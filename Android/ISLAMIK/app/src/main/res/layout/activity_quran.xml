@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/margin_large"
+    android:paddingLeft="@dimen/margin_extra_large"
+    android:paddingRight="@dimen/margin_extra_large"
+    android:orientation="vertical"
+    android:background="@color/white" >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_display_language"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textsize_normal" />
+    <Spinner
+        android:id="@+id/sp_language"
+        style="@style/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/choose_chapter"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textsize_normal" />
+    <Spinner
+        android:id="@+id/sp_chapter"
+        style="@style/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/choose_verses"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textsize_normal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <Spinner
+            android:id="@+id/sp_verse_start"
+            style="@style/spinnerItemStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center" />
+        <Spinner
+            android:id="@+id/sp_verse_end"
+            style="@style/spinnerItemStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:gravity="center" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/choose_reciter"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textsize_normal" />
+    <Spinner
+        android:id="@+id/sp_reciter"
+        style="@style/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/choose_speed"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textsize_normal" />
+    <Spinner
+        android:id="@+id/sp_speed"
+        style="@style/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+</LinearLayout>

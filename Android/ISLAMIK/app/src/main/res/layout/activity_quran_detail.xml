@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scr_quran"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white" >
+    <LinearLayout
+        android:id="@+id/layout_quran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_large"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="match_parent"
+            style="@style/normalText"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/textsize_really_large"
+            android:text="@string/allah_akbar"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_chapter"
+            style="@style/normalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/textsize_really_large" />
+        <TextView
+            android:id="@+id/txt_verse"
+            style="@style/normalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_very_large" />
+        <TextView
+            android:layout_width="match_parent"
+            style="@style/normalText"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/textsize_really_large"
+            android:text="@string/allah_akbar"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>
