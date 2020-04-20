@@ -4,11 +4,9 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
-    <color name="blue">#4890a3</color>
     <color name="gray">#d9dad9</color>
     <color name="green_light">#81b826</color>
     <color name="green">#0e6129</color>
-    <color name="orange">#ed7d31</color>
     <color name="red">#de5249</color>
 
     <color name="text_light">#acacac</color>

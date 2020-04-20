@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.alesapps.kaotech"
+        applicationId "com.alesapps.islamik"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
@@ -33,6 +33,8 @@ dependencies {
     })
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation project(':androidViewpagerIndicatorLibrary')
+    implementation "com.github.parse-community.Parse-SDK-Android:parse:1.20.0"
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.2.0'
     testImplementation 'junit:junit:4.12'
 }
