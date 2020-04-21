@@ -1,5 +1,6 @@
 package com.alesapps.islamikplus.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
@@ -28,6 +29,9 @@ public class ReadyActivity extends BaseActionBarActivity {
 		count --;
 		if (count > 0) {
 			txt_count.setText(String.valueOf(count));
+		} else {
+			startActivity(new Intent(instance, CameraActivity.class));
+			finish();
 		}
 	}
 

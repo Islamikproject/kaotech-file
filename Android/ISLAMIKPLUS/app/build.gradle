@@ -36,5 +36,6 @@ dependencies {
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.20.0"
     implementation 'com.google.android.gms:play-services-places:17.0.0'
     implementation 'com.google.android.libraries.places:places:2.2.0'
+    implementation 'com.github.florent37:camerafragment:1.0.9'
     testImplementation 'junit:junit:4.12'
 }

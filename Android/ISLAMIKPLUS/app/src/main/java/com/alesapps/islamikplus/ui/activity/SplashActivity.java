@@ -1,8 +1,12 @@
 package com.alesapps.islamikplus.ui.activity;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import androidx.core.app.ActivityCompat;
 import com.alesapps.islamikplus.AppPreference;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.UserListener;
@@ -13,6 +17,13 @@ import com.parse.ParseUser;
 
 public class SplashActivity extends BaseActivity {
 	public static SplashActivity instance = null;
+	private static final int REQUEST_PERMISSION = 1;
+	private static String[] PERMISSIONS = {
+			Manifest.permission.WRITE_EXTERNAL_STORAGE,
+			Manifest.permission.RECORD_AUDIO,
+			Manifest.permission.MODIFY_AUDIO_SETTINGS,
+			Manifest.permission.CAMERA
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +36,36 @@ public class SplashActivity extends BaseActivity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		new Handler().postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				boolean signedAuto = AppPreference.getBool(AppPreference.KEY.SIGN_IN_AUTO, false);
-				if (!signedAuto)
-					gotoNextActivity(true);
-				else
-					login();
-			}
-		}, 1000);
+		verifyStoragePermissions(this);
+	}
+
+	public void verifyStoragePermissions(Activity activity) {
+		int permission0 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+		int permission1 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA);
+		int permission2 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO);
+		int permission3 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.MODIFY_AUDIO_SETTINGS);
+
+		if (permission0 != PackageManager.PERMISSION_GRANTED
+				|| permission1 != PackageManager.PERMISSION_GRANTED
+				|| permission2 != PackageManager.PERMISSION_GRANTED
+				|| permission3 != PackageManager.PERMISSION_GRANTED) {
+			ActivityCompat.requestPermissions(
+					activity,
+					PERMISSIONS,
+					REQUEST_PERMISSION
+			);
+		} else {
+			new Handler().postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					boolean signedAuto = AppPreference.getBool(AppPreference.KEY.SIGN_IN_AUTO, false);
+					if (!signedAuto)
+						gotoNextActivity(true);
+					else
+						login();
+				}
+			}, 1000);
+		}
 	}
 
 	private void login() {

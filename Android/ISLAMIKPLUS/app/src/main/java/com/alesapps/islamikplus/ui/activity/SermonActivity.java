@@ -34,7 +34,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		switch (view.getId()) {
 			case R.id.btn_next:
 				if (isValid())
-					submit();
+					startActivity(new Intent(instance, ReadyActivity.class));
 				return;
 		}
 	}
@@ -49,8 +49,8 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		return true;
 	}
 
-	private void submit() {
-		startActivity(new Intent(instance, ReadyActivity.class));
+	public void submit(String path) {
+
 	}
 }
 
