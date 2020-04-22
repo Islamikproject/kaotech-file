@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/jumah_sermon"
-                android:textColor="@color/blue"
+                android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />
         </LinearLayout>
 
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/regular_sermon"
-                android:textColor="@color/blue"
+                android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />
         </LinearLayout>
     </LinearLayout>
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/manage_donation"
-                android:textColor="@color/blue"
+                android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />
         </LinearLayout>
         <LinearLayout
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/settings"
-                android:textColor="@color/blue"
+                android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />
         </LinearLayout>
     </LinearLayout>

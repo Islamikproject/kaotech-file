@@ -38,12 +38,12 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-			window.setStatusBarColor(getResources().getColor(R.color.blue));
+			window.setStatusBarColor(getResources().getColor(R.color.green));
 		}
 		actionBar = getSupportActionBar();
 		if (actionBar != null) {
 			actionBar.setDisplayHomeAsUpEnabled(false);
-			actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.blue)));
+			actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.green)));
 			actionBar.setHomeButtonEnabled(false);
 			actionBar.setElevation(0);
 

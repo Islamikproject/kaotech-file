@@ -22,6 +22,4 @@ public class SermonModel {
 		video = object.getParseFile(ParseConstants.KEY_LAST_NAME);
 	}
 
-
-
 }

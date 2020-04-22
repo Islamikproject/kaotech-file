@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/next_"
-            android:textColor="@color/blue"
+            android:textColor="@color/green"
             android:background="@color/transparent" />
     </LinearLayout>
 </LinearLayout>

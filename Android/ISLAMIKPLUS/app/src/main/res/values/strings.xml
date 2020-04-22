@@ -26,7 +26,7 @@
     <string name="valid_No_phone_number">Please enter phone number.</string>
     <string name="valid_No_password">Please enter password.</string>
     <string name="invalid_incorrect_password">Password entered is incorrect.</string>
-    <string name="no_account_signup_here">No account? <![CDATA[<font color=\'#007ab9\'><u>Sign Up Here!</u></font>]]></string>
+    <string name="no_account_signup_here">No account? <![CDATA[<font color=\'#0e6129\'><u>Sign Up Here!</u></font>]]></string>
     <string name="sign_up">Sign Up</string>
     <!-- Reset Password -->
     <string name="email_address">Email address</string>
