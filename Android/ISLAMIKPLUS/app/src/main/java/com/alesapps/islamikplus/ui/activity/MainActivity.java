@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.alesapps.islamikplus.AppPreference;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.ExceptionListener;
+import com.alesapps.islamikplus.model.SermonModel;
 import com.alesapps.islamikplus.model.UserModel;
 import com.alesapps.islamikplus.utils.MessageUtil;
 
@@ -44,11 +45,11 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				startActivity(new Intent(instance, SelectLanguageActivity.class));
 				break;
 			case R.id.layout_jumah:
-				SermonActivity.isRegular = false;
+				SermonActivity.type = SermonModel.TYPE_JUMAH;
 				startActivity(new Intent(instance, SermonActivity.class));
 				break;
 			case R.id.layout_regular:
-				SermonActivity.isRegular = true;
+				SermonActivity.type = SermonModel.TYPE_REGULAR;
 				startActivity(new Intent(instance, SermonActivity.class));
 				break;
 			case R.id.layout_donation:

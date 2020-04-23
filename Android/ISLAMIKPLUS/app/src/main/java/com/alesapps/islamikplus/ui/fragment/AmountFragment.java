@@ -8,10 +8,17 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.alesapps.islamikplus.R;
+import com.alesapps.islamikplus.listener.ObjectListListener;
+import com.alesapps.islamikplus.model.ParseConstants;
+import com.alesapps.islamikplus.model.PaymentModel;
 import com.alesapps.islamikplus.ui.activity.DonationActivity;
 import com.alesapps.islamikplus.ui.view.DragListView;
+import com.alesapps.islamikplus.utils.CommonUtil;
+import com.alesapps.islamikplus.utils.DateTimeUtils;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AmountFragment extends BaseFragment implements DragListView.OnRefreshLoadingMoreListener {
 	public static AmountFragment instance;
@@ -43,6 +50,9 @@ public class AmountFragment extends BaseFragment implements DragListView.OnRefre
 		adapter = new ListAdapter();
 		list_donation.setAdapter(adapter);
 		layout_nodata.setOnClickListener(this);
+		list_donation.setOnRefreshListener(this);
+		txt_total.setText("$0.00");
+		list_donation.refresh();
 		return mView;
 	}
 
@@ -56,7 +66,21 @@ public class AmountFragment extends BaseFragment implements DragListView.OnRefre
 	public void onDragLoadMore() {}
 
 	private void getServerData() {
-		showData();
+		PaymentModel.GetPaymentList(ParseUser.getCurrentUser(), new ObjectListListener() {
+			@Override
+			public void done(List<ParseObject> objects, String error) {
+				mDataList.clear();
+				if (error == null && objects.size() > 0) {
+					Double total = 0.0;
+					for (int i = 0; i < objects.size(); i ++) {
+						total = total + objects.get(i).getDouble(ParseConstants.KEY_AMOUNT);
+						mDataList.add(objects.get(i));
+					}
+					txt_total.setText("$" + CommonUtil.getStrDouble(total));
+				}
+				showData();
+			}
+		});
 	}
 
 	private void showData() {
@@ -65,6 +89,7 @@ public class AmountFragment extends BaseFragment implements DragListView.OnRefre
 		else
 			layout_nodata.setVisibility(View.VISIBLE);
 		adapter.notifyDataSetChanged();
+		list_donation.onRefreshComplete();
 	}
 
 
@@ -109,8 +134,11 @@ public class AmountFragment extends BaseFragment implements DragListView.OnRefre
 			} else {
 				holder = (ListAdapter.ViewHolder) convertView.getTag();
 			}
-
-			holder.txt_name.setText("");
+			PaymentModel model = new PaymentModel();
+			model.parse(mDataList.get(position));
+			holder.txt_name.setText(model.name);
+			holder.txt_amount.setText("$" + CommonUtil.getStrDouble(model.amount));
+			holder.txt_date.setText(DateTimeUtils.dateToString(mDataList.get(position).getCreatedAt(), DateTimeUtils.DATE_STRING_FORMAT));
 			return convertView;
 		}
 	}

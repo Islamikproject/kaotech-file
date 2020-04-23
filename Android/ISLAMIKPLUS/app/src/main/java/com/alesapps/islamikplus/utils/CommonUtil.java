@@ -71,4 +71,8 @@ public class CommonUtil {
 			IslamikPlusApp.getContext().startActivity(browserIntent);
 		}
 	}
+
+	public static String getStrDouble(double value) {
+		return  String.format("%.2f", value);
+	}
 }

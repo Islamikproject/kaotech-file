@@ -12,7 +12,10 @@
     <string name="warning">Warning</string>
     <string name="prev_">&lt;&lt; PREVIEW</string>
     <string name="next_">NEXT &gt;&gt;</string>
+    <string name="send_">SEND &gt;&gt;</string>
     <string name="confirm">CONFIRM</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
     <!-- Language -->
     <string name="select_language">Select Language</string>
     <string name="english">English</string>
@@ -70,6 +73,19 @@
     <string name="amount">Amount</string>
     <string name="date">Date</string>
     <string name="total_">Total:</string>
+    <string name="name_fundraiser_">Name of the fundraiser:</string>
+    <string name="name_mosque_">Name of the mosque:</string>
+    <string name="reasons_fundraising_">Reasons for fundraising:</string>
+    <string name="amount_seeking_">Amount seeking:</string>
+    <string name="raising_message">Dear ISLAMIK users, « %1$s » just launched a fundraising campaign to « %2$s » and is seeking a total amount of « $%3$s »</string>
+    <string name="choose_amount_seeking_individual_">Choose amount seeking per individual:</string>
+    <string name="confirm_mosque_virtual_basket">The mosque has a virtual basket of « %1$s » would you like to make a donation?</string>
+    <string name="valid_No_fundraiser">Please enter name of the fundraiser.</string>
+    <string name="valid_No_mosque">Please enter name of the mosque.</string>
+    <string name="valid_No_reason">Please enter reasons for fundraising.</string>
+    <string name="valid_No_amount">Please enter amount.</string>
+    <string name="topic">Topic</string>
+    <string name="no_basket">No Basket</string>
     <!-- Settings -->
     <string name="edit_profile">Edit Profile</string>
     <string name="payment_information">Payment Information</string>

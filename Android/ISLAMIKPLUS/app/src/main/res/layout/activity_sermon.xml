@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/margin_large"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@color/white" >
     <TextView
@@ -20,8 +19,22 @@
         android:layout_marginTop="@dimen/margin_small"
         android:padding="@dimen/image_very_small"
         android:gravity="top"
-        android:minLines="7"
+        android:minLines="5"
         android:background="@drawable/bg_rectangle_gray_line"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/choose_amount_seeking_individual_"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textsize_normal" />
+    <Spinner
+        android:id="@+id/sp_amount"
+        style="@style/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center" />
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -41,5 +54,14 @@
             android:text="@string/next_"
             android:textColor="@color/green"
             android:background="@color/transparent" />
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_change"
+            android:textColor="@color/green"
+            android:textAllCaps="true"
+            android:background="@color/transparent"
+            android:visibility="gone"/>
     </LinearLayout>
 </LinearLayout>

@@ -2,8 +2,100 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/margin_large"
     android:orientation="vertical"
     android:background="@color/white" >
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_normal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:text="@string/topic"
+            android:textSize="@dimen/textsize_normal"
+            android:textColor="@color/text_normal"
+            android:textAllCaps="true"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="@string/amount"
+            android:textSize="@dimen/textsize_normal"
+            android:textColor="@color/text_normal"
+            android:textAllCaps="true"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_light" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+        <com.alesapps.islamikplus.ui.view.DragListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/transparent"/>
+        <LinearLayout
+            android:id="@+id/layout_nodata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_very_large"
+            android:background="@drawable/bg_rectangle_gray_line"
+            android:gravity="center"
+            android:visibility="gone"
+            android:paddingLeft="@dimen/margin_large"
+            android:paddingRight="@dimen/margin_large"
+            android:paddingTop="@dimen/margin_normal"
+            android:paddingBottom="@dimen/margin_normal">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_search" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginRight="@dimen/image_very_small"
+                android:text="@string/no_basket"
+                android:textColor="@color/text_normal"
+                android:textSize="@dimen/textsize_normal" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <TextView
+            style="@style/normalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/total_"
+            android:gravity="center"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_total"
+            style="@style/normalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="$0.00"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="@drawable/bg_circle_gray_line"/>
+    </LinearLayout>
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.alesapps.islamik;
 
 public class AppConstant {
+	public static final int AUTOCOMPLETE_REQUEST_CODE = 10000;
 	public static final String MAIN_CHAPTER = "001. AL-FATIHA";
 	public static final int MAIN_VERSE = R.array.chapter_001_verses;
 	public static final String[] CHAPTER_ARRAY = {"002. AL-BAQARAH", "003. AL-IMRAN", "004. AN-NISA", "005. AL-MAIDAH", "006. AL-AN'AM", "007. AL-A'RAF", "008. AL-ANFAL", "009. AT-TAUBAH", "010. YUNUS",
@@ -33,7 +34,7 @@ public class AppConstant {
 	public static final int[] SPEED_VALUE_ARRAY = {50, 30, 20, 10};
 	public static final int TIME_SPEED = 15000;
 	public static final String[] RECITER_ARRAY = {"ABDUL HADI KANAKERI", "AL-HUSSAYNI AL-AZAZY (With Children)"};
-	public static final String RECITER_URL = "https://www.quran411.com/quran/";
+	public static final String RECITER_URL = "https://www.quran411.com/quran/kanakeri/";
 	public static final int TYPE_FAJR = 0;
 	public static final int TYPE_ZUHR = 1;
 	public static final int TYPE_ASR = 2;

@@ -1,16 +1,16 @@
 package com.alesapps.islamikplus;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import androidx.multidex.MultiDexApplication;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseCrashReporting;
 
-public class IslamikPlusApp extends Application {
+public class IslamikPlusApp extends MultiDexApplication {
     public static Context mContext;
 
     @Override

@@ -6,7 +6,6 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.util.DisplayMetrics;
 import com.alesapps.islamik.AppConstant;
-import com.alesapps.islamik.AppGlobals;
 import com.alesapps.islamik.AppPreference;
 import java.util.Locale;
 
@@ -70,8 +69,8 @@ public class CommonUtil {
 
 	public static Uri GetReciterPath(int chapter) {
 		String path = AppConstant.RECITER_URL;
-		if (AppGlobals.RECITERS_INDEX == 1)
-			path = path + "azazy/";
+//		if (AppGlobals.RECITERS_INDEX == 1)
+//			path = path + "azazy/";
 		if (chapter < 10)
 			path = path + "00" + chapter + ".mp3";
 		else if (chapter < 100)

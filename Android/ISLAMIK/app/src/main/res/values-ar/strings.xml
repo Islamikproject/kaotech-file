@@ -98,6 +98,17 @@
     <string name="choose_verses">اختر حياتك (آيات)</string>
     <string name="choose_reciter">اختيار القارئ</string>
 
+    <string name="choose_your_address">اختر عنوانك:</string>
+    <string name="valid_Invalid_mosque_connected">وجه الفتاة! لا يوجد مسجد متصل بهذا الحي في هذه اللحظة.</string>
+    <string name="confirm_another_mosque">هل ترغب في التواصل مع مسجد آخر في شبكتنا بدلاً من ذلك؟</string>
+    <string name="save_sermon">حفظ الخطبة</string>
+    <string name="send_inquiries_imam">إرسال الاستفسارات للإمام</string>
+    <string name="name_">اسم:</string>
+    <string name="subject_">موضوع:</string>
+    <string name="email_">البريد الإلكتروني:</string>
+    <string name="text_">نص:</string>
+    <string name="success_donation">شكرا لتبرعك ، لقد تم إرسالك إلى حساب المسجد.</string>
+
     <string name="main_chapter">001. AL-FATIHA</string>
 
     <array name="chapter_001_verses">

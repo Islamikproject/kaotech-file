@@ -98,6 +98,18 @@
     <string name="choose_verses">Choose your Āyāt (Verses)</string>
     <string name="choose_reciter">Choose the reciter</string>
 
+    <string name="choose_your_address">Choose Your Address:</string>
+    <string name="valid_Invalid_mosque_connected">Oops! There\'s no mosque connected in this neighborhood at this moment.</string>
+    <string name="confirm_another_mosque">Would you like to be connected with another mosque in our network instead?</string>
+    <string name="save_sermon">Save sermon</string>
+    <string name="send_inquiries_imam">Send inquiries to the imam</string>
+    <string name="name_">Name:</string>
+    <string name="subject_">Subject:</string>
+    <string name="email_">Email:</string>
+    <string name="text_">Text:</string>
+    <string name="success_donation">Thanks for your donation, You has been sent to the mosque account.</string>
+
+
     <string name="main_chapter">001. AL-FATIHA</string>
 
     <array name="chapter_001_verses">

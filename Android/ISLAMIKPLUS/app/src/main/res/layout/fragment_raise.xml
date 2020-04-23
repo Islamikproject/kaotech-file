@@ -3,7 +3,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/margin_large"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@color/white" >
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_fundraiser_"
+        android:textSize="@dimen/textsize_normal"
+        android:textColor="@color/text_normal"/>
+    <EditText
+        android:id="@+id/edt_raiser"
+        style="@style/normalEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/transparent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_light" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/name_mosque_"
+        android:textSize="@dimen/textsize_normal"
+        android:textColor="@color/text_normal"/>
+    <EditText
+        android:id="@+id/edt_mosque"
+        style="@style/normalEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/transparent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_light" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/reasons_fundraising_"
+        android:textSize="@dimen/textsize_normal"
+        android:textColor="@color/text_normal"/>
+    <EditText
+        android:id="@+id/edt_reason"
+        style="@style/normalEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/transparent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_light" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/amount_seeking_"
+        android:textSize="@dimen/textsize_normal"
+        android:textColor="@color/text_normal"/>
+    <EditText
+        android:id="@+id/edt_amount"
+        style="@style/normalEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:inputType="number"
+        android:background="@color/transparent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_light" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_"
+            android:textColor="@color/green"
+            android:background="@color/transparent" />
+    </LinearLayout>
 </LinearLayout>

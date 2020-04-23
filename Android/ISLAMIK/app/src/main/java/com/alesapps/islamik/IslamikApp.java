@@ -1,16 +1,17 @@
 package com.alesapps.islamik;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import androidx.multidex.MultiDexApplication;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseCrashReporting;
+import com.parse.ParseInstallation;
 
-public class IslamikApp extends Application {
+public class IslamikApp extends MultiDexApplication {
     public static Context mContext;
 
     @Override
@@ -35,6 +36,7 @@ public class IslamikApp extends Application {
         ParseACL.setDefaultACL(defaultACL, true);
         Places.initialize(getApplicationContext(), "AIzaSyCZSV21iRhzX8kEiHLeFYIlAOPIipw1Llg");
         PlacesClient placesClient = Places.createClient(this);
+        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
     }
 
     public static Context getContext() {

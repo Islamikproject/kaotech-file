@@ -8,11 +8,13 @@ import android.widget.TextView;
 import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.model.SurahModel;
+import com.alesapps.islamik.utils.BaseTask;
 import com.alesapps.islamik.utils.CommonUtil;
 import java.util.ArrayList;
 import java.util.List;
 
 public class QuranDetailActivity extends BaseActionBarActivity implements View.OnClickListener {
+    public static QuranDetailActivity instance;
     LinearLayout layout_quran;
     TextView txt_chapter;
     TextView txt_verse;
@@ -25,6 +27,7 @@ public class QuranDetailActivity extends BaseActionBarActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        instance = this;
         SetTitle("", -1);
         ShowActionBarIcons(true, R.id.action_back);
         CommonUtil.SetLocale(this, language);
@@ -43,8 +46,28 @@ public class QuranDetailActivity extends BaseActionBarActivity implements View.O
         speed = AppConstant.SPEED_VALUE_ARRAY[model.speed];
         showData();
 
-        mediaPlayer = MediaPlayer.create(this, CommonUtil.GetReciterPath(model.surahId + 2));
-        mediaPlayer.start();
+        final int chapter = model.surahId + 2;
+        BaseTask.run(new BaseTask.TaskListener() {
+            @Override
+            public Object onTaskRunning(int taskId, Object data) {
+                // TODO Auto-generated method stub
+                try {
+                    mediaPlayer = MediaPlayer.create(instance, CommonUtil.GetReciterPath(chapter));
+                    mediaPlayer.start();
+                } catch (Exception ex) {}
+                return null;
+            }
+            @Override
+            public void onTaskResult(int taskId, Object result) {
+                // TODO Auto-generated method stub
+            }
+            @Override
+            public void onTaskProgress(int taskId, Object... values) {}
+            @Override
+            public void onTaskPrepare(int taskId, Object data) {}
+            @Override
+            public void onTaskCancelled(int taskId) {}
+        });
     }
 
     private void showData() {
