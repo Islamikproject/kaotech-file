@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">الإسلام</string>
     <string name="company_name">Semper Altius</string>
-
+    <string name="gcm_sender_id">id:413068111620</string>
     <string name="error">خطأ</string>
     <string name="okay">حسنا</string>
     <string name="success">Success</string>
@@ -108,6 +108,28 @@
     <string name="email_">البريد الإلكتروني:</string>
     <string name="text_">نص:</string>
     <string name="success_donation">شكرا لتبرعك ، لقد تم إرسالك إلى حساب المسجد.</string>
+
+    <string name="donation">هبة</string>
+    <string name="name">اسم</string>
+    <string name="valid_No_name">وجه الفتاة! نسيت كتابة اسمك.</string>
+    <string name="card_number">رقم البطاقة</string>
+    <string name="cvc">رمز التحقق من البطاقة</string>
+    <string name="expiration_date">تاريخ إنتهاء الصلاحية</string>
+    <string name="hint_card_number">0000-0000-0000-0000</string>
+    <string name="hint_cvc">000</string>
+    <string name="enter_year">أدخل السنة</string>
+    <string name="enter_month">أدخل الشهر</string>
+    <string name="enter_amount">أدخل المبلغ</string>
+    <string name="pay">دفع</string>
+    <string name="amount">كمية</string>
+    <string name="valid_No_card_number">وجه الفتاة! نسيت كتابة رقم البطاقة.</string>
+    <string name="valid_No_cvc">وجه الفتاة! نسيت كتابة cvc.</string>
+    <string name="valid_No_year">وجه الفتاة! نسيت كتابة السنة.</string>
+    <string name="valid_No_month">وجه الفتاة! نسيت كتابة الشهر.</string>
+    <string name="valid_Invalid_year">عام غير صالح.</string>
+    <string name="valid_Invalid_month">شهر غير صالح.</string>
+    <string name="valid_No_amount">وجه الفتاة! نسيت كتابة المبلغ.</string>
+    <string name="msg_stripe_connect">يتطلب هذا المسجد حساب "Stripe" المرتبط.</string>
 
     <string name="main_chapter">001. AL-FATIHA</string>
 

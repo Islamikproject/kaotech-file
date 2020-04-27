@@ -28,7 +28,7 @@ public class UserModel {
 	public String mosque = "";
 	public ParseGeoPoint lonLat = new ParseGeoPoint();
 	public String address = "";
-	public String account = "";
+	public String accountId = "";
 
 	public void parse(ParseUser user) {
 		if (user == null)
@@ -43,7 +43,7 @@ public class UserModel {
 		mosque = user.getString(ParseConstants.KEY_MOSQUE);
 		lonLat = user.getParseGeoPoint(ParseConstants.KEY_LON_LAT);
 		address = user.getString(ParseConstants.KEY_ADDRESS);
-		account = user.getString(ParseConstants.KEY_ACCOUNT);
+		accountId = user.getString(ParseConstants.KEY_ACCOUNT_ID);
 	}
 
 	public static void RequestPasswordReset(String strEmail, final ExceptionListener listener) {
@@ -67,7 +67,7 @@ public class UserModel {
 		userObj.put(ParseConstants.KEY_MOSQUE, model.mosque);
 		userObj.put(ParseConstants.KEY_LON_LAT, model.lonLat);
 		userObj.put(ParseConstants.KEY_ADDRESS, model.address);
-		userObj.put(ParseConstants.KEY_ACCOUNT, model.account);
+		userObj.put(ParseConstants.KEY_ACCOUNT_ID, model.accountId);
 
 		userObj.signUpInBackground(new SignUpCallback() {
 			@Override
@@ -97,6 +97,7 @@ public class UserModel {
 				if (e == null) {
 					ParseInstallation installation = ParseInstallation.getCurrentInstallation();
 					installation.put(ParseConstants.KEY_OWNER, userObj);
+					installation.put("GCMSenderId", "413068111620");
 					installation.saveInBackground(new SaveCallback() {
 						@Override
 						public void done(ParseException e) {

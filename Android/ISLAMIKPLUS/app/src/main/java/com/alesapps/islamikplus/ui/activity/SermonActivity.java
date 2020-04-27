@@ -14,7 +14,10 @@ import com.alesapps.islamikplus.AppConstant;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.model.FileModel;
+import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.model.SermonModel;
+import com.alesapps.islamikplus.model.UserModel;
+import com.alesapps.islamikplus.push.PushNoti;
 import com.alesapps.islamikplus.utils.MessageUtil;
 import com.parse.ParseUser;
 
@@ -101,7 +104,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 	}
 
 	private void save() {
-		SermonModel model = new SermonModel();
+		final SermonModel model = new SermonModel();
 		model.owner = ParseUser.getCurrentUser();
 		model.type = type;
 		model.topic = edt_topic.getText().toString().trim();
@@ -113,6 +116,10 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 			public void done(String error) {
 				dlg_progress.cancel();
 				if (error == null) {
+					String message = String.format(getString(R.string.success_jumah_message), model.owner.getString(ParseConstants.KEY_MOSQUE), model.topic);
+					if (type == SermonModel.TYPE_REGULAR)
+						message = String.format(getString(R.string.success_regular_message), model.owner.getString(ParseConstants.KEY_MOSQUE), model.topic);
+					PushNoti.sendPushAll(type, message, "", null);
 					MessageUtil.showToast(instance, R.string.success);
 					myBack();
 				} else {

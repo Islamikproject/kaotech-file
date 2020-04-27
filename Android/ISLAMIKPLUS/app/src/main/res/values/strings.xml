@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">ISLAMIK+</string>
     <string name="company_name">Semper Altius</string>
-
+    <string name="gcm_sender_id">id:413068111620</string>
     <string name="error">Error</string>
     <string name="okay">Okay</string>
     <string name="success">Success</string>

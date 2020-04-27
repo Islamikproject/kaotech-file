@@ -1,0 +1,101 @@
+{
+  "project_info": {
+    "project_number": "413068111620",
+    "firebase_url": "https://islamik-by-kaotech.firebaseio.com",
+    "project_id": "islamik-by-kaotech",
+    "storage_bucket": "islamik-by-kaotech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413068111620:android:c4c145fcc509f80a40ea51",
+        "android_client_info": {
+          "package_name": "com.alesapps.islamik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413068111620-5bt6fsr9ipr1itqamvcbecbq1c4728t3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alesapps.islamik",
+            "certificate_hash": "49bf54470c744253ee548357f97f9f604bac1114"
+          }
+        },
+        {
+          "client_id": "413068111620-nnvd8s99j8mb6nni1dfnqubl2ilnevrv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alesapps.islamik",
+            "certificate_hash": "3bce41820da2c66e5f48c6f4c604154bb20244e3"
+          }
+        },
+        {
+          "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413068111620:android:2dc37866daa22b6840ea51",
+        "android_client_info": {
+          "package_name": "com.alesapps.islamikplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413068111620-vlej8elf1tn9vistr8luqlmuc0itt9b9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alesapps.islamikplus",
+            "certificate_hash": "456dc393eb782705f31b07dff2e573565ee1709f"
+          }
+        },
+        {
+          "client_id": "413068111620-6p5sdq8mrn56kvofr465j35bpkg52snc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alesapps.islamikplus",
+            "certificate_hash": "3bce41820da2c66e5f48c6f4c604154bb20244e3"
+          }
+        },
+        {
+          "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.alesapps.islamik.R;
+import com.alesapps.islamik.ui.dialog.MyProgressDialog;
 import com.alesapps.islamik.utils.CommonUtil;
 
 public class BaseActionBarActivity extends AppCompatActivity implements OnClickListener{
@@ -27,6 +28,7 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 	public TextView action_text_next;
 	public View action_button_language;
 	public View action_button_done;
+	public MyProgressDialog dlg_progress;
 
 	@SuppressLint({ "InflateParams", "NewApi" })
 	@Override
@@ -73,6 +75,7 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_button_done.setOnClickListener(this);
 			actionBar.setCustomView(v);
 		}
+		dlg_progress = new MyProgressDialog(this);
 	}
 
 	@Override
@@ -159,6 +162,8 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
+		if (dlg_progress != null)
+			dlg_progress.dismiss();
 	}
 
 	public void myBack() {

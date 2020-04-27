@@ -11,6 +11,12 @@ public class ParseConstants {
 	public static final String KEY_EMAIL = "email";
 	public static final String KEY_USERNAME = "username";
 	public static final String KEY_OBJECT_ID = "objectId";
+	// notification
+	public static final String NOTI_ALERT = "alert";
+	public static final String NOTI_DATA = "data";
+	public static final String NOTI_BADGE = "badge";
+	public static final String NOTI_SOUND = "sound";
+	public static final String NOTI_TYPE = "type";
 	// User
 	public static final String KEY_TYPE = "type";
 	public static final String KEY_FIRST_NAME = "firstName";
@@ -21,7 +27,7 @@ public class ParseConstants {
 	public static final String KEY_MOSQUE = "mosque";
 	public static final String KEY_LON_LAT = "lonLat";
 	public static final String KEY_ADDRESS = "address";
-	public static final String KEY_ACCOUNT = "account";
+	public static final String KEY_ACCOUNT_ID = "accountId";
 	// Sermon
 	public static final String KEY_OWNER = "owner";
 	public static final String KEY_TOPIC = "topic";
@@ -32,7 +38,5 @@ public class ParseConstants {
 	public static final String KEY_AMOUNT = "amount";
 	public static final String KEY_SERMON = "sermon";
 	public static final String KEY_NAME = "name";
-	public static final String KEY_SUBJECT = "subject";
-	public static final String KEY_TEXT = "text";
 
 }

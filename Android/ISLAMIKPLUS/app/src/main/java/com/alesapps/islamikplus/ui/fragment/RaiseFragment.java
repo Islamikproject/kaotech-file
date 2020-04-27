@@ -11,6 +11,7 @@ import android.widget.EditText;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.model.SermonModel;
+import com.alesapps.islamikplus.push.PushNoti;
 import com.alesapps.islamikplus.ui.activity.DonationActivity;
 import com.alesapps.islamikplus.utils.MessageUtil;
 
@@ -95,7 +96,7 @@ public class RaiseFragment extends BaseFragment{
 	private void showConfirmDialog() {
 		String mosque = edt_mosque.getText().toString().trim();
 		String reason = edt_reason.getText().toString().trim();
-		String amount = "$" + edt_amount.getText().toString().trim();
+		String amount = edt_amount.getText().toString().trim();
 		String message = String.format(getString(R.string.raising_message), mosque, reason, amount);
 		new AlertDialog.Builder(mActivity)
 				.setTitle(R.string.app_name)
@@ -112,20 +113,23 @@ public class RaiseFragment extends BaseFragment{
 
 	private void send() {
 		String raiser = edt_raiser.getText().toString().trim();
-		String mosque = edt_mosque.getText().toString().trim();
+		final String mosque = edt_mosque.getText().toString().trim();
 		String reason = edt_reason.getText().toString().trim();
-		String amount = edt_amount.getText().toString().trim();
-		SermonModel model = new SermonModel();
+		Double amount = Double.valueOf(edt_amount.getText().toString().trim());
+		final SermonModel model = new SermonModel();
 		model.type = SermonModel.TYPE_RAISE;
 		model.raiser = raiser;
 		model.mosque = mosque;
 		model.topic = reason;
-		model.amount = Double.valueOf(amount);
+		model.amount = amount;
 		mActivity.dlg_progress.show();
 		SermonModel.Register(model, new ExceptionListener() {
 			@Override
 			public void done(String error) {
+				mActivity.dlg_progress.cancel();
 				if (error == null) {
+					String message = String.format(getString(R.string.raising_message), model.mosque, model.topic, String.valueOf(model.amount));;
+					PushNoti.sendPushAll(SermonModel.TYPE_RAISE, message, "", null);
 					MessageUtil.showToast(mActivity, R.string.success);
 					initialize();
 				} else {

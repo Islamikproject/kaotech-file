@@ -7,9 +7,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import androidx.fragment.app.FragmentActivity;
 import com.alesapps.islamik.R;
+import com.alesapps.islamik.ui.dialog.MyProgressDialog;
 import com.alesapps.islamik.utils.CommonUtil;
 
 public class BaseActivity extends FragmentActivity  {
+	public MyProgressDialog dlg_progress;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class BaseActivity extends FragmentActivity  {
 			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 			window.setStatusBarColor(getResources().getColor(R.color.green));
 		}
+		dlg_progress = new MyProgressDialog(this);
 	}
 
 	@Override
@@ -52,6 +55,8 @@ public class BaseActivity extends FragmentActivity  {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
+		if (dlg_progress != null)
+			dlg_progress.dismiss();
 	}
 
 	@Override

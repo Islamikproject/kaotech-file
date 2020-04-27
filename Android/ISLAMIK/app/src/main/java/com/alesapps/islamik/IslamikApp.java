@@ -37,6 +37,8 @@ public class IslamikApp extends MultiDexApplication {
         Places.initialize(getApplicationContext(), "AIzaSyCZSV21iRhzX8kEiHLeFYIlAOPIipw1Llg");
         PlacesClient placesClient = Places.createClient(this);
         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+        installation.put("GCMSenderId", "413068111620");
+        installation.saveInBackground();
     }
 
     public static Context getContext() {

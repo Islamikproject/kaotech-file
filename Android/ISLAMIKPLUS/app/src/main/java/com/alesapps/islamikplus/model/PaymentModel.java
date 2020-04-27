@@ -17,9 +17,6 @@ public class PaymentModel {
 	public ParseUser toUser;
 	public ParseObject sermon;
 	public String name = "";
-	public String subject = "";
-	public String email = "";
-	public String text = "";
 	public Double amount = 0.0;
 
 	public void parse(ParseObject object) {
@@ -28,9 +25,6 @@ public class PaymentModel {
 		type = object.getInt(ParseConstants.KEY_TYPE);
 		toUser = object.getParseUser(ParseConstants.KEY_TO_USER);
 		name = object.getString(ParseConstants.KEY_NAME);
-		subject = object.getString(ParseConstants.KEY_SUBJECT);
-		email = object.getString(ParseConstants.KEY_EMAIL);
-		text = object.getString(ParseConstants.KEY_TEXT);
 		sermon = object.getParseObject(ParseConstants.KEY_SERMON);
 		amount = object.getDouble(ParseConstants.KEY_AMOUNT);
 	}

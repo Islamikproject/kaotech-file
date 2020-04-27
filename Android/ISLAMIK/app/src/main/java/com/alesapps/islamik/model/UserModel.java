@@ -19,7 +19,7 @@ public class UserModel {
 	public String mosque = "";
 	public ParseGeoPoint lonLat = new ParseGeoPoint();
 	public String address = "";
-	public String account = "";
+	public String accountId = "";
 
 	public void parse(ParseUser user) {
 		if (user == null)
@@ -34,7 +34,7 @@ public class UserModel {
 		mosque = user.getString(ParseConstants.KEY_MOSQUE);
 		lonLat = user.getParseGeoPoint(ParseConstants.KEY_LON_LAT);
 		address = user.getString(ParseConstants.KEY_ADDRESS);
-		account = user.getString(ParseConstants.KEY_ACCOUNT);
+		accountId = user.getString(ParseConstants.KEY_ACCOUNT_ID);
 	}
 
 	public static void GetAllUsers(final UserListListener listener) {
