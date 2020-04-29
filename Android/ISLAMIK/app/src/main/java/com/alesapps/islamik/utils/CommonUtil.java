@@ -69,8 +69,6 @@ public class CommonUtil {
 
 	public static Uri GetReciterPath(int chapter) {
 		String path = AppConstant.RECITER_URL;
-//		if (AppGlobals.RECITERS_INDEX == 1)
-//			path = path + "azazy/";
 		if (chapter < 10)
 			path = path + "00" + chapter + ".mp3";
 		else if (chapter < 100)

@@ -12,6 +12,8 @@
     <string name="warning">تحذير</string>
     <string name="prev_">&lt;&lt; معاينة</string>
     <string name="next_">التالى &gt;&gt;</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
 
     <string name="select_language">اختار اللغة</string>
     <string name="english">الإنجليزية</string>
@@ -108,6 +110,7 @@
     <string name="email_">البريد الإلكتروني:</string>
     <string name="text_">نص:</string>
     <string name="success_donation">شكرا لتبرعك ، لقد تم إرسالك إلى حساب المسجد.</string>
+    <string name="confirm_mosque_virtual_basket">يحتوي المسجد على سلة افتراضية من «%1$s» هل ترغب في التبرع؟</string>
 
     <string name="donation">هبة</string>
     <string name="name">اسم</string>

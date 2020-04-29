@@ -100,7 +100,7 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
                 @Override
                 public void onVideoRecorded(String filePath) {
                     Toast.makeText(getBaseContext(), "onVideoRecorded " + filePath, Toast.LENGTH_SHORT).show();
-                    SermonActivity.instance.showConfirmDialog(filePath);
+                    SermonActivity.instance.save(filePath);
                     myBack();
                 }
 

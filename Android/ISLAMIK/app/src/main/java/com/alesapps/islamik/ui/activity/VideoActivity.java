@@ -1,5 +1,7 @@
 package com.alesapps.islamik.ui.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -38,9 +40,7 @@ public class VideoActivity extends BaseActionBarActivity{
 		mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 			@Override
 			public void onCompletion(MediaPlayer mp) {
-				DonationActivity.mSermonObj = mSermonObj;
-				startActivity(new Intent(instance, DonationActivity.class));
-				finish();
+				showConfirmDialog();
 			}
 		});
 		initialize();
@@ -50,6 +50,28 @@ public class VideoActivity extends BaseActionBarActivity{
 		ParseFile videoFile = mSermonObj.getParseFile(ParseConstants.KEY_VIDEO);
 		if (videoFile != null)
 			mVideoView.setVideoPath(videoFile.getUrl());
+	}
+
+	private void showConfirmDialog() {
+		String amount = String.valueOf(mSermonObj.getDouble(ParseConstants.KEY_AMOUNT));
+		if (amount.equals("0") || amount.equals("0.0"))
+			amount = "";
+		else
+			amount = "$" + amount;
+		String message = String.format(getString(R.string.confirm_mosque_virtual_basket), amount);
+		new AlertDialog.Builder(instance)
+				.setTitle(R.string.app_name)
+				.setMessage(message)
+				.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						DonationActivity.mSermonObj = mSermonObj;
+						startActivity(new Intent(instance, DonationActivity.class));
+						finish();
+					}
+				})
+				.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {}
+				}).show();
 	}
 }
 

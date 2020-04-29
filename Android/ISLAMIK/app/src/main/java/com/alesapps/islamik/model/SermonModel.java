@@ -1,12 +1,13 @@
 package com.alesapps.islamik.model;
 
-import com.alesapps.islamik.listener.ObjectListener;
-import com.parse.GetCallback;
+import com.alesapps.islamik.listener.ObjectListListener;
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import java.util.List;
 
 public class SermonModel {
 	public static final int TYPE_JUMAH = 0;
@@ -33,17 +34,17 @@ public class SermonModel {
 		amount = object.getDouble(ParseConstants.KEY_AMOUNT);
 	}
 
-	public static void GetSermonObj(final ParseUser userObj, final ObjectListener listener) {
+	public static void GetSermonList(final ParseUser userObj, final ObjectListListener listener) {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery(ParseConstants.TBL_SERMON);
 		query.whereEqualTo(ParseConstants.KEY_OWNER, userObj);
 		query.include(ParseConstants.KEY_OWNER);
 		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
 		query.setLimit(ParseConstants.QUERY_FETCH_MAX_COUNT);
-		query.getFirstInBackground(new GetCallback<ParseObject>() {
+		query.findInBackground(new FindCallback<ParseObject>() {
 			@Override
-			public void done(ParseObject object, ParseException e) {
+			public void done(List<ParseObject> objects, ParseException e) {
 				if (listener != null)
-					listener.done(object, ParseErrorHandler.handle(e));
+					listener.done(objects, ParseErrorHandler.handle(e));
 			}
 		});
 	}

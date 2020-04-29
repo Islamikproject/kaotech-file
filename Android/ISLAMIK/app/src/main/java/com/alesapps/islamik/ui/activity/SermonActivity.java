@@ -9,17 +9,13 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.R;
-import com.alesapps.islamik.listener.ObjectListener;
 import com.alesapps.islamik.listener.UserListListener;
-import com.alesapps.islamik.model.SermonModel;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.ui.view.DragListView;
-import com.alesapps.islamik.utils.MessageUtil;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.parse.ParseGeoPoint;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -144,27 +140,11 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 			holder.layout_container.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					getSermonObj(mDataList.get(position));
+					SermonListActivity.mUserObj = mDataList.get(position);
+					startActivity(new Intent(instance, SermonListActivity.class));
 				}
 			});
 			return convertView;
 		}
-	}
-
-	private void getSermonObj(final ParseUser userObj) {
-		dlg_progress.show();
-		SermonModel.GetSermonObj(userObj, new ObjectListener() {
-			@Override
-			public void done(ParseObject object, String error) {
-				dlg_progress.cancel();
-				if (error == null && object != null) {
-					VideoActivity.mUser = userObj;
-					VideoActivity.mSermonObj = object;
-					startActivity(new Intent(instance, VideoActivity.class));
-				} else {
-					MessageUtil.showToast(instance, error);
-				}
-			}
-		});
 	}
 }

@@ -12,6 +12,8 @@
     <string name="warning">Warning</string>
     <string name="prev_">&lt;&lt; PREVIEW</string>
     <string name="next_">NEXT &gt;&gt;</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
 
     <string name="select_language">Select Language</string>
     <string name="english">English</string>
@@ -108,6 +110,7 @@
     <string name="email_">Email:</string>
     <string name="text_">Text:</string>
     <string name="success_donation">Thanks for your donation, You has been sent to the mosque account.</string>
+    <string name="confirm_mosque_virtual_basket">The mosque has a virtual basket of « %1$s » would you like to make a donation?</string>
 
     <string name="donation">Donation</string>
     <string name="name">Name</string>

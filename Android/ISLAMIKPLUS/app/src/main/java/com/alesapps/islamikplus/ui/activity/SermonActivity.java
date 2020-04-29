@@ -1,7 +1,5 @@
 package com.alesapps.islamikplus.ui.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,7 +14,6 @@ import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.model.FileModel;
 import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.model.SermonModel;
-import com.alesapps.islamikplus.model.UserModel;
 import com.alesapps.islamikplus.push.PushNoti;
 import com.alesapps.islamikplus.utils.MessageUtil;
 import com.parse.ParseUser;
@@ -27,9 +24,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 	Spinner sp_amount;
 	Button btn_next;
 	Button btn_save;
-
 	public static int type = SermonModel.TYPE_JUMAH;
-	String file_path = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,36 +75,13 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		return true;
 	}
 
-	public void showConfirmDialog(String path) {
-		file_path = path;
-		btn_save.setVisibility(View.VISIBLE);
-		btn_next.setVisibility(View.GONE);
-		String amount = AppConstant.STRING_AMOUNT[sp_amount.getSelectedItemPosition()];
-		if (TextUtils.isEmpty(amount))
-			amount = "";
-		else
-			amount = "$" + amount;
-		String message = String.format(getString(R.string.confirm_mosque_virtual_basket), amount);
-		new AlertDialog.Builder(instance)
-				.setTitle(R.string.app_name)
-				.setMessage(message)
-				.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						save();
-					}
-				})
-				.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {}
-				}).show();
-	}
-
-	private void save() {
+	public void save(String path) {
 		final SermonModel model = new SermonModel();
 		model.owner = ParseUser.getCurrentUser();
 		model.type = type;
 		model.topic = edt_topic.getText().toString().trim();
 		model.amount = AppConstant.ARRAY_AMOUNT[sp_amount.getSelectedItemPosition()];
-		model.video = FileModel.createVideoParseFile("video.mp4", file_path);
+		model.video = FileModel.createVideoParseFile("video.mp4", path);
 		dlg_progress.show();
 		SermonModel.Register(model, new ExceptionListener() {
 			@Override
@@ -121,6 +93,8 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 						message = String.format(getString(R.string.success_regular_message), model.owner.getString(ParseConstants.KEY_MOSQUE), model.topic);
 					PushNoti.sendPushAll(type, message, "", null);
 					MessageUtil.showToast(instance, R.string.success);
+					if (SermonListActivity.instance != null)
+						SermonListActivity.instance.list_sermon.refresh();
 					myBack();
 				} else {
 					MessageUtil.showToast(instance, error);

@@ -48,6 +48,7 @@
         <activity android:name="com.alesapps.islamik.ui.activity.SelectLanguageActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.MainActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SermonActivity" />
+        <activity android:name="com.alesapps.islamik.ui.activity.SermonListActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.DailyPrayersActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SalatActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.JumahActivity" />

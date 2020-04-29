@@ -45,12 +45,12 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				startActivity(new Intent(instance, SelectLanguageActivity.class));
 				break;
 			case R.id.layout_jumah:
-				SermonActivity.type = SermonModel.TYPE_JUMAH;
-				startActivity(new Intent(instance, SermonActivity.class));
+				SermonListActivity.type = SermonModel.TYPE_JUMAH;
+				startActivity(new Intent(instance, SermonListActivity.class));
 				break;
 			case R.id.layout_regular:
-				SermonActivity.type = SermonModel.TYPE_REGULAR;
-				startActivity(new Intent(instance, SermonActivity.class));
+				SermonListActivity.type = SermonModel.TYPE_REGULAR;
+				startActivity(new Intent(instance, SermonListActivity.class));
 				break;
 			case R.id.layout_donation:
 				startActivity(new Intent(instance, DonationActivity.class));
