@@ -9,4 +9,6 @@ public class AppConstant {
 	public static final String STRIPE_CONNECT_URL = "https://stripe.kaotech.brainyapps.com?";
 	public static final Double[] ARRAY_AMOUNT = {0.0, 1.0, 4.0, 8.0, 12.0, 20.0};
 	public static final String[] STRING_AMOUNT = {"", "$1", "$4", "$8", "$12", "$20"};
+	public static final String URL_STORAGE_REFERENCE = "gs://islamik-by-kaotech.appspot.com";
+	public static final String STORAGE_FILE = "file";
 }

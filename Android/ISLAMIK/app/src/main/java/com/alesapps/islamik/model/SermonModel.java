@@ -3,7 +3,6 @@ package com.alesapps.islamik.model;
 import com.alesapps.islamik.listener.ObjectListListener;
 import com.parse.FindCallback;
 import com.parse.ParseException;
-import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -17,7 +16,7 @@ public class SermonModel {
 	public int type = TYPE_JUMAH;
 	public ParseUser owner;
 	public String topic = "";
-	public ParseFile video;
+	public String video = "";
 	public String raiser = "";
 	public String mosque = "";
 	public Double amount = 0.0;
@@ -28,7 +27,7 @@ public class SermonModel {
 		owner = object.getParseUser(ParseConstants.KEY_OWNER);
 		topic = object.getString(ParseConstants.KEY_TOPIC);
 		type = object.getInt(ParseConstants.KEY_TYPE);
-		video = object.getParseFile(ParseConstants.KEY_VIDEO);
+		video = object.getString(ParseConstants.KEY_VIDEO);
 		raiser = object.getString(ParseConstants.KEY_RAISER);
 		mosque = object.getString(ParseConstants.KEY_MOSQUE);
 		amount = object.getDouble(ParseConstants.KEY_AMOUNT);

@@ -5,9 +5,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.text.TextUtils;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.model.ParseConstants;
-import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.universalvideoview.UniversalMediaController;
@@ -47,9 +47,12 @@ public class VideoActivity extends BaseActionBarActivity{
 	}
 
 	private void initialize() {
-		ParseFile videoFile = mSermonObj.getParseFile(ParseConstants.KEY_VIDEO);
-		if (videoFile != null)
-			mVideoView.setVideoPath(videoFile.getUrl());
+		String video_path = mSermonObj.getString(ParseConstants.KEY_VIDEO);
+		if (!TextUtils.isEmpty(video_path)) {
+			mVideoView.setVideoPath(video_path);
+			mVideoView.requestFocus();
+			mMediaController.showLoading();
+		}
 	}
 
 	private void showConfirmDialog() {

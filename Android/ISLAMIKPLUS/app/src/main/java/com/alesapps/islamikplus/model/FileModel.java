@@ -1,39 +1,51 @@
 package com.alesapps.islamikplus.model;
 
-import android.webkit.MimeTypeMap;
-import com.parse.ParseFile;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
+import android.net.Uri;
+import android.text.format.DateFormat;
+import androidx.annotation.NonNull;
+import com.alesapps.islamikplus.AppConstant;
+import com.alesapps.islamikplus.AppGlobals;
+import com.alesapps.islamikplus.listener.BooleanListener;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import java.util.Date;
 
 public class FileModel {
-	public static ParseFile createVideoParseFile(String fileName, String filePath) {
-		ParseFile parseFile = null;
-
-		try {
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			FileInputStream fis = new FileInputStream(new File(filePath));
-
-			byte[] buf = new byte[1024];
-			int n;
-			while (-1 != (n = fis.read(buf)))
-				baos.write(buf, 0, n);
-
-			byte[] videoBytes = baos.toByteArray();
-			parseFile = new ParseFile(fileName, videoBytes, getMimeType(filePath));
-
-		} catch (Exception e) {
-			e.printStackTrace();
+	public static void UploadVideo(final Uri videoURI, final BooleanListener listener) {
+		String folder_name = AppConstant.STORAGE_FILE;
+		AppGlobals.mStorageReference = AppGlobals.mFirebaseStorage.getReferenceFromUrl(AppConstant.URL_STORAGE_REFERENCE).child(folder_name);
+		if (AppGlobals.mStorageReference != null){
+			String name = DateFormat.format("yyyy-MM-dd_hhmmss", new Date()).toString();
+			final StorageReference fileRef = AppGlobals.mStorageReference.child(name);
+			final UploadTask uploadTask = fileRef.putFile(videoURI);
+			uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+				@Override
+				public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+					if (!task.isSuccessful()) {
+						if (listener != null)
+							listener.done(false, task.getException().toString());
+					}
+					return fileRef.getDownloadUrl();
+				}
+			}).addOnCompleteListener(new OnCompleteListener<Uri>() {
+				@Override
+				public void onComplete(@NonNull Task<Uri> task) {
+					if (task.isSuccessful()) {
+						Uri downloadUri = task.getResult();
+						if (listener != null)
+							listener.done(true, downloadUri.toString());
+					} else {
+						if (listener != null)
+							listener.done(false, task.getException().toString());
+					}
+				}
+			});
+		} else{
+			if (listener != null)
+				listener.done(false, "Google Play Services error.");
 		}
-		return parseFile;
-	}
-
-	public static String getMimeType(String url) {
-		String type = null;
-		String extension = MimeTypeMap.getFileExtensionFromUrl(url);
-		if (extension != null) {
-			type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
-		}
-		return type;
 	}
 }

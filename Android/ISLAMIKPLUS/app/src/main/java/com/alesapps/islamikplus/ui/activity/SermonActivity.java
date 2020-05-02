@@ -1,6 +1,7 @@
 package com.alesapps.islamikplus.ui.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import com.alesapps.islamikplus.AppConstant;
 import com.alesapps.islamikplus.R;
+import com.alesapps.islamikplus.listener.BooleanListener;
 import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.model.FileModel;
 import com.alesapps.islamikplus.model.ParseConstants;
@@ -75,14 +77,29 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		return true;
 	}
 
-	public void save(String path) {
+	public void uploadVideo(String path){
+		Uri video_uri = Uri.parse("file://" + path);
+		dlg_progress.show();
+		FileModel.UploadVideo(video_uri, new BooleanListener() {
+			@Override
+			public void done(boolean flag, String error) {
+				if (flag) {
+					save(error);
+				} else {
+					dlg_progress.cancel();
+					MessageUtil.showToast(instance, error);
+				}
+			}
+		});
+	}
+
+	private void save(String video_path) {
 		final SermonModel model = new SermonModel();
 		model.owner = ParseUser.getCurrentUser();
 		model.type = type;
 		model.topic = edt_topic.getText().toString().trim();
 		model.amount = AppConstant.ARRAY_AMOUNT[sp_amount.getSelectedItemPosition()];
-		model.video = FileModel.createVideoParseFile("video.mp4", path);
-		dlg_progress.show();
+		model.video = video_path;
 		SermonModel.Register(model, new ExceptionListener() {
 			@Override
 			public void done(String error) {
