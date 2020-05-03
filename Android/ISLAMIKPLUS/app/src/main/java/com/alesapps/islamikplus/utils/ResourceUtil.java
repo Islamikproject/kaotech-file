@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class ResourceUtil {
 	public static String RES_DIRECTORY = Environment.getExternalStorageDirectory() + "/alesapps/ISLAMIK/";
-	private static String getImageFilePath(String fileName) {
+	public static String getVideoFilePath(String fileName) {
 		String tempDirPath = RES_DIRECTORY;
 		String tempFileName = fileName;
 

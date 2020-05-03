@@ -18,15 +18,15 @@ public class FileModel {
 		String folder_name = AppConstant.STORAGE_FILE;
 		AppGlobals.mStorageReference = AppGlobals.mFirebaseStorage.getReferenceFromUrl(AppConstant.URL_STORAGE_REFERENCE).child(folder_name);
 		if (AppGlobals.mStorageReference != null){
-			String name = DateFormat.format("yyyy-MM-dd_hhmmss", new Date()).toString();
-			final StorageReference fileRef = AppGlobals.mStorageReference.child(name);
+			final String file_name = DateFormat.format("yyyy-MM-dd_hhmmss", new Date()).toString();
+			final StorageReference fileRef = AppGlobals.mStorageReference.child(file_name);
 			final UploadTask uploadTask = fileRef.putFile(videoURI);
 			uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
 				@Override
 				public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
 					if (!task.isSuccessful()) {
 						if (listener != null)
-							listener.done(false, task.getException().toString());
+							listener.done(false, "", task.getException().toString());
 					}
 					return fileRef.getDownloadUrl();
 				}
@@ -36,16 +36,16 @@ public class FileModel {
 					if (task.isSuccessful()) {
 						Uri downloadUri = task.getResult();
 						if (listener != null)
-							listener.done(true, downloadUri.toString());
+							listener.done(true, file_name, downloadUri.toString());
 					} else {
 						if (listener != null)
-							listener.done(false, task.getException().toString());
+							listener.done(false, "", task.getException().toString());
 					}
 				}
 			});
 		} else{
 			if (listener != null)
-				listener.done(false, "Google Play Services error.");
+				listener.done(false, "", "Google Play Services error.");
 		}
 	}
 }

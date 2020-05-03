@@ -19,6 +19,7 @@ public class SermonModel {
 	public ParseUser owner;
 	public String topic = "";
 	public String video;
+	public String videoName = "";
 	public String raiser = "";
 	public String mosque = "";
 	public Double amount = 0.0;
@@ -30,6 +31,7 @@ public class SermonModel {
 		topic = object.getString(ParseConstants.KEY_TOPIC);
 		type = object.getInt(ParseConstants.KEY_TYPE);
 		video = object.getString(ParseConstants.KEY_VIDEO);
+		videoName = object.getString(ParseConstants.KEY_VIDEO_NAME);
 		raiser = object.getString(ParseConstants.KEY_RAISER);
 		mosque = object.getString(ParseConstants.KEY_MOSQUE);
 		amount = object.getDouble(ParseConstants.KEY_AMOUNT);
@@ -59,8 +61,10 @@ public class SermonModel {
 		sermonObj.put(ParseConstants.KEY_RAISER, model.raiser);
 		sermonObj.put(ParseConstants.KEY_MOSQUE, model.mosque);
 		sermonObj.put(ParseConstants.KEY_AMOUNT, model.amount);
-		if (model.video != null)
+		if (model.video != null) {
 			sermonObj.put(ParseConstants.KEY_VIDEO, model.video);
+			sermonObj.put(ParseConstants.KEY_VIDEO_NAME, model.videoName);
+		}
 		sermonObj.saveInBackground(new SaveCallback() {
 			public void done(ParseException e) {
 				if (listener != null)

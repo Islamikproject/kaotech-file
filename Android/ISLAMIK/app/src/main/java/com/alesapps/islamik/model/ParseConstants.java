@@ -32,6 +32,7 @@ public class ParseConstants {
 	public static final String KEY_OWNER = "owner";
 	public static final String KEY_TOPIC = "topic";
 	public static final String KEY_VIDEO = "video";
+	public static final String KEY_VIDEO_NAME = "videoName";
 	public static final String KEY_RAISER = "raiser";
 	// Payment
 	public static final String KEY_TO_USER = "toUser";

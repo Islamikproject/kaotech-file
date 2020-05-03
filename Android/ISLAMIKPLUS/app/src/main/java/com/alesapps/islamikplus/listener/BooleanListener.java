@@ -1,5 +1,5 @@
 package com.alesapps.islamikplus.listener;
 
 public interface BooleanListener {
-	public void done(boolean flag, String error);
+	public void done(boolean flag, String fileName, String error);
 }

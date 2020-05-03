@@ -17,6 +17,7 @@ public class SermonModel {
 	public ParseUser owner;
 	public String topic = "";
 	public String video = "";
+	public String videoName = "";
 	public String raiser = "";
 	public String mosque = "";
 	public Double amount = 0.0;
@@ -28,6 +29,7 @@ public class SermonModel {
 		topic = object.getString(ParseConstants.KEY_TOPIC);
 		type = object.getInt(ParseConstants.KEY_TYPE);
 		video = object.getString(ParseConstants.KEY_VIDEO);
+		videoName = object.getString(ParseConstants.KEY_VIDEO_NAME);
 		raiser = object.getString(ParseConstants.KEY_RAISER);
 		mosque = object.getString(ParseConstants.KEY_MOSQUE);
 		amount = object.getDouble(ParseConstants.KEY_AMOUNT);

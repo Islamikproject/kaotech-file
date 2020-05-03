@@ -82,9 +82,9 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		dlg_progress.show();
 		FileModel.UploadVideo(video_uri, new BooleanListener() {
 			@Override
-			public void done(boolean flag, String error) {
+			public void done(boolean flag, String fileName, String error) {
 				if (flag) {
-					save(error);
+					save(fileName, error);
 				} else {
 					dlg_progress.cancel();
 					MessageUtil.showToast(instance, error);
@@ -93,13 +93,14 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		});
 	}
 
-	private void save(String video_path) {
+	private void save(String video_name, String video_path) {
 		final SermonModel model = new SermonModel();
 		model.owner = ParseUser.getCurrentUser();
 		model.type = type;
 		model.topic = edt_topic.getText().toString().trim();
 		model.amount = AppConstant.ARRAY_AMOUNT[sp_amount.getSelectedItemPosition()];
 		model.video = video_path;
+		model.videoName = video_name;
 		SermonModel.Register(model, new ExceptionListener() {
 			@Override
 			public void done(String error) {
