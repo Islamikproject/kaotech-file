@@ -20,6 +20,7 @@
     <string name="select_language">Select Language</string>
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
+    <string name="agree">Agree</string>
     <!-- Login -->
     <string name="login">Login</string>
     <string name="phone_number">Phone number</string>

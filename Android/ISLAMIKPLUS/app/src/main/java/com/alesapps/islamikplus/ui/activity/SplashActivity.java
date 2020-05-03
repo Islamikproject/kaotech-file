@@ -109,10 +109,14 @@ public class SplashActivity extends BaseActivity {
 	}
 
 	private void gotoNextActivity(boolean isLogin) {
-		if (isLogin)
+		if (!AppPreference.getBool(AppPreference.KEY.AGREE, false)) {
+			TermsConditionActivity.type = 1;
+			startActivity(new Intent(instance, TermsConditionActivity.class));
+		} else if (isLogin) {
 			startActivity(new Intent(instance, LoginActivity.class));
-		else
+		} else {
 			startActivity(new Intent(instance, MainActivity.class));
+		}
 		finish();
 	}
 }

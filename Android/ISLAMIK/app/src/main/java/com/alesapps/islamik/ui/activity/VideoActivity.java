@@ -6,14 +6,14 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.VideoView;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.utils.MessageUtil;
 import com.alesapps.islamik.utils.ResourceUtil;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
-import com.universalvideoview.UniversalMediaController;
-import com.universalvideoview.UniversalVideoView;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -24,8 +24,7 @@ import java.net.URLConnection;
 
 public class VideoActivity extends BaseActionBarActivity{
 	public static VideoActivity instance = null;
-	UniversalVideoView mVideoView;
-	UniversalMediaController mMediaController;
+	VideoView videoView;
 	public static ParseUser mUser;
 	public static ParseObject mSermonObj;
 
@@ -36,22 +35,7 @@ public class VideoActivity extends BaseActionBarActivity{
 		SetTitle(null, 0);
 		ShowActionBarIcons(true, R.id.action_back);
 		setContentView(R.layout.activity_video);
-		mVideoView = findViewById(R.id.videoView);
-		mMediaController = findViewById(R.id.media_controller);
-		mVideoView.setMediaController(mMediaController);
-
-		mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-			@Override
-			public void onPrepared(MediaPlayer mp) {
-				mVideoView.start();
-			}
-		});
-		mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-			@Override
-			public void onCompletion(MediaPlayer mp) {
-				showConfirmDialog();
-			}
-		});
+		videoView = findViewById(R.id.videoView);
 		videoDownload();
 	}
 
@@ -61,7 +45,7 @@ public class VideoActivity extends BaseActionBarActivity{
 		String local_path = ResourceUtil.getVideoFilePath(video_name);
 		File videoFile = new File(local_path);
 		if (videoFile.length() > 100) {
-			initialize(local_path);
+			videoLoad(local_path);
 		} else {
 			dlg_progress.show();
 			new DownloadFile().execute(video_path, local_path);
@@ -97,17 +81,38 @@ public class VideoActivity extends BaseActionBarActivity{
 		protected void onPostExecute(String result) {
 			dlg_progress.cancel();
 			if (result == null) {
-				initialize(path);
+				videoLoad(path);
 			} else {
 				MessageUtil.showToast(instance, result);
 			}
 		}
 	}
 
-	private void initialize(String video_path) {
-		mVideoView.setVideoPath(video_path);
-		mVideoView.requestFocus();
-		mMediaController.showLoading();
+	private void videoLoad(final String video_path) {
+		videoView.setVideoPath(video_path);
+		videoView.setMediaController(new MediaController(instance));
+		videoView.requestFocus();
+		videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+			@Override
+			public void onPrepared(MediaPlayer mediaPlayer) {
+				videoView.start();
+			}
+		});
+		videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			@Override
+			public void onCompletion(MediaPlayer mp) {
+				showConfirmDialog();
+			}
+		});
+		videoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+			@Override
+			public boolean onError(MediaPlayer mp, int what, int extra) {
+				MessageUtil.showToast(instance, "Video is not valid");
+				File file = new File(video_path);
+				file.delete();
+				return true;
+			}
+		});
 	}
 
 	private void showConfirmDialog() {
