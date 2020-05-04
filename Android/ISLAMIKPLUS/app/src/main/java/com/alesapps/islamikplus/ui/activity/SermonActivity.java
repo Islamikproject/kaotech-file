@@ -1,8 +1,15 @@
 package com.alesapps.islamikplus.ui.activity;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,6 +25,7 @@ import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.model.SermonModel;
 import com.alesapps.islamikplus.push.PushNoti;
 import com.alesapps.islamikplus.utils.MessageUtil;
+import com.alesapps.islamikplus.utils.ResourceUtil;
 import com.parse.ParseUser;
 
 public class SermonActivity extends BaseActionBarActivity implements View.OnClickListener {
@@ -27,6 +35,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 	Button btn_next;
 	Button btn_save;
 	public static int type = SermonModel.TYPE_JUMAH;
+	final int VIDEO_PICK = 1000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +71,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		switch (view.getId()) {
 			case R.id.btn_next:
 				if (isValid())
-					startActivity(new Intent(instance, ReadyActivity.class));
+					showVideoDialog();
 				return;
 		}
 	}
@@ -75,6 +84,59 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 			return false;
 		}
 		return true;
+	}
+
+	private void showVideoDialog() {
+		new AlertDialog.Builder(instance)
+				.setTitle(R.string.upload_video)
+				.setPositiveButton(R.string.select_gallery, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						if (Build.VERSION.SDK_INT < 19) {
+							Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+							intent.setType("video/*");
+							startActivityForResult(intent, VIDEO_PICK);
+						} else {
+							Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+							intent.addCategory(Intent.CATEGORY_OPENABLE);
+							intent.setType("video/*");
+							intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[] {"video/*"});
+							startActivityForResult(intent, VIDEO_PICK);
+						}
+					}
+				})
+				.setNegativeButton(R.string.take_new_video, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						startActivity(new Intent(instance, ReadyActivity.class));
+					}
+				})
+				.show();
+	}
+
+
+	@SuppressLint("MissingSuperCall")
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == VIDEO_PICK && resultCode == Activity.RESULT_OK) {
+			Uri selectedUri = data.getData();
+			String[] columns = { MediaStore.Images.Media.DATA,
+					MediaStore.Images.Media.MIME_TYPE };
+
+			Cursor cursor = getContentResolver().query(selectedUri, columns, null, null, null);
+			cursor.moveToFirst();
+
+			int pathColumnIndex     = cursor.getColumnIndex( columns[0] );
+			int mimeTypeColumnIndex = cursor.getColumnIndex( columns[1] );
+
+			String contentPath = cursor.getString(pathColumnIndex);
+			String mimeType = cursor.getString(mimeTypeColumnIndex);
+			cursor.close();
+
+			if(mimeType.startsWith("video")) {
+				Uri selectedImageUri = data.getData();
+				String selectedImagePath = ResourceUtil.generatePath(selectedImageUri, this);
+				uploadVideo(selectedImagePath);
+			}
+		}
 	}
 
 	public void uploadVideo(String path){

@@ -61,6 +61,9 @@
     <string name="logout">Log Out</string>
     <string name="label_log_out">Are you sure you want to log out?</string>
     <!-- Sermon -->
+    <string name="upload_video">Upload video</string>
+    <string name="take_new_video">Take a new video</string>
+    <string name="select_gallery">Select from gallery</string>
     <string name="type_topic_sermon">Type the topic of the sermon:</string>
     <string name="valid_No_topic">Please enter topic.</string>
     <string name="success_jumah_message">Imam %1$s is going live for JUMAH SERMON and will talk about \n %2$s</string>
