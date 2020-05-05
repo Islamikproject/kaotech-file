@@ -13,6 +13,7 @@ import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ExceptionListener;
 import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.model.PaymentModel;
+import com.alesapps.islamik.utils.CommonUtil;
 import com.alesapps.islamik.utils.MessageUtil;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -169,6 +170,7 @@ public class DonationActivity extends BaseActionBarActivity implements View.OnCl
         chargeParams.put("currency", AppConstant.STRIPE_CURRENCY);
         chargeParams.put("source", token.getId());
         chargeParams.put("capture", true);
+        chargeParams.put("application_fee", CommonUtil.GetApplicationFee(amount));
         chargeParams.put("destination", userObj.getString(ParseConstants.KEY_ACCOUNT_ID));
         String description = edt_name.getText().toString().trim() + " paid to " + userObj.getString(ParseConstants.KEY_MOSQUE);
         chargeParams.put("description", description);

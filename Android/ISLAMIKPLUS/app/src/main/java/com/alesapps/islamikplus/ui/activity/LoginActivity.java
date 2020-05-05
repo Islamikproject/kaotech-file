@@ -122,7 +122,7 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 	private void showConfirmRegisterDialog() {
 		new AlertDialog.Builder(instance)
 				.setTitle(R.string.confirm)
-				.setMessage(R.string.valid_No_email_register)
+				.setMessage(R.string.valid_No_phone_number_register)
 				.setPositiveButton(R.string.sign_up, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						startActivity(new Intent(instance, SignUpActivity.class));

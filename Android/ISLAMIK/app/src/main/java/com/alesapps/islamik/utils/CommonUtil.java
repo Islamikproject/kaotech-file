@@ -77,4 +77,14 @@ public class CommonUtil {
 			path = path + chapter + ".mp3";
 		return Uri.parse(path);
 	}
+
+	public static Double D2D(double value) {
+		Double result = Double.valueOf((int)(value * 100)) / 100;
+		return result;
+	}
+
+	public static int GetApplicationFee(double total) {
+		Double application_fee = total * 0.05;
+		return (int) (application_fee * 100);
+	}
 }
