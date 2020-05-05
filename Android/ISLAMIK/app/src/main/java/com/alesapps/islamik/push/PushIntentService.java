@@ -4,7 +4,6 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-
 import com.alesapps.islamik.model.NotificationModel;
 import com.alesapps.islamik.model.ParseConstants;
 import org.json.JSONException;

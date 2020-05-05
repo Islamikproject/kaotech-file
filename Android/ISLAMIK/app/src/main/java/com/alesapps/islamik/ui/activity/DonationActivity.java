@@ -1,5 +1,7 @@
 package com.alesapps.islamik.ui.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -210,10 +212,16 @@ public class DonationActivity extends BaseActionBarActivity implements View.OnCl
         PaymentModel.Register(model, new ExceptionListener() {
             @Override
             public void done(String error) {
-                dlg_progress.hide();
+                dlg_progress.cancel();
                 if (error == null) {
-                    MessageUtil.showToast(instance, R.string.success_donation);
-                    myBack();
+                    new AlertDialog.Builder(instance)
+                            .setTitle(R.string.success)
+                            .setMessage(R.string.success_donation)
+                            .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    myBack();
+                                }
+                            }).show();
                 } else {
                     MessageUtil.showToast(instance, error);
                 }

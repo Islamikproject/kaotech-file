@@ -109,7 +109,7 @@
     <string name="subject_">Subject:</string>
     <string name="email_">Email:</string>
     <string name="text_">Text:</string>
-    <string name="success_donation">Thanks for your donation, You has been sent to the mosque account.</string>
+    <string name="success_donation">Thanks for your donation, it has been sent to the mosque account.</string>
     <string name="confirm_mosque_virtual_basket">The mosque has a virtual basket of « %1$s » would you like to make a donation?</string>
 
     <string name="donation">Donation</string>
