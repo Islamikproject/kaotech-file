@@ -46,5 +46,5 @@ public class AppConstant {
 	public static final String STRIPE_PUBLISHABLE_KEY = "pk_test_PiltFhS6q66sDDlXeJl4WrPC004sWB9QP1"; // "pk_live_EZ0kJnLAYT3o3Wo5ZEnG3FYH00a1tkGc2g";
 	public static final String STRIPE_API_KEY = "sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK"; // "sk_live_qVuyy0H09fbrm45dSr5ZPTBE";
 	public static final String STRIPE_CURRENCY = "usd";
-	public static final String STRIPE_CONNECT_URL = "http://stripe.kaotech.org?";
+	public static final String STRIPE_CONNECT_URL = "https://stripe.kaotech.org?";
 }
