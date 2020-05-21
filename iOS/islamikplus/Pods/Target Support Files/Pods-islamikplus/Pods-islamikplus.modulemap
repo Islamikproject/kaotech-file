@@ -1,0 +1,6 @@
+framework module Pods_islamikplus {
+  umbrella header "Pods-islamikplus-umbrella.h"
+
+  export *
+  module * { export * }
+}
