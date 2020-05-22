@@ -14,20 +14,10 @@
 + (NSString*) getLoginUserPassword;
 
 + (NSString *) trim:(NSString *) string;
-+ (NSString *) checkSpace:(NSString *) string;
 + (AppDelegate*) appDelegate;
 
 + (NSString*) convertDateToString:(NSDate*)date;
 + (NSString*) convertDateTimeToString:(NSDate*)date;
-
-+ (BOOL) stringContainsInArray:(NSString*)string :(NSArray*)stringArray;
-+ (BOOL) stringContainNumber:(NSString *) string;
-+ (BOOL) stringContainLetter:(NSString *) string;
-+ (BOOL) isContainsUpperCase:(NSString *) password;
-+ (BOOL) isContainsLowerCase:(NSString *) password;
-+ (BOOL) isContainsNumber:(NSString *) password;
-+ (BOOL) isContainsSpecial:(NSString *) password;
-+ (BOOL) stringIsNumber:(NSString*) str;
 
 + (UIImage *)getUploadingImageFromImage:(UIImage *)image;
 + (UIImage *)getUploadingUserImageFromImage:(UIImage *)image;

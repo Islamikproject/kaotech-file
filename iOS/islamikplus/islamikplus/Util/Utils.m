@@ -7,8 +7,6 @@
 #import "UIImageView+AFNetworking.h"
 #import "UIImageView+AFNetworking_UIActivityIndicatorView.h"
 
-#define PARSE_SERVER_BASE                  @"parseapps.brainyapps.tk"
-
 @implementation Util
 
 + (void) sendPushAllNotification:(NSString *)message type:(int)type{
@@ -126,12 +124,6 @@
     NSString *newString = [string stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     return newString;
 }
-+ (NSString *) checkSpace:(NSString *) string
-{
-    NSString *newString = [string stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    NSString * newnewString = [newString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    return newnewString;
-}
 + (AppDelegate*) appDelegate{
     return (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
@@ -148,70 +140,6 @@
     [formatter setDateFormat:@"yyyy-MM-dd_hhmmss"];
     return [formatter stringFromDate:date];
 }
-
-+ (BOOL) stringContainsInArray:(NSString*)string :(NSArray*)stringArray
-{
-    for (NSString * substring in stringArray) {
-        if([string isEqualToString:substring])
-            return YES;
-    }
-    return NO;
-}
-+ (BOOL) stringContainNumber:(NSString *) string
-{
-    NSCharacterSet * set = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
-    
-    if ([string rangeOfCharacterFromSet:set].location != NSNotFound) {
-        return YES;
-    }
-    return NO;
-}
-+ (BOOL) isContainsNumber:(NSString *)password {
-    NSCharacterSet * set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-    
-    if ([password rangeOfCharacterFromSet:set].location != NSNotFound) {
-        return YES;
-    }
-    return NO;
-}
-
-+ (BOOL) isContainsLowerCase:(NSString *)password {
-    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"^.*(?=.*[a-z])" options:0 error:nil];
-    return [regex numberOfMatchesInString:password options:0 range:NSMakeRange(0, [password length])] > 0;
-}
-
-+ (BOOL) isContainsUpperCase:(NSString *)password {
-    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"^.*(?=.*[A-Z])" options:0 error:nil];
-    return [regex numberOfMatchesInString:password options:0 range:NSMakeRange(0, [password length])] > 0;
-}
-+ (BOOL) isContainsSpecial:(NSString *) password
-{
-    NSCharacterSet * set = [[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789"] invertedSet];
-    
-    if ([password rangeOfCharacterFromSet:set].location != NSNotFound) {
-        return YES;
-    }
-    return NO;
-}
-+ (BOOL) stringContainLetter:(NSString *) string
-{
-    NSCharacterSet * set = [[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ"] invertedSet];
-    
-    if ([string rangeOfCharacterFromSet:set].location != NSNotFound) {
-        return YES;
-    }
-    return NO;
-}
-
-+ (BOOL) stringIsNumber:(NSString*) str
-{
-    NSScanner * sc = [NSScanner scannerWithString:str];
-    if([sc scanFloat:NULL]){
-        return [sc isAtEnd];
-    }
-    return NO;
-}
-
 + (UIImage *)getUploadingImageFromImage:(UIImage *)image {
     CGFloat maxResolution = 640.f;
     if (image.size.width < maxResolution) {
