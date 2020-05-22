@@ -10,7 +10,7 @@ enum {
     TYPE_RAISE = 2
 };
 #define STRING_AMOUNT                                           [[NSArray alloc] initWithObjects:@"", @"$1", @"$4", @"$8", @"$12", @"$20", nil]
-#define ARRAY_AMOUNT                                            [[NSArray alloc] initWithObjects:0.0, 1.0, 4.0, 8.0, 12.0, 20.0, nil]
+#define ARRAY_AMOUNT                                            [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f], [NSNumber numberWithFloat:4.0f],[NSNumber numberWithFloat:8.0f], [NSNumber numberWithFloat:12.0f], [NSNumber numberWithFloat:20.0f], nil]
 #define MAIN_COLOR                                              [UIColor colorWithRed:14/255.f green:97/255.f blue:41/255.f alpha:1.f]
 
 #define PARSE_FIELD_OBJECT_ID                                   @"objectId"

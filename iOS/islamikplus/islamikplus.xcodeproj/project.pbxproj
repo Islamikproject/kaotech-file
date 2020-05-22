@@ -133,6 +133,11 @@
 		78FAFE05247706F1008A7151 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAFE04247706F1008A7151 /* TermsViewController.m */; };
 		78FAFE08247709DA008A7151 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAFE07247709DA008A7151 /* PaymentViewController.m */; };
 		78FAFE0B24770BD6008A7151 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAFE0A24770BD6008A7151 /* EditProfileViewController.m */; };
+		78FAFE0E247712E0008A7151 /* SermonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAFE0D247712E0008A7151 /* SermonListViewController.m */; };
+		78FAFE112477130B008A7151 /* SermonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAFE102477130B008A7151 /* SermonViewController.m */; };
+		78FAFE14247713B8008A7151 /* DonationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAFE13247713B8008A7151 /* DonationViewController.m */; };
+		78FAFE18247715A4008A7151 /* SermonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAFE17247715A4008A7151 /* SermonCell.m */; };
+		78FAFE1A2477259B008A7151 /* ic_dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 78FAFE192477259B008A7151 /* ic_dropdown.png */; };
 		DF58A2A10D547EB574247E6B /* Pods_islamikplus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DC022A0176332EB2BE98D9A /* Pods_islamikplus.framework */; };
 /* End PBXBuildFile section */
 
@@ -345,6 +350,15 @@
 		78FAFE07247709DA008A7151 /* PaymentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		78FAFE0924770BD6008A7151 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		78FAFE0A24770BD6008A7151 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		78FAFE0C247712E0008A7151 /* SermonListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListViewController.h; sourceTree = "<group>"; };
+		78FAFE0D247712E0008A7151 /* SermonListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListViewController.m; sourceTree = "<group>"; };
+		78FAFE0F2477130B008A7151 /* SermonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonViewController.h; sourceTree = "<group>"; };
+		78FAFE102477130B008A7151 /* SermonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonViewController.m; sourceTree = "<group>"; };
+		78FAFE12247713B8008A7151 /* DonationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DonationViewController.h; sourceTree = "<group>"; };
+		78FAFE13247713B8008A7151 /* DonationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonationViewController.m; sourceTree = "<group>"; };
+		78FAFE16247715A4008A7151 /* SermonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonCell.h; sourceTree = "<group>"; };
+		78FAFE17247715A4008A7151 /* SermonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonCell.m; sourceTree = "<group>"; };
+		78FAFE192477259B008A7151 /* ic_dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_dropdown.png; sourceTree = "<group>"; };
 		CCA8EC713BAB46110443B79F /* Pods-islamikplus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-islamikplus.release.xcconfig"; path = "Target Support Files/Pods-islamikplus/Pods-islamikplus.release.xcconfig"; sourceTree = "<group>"; };
 		F8B49D749D5C508630E2A191 /* Pods-islamikplus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-islamikplus.debug.xcconfig"; path = "Target Support Files/Pods-islamikplus/Pods-islamikplus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -372,6 +386,7 @@
 		78066D9624761C38007F04A9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				78FAFE192477259B008A7151 /* ic_dropdown.png */,
 				78066F032476548B007F04A9 /* html */,
 				78066DB024761C93007F04A9 /* app_icon.png */,
 				78066DAC24761C92007F04A9 /* check_off.png */,
@@ -416,6 +431,7 @@
 		78066DDF24761C9B007F04A9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				78FAFE1524771583008A7151 /* cell */,
 				78FAFDFC2476FD3A008A7151 /* settings */,
 				78066F0B24767265007F04A9 /* main */,
 				78066EFF24764411007F04A9 /* signin */,
@@ -720,6 +736,12 @@
 			children = (
 				78066F0C24767278007F04A9 /* MainViewController.h */,
 				78066F0D24767278007F04A9 /* MainViewController.m */,
+				78FAFE0C247712E0008A7151 /* SermonListViewController.h */,
+				78FAFE0D247712E0008A7151 /* SermonListViewController.m */,
+				78FAFE0F2477130B008A7151 /* SermonViewController.h */,
+				78FAFE102477130B008A7151 /* SermonViewController.m */,
+				78FAFE12247713B8008A7151 /* DonationViewController.h */,
+				78FAFE13247713B8008A7151 /* DonationViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -776,6 +798,15 @@
 				78FAFE0A24770BD6008A7151 /* EditProfileViewController.m */,
 			);
 			path = settings;
+			sourceTree = "<group>";
+		};
+		78FAFE1524771583008A7151 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				78FAFE16247715A4008A7151 /* SermonCell.h */,
+				78FAFE17247715A4008A7151 /* SermonCell.m */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		90AD47B0D4C2B55141494A39 /* Pods */ = {
@@ -871,6 +902,7 @@
 				78066DCE24761C94007F04A9 /* com_loading_arrow.png in Resources */,
 				78066DDD24761C94007F04A9 /* ic_log_out.png in Resources */,
 				78066DCB24761C94007F04A9 /* img_company_logo.png in Resources */,
+				78FAFE1A2477259B008A7151 /* ic_dropdown.png in Resources */,
 				78066DC424761C94007F04A9 /* img_logo.png in Resources */,
 				78066EC824761D4D007F04A9 /* JSQMessagesToolbarContentView.xib in Resources */,
 				78066DD124761C94007F04A9 /* ic_email.png in Resources */,
@@ -1013,9 +1045,11 @@
 				78FAFE02247706DF008A7151 /* AboutViewController.m in Sources */,
 				78066ED424761D4D007F04A9 /* UIDevice+JSQMessages.m in Sources */,
 				788A168F24750ABA007DCA57 /* AppDelegate.m in Sources */,
+				78FAFE112477130B008A7151 /* SermonViewController.m in Sources */,
 				78066ED924761D4D007F04A9 /* UIViewController+BIZChildViewController.m in Sources */,
 				78066EC624761D4D007F04A9 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
 				788A16A024750ABB007DCA57 /* main.m in Sources */,
+				78FAFE14247713B8008A7151 /* DonationViewController.m in Sources */,
 				78066EAC24761D4D007F04A9 /* JSQMessagesBubbleImageFactory.m in Sources */,
 				78066EA924761D4D007F04A9 /* JSQMessagesBubblesSizeCalculator.m in Sources */,
 				78066EBC24761D4D007F04A9 /* JSQMessagesComposerTextView.m in Sources */,
@@ -1023,6 +1057,7 @@
 				78066EFD2476439A007F04A9 /* BaseViewController.m in Sources */,
 				78066EB524761D4D007F04A9 /* JSQMessage.m in Sources */,
 				78066EDB24761D4D007F04A9 /* SCLTimerDisplay.m in Sources */,
+				78FAFE0E247712E0008A7151 /* SermonListViewController.m in Sources */,
 				78066EB624761D4D007F04A9 /* JSQMediaItem.m in Sources */,
 				78066EE324761D4D007F04A9 /* SCLAlertView.m in Sources */,
 				78066EFE2476439A007F04A9 /* MainNavViewController.m in Sources */,
@@ -1037,6 +1072,7 @@
 				78066EB124761D4D007F04A9 /* JSQMessagesAvatarImage.m in Sources */,
 				78066EDA24761D4D007F04A9 /* BIZPopupViewController.m in Sources */,
 				78066ED724761D4D007F04A9 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				78FAFE18247715A4008A7151 /* SermonCell.m in Sources */,
 				78066EE424761D4D007F04A9 /* JSQSystemSoundPlayer.m in Sources */,
 				78FAFE08247709DA008A7151 /* PaymentViewController.m in Sources */,
 				78066EAA24761D4D007F04A9 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,

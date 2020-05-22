@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "PrivacyViewController.h"
 #import "LoginViewController.h"
-@import GooglePlaces;
 
 @interface AppDelegate ()
 @end
@@ -20,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [GMSPlacesClient provideAPIKey:@"AIzaSyDxZ0qrWBRaC5Lb4IieW-pN0f0PpEGqlj4"];
+    [FIRApp configure];
     [PFUser enableAutomaticUser];
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         configuration.applicationId = @"b0484b2d-2135-4a2d-a924-b916750cf001";

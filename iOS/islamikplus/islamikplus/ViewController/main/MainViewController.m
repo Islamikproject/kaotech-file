@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 #import "LoginViewController.h"
 #import "SettingsViewController.h"
+#import "SermonListViewController.h"
+#import "DonationViewController.h"
 
 @interface MainViewController ()
 
@@ -59,13 +61,18 @@
     [alert showQuestion:@"ISLAMIK+" subTitle:msg closeButtonTitle:nil duration:0.0f];
 }
 - (IBAction)onJumahClick:(id)sender {
-    
+    SermonListViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SermonListViewController"];
+    controller.type = TYPE_JUMAH;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onRegularClick:(id)sender {
-    
+    SermonListViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SermonListViewController"];
+    controller.type = TYPE_REGULAR;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onDonationClick:(id)sender {
-    
+    DonationViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DonationViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onSettingsClick:(id)sender {
     SettingsViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingsViewController"];

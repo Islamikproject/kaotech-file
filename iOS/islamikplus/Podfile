@@ -8,6 +8,8 @@ target 'islamikplus' do
   # Pods for screenbreak
 pod 'GooglePlaces'
 pod 'GooglePlacePicker'
+pod 'Firebase/Analytics'
+pod 'Firebase/Storage'
 pod 'IQKeyboardManager'
 pod 'MBProgressHUD'
 pod 'SVProgressHUD'

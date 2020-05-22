@@ -3,7 +3,7 @@
 #import "AppDelegate.h"
 
 @interface Util : NSObject
-+ (void) sendPushAllNotification:message:(NSString *)message type:(int)type;
++ (void) sendPushAllNotification:(NSString *)message type:(int)type;
 + (BOOL) isConnectableInternet;
 + (void)showAlertTitle:(UIViewController *)vc title:(NSString *)title message:(NSString *)message;
 + (void)showAlertTitle:(UIViewController *)vc title:(NSString *)title message:(NSString *)message finish:(void (^)(void))finish;

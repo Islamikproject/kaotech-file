@@ -11,7 +11,7 @@
 
 @implementation Util
 
-+ (void) sendPushAllNotification:(NSString *)email message:(NSString *)message type:(int)type{
++ (void) sendPushAllNotification:(NSString *)message type:(int)type{
     NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
                           message, @"alert",
                           @"Increment", @"badge",
@@ -145,7 +145,7 @@
 + (NSString*) convertDateTimeToString:(NSDate*)date
 {
     NSDateFormatter * formatter = [NSDateFormatter new];
-    [formatter setDateFormat:@"MMM dd, yyyy hh:mm aa"];
+    [formatter setDateFormat:@"yyyy-MM-dd_hhmmss"];
     return [formatter stringFromDate:date];
 }
 
