@@ -9,6 +9,7 @@
 #import "SermonListViewController.h"
 #import "SermonViewController.h"
 #import "SermonCell.h"
+#import "VideoViewController.h"
 
 @interface SermonListViewController () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -97,7 +98,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     PFObject * sermonObj = [mDataList objectAtIndex:indexPath.row];
-    
+    NSString *url = sermonObj[PARSE_VIDEO];
+    if (url != nil && url.length > 0) {
+        VideoViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"VideoViewController"];
+        controller.mSermonObj = sermonObj;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 /*
 #pragma mark - Navigation

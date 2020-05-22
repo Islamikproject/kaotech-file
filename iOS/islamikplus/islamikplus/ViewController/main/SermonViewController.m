@@ -108,7 +108,7 @@ static SermonViewController *_sharedViewController = nil;
 - (void) uploadVideo:(NSURL*) videoUrl {
     NSString *videoName = [Util convertDateTimeToString:[NSDate date]];
     NSData *videoData = [NSData dataWithContentsOfURL:videoUrl];
-    FIRStorage *storage = [FIRStorage storageWithURL:@"gs://islamik-by-kaotech.appspot.com"];
+    FIRStorage *storage = [FIRStorage storage];
     FIRStorageReference *storageRef = [storage reference];
     NSString *storagePath = [NSString stringWithFormat:@"file/%@.mp4", videoName];
     FIRStorageReference *fileRef = [storageRef child:storagePath];
@@ -127,7 +127,7 @@ static SermonViewController *_sharedViewController = nil;
                   [SVProgressHUD dismiss];
                   [Util showAlertTitle:self title:@"Error" message:[error localizedDescription]];
               } else {
-                  [self registerSermon:videoName videoPath:URL.path];
+                  [self registerSermon:videoName videoPath:URL.absoluteString];
               }
         }];
       }

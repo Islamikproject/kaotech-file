@@ -123,6 +123,10 @@
 		78066F0E24767278007F04A9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066F0D24767278007F04A9 /* MainViewController.m */; };
 		78066F11247672A0007F04A9 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066F10247672A0007F04A9 /* SignUpViewController.m */; };
 		78066F1424767359007F04A9 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066F1324767359007F04A9 /* ResetPasswordViewController.m */; };
+		7851A0442477929600C3E380 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7851A0432477929600C3E380 /* VideoViewController.m */; };
+		7851A047247796E600C3E380 /* AmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7851A046247796E600C3E380 /* AmountCell.m */; };
+		7851A04A2477970200C3E380 /* BasketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7851A0492477970200C3E380 /* BasketCell.m */; };
+		7851A04F2477B12500C3E380 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7851A04E2477B12500C3E380 /* GoogleService-Info.plist */; };
 		788A168F24750ABA007DCA57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A168E24750ABA007DCA57 /* AppDelegate.m */; };
 		788A169824750ABA007DCA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 788A169624750ABA007DCA57 /* Main.storyboard */; };
 		788A169A24750ABB007DCA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 788A169924750ABB007DCA57 /* Assets.xcassets */; };
@@ -332,6 +336,13 @@
 		78066F10247672A0007F04A9 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		78066F1224767359007F04A9 /* ResetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
 		78066F1324767359007F04A9 /* ResetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		7851A0422477929600C3E380 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		7851A0432477929600C3E380 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		7851A045247796E600C3E380 /* AmountCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AmountCell.h; sourceTree = "<group>"; };
+		7851A046247796E600C3E380 /* AmountCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmountCell.m; sourceTree = "<group>"; };
+		7851A0482477970200C3E380 /* BasketCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasketCell.h; sourceTree = "<group>"; };
+		7851A0492477970200C3E380 /* BasketCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasketCell.m; sourceTree = "<group>"; };
+		7851A04E2477B12500C3E380 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		788A168A24750ABA007DCA57 /* ISLAMIK+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ISLAMIK+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		788A168D24750ABA007DCA57 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		788A168E24750ABA007DCA57 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -742,8 +753,18 @@
 				78FAFE102477130B008A7151 /* SermonViewController.m */,
 				78FAFE12247713B8008A7151 /* DonationViewController.h */,
 				78FAFE13247713B8008A7151 /* DonationViewController.m */,
+				7851A0422477929600C3E380 /* VideoViewController.h */,
+				7851A0432477929600C3E380 /* VideoViewController.m */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		7851A04B2477B0FF00C3E380 /* GoogleService */ = {
+			isa = PBXGroup;
+			children = (
+				7851A04E2477B12500C3E380 /* GoogleService-Info.plist */,
+			);
+			path = GoogleService;
 			sourceTree = "<group>";
 		};
 		788A168124750ABA007DCA57 = {
@@ -767,6 +788,7 @@
 		788A168C24750ABA007DCA57 /* islamikplus */ = {
 			isa = PBXGroup;
 			children = (
+				7851A04B2477B0FF00C3E380 /* GoogleService */,
 				78066DE124761D4C007F04A9 /* framework */,
 				78066DE424761D4C007F04A9 /* libs */,
 				78066DE024761CE4007F04A9 /* Util */,
@@ -805,6 +827,10 @@
 			children = (
 				78FAFE16247715A4008A7151 /* SermonCell.h */,
 				78FAFE17247715A4008A7151 /* SermonCell.m */,
+				7851A045247796E600C3E380 /* AmountCell.h */,
+				7851A046247796E600C3E380 /* AmountCell.m */,
+				7851A0482477970200C3E380 /* BasketCell.h */,
+				7851A0492477970200C3E380 /* BasketCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -921,6 +947,7 @@
 				78066DD224761C94007F04A9 /* ic_right.png in Resources */,
 				78066DC224761C94007F04A9 /* ic_action_back.png in Resources */,
 				78066DCA24761C94007F04A9 /* ic_person.png in Resources */,
+				7851A04F2477B12500C3E380 /* GoogleService-Info.plist in Resources */,
 				78066ECC24761D4D007F04A9 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				78066DC124761C94007F04A9 /* ic_action_done.png in Resources */,
 				78066DCC24761C94007F04A9 /* img_regular.png in Resources */,
@@ -1016,6 +1043,7 @@
 				78066EBE24761D4D007F04A9 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				78066EF72476245A007F04A9 /* Utils.m in Sources */,
 				78066EB924761D4D007F04A9 /* JSQMessagesViewController.m in Sources */,
+				7851A04A2477970200C3E380 /* BasketCell.m in Sources */,
 				78066F022476444C007F04A9 /* PrivacyViewController.m in Sources */,
 				78066EB724761D4D007F04A9 /* JSQVideoMediaItem.m in Sources */,
 				78066ECE24761D4D007F04A9 /* UIImage+JSQMessages.m in Sources */,
@@ -1029,6 +1057,7 @@
 				78066ED624761D4D007F04A9 /* TPKeyboardAvoidingTableView.m in Sources */,
 				78066ED324761D4D007F04A9 /* UIView+JSQMessages.m in Sources */,
 				78066ECA24761D4D007F04A9 /* JSQMessagesCollectionView.m in Sources */,
+				7851A0442477929600C3E380 /* VideoViewController.m in Sources */,
 				78066EBD24761D4D007F04A9 /* JSQMessagesToolbarContentView.m in Sources */,
 				78066EDC24761D4D007F04A9 /* SCLAlertViewStyleKit.m in Sources */,
 				78FAFE05247706F1008A7151 /* TermsViewController.m in Sources */,
@@ -1075,6 +1104,7 @@
 				78FAFE18247715A4008A7151 /* SermonCell.m in Sources */,
 				78066EE424761D4D007F04A9 /* JSQSystemSoundPlayer.m in Sources */,
 				78FAFE08247709DA008A7151 /* PaymentViewController.m in Sources */,
+				7851A047247796E600C3E380 /* AmountCell.m in Sources */,
 				78066EAA24761D4D007F04A9 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				78066ED224761D4D007F04A9 /* NSString+JSQMessages.m in Sources */,
 				78066EC924761D4D007F04A9 /* JSQMessagesCollectionViewCell.m in Sources */,

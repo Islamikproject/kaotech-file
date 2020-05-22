@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>413068111620-sk1uen6nts2safokm435kghlbdts1lrd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.413068111620-sk1uen6nts2safokm435kghlbdts1lrd</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>413068111620-vlej8elf1tn9vistr8luqlmuc0itt9b9.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyABAD3vwg9Vx2TumwRMEf2RjKreg41Wg8Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>413068111620</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.alesapps.islamikplus</string>
+	<key>PROJECT_ID</key>
+	<string>islamik-by-kaotech</string>
+	<key>STORAGE_BUCKET</key>
+	<string>islamik-by-kaotech.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:413068111620:ios:b1603f0d76de994240ea51</string>
+	<key>DATABASE_URL</key>
+	<string>https://islamik-by-kaotech.firebaseio.com</string>
+</dict>
+</plist>
