@@ -117,6 +117,18 @@
 		780F633C247874CE0027CDB4 /* MainNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F6339247874CE0027CDB4 /* MainNavViewController.m */; };
 		780F6340247875480027CDB4 /* OnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F633F247875480027CDB4 /* OnboardViewController.m */; };
 		780F63432478758D0027CDB4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F63422478758D0027CDB4 /* MainViewController.m */; };
+		7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */; };
+		78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0742478FE650082D0A7 /* SermonListViewController.m */; };
+		78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0772478FEC90082D0A7 /* SermonListCell.m */; };
+		78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA07924790CFB0082D0A7 /* VideoViewController.m */; };
+		78EDA07E247911480082D0A7 /* DonationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA07D247911480082D0A7 /* DonationViewController.m */; };
+		78F681C6247C35E700B6B955 /* PrayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F681C5247C35E700B6B955 /* PrayersViewController.m */; };
+		78F681C8247C428900B6B955 /* ic_dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F681C7247C428900B6B955 /* ic_dropdown.png */; };
+		78F681CB247C927A00B6B955 /* ReadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F681CA247C927A00B6B955 /* ReadyViewController.m */; };
+		78F681CD247C946200B6B955 /* img_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F681CC247C946200B6B955 /* img_circle.png */; };
+		78F681D1247C99BA00B6B955 /* SurahModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F681D0247C99BA00B6B955 /* SurahModel.m */; };
+		78FC72E12478E367000F0671 /* SermonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC72E02478E367000F0671 /* SermonViewController.m */; };
+		78FC72E42478E380000F0671 /* SermonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FC72E32478E380000F0671 /* SermonCell.m */; };
 		CB28685F4C6BBF730F93F847 /* Pods_islamik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E37A2F5930F4EB511DB3E2 /* Pods_islamik.framework */; };
 /* End PBXBuildFile section */
 
@@ -307,6 +319,28 @@
 		780F633F247875480027CDB4 /* OnboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardViewController.m; sourceTree = "<group>"; };
 		780F63412478758D0027CDB4 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		780F63422478758D0027CDB4 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7852B7D2247BC9C600A5CFDE /* DailyPrayersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyPrayersViewController.h; sourceTree = "<group>"; };
+		7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyPrayersViewController.m; sourceTree = "<group>"; };
+		78EDA0732478FE650082D0A7 /* SermonListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListViewController.h; sourceTree = "<group>"; };
+		78EDA0742478FE650082D0A7 /* SermonListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListViewController.m; sourceTree = "<group>"; };
+		78EDA0762478FEC90082D0A7 /* SermonListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListCell.h; sourceTree = "<group>"; };
+		78EDA0772478FEC90082D0A7 /* SermonListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListCell.m; sourceTree = "<group>"; };
+		78EDA07924790CFB0082D0A7 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		78EDA07A24790CFB0082D0A7 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		78EDA07C247911480082D0A7 /* DonationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DonationViewController.h; sourceTree = "<group>"; };
+		78EDA07D247911480082D0A7 /* DonationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonationViewController.m; sourceTree = "<group>"; };
+		78F681C4247C35E700B6B955 /* PrayersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrayersViewController.h; sourceTree = "<group>"; };
+		78F681C5247C35E700B6B955 /* PrayersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrayersViewController.m; sourceTree = "<group>"; };
+		78F681C7247C428900B6B955 /* ic_dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_dropdown.png; sourceTree = "<group>"; };
+		78F681C9247C927A00B6B955 /* ReadyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadyViewController.h; sourceTree = "<group>"; };
+		78F681CA247C927A00B6B955 /* ReadyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadyViewController.m; sourceTree = "<group>"; };
+		78F681CC247C946200B6B955 /* img_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_circle.png; sourceTree = "<group>"; };
+		78F681CF247C99BA00B6B955 /* SurahModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurahModel.h; sourceTree = "<group>"; };
+		78F681D0247C99BA00B6B955 /* SurahModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SurahModel.m; sourceTree = "<group>"; };
+		78FC72DF2478E367000F0671 /* SermonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonViewController.h; sourceTree = "<group>"; };
+		78FC72E02478E367000F0671 /* SermonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonViewController.m; sourceTree = "<group>"; };
+		78FC72E22478E380000F0671 /* SermonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonCell.h; sourceTree = "<group>"; };
+		78FC72E32478E380000F0671 /* SermonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonCell.m; sourceTree = "<group>"; };
 		9140EC52818183F0CE456494 /* Pods-islamik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-islamik.debug.xcconfig"; path = "Target Support Files/Pods-islamik/Pods-islamik.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -625,11 +659,10 @@
 		780F62F2247871E40027CDB4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				78F681CE247C99A500B6B955 /* model */,
+				78FC72E62478E3C0000F0671 /* main */,
+				78FC72E52478E3AD000F0671 /* cell */,
 				780F6336247874CE0027CDB4 /* base */,
-				780F633E247875480027CDB4 /* OnboardViewController.h */,
-				780F633F247875480027CDB4 /* OnboardViewController.m */,
-				780F63412478758D0027CDB4 /* MainViewController.h */,
-				780F63422478758D0027CDB4 /* MainViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -637,6 +670,8 @@
 		780F62F3247873C00027CDB4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				78F681CC247C946200B6B955 /* img_circle.png */,
+				78F681C7247C428900B6B955 /* ic_dropdown.png */,
 				780F630C247874010027CDB4 /* app_icon.png */,
 				780F62FA247874000027CDB4 /* background.png */,
 				780F62F4247874000027CDB4 /* check_off.png */,
@@ -685,12 +720,57 @@
 		780F6336247874CE0027CDB4 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				780F633A247874CE0027CDB4 /* BaseViewController.h */,
 				780F6337247874CE0027CDB4 /* BaseViewController.m */,
 				780F6338247874CE0027CDB4 /* MainNavViewController.h */,
 				780F6339247874CE0027CDB4 /* MainNavViewController.m */,
-				780F633A247874CE0027CDB4 /* BaseViewController.h */,
 			);
 			path = base;
+			sourceTree = "<group>";
+		};
+		78F681CE247C99A500B6B955 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				78F681CF247C99BA00B6B955 /* SurahModel.h */,
+				78F681D0247C99BA00B6B955 /* SurahModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		78FC72E52478E3AD000F0671 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				78FC72E22478E380000F0671 /* SermonCell.h */,
+				78FC72E32478E380000F0671 /* SermonCell.m */,
+				78EDA0762478FEC90082D0A7 /* SermonListCell.h */,
+				78EDA0772478FEC90082D0A7 /* SermonListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		78FC72E62478E3C0000F0671 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				780F633E247875480027CDB4 /* OnboardViewController.h */,
+				780F633F247875480027CDB4 /* OnboardViewController.m */,
+				780F63412478758D0027CDB4 /* MainViewController.h */,
+				780F63422478758D0027CDB4 /* MainViewController.m */,
+				78FC72DF2478E367000F0671 /* SermonViewController.h */,
+				78FC72E02478E367000F0671 /* SermonViewController.m */,
+				78EDA0732478FE650082D0A7 /* SermonListViewController.h */,
+				78EDA0742478FE650082D0A7 /* SermonListViewController.m */,
+				78EDA07A24790CFB0082D0A7 /* VideoViewController.h */,
+				78EDA07924790CFB0082D0A7 /* VideoViewController.m */,
+				78EDA07C247911480082D0A7 /* DonationViewController.h */,
+				78EDA07D247911480082D0A7 /* DonationViewController.m */,
+				7852B7D2247BC9C600A5CFDE /* DailyPrayersViewController.h */,
+				7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */,
+				78F681C4247C35E700B6B955 /* PrayersViewController.h */,
+				78F681C5247C35E700B6B955 /* PrayersViewController.m */,
+				78F681C9247C927A00B6B955 /* ReadyViewController.h */,
+				78F681CA247C927A00B6B955 /* ReadyViewController.m */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 		C9289895EF8C0E5FB1BF617D /* Frameworks */ = {
@@ -770,6 +850,7 @@
 				780F6311247874020027CDB4 /* check_off.png in Resources */,
 				780F620E24786C7C0027CDB4 /* LaunchScreen.storyboard in Resources */,
 				780F631C247874020027CDB4 /* com_loading_arrow.png in Resources */,
+				78F681C8247C428900B6B955 /* ic_dropdown.png in Resources */,
 				780F62CC247870D90027CDB4 /* JSQMessagesAssets.bundle in Resources */,
 				780F631F247874020027CDB4 /* img_company_logo.png in Resources */,
 				780F6313247874020027CDB4 /* check_on.png in Resources */,
@@ -799,6 +880,7 @@
 				780F6316247874020027CDB4 /* default_image_bg.png in Resources */,
 				780F6327247874020027CDB4 /* default_profile.png in Resources */,
 				780F6320247874020027CDB4 /* fajr_four.png in Resources */,
+				78F681CD247C946200B6B955 /* img_circle.png in Resources */,
 				780F631B247874020027CDB4 /* fajr_one.png in Resources */,
 				780F631E247874020027CDB4 /* img_quran.png in Resources */,
 				780F6312247874020027CDB4 /* img_nafilah.png in Resources */,
@@ -877,6 +959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				780F62AA247870D90027CDB4 /* JSQMessagesCollectionViewFlowLayout.m in Sources */,
+				78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */,
 				780F62DC247870D90027CDB4 /* SCLAlertViewResponder.m in Sources */,
 				780F62CD247870D90027CDB4 /* UIImage+JSQMessages.m in Sources */,
 				780F62B2247870D90027CDB4 /* JSQMessagesBubbleImage.m in Sources */,
@@ -886,22 +969,29 @@
 				780F62E0247870D90027CDB4 /* SCLButton.m in Sources */,
 				780F62D4247870D90027CDB4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				780F62BD247870D90027CDB4 /* JSQMessagesMediaPlaceholderView.m in Sources */,
+				78F681D1247C99BA00B6B955 /* SurahModel.m in Sources */,
 				780F620024786C7B0027CDB4 /* AppDelegate.m in Sources */,
 				780F62DA247870D90027CDB4 /* SCLTimerDisplay.m in Sources */,
+				78FC72E12478E367000F0671 /* SermonViewController.m in Sources */,
 				780F62B4247870D90027CDB4 /* JSQMessage.m in Sources */,
 				780F6340247875480027CDB4 /* OnboardViewController.m in Sources */,
 				780F62C6247870D90027CDB4 /* JSQMessagesCellTextView.m in Sources */,
 				780F62CF247870D90027CDB4 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
+				78EDA07E247911480082D0A7 /* DonationViewController.m in Sources */,
 				780F62E1247870D90027CDB4 /* UIImage+ImageEffects.m in Sources */,
 				780F62AD247870D90027CDB4 /* JSQMessagesToolbarButtonFactory.m in Sources */,
 				780F62CE247870D90027CDB4 /* UIColor+JSQMessages.m in Sources */,
 				780F62DE247870D90027CDB4 /* SCLSwitchView.m in Sources */,
+				7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */,
 				780F62E2247870D90027CDB4 /* SCLAlertView.m in Sources */,
 				780F6334247874C50027CDB4 /* AppStateManager.m in Sources */,
 				780F62BB247870D90027CDB4 /* JSQMessagesComposerTextView.m in Sources */,
+				78F681C6247C35E700B6B955 /* PrayersViewController.m in Sources */,
 				780F63432478758D0027CDB4 /* MainViewController.m in Sources */,
 				780F62BC247870D90027CDB4 /* JSQMessagesToolbarContentView.m in Sources */,
+				78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */,
 				780F62B5247870D90027CDB4 /* JSQMediaItem.m in Sources */,
+				78FC72E42478E380000F0671 /* SermonCell.m in Sources */,
 				780F62AE247870D90027CDB4 /* JSQMessagesTimestampFormatter.m in Sources */,
 				780F62AF247870D90027CDB4 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				780F62AB247870D90027CDB4 /* JSQMessagesBubbleImageFactory.m in Sources */,
@@ -909,6 +999,7 @@
 				780F62A7247870D90027CDB4 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
 				780F62D6247870D90027CDB4 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				780F62D7247870D90027CDB4 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				78F681CB247C927A00B6B955 /* ReadyViewController.m in Sources */,
 				780F62D5247870D90027CDB4 /* TPKeyboardAvoidingTableView.m in Sources */,
 				780F62A8247870D90027CDB4 /* JSQMessagesBubblesSizeCalculator.m in Sources */,
 				780F62B9247870D90027CDB4 /* JSQMessagesKeyboardController.m in Sources */,
@@ -918,6 +1009,7 @@
 				780F621124786C7C0027CDB4 /* main.m in Sources */,
 				780F62C9247870D90027CDB4 /* JSQMessagesCollectionView.m in Sources */,
 				780F633C247874CE0027CDB4 /* MainNavViewController.m in Sources */,
+				78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */,
 				780F62A9247870D90027CDB4 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				780F62B6247870D90027CDB4 /* JSQVideoMediaItem.m in Sources */,
 				780F62B7247870D90027CDB4 /* DemoModelData.m in Sources */,

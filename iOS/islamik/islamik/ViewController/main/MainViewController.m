@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "SermonViewController.h"
+#import "DailyPrayersViewController.h"
 
 @interface MainViewController ()
 
@@ -29,10 +31,12 @@
 }
 */
 - (IBAction)onSermonClick:(id)sender {
-    
+    SermonViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SermonViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onPrayersClick:(id)sender {
-    
+    DailyPrayersViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DailyPrayersViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onSalatClick:(id)sender {
     

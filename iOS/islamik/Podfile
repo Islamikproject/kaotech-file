@@ -21,4 +21,5 @@ pod 'Reachability'
 pod 'NSDate-Time-Ago'
 pod 'MGSwipeTableCell'
 pod 'SDWebImage', '~> 5.0'
+pod 'Stripe'
 end

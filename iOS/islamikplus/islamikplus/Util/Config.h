@@ -19,7 +19,6 @@ enum {
 #define PARSE_FIELD_CREATED_AT                                  @"createdAt"
 #define PARSE_FIELD_UPDATED_AT                                  @"updatedAt"
 
-#define PARSE_TABLE_USER                                        @"User"
 #define PARSE_TABLE_PAYMENT                                     @"Payment"
 #define PARSE_TABLE_SERMON                                      @"Sermon"
 

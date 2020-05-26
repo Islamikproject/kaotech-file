@@ -82,7 +82,7 @@
         PFObject * sermonObj = [mDataList objectAtIndex:indexPath.row];
         PFUser *owner = sermonObj[PARSE_OWNER];
         NSString *mosque = sermonObj[PARSE_MOSQUE];
-        NSArray *raiser = sermonObj[PARSE_RAISER];
+        NSString *raiser = sermonObj[PARSE_RAISER];
         if (self.type < TYPE_RAISE) {
             mosque = owner[PARSE_MOSQUE];
             raiser = [NSString stringWithFormat:@"%@ %@", owner[PARSE_FIRSTNAME], owner[PARSE_LASTSTNAME]];

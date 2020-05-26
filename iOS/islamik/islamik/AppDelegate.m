@@ -26,6 +26,7 @@
         configuration.server = @"https://parse.kaotech.org:20001/parse";
     }]];
     [PFUser enableRevocableSessionInBackground];
+    [Stripe setDefaultPublishableKey:@"pk_test_TYooMQauvdEDq54NiTphI7jx"];
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     BOOL agree = [[NSUserDefaults standardUserDefaults] boolForKey:SYSTEM_KEY_AGREE];
