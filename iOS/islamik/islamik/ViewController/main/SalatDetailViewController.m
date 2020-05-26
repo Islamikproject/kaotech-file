@@ -74,12 +74,12 @@
 - (void) setContent:(BOOL) isFirst{
     SurahModel *model = self.mDataList[0];
     NSString * html = @"<table style='width:100%'>";
-    html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar <br></th></tr>"];
-    html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br></th></tr>", MAIN_CHAPTER];
+    html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar <br><br></th></tr>"];
+    html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br><br></th></tr>", MAIN_CHAPTER];
     html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ <br><br><br></td></tr>", [Util getVerseString:MAIN_VERSE start:0 end:MAIN_VERSE.count-1]];
-    html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br></th></tr>", model.chapter];
-    html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ </td></tr>", model.verse];
-    html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar <br></th></tr>"];
+    html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br><br></th></tr>", model.chapter];
+    html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ <br><br><br></td></tr>", model.verse];
+    html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar </th></tr>"];
     html = [html stringByAppendingFormat:@"</table>"];
     
     NSAttributedString *attributedString = [[NSAttributedString alloc]

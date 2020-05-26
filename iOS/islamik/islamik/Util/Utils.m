@@ -423,4 +423,13 @@
     }
     return strVerse;
 }
++ (NSString *) getReciterPath:(NSInteger)chapter{
+    NSString *strVerse = [NSString stringWithFormat:@"%@%ld.mp3", RECITER_URL, chapter + 1];
+    if (chapter + 1 < 10) {
+        strVerse = [NSString stringWithFormat:@"%@00%ld.mp3", RECITER_URL, chapter + 1];
+    } else if (chapter + 1 < 100) {
+        strVerse = [NSString stringWithFormat:@"%@0%ld.mp3", RECITER_URL, chapter + 1];
+    }
+    return strVerse;
+}
 @end

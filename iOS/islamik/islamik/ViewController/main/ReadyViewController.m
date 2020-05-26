@@ -11,6 +11,7 @@
 #import "ZuhrDetailViewController.h"
 #import "MaghribDetailViewController.h"
 #import "SalatDetailViewController.h"
+#import "QuranDetailViewController.h"
 
 @interface ReadyViewController () {
     NSTimer *timer;
@@ -66,7 +67,9 @@
         controller.mDataList = self.mDataList;
         [self.navigationController pushViewController:controller animated:YES];
     } else if (self.type == TYPE_QURAN) {
-        
+        QuranDetailViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"QuranDetailViewController"];
+        controller.mDataList = self.mDataList;
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 @end

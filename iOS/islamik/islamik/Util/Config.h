@@ -1,5 +1,9 @@
 
 #define SYSTEM_KEY_AGREE                                        @"AGREE"
+#define NOTIFICATION_ACTIVE                                     @"NOTIFICATION_ACTIVE"
+#define NOTIFICATION_BACKGROUND                                 @"NOTIFICATION_BACKGROUND"
+#define PUSH_NOTIFICATION_TYPE                                  @"type"
+#define PUSH_NOTIFICATION_DATA                                  @"data"
 
 enum {
     TYPE_JUMAH = 0,
@@ -22,6 +26,8 @@ enum {
 #define ANIMATION_TIME                                          0.1
 #define TIME_SPEED                                              15
 #define MAIN_COLOR                                              [UIColor colorWithRed:14/255.f green:97/255.f blue:41/255.f alpha:1.f]
+#define ARRAY_RECITER                                           [[NSArray alloc] initWithObjects:@"ABDUL HADI KANAKERI", @"AL-HUSSAYNI AL-AZAZY (With Children)", nil]
+#define RECITER_URL                                             @"https://www.quran411.com/quran/kanakeri/"
 
 #define PARSE_FIELD_OBJECT_ID                                   @"objectId"
 #define PARSE_FIELD_USER                                        @"user"

@@ -124,6 +124,8 @@
 		7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */; };
 		7869B85E247DAB7A00A5DE6E /* SalatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */; };
 		7869B864247DB5EC00A5DE6E /* NafilahViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B863247DB5EC00A5DE6E /* NafilahViewController.m */; };
+		7869B867247DBC5F00A5DE6E /* QuranViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B866247DBC5F00A5DE6E /* QuranViewController.m */; };
+		7869B86A247DBC8A00A5DE6E /* QuranDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B869247DBC8A00A5DE6E /* QuranDetailViewController.m */; };
 		78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0742478FE650082D0A7 /* SermonListViewController.m */; };
 		78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0772478FEC90082D0A7 /* SermonListCell.m */; };
 		78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA07924790CFB0082D0A7 /* VideoViewController.m */; };
@@ -339,6 +341,10 @@
 		7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SalatDetailViewController.m; sourceTree = "<group>"; };
 		7869B862247DB5EC00A5DE6E /* NafilahViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NafilahViewController.h; sourceTree = "<group>"; };
 		7869B863247DB5EC00A5DE6E /* NafilahViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NafilahViewController.m; sourceTree = "<group>"; };
+		7869B865247DBC5F00A5DE6E /* QuranViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuranViewController.h; sourceTree = "<group>"; };
+		7869B866247DBC5F00A5DE6E /* QuranViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuranViewController.m; sourceTree = "<group>"; };
+		7869B868247DBC8A00A5DE6E /* QuranDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuranDetailViewController.h; sourceTree = "<group>"; };
+		7869B869247DBC8A00A5DE6E /* QuranDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuranDetailViewController.m; sourceTree = "<group>"; };
 		78EDA0732478FE650082D0A7 /* SermonListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListViewController.h; sourceTree = "<group>"; };
 		78EDA0742478FE650082D0A7 /* SermonListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListViewController.m; sourceTree = "<group>"; };
 		78EDA0762478FEC90082D0A7 /* SermonListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListCell.h; sourceTree = "<group>"; };
@@ -799,6 +805,10 @@
 				7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */,
 				7869B862247DB5EC00A5DE6E /* NafilahViewController.h */,
 				7869B863247DB5EC00A5DE6E /* NafilahViewController.m */,
+				7869B865247DBC5F00A5DE6E /* QuranViewController.h */,
+				7869B866247DBC5F00A5DE6E /* QuranViewController.m */,
+				7869B868247DBC8A00A5DE6E /* QuranDetailViewController.h */,
+				7869B869247DBC8A00A5DE6E /* QuranDetailViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -1003,6 +1013,7 @@
 				780F620024786C7B0027CDB4 /* AppDelegate.m in Sources */,
 				780F62DA247870D90027CDB4 /* SCLTimerDisplay.m in Sources */,
 				78FC72E12478E367000F0671 /* SermonViewController.m in Sources */,
+				7869B86A247DBC8A00A5DE6E /* QuranDetailViewController.m in Sources */,
 				780F62B4247870D90027CDB4 /* JSQMessage.m in Sources */,
 				780F6340247875480027CDB4 /* OnboardViewController.m in Sources */,
 				780F62C6247870D90027CDB4 /* JSQMessagesCellTextView.m in Sources */,
@@ -1037,6 +1048,7 @@
 				780F62A8247870D90027CDB4 /* JSQMessagesBubblesSizeCalculator.m in Sources */,
 				780F62B9247870D90027CDB4 /* JSQMessagesKeyboardController.m in Sources */,
 				780F633B247874CE0027CDB4 /* BaseViewController.m in Sources */,
+				7869B867247DBC5F00A5DE6E /* QuranViewController.m in Sources */,
 				780F62CA247870D90027CDB4 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 				780F62C2247870D90027CDB4 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				780F621124786C7C0027CDB4 /* main.m in Sources */,

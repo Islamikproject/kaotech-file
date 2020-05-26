@@ -24,4 +24,5 @@
 + (NSArray *) getEnglishVerseArray:(NSString *)key;
 + (NSArray *) getArabicVerseArray:(NSString *)key;
 + (NSString *) getVerseString:(NSArray *)data start:(NSInteger)start end:(NSInteger)end;
++ (NSString *) getReciterPath:(NSInteger)chapter;
 @end
