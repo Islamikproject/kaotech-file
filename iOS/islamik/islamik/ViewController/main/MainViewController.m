@@ -11,6 +11,7 @@
 #import "DailyPrayersViewController.h"
 #import "SalatViewController.h"
 #import "PrayersViewController.h"
+#import "NafilahViewController.h"
 
 @interface MainViewController ()
 
@@ -50,7 +51,8 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onNafilahClick:(id)sender {
-    
+    NafilahViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NafilahViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onQuranClick:(id)sender {
     

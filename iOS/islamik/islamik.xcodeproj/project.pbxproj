@@ -123,6 +123,7 @@
 		780F63432478758D0027CDB4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F63422478758D0027CDB4 /* MainViewController.m */; };
 		7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */; };
 		7869B85E247DAB7A00A5DE6E /* SalatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */; };
+		7869B864247DB5EC00A5DE6E /* NafilahViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B863247DB5EC00A5DE6E /* NafilahViewController.m */; };
 		78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0742478FE650082D0A7 /* SermonListViewController.m */; };
 		78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0772478FEC90082D0A7 /* SermonListCell.m */; };
 		78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA07924790CFB0082D0A7 /* VideoViewController.m */; };
@@ -336,6 +337,8 @@
 		7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyPrayersViewController.m; sourceTree = "<group>"; };
 		7869B85C247DAB7A00A5DE6E /* SalatDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SalatDetailViewController.h; sourceTree = "<group>"; };
 		7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SalatDetailViewController.m; sourceTree = "<group>"; };
+		7869B862247DB5EC00A5DE6E /* NafilahViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NafilahViewController.h; sourceTree = "<group>"; };
+		7869B863247DB5EC00A5DE6E /* NafilahViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NafilahViewController.m; sourceTree = "<group>"; };
 		78EDA0732478FE650082D0A7 /* SermonListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListViewController.h; sourceTree = "<group>"; };
 		78EDA0742478FE650082D0A7 /* SermonListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListViewController.m; sourceTree = "<group>"; };
 		78EDA0762478FEC90082D0A7 /* SermonListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListCell.h; sourceTree = "<group>"; };
@@ -794,6 +797,8 @@
 				7800AC36247D154C006F47B5 /* SalatViewController.m */,
 				7869B85C247DAB7A00A5DE6E /* SalatDetailViewController.h */,
 				7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */,
+				7869B862247DB5EC00A5DE6E /* NafilahViewController.h */,
+				7869B863247DB5EC00A5DE6E /* NafilahViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -1047,6 +1052,7 @@
 				780F62D3247870D90027CDB4 /* UIDevice+JSQMessages.m in Sources */,
 				780F62E3247870D90027CDB4 /* JSQSystemSoundPlayer.m in Sources */,
 				780F62D8247870D90027CDB4 /* UIViewController+BIZChildViewController.m in Sources */,
+				7869B864247DB5EC00A5DE6E /* NafilahViewController.m in Sources */,
 				780F62C1247870D90027CDB4 /* JSQMessagesInputToolbar.m in Sources */,
 				7800AC37247D154C006F47B5 /* SalatViewController.m in Sources */,
 				780F62C5247870D90027CDB4 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
