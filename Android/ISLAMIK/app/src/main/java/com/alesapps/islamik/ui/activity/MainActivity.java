@@ -39,6 +39,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				break;
 			case R.id.layout_sermon:
 				startActivity(new Intent(instance, SermonActivity.class));
+//				startActivity(new Intent(instance, VerseActivity.class));
 				break;
 			case R.id.layout_prayers:
 				startActivity(new Intent(instance, DailyPrayersActivity.class));

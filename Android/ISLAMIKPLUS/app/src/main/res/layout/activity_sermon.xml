@@ -27,6 +27,7 @@
         android:layout_marginTop="@dimen/margin_normal"
         android:text="@string/choose_amount_seeking_individual_"
         android:textColor="@color/text_normal"
+        android:textAllCaps="true"
         android:textSize="@dimen/textsize_normal" />
     <Spinner
         android:id="@+id/sp_amount"

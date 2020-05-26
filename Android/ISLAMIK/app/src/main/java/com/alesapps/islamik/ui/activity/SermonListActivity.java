@@ -22,6 +22,7 @@ import java.util.List;
 
 public class SermonListActivity extends BaseActionBarActivity implements View.OnClickListener, DragListView.OnRefreshLoadingMoreListener {
 	public static SermonListActivity instance;
+	TextView txt_address;
 	DragListView list_sermon;
 	ListAdapter adapter;
 	ArrayList<ParseObject> mDataList = new ArrayList<>();
@@ -34,6 +35,8 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 		SetTitle(R.string.app_name, -1);
 		ShowActionBarIcons(true, R.id.action_back);
 		setContentView(R.layout.activity_sermon);
+		txt_address = findViewById(R.id.txt_address);
+		txt_address.setVisibility(View.GONE);
 		list_sermon = findViewById(R.id.listView);
 		adapter = new ListAdapter();
 		list_sermon.setAdapter(adapter);
@@ -89,7 +92,6 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 			View layout_container;
 			TextView txt_mosque;
 			TextView txt_date;
-			TextView txt_name;
 			TextView txt_topic;
 		}
 
@@ -103,7 +105,6 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 				holder.layout_container = convertView.findViewById(R.id.layout_container);
 				holder.txt_mosque = convertView.findViewById(R.id.txt_mosque);
 				holder.txt_date = convertView.findViewById(R.id.txt_date);
-				holder.txt_name = convertView.findViewById(R.id.txt_name);
 				holder.txt_topic = convertView.findViewById(R.id.txt_topic);
 				convertView.setTag(holder);
 
