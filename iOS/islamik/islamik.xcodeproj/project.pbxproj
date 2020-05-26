@@ -10,6 +10,7 @@
 		78008902247CC546007CAB87 /* FajrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78008901247CC546007CAB87 /* FajrDetailViewController.m */; };
 		7800AC31247D0770006F47B5 /* ZuhrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */; };
 		7800AC34247D0E98006F47B5 /* MaghribDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */; };
+		7800AC37247D154C006F47B5 /* SalatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC36247D154C006F47B5 /* SalatViewController.m */; };
 		780F620024786C7B0027CDB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F61FF24786C7B0027CDB4 /* AppDelegate.m */; };
 		780F620924786C7B0027CDB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780F620724786C7B0027CDB4 /* Main.storyboard */; };
 		780F620B24786C7C0027CDB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780F620A24786C7C0027CDB4 /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		780F6340247875480027CDB4 /* OnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F633F247875480027CDB4 /* OnboardViewController.m */; };
 		780F63432478758D0027CDB4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F63422478758D0027CDB4 /* MainViewController.m */; };
 		7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */; };
+		7869B85E247DAB7A00A5DE6E /* SalatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */; };
 		78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0742478FE650082D0A7 /* SermonListViewController.m */; };
 		78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0772478FEC90082D0A7 /* SermonListCell.m */; };
 		78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA07924790CFB0082D0A7 /* VideoViewController.m */; };
@@ -144,6 +146,8 @@
 		7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZuhrDetailViewController.m; sourceTree = "<group>"; };
 		7800AC32247D0E98006F47B5 /* MaghribDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaghribDetailViewController.h; sourceTree = "<group>"; };
 		7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaghribDetailViewController.m; sourceTree = "<group>"; };
+		7800AC35247D154C006F47B5 /* SalatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SalatViewController.h; sourceTree = "<group>"; };
+		7800AC36247D154C006F47B5 /* SalatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SalatViewController.m; sourceTree = "<group>"; };
 		780F61FB24786C7B0027CDB4 /* ISLAMIK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISLAMIK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		780F61FE24786C7B0027CDB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		780F61FF24786C7B0027CDB4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -330,6 +334,8 @@
 		780F63422478758D0027CDB4 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7852B7D2247BC9C600A5CFDE /* DailyPrayersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyPrayersViewController.h; sourceTree = "<group>"; };
 		7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyPrayersViewController.m; sourceTree = "<group>"; };
+		7869B85C247DAB7A00A5DE6E /* SalatDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SalatDetailViewController.h; sourceTree = "<group>"; };
+		7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SalatDetailViewController.m; sourceTree = "<group>"; };
 		78EDA0732478FE650082D0A7 /* SermonListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListViewController.h; sourceTree = "<group>"; };
 		78EDA0742478FE650082D0A7 /* SermonListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListViewController.m; sourceTree = "<group>"; };
 		78EDA0762478FEC90082D0A7 /* SermonListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListCell.h; sourceTree = "<group>"; };
@@ -784,6 +790,10 @@
 				7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */,
 				7800AC32247D0E98006F47B5 /* MaghribDetailViewController.h */,
 				7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */,
+				7800AC35247D154C006F47B5 /* SalatViewController.h */,
+				7800AC36247D154C006F47B5 /* SalatViewController.m */,
+				7869B85C247DAB7A00A5DE6E /* SalatDetailViewController.h */,
+				7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -1013,6 +1023,7 @@
 				780F62B1247870D90027CDB4 /* JSQLocationMediaItem.m in Sources */,
 				7800AC31247D0770006F47B5 /* ZuhrDetailViewController.m in Sources */,
 				780F62A7247870D90027CDB4 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
+				7869B85E247DAB7A00A5DE6E /* SalatDetailViewController.m in Sources */,
 				780F62D6247870D90027CDB4 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				7800AC34247D0E98006F47B5 /* MaghribDetailViewController.m in Sources */,
 				780F62D7247870D90027CDB4 /* TPKeyboardAvoidingCollectionView.m in Sources */,
@@ -1037,6 +1048,7 @@
 				780F62E3247870D90027CDB4 /* JSQSystemSoundPlayer.m in Sources */,
 				780F62D8247870D90027CDB4 /* UIViewController+BIZChildViewController.m in Sources */,
 				780F62C1247870D90027CDB4 /* JSQMessagesInputToolbar.m in Sources */,
+				7800AC37247D154C006F47B5 /* SalatViewController.m in Sources */,
 				780F62C5247870D90027CDB4 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
 				780F62B8247870D90027CDB4 /* JSQMessagesViewController.m in Sources */,
 				780F62B3247870D90027CDB4 /* JSQPhotoMediaItem.m in Sources */,
@@ -1189,6 +1201,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1212,6 +1225,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

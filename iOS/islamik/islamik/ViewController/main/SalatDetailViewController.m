@@ -1,15 +1,15 @@
 //
-//  ZuhrDetailViewController.m
+//  SalatDetailViewController.m
 //  islamik
 //
 //  Created by Ales Gabrysz on 5/26/20.
 //  Copyright © 2020 Ales Gabrysz. All rights reserved.
 //
 
-#import "ZuhrDetailViewController.h"
+#import "SalatDetailViewController.h"
 #import "SurahModel.h"
 
-@interface ZuhrDetailViewController (){
+@interface SalatDetailViewController (){
     NSTimer *timer;
     int count;
     float speed;
@@ -19,14 +19,13 @@
 @property (weak, nonatomic) IBOutlet UIView *viewSecond;
 @property (weak, nonatomic) IBOutlet UIView *viewThird;
 @property (weak, nonatomic) IBOutlet UIView *viewFourth;
-@property (weak, nonatomic) IBOutlet UIView *viewZuhr;
+@property (weak, nonatomic) IBOutlet UIView *viewFajr;
 @property (weak, nonatomic) IBOutlet UIView *viewFifth;
 @property (weak, nonatomic) IBOutlet UIView *viewSixth;
-@property (weak, nonatomic) IBOutlet UIView *viewSeventh;
 @property (weak, nonatomic) IBOutlet UITextView *txtContent;
 @end
 
-@implementation ZuhrDetailViewController
+@implementation SalatDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,62 +42,43 @@
     self.viewSecond.hidden = YES;
     self.viewThird.hidden = YES;
     self.viewFourth.hidden = YES;
-    self.viewZuhr.hidden = YES;
+    self.viewFajr.hidden = YES;
     self.viewFifth.hidden = YES;
     self.viewSixth.hidden = YES;
-    self.viewSeventh.hidden = YES;
     if (count == 0) {
-        self.viewZuhr.hidden = NO;
-        [self setContent:count];
-    } else if (count == 6) {
-        self.viewZuhr.hidden = NO;
-        [self setContent:count];
-    } else if (count == 13) {
-        self.viewZuhr.hidden = NO;
-        [self setContent:count];
-    } else if (count == 19) {
-        self.viewZuhr.hidden = NO;
-        [self setContent:count];
-    } else if (count == 1 || count == 7 || count == 14 || count == 20) {
+        self.viewFajr.hidden = NO;
+        [self setContent:YES];
+    } else if (count == 1) {
         self.viewFirst.hidden = NO;
-    } else if (count == 2 || count == 8 || count == 15 || count == 21) {
+    } else if (count == 2) {
         self.viewSecond.hidden = NO;
-    } else if (count == 3 || count == 9 || count == 16 || count == 22) {
+    } else if (count == 3) {
         self.viewThird.hidden = NO;
-    } else if (count == 4 || count == 10 || count == 17 || count == 23) {
+    } else if (count == 4) {
         self.viewFourth.hidden = NO;
-    } else if (count == 5 || count == 11 || count == 18 || count == 24) {
+    } else if (count == 5) {
         self.viewThird.hidden = NO;
-    } else if (count == 12) {
+    } else if (count == 6) {
         self.viewFifth.hidden = NO;
-    } else if (count == 25) {
+    } else if (count == 7) {
         self.viewSixth.hidden = NO;
-    } else if (count == 26) {
-        self.viewSeventh.hidden = NO;
-    } else if (count == 27) {
+    } else if (count == 8) {
         [self onBack:nil];
     }
-    if (count != 0 && count != 6 && count != 13 && count != 19 && count < 27) {
+    
+    if (count != 0 && count < 8) {
         timer=[NSTimer scheduledTimerWithTimeInterval:TIME_SPEED target:self selector:@selector(updateUI) userInfo:nil repeats:NO];
     }
 }
 
-- (void) setContent:(int) index{
-    SurahModel *model;
-    if (index == 0) {
-        model = self.mDataList[0];
-    } else if (index == 6) {
-        model = self.mDataList[1];
-    }
-    
+- (void) setContent:(BOOL) isFirst{
+    SurahModel *model = self.mDataList[0];
     NSString * html = @"<table style='width:100%'>";
     html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar <br></th></tr>"];
     html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br></th></tr>", MAIN_CHAPTER];
     html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ <br><br><br></td></tr>", [Util getVerseString:MAIN_VERSE start:0 end:MAIN_VERSE.count-1]];
-    if (model) {
-        html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br></th></tr>", model.chapter];
-        html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ </td></tr>", model.verse];
-    }
+    html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br></th></tr>", model.chapter];
+    html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ </td></tr>", model.verse];
     html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar <br></th></tr>"];
     html = [html stringByAppendingFormat:@"</table>"];
     
@@ -128,13 +108,13 @@
     }];
 }
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

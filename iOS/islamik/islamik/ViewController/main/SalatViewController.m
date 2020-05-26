@@ -1,18 +1,21 @@
 //
-//  PrayersViewController.m
+//  SalatViewController.m
 //  islamik
 //
-//  Created by Ales Gabrysz on 5/25/20.
+//  Created by Ales Gabrysz on 5/26/20.
 //  Copyright © 2020 Ales Gabrysz. All rights reserved.
 //
 
-#import "PrayersViewController.h"
-#import "ReadyViewController.h"
+#import "SalatViewController.h"
 #import "SurahModel.h"
+#import "ReadyViewController.h"
 
-@interface PrayersViewController () <IQDropDownTextFieldDelegate>
-
-@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@interface SalatViewController () <IQDropDownTextFieldDelegate>{
+    int type;
+}
+@property (weak, nonatomic) IBOutlet UIButton *btnWitr;
+@property (weak, nonatomic) IBOutlet UIButton *btnTwo;
+@property (weak, nonatomic) IBOutlet UIButton *btnFour;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *spLanguage;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *spFirstChapter;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *spFirstVerseStart;
@@ -21,19 +24,20 @@
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *spSecondVerseStart;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *spSecondVerseEnd;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *spSpeed;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewSecondHight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewThirdHight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewFourthHight;
 
 @end
 
-@implementation PrayersViewController
+@implementation SalatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initialize];
+    [self setType:TYPE_SALAT];
 }
-
 - (void)initialize {
     self.spLanguage.itemList = LANGUAGE_ARRAY;
     self.spLanguage.isOptionalDropDown = YES;
@@ -58,26 +62,40 @@
     self.spSecondVerseStart.isOptionalDropDown = YES;
     self.spSecondVerseEnd.isOptionalDropDown = YES;
     [self setVerses:YES];
+}
+- (void) setType:(int) index {
+    type = index;
+    self.btnWitr.layer.borderColor = UIColor.whiteColor.CGColor;
+    self.btnWitr.layer.borderWidth = 1;
+    self.btnWitr.backgroundColor = UIColor.clearColor;
+    [self.btnWitr setTitleColor:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0] forState:UIControlStateNormal];
     
-    self.viewThirdHight.constant = 70;
-    self.viewFourthHight.constant = 70;
-    if (self.type == TYPE_FAJR) {
-        self.lblTitle.text = @"FAJR";
-        self.viewThirdHight.constant = 0;
-        self.viewFourthHight.constant = 0;
-    } else if (self.type == TYPE_ZUHR) {
-        self.lblTitle.text = @"ZUHR";
-    } else if (self.type == TYPE_ASR) {
-        self.lblTitle.text = @"ASR";
-    } else if (self.type == TYPE_MAGHRIB) {
-        self.lblTitle.text = @"MAGHRIB";
-        self.viewFourthHight.constant = 0;
-    } else if (self.type == TYPE_ISHA) {
-        self.lblTitle.text = @"ISHA";
-    } else if (self.type == TYPE_JUMAH_FAJR) {
-        self.lblTitle.text = @"JUMAH";
-        self.viewThirdHight.constant = 0;
-        self.viewFourthHight.constant = 0;
+    self.btnTwo.layer.borderColor = UIColor.whiteColor.CGColor;
+    self.btnTwo.layer.borderWidth = 1;
+    self.btnTwo.backgroundColor = UIColor.clearColor;
+    [self.btnTwo setTitleColor:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0] forState:UIControlStateNormal];
+    
+    self.btnFour.layer.borderColor = UIColor.whiteColor.CGColor;
+    self.btnFour.layer.borderWidth = 1;
+    self.btnFour.backgroundColor = UIColor.clearColor;
+    [self.btnFour setTitleColor:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0] forState:UIControlStateNormal];
+    
+    self.viewSecondHight.constant = 0;
+    self.viewThirdHight.constant = 0;
+    self.viewFourthHight.constant = 0;
+    if (type == TYPE_SALAT) {
+        self.btnWitr.backgroundColor = UIColor.whiteColor;
+        [self.btnWitr setTitleColor:[UIColor colorWithRed:14/255.0 green:97/255.0 blue:41/255.0 alpha:1.0] forState:UIControlStateNormal];
+    } else if (type == TYPE_FAJR) {
+        self.btnTwo.backgroundColor = UIColor.whiteColor;
+        [self.btnTwo setTitleColor:[UIColor colorWithRed:14/255.0 green:97/255.0 blue:41/255.0 alpha:1.0] forState:UIControlStateNormal];
+        self.viewSecondHight.constant = 180;
+    } else if (type == TYPE_ZUHR) {
+        self.btnFour.backgroundColor = UIColor.whiteColor;
+        [self.btnFour setTitleColor:[UIColor colorWithRed:14/255.0 green:97/255.0 blue:41/255.0 alpha:1.0] forState:UIControlStateNormal];
+        self.viewSecondHight.constant = 180;
+        self.viewThirdHight.constant = 70;
+        self.viewFourthHight.constant = 70;
     }
 }
 -(void) setVerses:(BOOL) isSecond {
@@ -118,14 +136,36 @@
     }
 }
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+- (IBAction)onWitrClick:(id)sender {
+    [self setType:TYPE_SALAT];
+}
+- (IBAction)onTwoClick:(id)sender {
+    [self setType:TYPE_FAJR];
+}
+- (IBAction)onFourClick:(id)sender {
+    [self setType:TYPE_ZUHR];
+}
+- (IBAction)onDoneClick:(id)sender {
+    if ([self isValid]) {
+        NSMutableArray *dataList = [NSMutableArray new];
+        [dataList addObject:[self getSurahModel:YES]];
+        if (type != TYPE_SALAT) {
+            [dataList addObject:[self getSurahModel:NO]];
+        }
+        ReadyViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReadyViewController"];
+        controller.type = type;
+        controller.mDataList = dataList;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
 - (BOOL) isValid {
     NSString * errorMsg = @"";
     if (self.spLanguage.selectedItem.length == 0) {
@@ -143,30 +183,14 @@
     } else if (self.spFirstVerseStart.selectedRow > self.spFirstVerseEnd.selectedRow) {
         errorMsg = @"Start Āyāt (Verses) must be <= End Āyāt (Verses).";
     } else if (self.spSecondVerseStart.selectedRow > self.spSecondVerseEnd.selectedRow) {
-           errorMsg = @"Start Āyāt (Verses) must be <= End Āyāt (Verses).";
-       }
+        errorMsg = @"Start Āyāt (Verses) must be <= End Āyāt (Verses).";
+    }
     if (errorMsg.length > 0) {
         [Util showAlertTitle:self title:@"Error" message:errorMsg];
         return NO;
     }
     return YES;
 }
-- (IBAction)onDoneClick:(id)sender {
-    if ([self isValid]) {
-        NSMutableArray *dataList = [NSMutableArray new];
-        [dataList addObject:[self getSurahModel:YES]];
-        [dataList addObject:[self getSurahModel:NO]];
-        ReadyViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReadyViewController"];
-        if (self.type == TYPE_JUMAH_FAJR) {
-            controller.type = TYPE_FAJR;
-        } else {
-            controller.type = self.type;
-        }
-        controller.mDataList = dataList;
-        [self.navigationController pushViewController:controller animated:YES];
-    }
-}
-
 - (SurahModel *) getSurahModel:(BOOL)isFirst {
     SurahModel *model = [SurahModel new];
     model.language = self.spLanguage.selectedRow;
@@ -182,5 +206,4 @@
     }
     return model;
 }
-
 @end

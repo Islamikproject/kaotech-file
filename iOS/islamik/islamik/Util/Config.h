@@ -13,11 +13,14 @@ enum {
     TYPE_MAGHRIB = 3,
     TYPE_ISHA = 4,
     TYPE_QURAN = 5,
-    TYPE_SALAT = 6
+    TYPE_SALAT = 6,
+    TYPE_JUMAH_FAJR = 7
 };
 #define STRING_AMOUNT                                           [[NSArray alloc] initWithObjects:@"", @"$1", @"$4", @"$8", @"$12", @"$20", nil]
 #define ARRAY_AMOUNT                                            [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f], [NSNumber numberWithFloat:4.0f],[NSNumber numberWithFloat:8.0f], [NSNumber numberWithFloat:12.0f], [NSNumber numberWithFloat:20.0f], nil]
-#define SPEED_ARRAY                                             [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:50], [NSNumber numberWithInt:30], [NSNumber numberWithInt:20],[NSNumber numberWithInt:10], nil]
+#define SPEED_VALUE                                             [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3],[NSNumber numberWithInt:5], nil]
+#define ANIMATION_TIME                                          0.1
+#define TIME_SPEED                                              15
 #define MAIN_COLOR                                              [UIColor colorWithRed:14/255.f green:97/255.f blue:41/255.f alpha:1.f]
 
 #define PARSE_FIELD_OBJECT_ID                                   @"objectId"

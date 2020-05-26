@@ -21,7 +21,7 @@
 + (BOOL) isPhotoAvaileble;
 + (BOOL) isCameraAvailable;
 
-+ (NSMutableArray *) getEnglishVerseArray:(NSString *)key;
-+ (NSMutableArray *) getArabicVerseArray:(NSString *)key;
-+ (NSString *) getVerseString:(NSMutableArray *)data start:(NSInteger)start end:(NSInteger)end;
++ (NSArray *) getEnglishVerseArray:(NSString *)key;
++ (NSArray *) getArabicVerseArray:(NSString *)key;
++ (NSString *) getVerseString:(NSArray *)data start:(NSInteger)start end:(NSInteger)end;
 @end

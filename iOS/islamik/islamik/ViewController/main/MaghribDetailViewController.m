@@ -12,6 +12,8 @@
 @interface MaghribDetailViewController (){
     NSTimer *timer;
     int count;
+    float speed;
+    CGPoint current_position;
 }
 @property (weak, nonatomic) IBOutlet UIView *viewFirst;
 @property (weak, nonatomic) IBOutlet UIView *viewSecond;
@@ -21,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewFifth;
 @property (weak, nonatomic) IBOutlet UIView *viewSixth;
 @property (weak, nonatomic) IBOutlet UIView *viewSeventh;
+@property (weak, nonatomic) IBOutlet UITextView *txtContent;
 @end
 
 @implementation MaghribDetailViewController
@@ -28,11 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initialize];
-}
-
-- (void) initialize {
     count = -1;
+    SurahModel *model = self.mDataList[0];
+    speed = [SPEED_VALUE[model.speed] intValue];
     [self updateUI];
 }
 
@@ -48,13 +49,13 @@
     self.viewSeventh.hidden = YES;
     if (count == 0) {
         self.viewMaghrib.hidden = NO;
-        [self moveTextView];
+        [self setContent:count];
     } else if (count == 6) {
         self.viewMaghrib.hidden = NO;
-        [self moveTextView];
+        [self setContent:count];
     } else if (count == 13) {
         self.viewMaghrib.hidden = NO;
-        [self moveTextView];
+        [self setContent:count];
     } else if (count == 1 || count == 7 || count == 14) {
         self.viewFirst.hidden = NO;
     } else if (count == 2 || count == 8 || count == 15) {
@@ -75,14 +76,53 @@
         [self onBack:nil];
     }
     if (count != 0 && count != 6 && count != 13 && count < 21) {
-        timer=[NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateUI) userInfo:nil repeats:NO];
+        timer=[NSTimer scheduledTimerWithTimeInterval:TIME_SPEED target:self selector:@selector(updateUI) userInfo:nil repeats:NO];
     }
 }
 
+- (void) setContent:(int) index{
+    SurahModel *model;
+    if (index == 0) {
+        model = self.mDataList[0];
+    } else if (index == 6) {
+        model = self.mDataList[1];
+    }
+    
+    NSString * html = @"<table style='width:100%'>";
+    html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar <br></th></tr>"];
+    html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br></th></tr>", MAIN_CHAPTER];
+    html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ <br><br><br></td></tr>", [Util getVerseString:MAIN_VERSE start:0 end:MAIN_VERSE.count-1]];
+    if (model) {
+        html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br></th></tr>", model.chapter];
+        html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ </td></tr>", model.verse];
+    }
+    html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar <br></th></tr>"];
+    html = [html stringByAppendingFormat:@"</table>"];
+    
+    NSAttributedString *attributedString = [[NSAttributedString alloc]
+              initWithData: [html dataUsingEncoding:NSUnicodeStringEncoding]
+                   options: @{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType }
+        documentAttributes: nil
+                     error: nil
+    ];
+    self.txtContent.attributedText = attributedString;
+    current_position = CGPointZero;
+    [self performSelector:@selector(moveTextView) withObject:nil afterDelay:ANIMATION_TIME];
+}
+
 - (void) moveTextView {
-    SurahModel *model = self.mDataList[0];
-    double speed = [SPEED_ARRAY[model.speed] intValue] / 1000;
-    timer=[NSTimer scheduledTimerWithTimeInterval:speed target:self selector:@selector(updateUI) userInfo:nil repeats:NO];
+    current_position.y = current_position.y + speed;
+    if(current_position.y >= self.txtContent.contentSize.height){
+        [self updateUI];
+        return;
+    }
+    [UIView animateWithDuration:ANIMATION_TIME animations:^{
+        [self.txtContent setContentOffset:self->current_position animated:YES];
+    } completion:^(BOOL finished) {
+        if(finished){
+            [self performSelector:@selector(moveTextView) withObject:nil afterDelay:ANIMATION_TIME];
+        }
+    }];
 }
 /*
 #pragma mark - Navigation

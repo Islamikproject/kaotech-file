@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 #import "SermonViewController.h"
 #import "DailyPrayersViewController.h"
+#import "SalatViewController.h"
+#import "PrayersViewController.h"
 
 @interface MainViewController ()
 
@@ -39,10 +41,13 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onSalatClick:(id)sender {
-    
+    SalatViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SalatViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onJumahClick:(id)sender {
-    
+    PrayersViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PrayersViewController"];
+    controller.type = TYPE_JUMAH_FAJR;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onNafilahClick:(id)sender {
     
