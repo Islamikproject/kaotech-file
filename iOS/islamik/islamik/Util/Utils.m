@@ -415,4 +415,12 @@
                                        nil];
     return dictionary[key];
 }
+
++ (NSString *) getVerseString:(NSMutableArray *)data start:(NSInteger)start end:(NSInteger)end{
+    NSString *strVerse = data[start];
+    for (int i = start+1; i <= end; i ++) {
+        strVerse = [NSString stringWithFormat:@"%@\n\n%@", strVerse, data[i]];
+    }
+    return strVerse;
+}
 @end

@@ -7,8 +7,14 @@
 //
 
 #import "ReadyViewController.h"
+#import "FajrDetailViewController.h"
+#import "ZuhrDetailViewController.h"
+#import "MaghribDetailViewController.h"
 
-@interface ReadyViewController ()
+@interface ReadyViewController () {
+    NSTimer *timer;
+    int count;
+}
 @property (weak, nonatomic) IBOutlet UILabel *lblCount;
 
 @end
@@ -18,8 +24,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    count = 8;
+    timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
 }
 
+- (void)updateUI {
+    if (count > 0) {
+        count --;
+        self.lblCount.text = [NSString stringWithFormat:@"%d", count];
+    } else {
+        [timer invalidate];
+        [self gotoNextScreen];
+    }
+}
 /*
 #pragma mark - Navigation
 
@@ -29,5 +46,24 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+- (void)gotoNextScreen {
+    [self.navigationController popViewControllerAnimated:YES];
+    if (self.type == TYPE_FAJR) {
+        FajrDetailViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"FajrDetailViewController"];
+        controller.mDataList = self.mDataList;
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if (self.type == TYPE_ZUHR || self.type == TYPE_ASR || self.type == TYPE_ISHA) {
+        ZuhrDetailViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ZuhrDetailViewController"];
+        controller.mDataList = self.mDataList;
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if (self.type == TYPE_MAGHRIB) {
+        MaghribDetailViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MaghribDetailViewController"];
+        controller.mDataList = self.mDataList;
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if (self.type == TYPE_SALAT) {
+        
+    } else if (self.type == TYPE_QURAN) {
+        
+    }
+}
 @end

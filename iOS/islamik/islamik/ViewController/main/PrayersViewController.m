@@ -7,6 +7,8 @@
 //
 
 #import "PrayersViewController.h"
+#import "ReadyViewController.h"
+#import "SurahModel.h"
 
 @interface PrayersViewController () <IQDropDownTextFieldDelegate>
 
@@ -120,11 +122,6 @@
  // Pass the selected object to the new view controller.
  }
  */
-- (IBAction)onDoneClick:(id)sender {
-    if ([self isValid]) {
-        
-    }
-}
 - (BOOL) isValid {
     NSString * errorMsg = @"";
     if (self.spLanguage.selectedItem.length == 0) {
@@ -150,4 +147,32 @@
     }
     return YES;
 }
+- (IBAction)onDoneClick:(id)sender {
+    if ([self isValid]) {
+        NSMutableArray *dataList = [NSMutableArray new];
+        [dataList addObject:[self getSurahModel:YES]];
+        [dataList addObject:[self getSurahModel:NO]];
+        ReadyViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReadyViewController"];
+        controller.type = self.type;
+        controller.mDataList = dataList;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
+
+- (SurahModel *) getSurahModel:(BOOL)isFirst {
+    SurahModel *model = [SurahModel new];
+    model.language = self.spLanguage.selectedRow;
+    model.speed = self.spSpeed.selectedRow;
+    if (isFirst) {
+        model.chapter = CHAPTER_ARRAY[self.spFirstChapter.selectedRow];
+        NSMutableArray *verses = [Util getEnglishVerseArray:self.spFirstChapter.selectedItem];
+        model.verse = [Util getVerseString:verses start:self.spFirstVerseStart.selectedRow end:self.spFirstVerseEnd.selectedRow];
+    } else {
+        model.chapter = CHAPTER_ARRAY[self.spSecondChapter.selectedRow];
+        NSMutableArray *verses = [Util getEnglishVerseArray:self.spSecondChapter.selectedItem];
+        model.verse = [Util getVerseString:verses start:self.spSecondVerseStart.selectedRow end:self.spSecondVerseEnd.selectedRow];
+    }
+    return model;
+}
+
 @end

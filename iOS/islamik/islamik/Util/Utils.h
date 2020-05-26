@@ -23,4 +23,5 @@
 
 + (NSMutableArray *) getEnglishVerseArray:(NSString *)key;
 + (NSMutableArray *) getArabicVerseArray:(NSString *)key;
++ (NSString *) getVerseString:(NSMutableArray *)data start:(NSInteger)start end:(NSInteger)end;
 @end

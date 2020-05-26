@@ -1,5 +1,5 @@
 //
-//  ReadyViewController.h
+//  FajrDetailViewController.h
 //  islamik
 //
 //  Created by Ales Gabrysz on 5/25/20.
@@ -10,8 +10,7 @@
 #import "BaseViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ReadyViewController : BaseViewController
-@property (atomic) int type;
+@interface FajrDetailViewController : BaseViewController
 @property (nonatomic, strong) NSMutableArray *mDataList;
 @end
 

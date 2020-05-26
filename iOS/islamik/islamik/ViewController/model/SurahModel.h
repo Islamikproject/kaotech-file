@@ -11,13 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SurahModel : NSObject
-@property (atomic) int language;
-@property (atomic) int surahId;
-@property (atomic) int verseStart;
-@property (atomic) int verseEnd;
-@property (nonatomic, strong) NSString *surah;
+@property (atomic) NSInteger language;
+@property (nonatomic, strong) NSString *chapter;
 @property (nonatomic, strong) NSString *verse;
-@property (atomic) int speed;
+@property (atomic) NSInteger speed;
 @end
 
 NS_ASSUME_NONNULL_END

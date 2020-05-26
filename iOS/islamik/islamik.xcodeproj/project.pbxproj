@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78008902247CC546007CAB87 /* FajrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78008901247CC546007CAB87 /* FajrDetailViewController.m */; };
+		7800AC31247D0770006F47B5 /* ZuhrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */; };
+		7800AC34247D0E98006F47B5 /* MaghribDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */; };
 		780F620024786C7B0027CDB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F61FF24786C7B0027CDB4 /* AppDelegate.m */; };
 		780F620924786C7B0027CDB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780F620724786C7B0027CDB4 /* Main.storyboard */; };
 		780F620B24786C7C0027CDB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780F620A24786C7C0027CDB4 /* Assets.xcassets */; };
@@ -135,6 +138,12 @@
 /* Begin PBXFileReference section */
 		2C64822167334A118E93EB38 /* Pods-islamik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-islamik.release.xcconfig"; path = "Target Support Files/Pods-islamik/Pods-islamik.release.xcconfig"; sourceTree = "<group>"; };
 		30E37A2F5930F4EB511DB3E2 /* Pods_islamik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_islamik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78008900247CC546007CAB87 /* FajrDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FajrDetailViewController.h; sourceTree = "<group>"; };
+		78008901247CC546007CAB87 /* FajrDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FajrDetailViewController.m; sourceTree = "<group>"; };
+		7800AC2F247D0770006F47B5 /* ZuhrDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZuhrDetailViewController.h; sourceTree = "<group>"; };
+		7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZuhrDetailViewController.m; sourceTree = "<group>"; };
+		7800AC32247D0E98006F47B5 /* MaghribDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaghribDetailViewController.h; sourceTree = "<group>"; };
+		7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaghribDetailViewController.m; sourceTree = "<group>"; };
 		780F61FB24786C7B0027CDB4 /* ISLAMIK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISLAMIK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		780F61FE24786C7B0027CDB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		780F61FF24786C7B0027CDB4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -769,6 +778,12 @@
 				78F681C5247C35E700B6B955 /* PrayersViewController.m */,
 				78F681C9247C927A00B6B955 /* ReadyViewController.h */,
 				78F681CA247C927A00B6B955 /* ReadyViewController.m */,
+				78008900247CC546007CAB87 /* FajrDetailViewController.h */,
+				78008901247CC546007CAB87 /* FajrDetailViewController.m */,
+				7800AC2F247D0770006F47B5 /* ZuhrDetailViewController.h */,
+				7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */,
+				7800AC32247D0E98006F47B5 /* MaghribDetailViewController.h */,
+				7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -996,8 +1011,10 @@
 				780F62AF247870D90027CDB4 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				780F62AB247870D90027CDB4 /* JSQMessagesBubbleImageFactory.m in Sources */,
 				780F62B1247870D90027CDB4 /* JSQLocationMediaItem.m in Sources */,
+				7800AC31247D0770006F47B5 /* ZuhrDetailViewController.m in Sources */,
 				780F62A7247870D90027CDB4 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
 				780F62D6247870D90027CDB4 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				7800AC34247D0E98006F47B5 /* MaghribDetailViewController.m in Sources */,
 				780F62D7247870D90027CDB4 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				78F681CB247C927A00B6B955 /* ReadyViewController.m in Sources */,
 				780F62D5247870D90027CDB4 /* TPKeyboardAvoidingTableView.m in Sources */,
@@ -1026,6 +1043,7 @@
 				780F62C3247870D90027CDB4 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				780F62DB247870D90027CDB4 /* SCLAlertViewStyleKit.m in Sources */,
 				780F62D1247870D90027CDB4 /* NSString+JSQMessages.m in Sources */,
+				78008902247CC546007CAB87 /* FajrDetailViewController.m in Sources */,
 				780F62A6247870D90027CDB4 /* CircleImageView.m in Sources */,
 				780F62AC247870D90027CDB4 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				780F62B0247870D90027CDB4 /* JSQMessagesAvatarImage.m in Sources */,
