@@ -10,7 +10,7 @@
 
 static SermonViewController *_sharedViewController = nil;
 
-@interface SermonViewController () <IQDropDownTextFieldDelegate>{
+@interface SermonViewController () <IQDropDownTextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
     BOOL isCameraOpen;
 }
 

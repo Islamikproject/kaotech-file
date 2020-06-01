@@ -8,14 +8,16 @@
 
 #import "QuranDetailViewController.h"
 #import "SurahModel.h"
+#import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 
 @interface QuranDetailViewController (){
     float speed;
     CGPoint current_position;
+    
 }
 @property (weak, nonatomic) IBOutlet UITextView *textContent;
-
+@property (nonatomic, retain) AVAudioPlayer * audioPlayer;
 @end
 
 @implementation QuranDetailViewController
@@ -27,11 +29,14 @@
     speed = [SPEED_VALUE[model.speed] intValue];
     
     NSString *audioPath = [Util getReciterPath:model.surahId];
-    NSURL *audioURL = [NSURL fileURLWithPath:audioPath];
-    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
-    player.numberOfLoops = -1; //Infinite
-    [player play];
-    
+    NSURL *audioURL = [NSURL URLWithString:audioPath];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *mp3URL = audioURL;
+        NSData *data = [NSData dataWithContentsOfURL:mp3URL];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:NULL];
+        [self.audioPlayer play];
+    });
     [self setContent];
 }
 
@@ -79,5 +84,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end

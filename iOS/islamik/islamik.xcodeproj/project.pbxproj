@@ -126,6 +126,7 @@
 		7869B864247DB5EC00A5DE6E /* NafilahViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B863247DB5EC00A5DE6E /* NafilahViewController.m */; };
 		7869B867247DBC5F00A5DE6E /* QuranViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B866247DBC5F00A5DE6E /* QuranViewController.m */; };
 		7869B86A247DBC8A00A5DE6E /* QuranDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B869247DBC8A00A5DE6E /* QuranDetailViewController.m */; };
+		78A21CAB2483713A00A1C3A5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A21CAA2483713A00A1C3A5 /* AVFoundation.framework */; };
 		78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0742478FE650082D0A7 /* SermonListViewController.m */; };
 		78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0772478FEC90082D0A7 /* SermonListCell.m */; };
 		78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA07924790CFB0082D0A7 /* VideoViewController.m */; };
@@ -345,6 +346,7 @@
 		7869B866247DBC5F00A5DE6E /* QuranViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuranViewController.m; sourceTree = "<group>"; };
 		7869B868247DBC8A00A5DE6E /* QuranDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuranDetailViewController.h; sourceTree = "<group>"; };
 		7869B869247DBC8A00A5DE6E /* QuranDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuranDetailViewController.m; sourceTree = "<group>"; };
+		78A21CAA2483713A00A1C3A5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		78EDA0732478FE650082D0A7 /* SermonListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListViewController.h; sourceTree = "<group>"; };
 		78EDA0742478FE650082D0A7 /* SermonListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListViewController.m; sourceTree = "<group>"; };
 		78EDA0762478FEC90082D0A7 /* SermonListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListCell.h; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 			files = (
 				780F62ED247871AD0027CDB4 /* libxml2.2.tbd in Frameworks */,
 				780F62EB2478719C0027CDB4 /* libsqlite3.tbd in Frameworks */,
+				78A21CAB2483713A00A1C3A5 /* AVFoundation.framework in Frameworks */,
 				780F62E5247870D90027CDB4 /* Bolts.framework in Frameworks */,
 				780F62E9247871870027CDB4 /* libc++.tbd in Frameworks */,
 				780F62E4247870D90027CDB4 /* Parse.framework in Frameworks */,
@@ -683,10 +686,12 @@
 		780F62F2247871E40027CDB4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				78F681CE247C99A500B6B955 /* model */,
-				78FC72E62478E3C0000F0671 /* main */,
-				78FC72E52478E3AD000F0671 /* cell */,
 				780F6336247874CE0027CDB4 /* base */,
+				78B5A8A624848021006C7EFA /* onboard */,
+				78FC72E62478E3C0000F0671 /* main */,
+				78B5A8A724848064006C7EFA /* sermon */,
+				78F681CE247C99A500B6B955 /* model */,
+				78FC72E52478E3AD000F0671 /* cell */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -752,6 +757,30 @@
 			path = base;
 			sourceTree = "<group>";
 		};
+		78B5A8A624848021006C7EFA /* onboard */ = {
+			isa = PBXGroup;
+			children = (
+				780F633E247875480027CDB4 /* OnboardViewController.h */,
+				780F633F247875480027CDB4 /* OnboardViewController.m */,
+			);
+			path = onboard;
+			sourceTree = "<group>";
+		};
+		78B5A8A724848064006C7EFA /* sermon */ = {
+			isa = PBXGroup;
+			children = (
+				78FC72DF2478E367000F0671 /* SermonViewController.h */,
+				78FC72E02478E367000F0671 /* SermonViewController.m */,
+				78EDA0732478FE650082D0A7 /* SermonListViewController.h */,
+				78EDA0742478FE650082D0A7 /* SermonListViewController.m */,
+				78EDA07A24790CFB0082D0A7 /* VideoViewController.h */,
+				78EDA07924790CFB0082D0A7 /* VideoViewController.m */,
+				78EDA07C247911480082D0A7 /* DonationViewController.h */,
+				78EDA07D247911480082D0A7 /* DonationViewController.m */,
+			);
+			path = sermon;
+			sourceTree = "<group>";
+		};
 		78F681CE247C99A500B6B955 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,18 +804,8 @@
 		78FC72E62478E3C0000F0671 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				780F633E247875480027CDB4 /* OnboardViewController.h */,
-				780F633F247875480027CDB4 /* OnboardViewController.m */,
 				780F63412478758D0027CDB4 /* MainViewController.h */,
 				780F63422478758D0027CDB4 /* MainViewController.m */,
-				78FC72DF2478E367000F0671 /* SermonViewController.h */,
-				78FC72E02478E367000F0671 /* SermonViewController.m */,
-				78EDA0732478FE650082D0A7 /* SermonListViewController.h */,
-				78EDA0742478FE650082D0A7 /* SermonListViewController.m */,
-				78EDA07A24790CFB0082D0A7 /* VideoViewController.h */,
-				78EDA07924790CFB0082D0A7 /* VideoViewController.m */,
-				78EDA07C247911480082D0A7 /* DonationViewController.h */,
-				78EDA07D247911480082D0A7 /* DonationViewController.m */,
 				7852B7D2247BC9C600A5CFDE /* DailyPrayersViewController.h */,
 				7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */,
 				78F681C4247C35E700B6B955 /* PrayersViewController.h */,
@@ -816,6 +835,7 @@
 		C9289895EF8C0E5FB1BF617D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78A21CAA2483713A00A1C3A5 /* AVFoundation.framework */,
 				780F62F0247871C30027CDB4 /* libz.tbd */,
 				780F62EE247871B40027CDB4 /* libxml2.tbd */,
 				780F62EC247871A40027CDB4 /* libxml2.2.tbd */,
@@ -1137,6 +1157,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1195,6 +1216,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

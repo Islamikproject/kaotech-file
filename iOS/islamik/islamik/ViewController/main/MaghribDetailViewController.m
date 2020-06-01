@@ -87,11 +87,14 @@
     } else if (index == 6) {
         model = self.mDataList[1];
     }
-    
+    NSString *main_verse = [Util getVerseString:MAIN_VERSE start:0 end:MAIN_VERSE.count-1];
+    if (model.language == 1) {
+        main_verse = [Util getVerseString:MAIN_VERSE_ARABIC start:0 end:MAIN_VERSE.count-1];
+    }
     NSString * html = @"<table style='width:100%'>";
     html = [html stringByAppendingFormat:@"<tr><th style='font-size:30px'> Allah Akbar <br><br></th></tr>"];
     html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br><br></th></tr>", MAIN_CHAPTER];
-    html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ <br><br><br></td></tr>", [Util getVerseString:MAIN_VERSE start:0 end:MAIN_VERSE.count-1]];
+    html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ <br><br><br></td></tr>", main_verse];
     if (model) {
         html = [html stringByAppendingFormat:@"<tr><th style='font-size:25px'> %@ <br><br></th></tr>", model.chapter];
         html = [html stringByAppendingFormat:@"<tr><td style='font-size:20px'> %@ <br><br><br></td></tr>", model.verse];

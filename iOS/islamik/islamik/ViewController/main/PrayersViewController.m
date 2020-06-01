@@ -174,10 +174,16 @@
     if (isFirst) {
         model.chapter = CHAPTER_ARRAY[self.spFirstChapter.selectedRow];
         NSArray *verses = [Util getEnglishVerseArray:self.spFirstChapter.selectedItem];
+        if (model.language == 1) {
+            verses = [Util getArabicVerseArray:self.spFirstChapter.selectedItem];
+        }
         model.verse = [Util getVerseString:verses start:self.spFirstVerseStart.selectedRow end:self.spFirstVerseEnd.selectedRow];
     } else {
         model.chapter = CHAPTER_ARRAY[self.spSecondChapter.selectedRow];
         NSArray *verses = [Util getEnglishVerseArray:self.spSecondChapter.selectedItem];
+        if (model.language == 1) {
+            verses = [Util getArabicVerseArray:self.spSecondChapter.selectedItem];
+        }
         model.verse = [Util getVerseString:verses start:self.spSecondVerseStart.selectedRow end:self.spSecondVerseEnd.selectedRow];
     }
     return model;

@@ -127,9 +127,15 @@
     model.surahId = self.spChapter.selectedRow;
     model.chapter = MAIN_CHAPTER;
     NSArray *verses = MAIN_VERSE;
+    if (model.language == 1) {
+        verses = MAIN_VERSE_ARABIC;
+    }
     if (self.spChapter.selectedRow > 0) {
         model.chapter = CHAPTER_ARRAY[self.spChapter.selectedRow - 1];
         verses = [Util getEnglishVerseArray:self.spChapter.selectedItem];
+        if (model.language == 1) {
+            verses = [Util getArabicVerseArray:self.spChapter.selectedItem];
+        }
     }
     model.verse = [Util getVerseString:verses start:self.spVerseStart.selectedRow end:self.spVerseEnd.selectedRow];
     return model;
