@@ -121,6 +121,18 @@
 		780F633C247874CE0027CDB4 /* MainNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F6339247874CE0027CDB4 /* MainNavViewController.m */; };
 		780F6340247875480027CDB4 /* OnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F633F247875480027CDB4 /* OnboardViewController.m */; };
 		780F63432478758D0027CDB4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F63422478758D0027CDB4 /* MainViewController.m */; };
+		781633352484EF580073D07B /* StripeRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633342484EF580073D07B /* StripeRest.m */; };
+		7816333A2484EF7B0073D07B /* HttpRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633372484EF7B0073D07B /* HttpRest.m */; };
+		7816333B2484EF7B0073D07B /* HttpApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633382484EF7B0073D07B /* HttpApi.m */; };
+		7816334A2484F01F0073D07B /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816333D2484F01E0073D07B /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7816334B2484F01F0073D07B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633402484F01E0073D07B /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7816334C2484F01F0073D07B /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633412484F01E0073D07B /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7816334D2484F01F0073D07B /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633432484F01F0073D07B /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7816334E2484F01F0073D07B /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633462484F01F0073D07B /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7816334F2484F01F0073D07B /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633482484F01F0073D07B /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		781633552484F0C70073D07B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 781633512484F0C60073D07B /* LICENSE */; };
+		781633562484F0C70073D07B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 781633532484F0C60073D07B /* README.md */; };
+		781633572484F0C70073D07B /* NSString+UrlEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633542484F0C60073D07B /* NSString+UrlEncode.m */; };
 		7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */; };
 		7869B85E247DAB7A00A5DE6E /* SalatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B85D247DAB7A00A5DE6E /* SalatDetailViewController.m */; };
 		7869B864247DB5EC00A5DE6E /* NafilahViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7869B863247DB5EC00A5DE6E /* NafilahViewController.m */; };
@@ -336,6 +348,29 @@
 		780F633F247875480027CDB4 /* OnboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardViewController.m; sourceTree = "<group>"; };
 		780F63412478758D0027CDB4 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		780F63422478758D0027CDB4 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		781633332484EF580073D07B /* StripeRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StripeRest.h; sourceTree = "<group>"; };
+		781633342484EF580073D07B /* StripeRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StripeRest.m; sourceTree = "<group>"; };
+		781633362484EF7B0073D07B /* HttpApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpApi.h; sourceTree = "<group>"; };
+		781633372484EF7B0073D07B /* HttpRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRest.m; sourceTree = "<group>"; };
+		781633382484EF7B0073D07B /* HttpApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpApi.m; sourceTree = "<group>"; };
+		781633392484EF7B0073D07B /* HttpRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRest.h; sourceTree = "<group>"; };
+		7816333D2484F01E0073D07B /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		7816333E2484F01E0073D07B /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		7816333F2484F01E0073D07B /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		781633402484F01E0073D07B /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		781633412484F01E0073D07B /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		781633422484F01E0073D07B /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		781633432484F01F0073D07B /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		781633442484F01F0073D07B /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		781633452484F01F0073D07B /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		781633462484F01F0073D07B /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		781633472484F01F0073D07B /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		781633482484F01F0073D07B /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		781633492484F01F0073D07B /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		781633512484F0C60073D07B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		781633522484F0C60073D07B /* NSString+UrlEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UrlEncode.h"; sourceTree = "<group>"; };
+		781633532484F0C60073D07B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		781633542484F0C60073D07B /* NSString+UrlEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UrlEncode.m"; sourceTree = "<group>"; };
 		7852B7D2247BC9C600A5CFDE /* DailyPrayersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyPrayersViewController.h; sourceTree = "<group>"; };
 		7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyPrayersViewController.m; sourceTree = "<group>"; };
 		7869B85C247DAB7A00A5DE6E /* SalatDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SalatDetailViewController.h; sourceTree = "<group>"; };
@@ -440,6 +475,8 @@
 		780F6217247870D80027CDB4 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				781633502484F0C60073D07B /* NSString-UrlEncode */,
+				7816333C2484F01E0073D07B /* JSON */,
 				780F6218247870D80027CDB4 /* CircleImageView */,
 				780F621B247870D80027CDB4 /* JSQMessagesViewController */,
 				780F627E247870D80027CDB4 /* BizPopupView */,
@@ -737,6 +774,12 @@
 		780F632E247874C50027CDB4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				781633362484EF7B0073D07B /* HttpApi.h */,
+				781633382484EF7B0073D07B /* HttpApi.m */,
+				781633392484EF7B0073D07B /* HttpRest.h */,
+				781633372484EF7B0073D07B /* HttpRest.m */,
+				781633332484EF580073D07B /* StripeRest.h */,
+				781633342484EF580073D07B /* StripeRest.m */,
 				780F632F247874C50027CDB4 /* Utils.h */,
 				780F6332247874C50027CDB4 /* Utils.m */,
 				780F6331247874C50027CDB4 /* Config.h */,
@@ -755,6 +798,37 @@
 				780F6339247874CE0027CDB4 /* MainNavViewController.m */,
 			);
 			path = base;
+			sourceTree = "<group>";
+		};
+		7816333C2484F01E0073D07B /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				7816333D2484F01E0073D07B /* NSObject+SBJSON.m */,
+				7816333E2484F01E0073D07B /* SBJsonBase.h */,
+				7816333F2484F01E0073D07B /* SBJsonWriter.h */,
+				781633402484F01E0073D07B /* SBJsonParser.m */,
+				781633412484F01E0073D07B /* SBJSON.m */,
+				781633422484F01E0073D07B /* NSString+SBJSON.h */,
+				781633432484F01F0073D07B /* SBJsonBase.m */,
+				781633442484F01F0073D07B /* NSObject+SBJSON.h */,
+				781633452484F01F0073D07B /* JSON.h */,
+				781633462484F01F0073D07B /* SBJsonWriter.m */,
+				781633472484F01F0073D07B /* SBJsonParser.h */,
+				781633482484F01F0073D07B /* NSString+SBJSON.m */,
+				781633492484F01F0073D07B /* SBJSON.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		781633502484F0C60073D07B /* NSString-UrlEncode */ = {
+			isa = PBXGroup;
+			children = (
+				781633512484F0C60073D07B /* LICENSE */,
+				781633522484F0C60073D07B /* NSString+UrlEncode.h */,
+				781633532484F0C60073D07B /* README.md */,
+				781633542484F0C60073D07B /* NSString+UrlEncode.m */,
+			);
+			path = "NSString-UrlEncode";
 			sourceTree = "<group>";
 		};
 		78B5A8A624848021006C7EFA /* onboard */ = {
@@ -907,6 +981,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781633552484F0C70073D07B /* LICENSE in Resources */,
 				780F6311247874020027CDB4 /* check_off.png in Resources */,
 				780F620E24786C7C0027CDB4 /* LaunchScreen.storyboard in Resources */,
 				780F631C247874020027CDB4 /* com_loading_arrow.png in Resources */,
@@ -948,6 +1023,7 @@
 				780F6323247874020027CDB4 /* fajr_three.png in Resources */,
 				780F62CB247870D90027CDB4 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				780F632B247874020027CDB4 /* splash.png in Resources */,
+				781633562484F0C70073D07B /* README.md in Resources */,
 				780F6319247874020027CDB4 /* img_training.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1031,9 +1107,11 @@
 				780F62BD247870D90027CDB4 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				78F681D1247C99BA00B6B955 /* SurahModel.m in Sources */,
 				780F620024786C7B0027CDB4 /* AppDelegate.m in Sources */,
+				7816334E2484F01F0073D07B /* SBJsonWriter.m in Sources */,
 				780F62DA247870D90027CDB4 /* SCLTimerDisplay.m in Sources */,
 				78FC72E12478E367000F0671 /* SermonViewController.m in Sources */,
 				7869B86A247DBC8A00A5DE6E /* QuranDetailViewController.m in Sources */,
+				7816333B2484EF7B0073D07B /* HttpApi.m in Sources */,
 				780F62B4247870D90027CDB4 /* JSQMessage.m in Sources */,
 				780F6340247875480027CDB4 /* OnboardViewController.m in Sources */,
 				780F62C6247870D90027CDB4 /* JSQMessagesCellTextView.m in Sources */,
@@ -1045,6 +1123,7 @@
 				780F62DE247870D90027CDB4 /* SCLSwitchView.m in Sources */,
 				7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */,
 				780F62E2247870D90027CDB4 /* SCLAlertView.m in Sources */,
+				7816333A2484EF7B0073D07B /* HttpRest.m in Sources */,
 				780F6334247874C50027CDB4 /* AppStateManager.m in Sources */,
 				780F62BB247870D90027CDB4 /* JSQMessagesComposerTextView.m in Sources */,
 				78F681C6247C35E700B6B955 /* PrayersViewController.m in Sources */,
@@ -1062,6 +1141,7 @@
 				7869B85E247DAB7A00A5DE6E /* SalatDetailViewController.m in Sources */,
 				780F62D6247870D90027CDB4 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				7800AC34247D0E98006F47B5 /* MaghribDetailViewController.m in Sources */,
+				7816334A2484F01F0073D07B /* NSObject+SBJSON.m in Sources */,
 				780F62D7247870D90027CDB4 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				78F681CB247C927A00B6B955 /* ReadyViewController.m in Sources */,
 				780F62D5247870D90027CDB4 /* TPKeyboardAvoidingTableView.m in Sources */,
@@ -1070,13 +1150,16 @@
 				780F633B247874CE0027CDB4 /* BaseViewController.m in Sources */,
 				7869B867247DBC5F00A5DE6E /* QuranViewController.m in Sources */,
 				780F62CA247870D90027CDB4 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
+				781633352484EF580073D07B /* StripeRest.m in Sources */,
 				780F62C2247870D90027CDB4 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				780F621124786C7C0027CDB4 /* main.m in Sources */,
 				780F62C9247870D90027CDB4 /* JSQMessagesCollectionView.m in Sources */,
 				780F633C247874CE0027CDB4 /* MainNavViewController.m in Sources */,
 				78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */,
 				780F62A9247870D90027CDB4 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
+				7816334F2484F01F0073D07B /* NSString+SBJSON.m in Sources */,
 				780F62B6247870D90027CDB4 /* JSQVideoMediaItem.m in Sources */,
+				781633572484F0C70073D07B /* NSString+UrlEncode.m in Sources */,
 				780F62B7247870D90027CDB4 /* DemoModelData.m in Sources */,
 				780F62D2247870D90027CDB4 /* UIView+JSQMessages.m in Sources */,
 				780F62D0247870D90027CDB4 /* NSBundle+JSQMessages.m in Sources */,
@@ -1092,11 +1175,14 @@
 				780F62B3247870D90027CDB4 /* JSQPhotoMediaItem.m in Sources */,
 				780F62C3247870D90027CDB4 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				780F62DB247870D90027CDB4 /* SCLAlertViewStyleKit.m in Sources */,
+				7816334B2484F01F0073D07B /* SBJsonParser.m in Sources */,
+				7816334D2484F01F0073D07B /* SBJsonBase.m in Sources */,
 				780F62D1247870D90027CDB4 /* NSString+JSQMessages.m in Sources */,
 				78008902247CC546007CAB87 /* FajrDetailViewController.m in Sources */,
 				780F62A6247870D90027CDB4 /* CircleImageView.m in Sources */,
 				780F62AC247870D90027CDB4 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				780F62B0247870D90027CDB4 /* JSQMessagesAvatarImage.m in Sources */,
+				7816334C2484F01F0073D07B /* SBJSON.m in Sources */,
 				780F62C4247870D90027CDB4 /* JSQMessagesLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

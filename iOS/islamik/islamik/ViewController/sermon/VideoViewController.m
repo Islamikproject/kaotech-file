@@ -75,6 +75,6 @@
         controller.mSermonObj = self.mSermonObj;
         [self.navigationController pushViewController:controller animated:YES];
     }];
-    [alert showError:@"ISLAMIK" subTitle:message closeButtonTitle:nil duration:0.0f];
+    [alert showQuestion:@"ISLAMIK" subTitle:message closeButtonTitle:nil duration:0.0f];
 }
 @end
