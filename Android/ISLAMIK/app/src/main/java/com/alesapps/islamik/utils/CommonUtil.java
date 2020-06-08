@@ -84,7 +84,7 @@ public class CommonUtil {
 	}
 
 	public static int GetApplicationFee(double total) {
-		Double application_fee = total * 0.05;
+		Double application_fee = total * 0.1;
 		return (int) (application_fee * 100);
 	}
 }

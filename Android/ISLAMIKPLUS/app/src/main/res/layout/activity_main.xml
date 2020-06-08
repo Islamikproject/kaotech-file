@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
         android:orientation="horizontal" >
         <LinearLayout
             android:id="@+id/layout_jumah"
@@ -53,7 +54,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_very_large"
+        android:layout_marginTop="@dimen/margin_really_large"
         android:orientation="horizontal" >
         <LinearLayout
             android:id="@+id/layout_donation"

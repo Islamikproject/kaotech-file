@@ -38,9 +38,12 @@ public class VerseActivity extends BaseActionBarActivity implements View.OnClick
 
 	private String getValue(int index) {
 		String[] verseArray = getResources().getStringArray(AppConstant.VERSE_ARRAY[index]);
-		String value = "@\"" + verseArray[0] + "\"";
-		for (int i = 1; i < verseArray.length; i ++) {
-			value = value + ", " + "@\"" + verseArray[i] + "\"";
+		String value = "";
+		for (int i = 0; i < verseArray.length; i ++) {
+			if (i == 0)
+				value = "@\"" + verseArray[i] + "\"";
+			else
+				value = value + ", " + "@\"" + verseArray[i] + "\"";
 		}
 		return value;
 	}

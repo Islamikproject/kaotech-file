@@ -24,7 +24,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 
 		instance = this;
 		SetTitle(null, 0);
-		ShowActionBarIcons(true, R.id.action_logout, R.id.action_language);
+		ShowActionBarIcons(true, R.id.action_logout);
 		setContentView(R.layout.activity_main);
 		findViewById(R.id.layout_jumah).setOnClickListener(this);
 		findViewById(R.id.layout_regular).setOnClickListener(this);
