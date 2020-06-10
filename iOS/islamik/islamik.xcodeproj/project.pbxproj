@@ -382,6 +382,7 @@
 		7869B868247DBC8A00A5DE6E /* QuranDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuranDetailViewController.h; sourceTree = "<group>"; };
 		7869B869247DBC8A00A5DE6E /* QuranDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuranDetailViewController.m; sourceTree = "<group>"; };
 		78A21CAA2483713A00A1C3A5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		78EC58A62490DB8100386FC6 /* ISLAMIK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ISLAMIK.entitlements; sourceTree = "<group>"; };
 		78EDA0732478FE650082D0A7 /* SermonListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListViewController.h; sourceTree = "<group>"; };
 		78EDA0742478FE650082D0A7 /* SermonListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListViewController.m; sourceTree = "<group>"; };
 		78EDA0762478FEC90082D0A7 /* SermonListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SermonListCell.h; sourceTree = "<group>"; };
@@ -456,6 +457,7 @@
 		780F61FD24786C7B0027CDB4 /* islamik */ = {
 			isa = PBXGroup;
 			children = (
+				78EC58A62490DB8100386FC6 /* ISLAMIK.entitlements */,
 				780F632E247874C50027CDB4 /* Util */,
 				780F62F3247873C00027CDB4 /* Resource */,
 				780F62F2247871E40027CDB4 /* ViewController */,
@@ -1326,6 +1328,7 @@
 			baseConfigurationReference = 9140EC52818183F0CE456494 /* Pods-islamik.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
@@ -1350,6 +1353,7 @@
 			baseConfigurationReference = 2C64822167334A118E93EB38 /* Pods-islamik.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
