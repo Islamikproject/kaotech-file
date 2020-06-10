@@ -8,11 +8,12 @@
 
 #import "PaymentViewController.h"
 #import "MainViewController.h"
+#import <WebKit/WebKit.h>
 
 @interface PaymentViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnBack;
 @property (weak, nonatomic) IBOutlet UIButton *btnDone;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
 
 @end
 

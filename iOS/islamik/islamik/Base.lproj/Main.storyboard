@@ -851,20 +851,20 @@
                                 <rect key="frame" x="0.0" y="104" width="414" height="792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFk-So-Aqv">
-                                        <rect key="frame" x="72" y="50" width="270" height="120"/>
+                                        <rect key="frame" x="30" y="50" width="354" height="120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="181-XB-7gV">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_training.png" translatesAutoresizingMaskIntoConstraints="NO" id="wBS-xN-wLP">
-                                                        <rect key="frame" x="15" y="0.0" width="90" height="90"/>
+                                                        <rect key="frame" x="43.5" y="0.0" width="90" height="90"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="90" id="AxH-Z8-0oN"/>
                                                             <constraint firstAttribute="width" secondItem="wBS-xN-wLP" secondAttribute="height" multiplier="1:1" id="abh-7h-O8g"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaz-Wl-YJs">
-                                                        <rect key="frame" x="18.5" y="90" width="83" height="33.5"/>
+                                                        <rect key="frame" x="47" y="90" width="83" height="33.5"/>
                                                         <string key="text">JUMAH AND
 SERMON</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -872,7 +872,7 @@ SERMON</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpZ-Ij-dR2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                         <connections>
                                                             <action selector="onSermonClick:" destination="goN-ub-pJ3" eventType="touchUpInside" id="0Wt-ZX-c0t"/>
                                                         </connections>
@@ -886,30 +886,29 @@ SERMON</string>
                                                     <constraint firstItem="Xaz-Wl-YJs" firstAttribute="centerX" secondItem="181-XB-7gV" secondAttribute="centerX" id="gPl-gb-eks"/>
                                                     <constraint firstAttribute="trailing" secondItem="BpZ-Ij-dR2" secondAttribute="trailing" id="i6I-0C-O8B"/>
                                                     <constraint firstItem="wBS-xN-wLP" firstAttribute="centerX" secondItem="181-XB-7gV" secondAttribute="centerX" id="pvR-ep-ooo"/>
-                                                    <constraint firstAttribute="width" constant="120" id="rMX-uA-j5N"/>
                                                     <constraint firstItem="BpZ-Ij-dR2" firstAttribute="top" secondItem="181-XB-7gV" secondAttribute="top" id="wbA-vm-QNs"/>
                                                     <constraint firstItem="wBS-xN-wLP" firstAttribute="top" secondItem="181-XB-7gV" secondAttribute="top" id="x1H-qI-p5R"/>
                                                     <constraint firstItem="Xaz-Wl-YJs" firstAttribute="top" secondItem="wBS-xN-wLP" secondAttribute="bottom" id="yjQ-6q-JkP"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1K-aq-DUm">
-                                                <rect key="frame" x="150" y="0.0" width="120" height="120"/>
+                                                <rect key="frame" x="177" y="0.0" width="177" height="120"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_prayers.png" translatesAutoresizingMaskIntoConstraints="NO" id="kD5-5j-QrT">
-                                                        <rect key="frame" x="15" y="0.0" width="90" height="90"/>
+                                                        <rect key="frame" x="43.5" y="0.0" width="90" height="90"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="90" id="IbU-CJ-npw"/>
                                                             <constraint firstAttribute="width" secondItem="kD5-5j-QrT" secondAttribute="height" multiplier="1:1" id="Vu6-fp-3fj"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAILY PRAYERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4Y-2N-Azd">
-                                                        <rect key="frame" x="8.5" y="90" width="103" height="17"/>
+                                                        <rect key="frame" x="37" y="90" width="103" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.054901960780000002" green="0.3803921569" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2X-VY-Moc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                         <connections>
                                                             <action selector="onPrayersClick:" destination="goN-ub-pJ3" eventType="touchUpInside" id="fWM-kD-PdK"/>
                                                         </connections>
@@ -924,7 +923,6 @@ SERMON</string>
                                                     <constraint firstItem="r2X-VY-Moc" firstAttribute="top" secondItem="p1K-aq-DUm" secondAttribute="top" id="VcP-n6-etS"/>
                                                     <constraint firstItem="b4Y-2N-Azd" firstAttribute="top" secondItem="kD5-5j-QrT" secondAttribute="bottom" id="afi-5W-peN"/>
                                                     <constraint firstAttribute="bottom" secondItem="r2X-VY-Moc" secondAttribute="bottom" id="kLg-oV-KVw"/>
-                                                    <constraint firstAttribute="width" constant="120" id="sfo-Nz-KyP"/>
                                                     <constraint firstItem="kD5-5j-QrT" firstAttribute="centerX" secondItem="p1K-aq-DUm" secondAttribute="centerX" id="tFz-Yk-sXO"/>
                                                     <constraint firstItem="b4Y-2N-Azd" firstAttribute="centerX" secondItem="p1K-aq-DUm" secondAttribute="centerX" id="uQA-ql-o8n"/>
                                                 </constraints>
@@ -934,27 +932,28 @@ SERMON</string>
                                         <constraints>
                                             <constraint firstItem="p1K-aq-DUm" firstAttribute="centerY" secondItem="QFk-So-Aqv" secondAttribute="centerY" id="5gJ-Dt-4wF"/>
                                             <constraint firstItem="181-XB-7gV" firstAttribute="centerY" secondItem="QFk-So-Aqv" secondAttribute="centerY" id="C5C-nL-Ts6"/>
+                                            <constraint firstItem="181-XB-7gV" firstAttribute="width" secondItem="QFk-So-Aqv" secondAttribute="width" multiplier="1:2" id="Q6Y-1Q-H57"/>
                                             <constraint firstAttribute="height" constant="120" id="RRA-C5-RvE"/>
-                                            <constraint firstAttribute="width" constant="270" id="VYv-vi-KUT"/>
                                             <constraint firstItem="181-XB-7gV" firstAttribute="leading" secondItem="QFk-So-Aqv" secondAttribute="leading" id="Xk0-eT-NzM"/>
+                                            <constraint firstItem="p1K-aq-DUm" firstAttribute="width" secondItem="QFk-So-Aqv" secondAttribute="width" multiplier="1:2" id="cLa-hd-fVQ"/>
                                             <constraint firstAttribute="trailing" secondItem="p1K-aq-DUm" secondAttribute="trailing" id="caA-Z5-GbY"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYJ-bd-z1J">
-                                        <rect key="frame" x="72" y="200" width="270" height="120"/>
+                                        <rect key="frame" x="30" y="220" width="354" height="120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZd-pX-iZv">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_salat.png" translatesAutoresizingMaskIntoConstraints="NO" id="0dK-aZ-Ydv">
-                                                        <rect key="frame" x="15" y="0.0" width="90" height="90"/>
+                                                        <rect key="frame" x="43.5" y="0.0" width="90" height="90"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="0dK-aZ-Ydv" secondAttribute="height" multiplier="1:1" id="Oa6-ih-w9H"/>
                                                             <constraint firstAttribute="height" constant="90" id="PZM-fb-v4K"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIs-lt-oqZ">
-                                                        <rect key="frame" x="20.5" y="90" width="79.5" height="33.5"/>
+                                                        <rect key="frame" x="49" y="90" width="79.5" height="33.5"/>
                                                         <string key="text">SALAT LAYL
 TAHAJJUD</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -962,7 +961,7 @@ TAHAJJUD</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNJ-rI-VEN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                         <connections>
                                                             <action selector="onSalatClick:" destination="goN-ub-pJ3" eventType="touchUpInside" id="PSA-KV-ZJc"/>
                                                         </connections>
@@ -977,29 +976,28 @@ TAHAJJUD</string>
                                                     <constraint firstAttribute="bottom" secondItem="QNJ-rI-VEN" secondAttribute="bottom" id="P1S-bD-JjM"/>
                                                     <constraint firstItem="QNJ-rI-VEN" firstAttribute="top" secondItem="UZd-pX-iZv" secondAttribute="top" id="UD0-ak-IZ7"/>
                                                     <constraint firstItem="0dK-aZ-Ydv" firstAttribute="top" secondItem="UZd-pX-iZv" secondAttribute="top" id="US3-DN-s0g"/>
-                                                    <constraint firstAttribute="width" constant="120" id="jfo-gV-aE8"/>
                                                     <constraint firstAttribute="height" constant="120" id="wnV-Nd-zmm"/>
                                                     <constraint firstItem="0dK-aZ-Ydv" firstAttribute="centerX" secondItem="UZd-pX-iZv" secondAttribute="centerX" id="xQQ-h7-2vv"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhD-RV-25K">
-                                                <rect key="frame" x="150" y="0.0" width="120" height="120"/>
+                                                <rect key="frame" x="177" y="0.0" width="177" height="120"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_jumah.png" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-ka-vPy">
-                                                        <rect key="frame" x="15" y="0.0" width="90" height="90"/>
+                                                        <rect key="frame" x="43.5" y="0.0" width="90" height="90"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="gIV-ka-vPy" secondAttribute="height" multiplier="1:1" id="Jpa-Vg-vrw"/>
                                                             <constraint firstAttribute="height" constant="90" id="x9h-0M-qYF"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUMAH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaA-hj-teR">
-                                                        <rect key="frame" x="35.5" y="90" width="49.5" height="17"/>
+                                                        <rect key="frame" x="64" y="90" width="49.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.054901960780000002" green="0.3803921569" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS6-yS-soD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                         <connections>
                                                             <action selector="onJumahClick:" destination="goN-ub-pJ3" eventType="touchUpInside" id="Vnq-zk-f43"/>
                                                         </connections>
@@ -1008,7 +1006,6 @@ TAHAJJUD</string>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="RS6-yS-soD" secondAttribute="trailing" id="8KZ-Vo-1sJ"/>
-                                                    <constraint firstAttribute="width" constant="120" id="9TI-nU-RzD"/>
                                                     <constraint firstItem="OaA-hj-teR" firstAttribute="top" secondItem="gIV-ka-vPy" secondAttribute="bottom" id="9dh-Aj-RY9"/>
                                                     <constraint firstAttribute="height" constant="120" id="Ey4-ag-3wf"/>
                                                     <constraint firstItem="gIV-ka-vPy" firstAttribute="centerX" secondItem="VhD-RV-25K" secondAttribute="centerX" id="KE1-op-R4t"/>
@@ -1025,32 +1022,33 @@ TAHAJJUD</string>
                                             <constraint firstAttribute="trailing" secondItem="VhD-RV-25K" secondAttribute="trailing" id="6K4-bI-DV4"/>
                                             <constraint firstAttribute="height" constant="120" id="Y2T-We-uJT"/>
                                             <constraint firstItem="UZd-pX-iZv" firstAttribute="leading" secondItem="yYJ-bd-z1J" secondAttribute="leading" id="ZgM-VG-wmh"/>
-                                            <constraint firstAttribute="width" constant="270" id="nPJ-lY-aNq"/>
+                                            <constraint firstItem="UZd-pX-iZv" firstAttribute="width" secondItem="yYJ-bd-z1J" secondAttribute="width" multiplier="1:2" id="fB9-v3-3Wm"/>
+                                            <constraint firstItem="VhD-RV-25K" firstAttribute="width" secondItem="yYJ-bd-z1J" secondAttribute="width" multiplier="1:2" id="hcV-o0-glJ"/>
                                             <constraint firstItem="VhD-RV-25K" firstAttribute="centerY" secondItem="yYJ-bd-z1J" secondAttribute="centerY" id="qvh-ft-fxE"/>
                                             <constraint firstItem="UZd-pX-iZv" firstAttribute="centerY" secondItem="yYJ-bd-z1J" secondAttribute="centerY" id="y9F-ld-53y"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlm-b5-hii">
-                                        <rect key="frame" x="72" y="350" width="270" height="120"/>
+                                        <rect key="frame" x="30" y="390" width="354" height="120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYK-8W-t8h">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nafilah.png" translatesAutoresizingMaskIntoConstraints="NO" id="Czn-jE-syG">
-                                                        <rect key="frame" x="15" y="0.0" width="90" height="90"/>
+                                                        <rect key="frame" x="43.5" y="0.0" width="90" height="90"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="90" id="NOq-R6-nLK"/>
                                                             <constraint firstAttribute="width" secondItem="Czn-jE-syG" secondAttribute="height" multiplier="1:1" id="SXa-iH-ZNH"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAFILAH" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4a-MH-Aqh">
-                                                        <rect key="frame" x="31" y="90" width="58.5" height="17"/>
+                                                        <rect key="frame" x="59.5" y="90" width="58.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.054901960780000002" green="0.3803921569" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlX-ow-lle">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                         <connections>
                                                             <action selector="onNafilahClick:" destination="goN-ub-pJ3" eventType="touchUpInside" id="7lJ-cj-8gX"/>
                                                         </connections>
@@ -1059,7 +1057,6 @@ TAHAJJUD</string>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="Pxc-qT-OKB"/>
-                                                    <constraint firstAttribute="width" constant="120" id="U9X-FE-vZA"/>
                                                     <constraint firstItem="Czn-jE-syG" firstAttribute="top" secondItem="YYK-8W-t8h" secondAttribute="top" id="Vgm-He-Ioe"/>
                                                     <constraint firstAttribute="trailing" secondItem="xlX-ow-lle" secondAttribute="trailing" id="Z8a-2D-EfT"/>
                                                     <constraint firstItem="S4a-MH-Aqh" firstAttribute="top" secondItem="Czn-jE-syG" secondAttribute="bottom" id="dG1-82-74D"/>
@@ -1071,23 +1068,23 @@ TAHAJJUD</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4TB-bh-aXU">
-                                                <rect key="frame" x="150" y="0.0" width="120" height="120"/>
+                                                <rect key="frame" x="177" y="0.0" width="177" height="120"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_quran.png" translatesAutoresizingMaskIntoConstraints="NO" id="nGG-7h-ImY">
-                                                        <rect key="frame" x="15" y="0.0" width="90" height="90"/>
+                                                        <rect key="frame" x="43.5" y="0.0" width="90" height="90"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="nGG-7h-ImY" secondAttribute="height" multiplier="1:1" id="8oW-Vn-zO5"/>
                                                             <constraint firstAttribute="height" constant="90" id="EQL-AF-y8S"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QURAN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvO-IM-9HM">
-                                                        <rect key="frame" x="35.5" y="90" width="49.5" height="17"/>
+                                                        <rect key="frame" x="64" y="90" width="49.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.054901960780000002" green="0.3803921569" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjA-Qd-PXj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="120"/>
                                                         <connections>
                                                             <action selector="onQuranClick:" destination="goN-ub-pJ3" eventType="touchUpInside" id="0FQ-fI-wli"/>
                                                         </connections>
@@ -1102,7 +1099,6 @@ TAHAJJUD</string>
                                                     <constraint firstItem="nGG-7h-ImY" firstAttribute="centerX" secondItem="4TB-bh-aXU" secondAttribute="centerX" id="VIa-up-cTR"/>
                                                     <constraint firstAttribute="trailing" secondItem="mjA-Qd-PXj" secondAttribute="trailing" id="WEH-JF-iJV"/>
                                                     <constraint firstItem="fvO-IM-9HM" firstAttribute="top" secondItem="nGG-7h-ImY" secondAttribute="bottom" id="ZHq-RG-OEl"/>
-                                                    <constraint firstAttribute="width" constant="120" id="f3e-Ta-euH"/>
                                                     <constraint firstItem="nGG-7h-ImY" firstAttribute="top" secondItem="4TB-bh-aXU" secondAttribute="top" id="lhO-oc-64d"/>
                                                     <constraint firstAttribute="height" constant="120" id="wLV-zp-mSn"/>
                                                 </constraints>
@@ -1111,22 +1107,26 @@ TAHAJJUD</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="4TB-bh-aXU" secondAttribute="trailing" id="87x-yq-p1T"/>
+                                            <constraint firstItem="4TB-bh-aXU" firstAttribute="width" secondItem="Wlm-b5-hii" secondAttribute="width" multiplier="1:2" id="GMT-jR-Xfp"/>
                                             <constraint firstItem="YYK-8W-t8h" firstAttribute="leading" secondItem="Wlm-b5-hii" secondAttribute="leading" id="O1i-qM-WvO"/>
                                             <constraint firstItem="YYK-8W-t8h" firstAttribute="centerY" secondItem="Wlm-b5-hii" secondAttribute="centerY" id="ONr-R8-miO"/>
                                             <constraint firstItem="4TB-bh-aXU" firstAttribute="centerY" secondItem="Wlm-b5-hii" secondAttribute="centerY" id="TNb-ka-KW7"/>
-                                            <constraint firstAttribute="width" constant="270" id="Vsa-pc-7Eu"/>
                                             <constraint firstAttribute="height" constant="120" id="Xgs-tU-2yK"/>
+                                            <constraint firstItem="YYK-8W-t8h" firstAttribute="width" secondItem="Wlm-b5-hii" secondAttribute="width" multiplier="1:2" id="cU4-Iu-VVm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="yYJ-bd-z1J" firstAttribute="centerX" secondItem="WaW-e6-Gve" secondAttribute="centerX" id="8XE-sk-1h9"/>
-                                    <constraint firstItem="Wlm-b5-hii" firstAttribute="top" secondItem="yYJ-bd-z1J" secondAttribute="bottom" constant="30" id="9lq-SJ-0Rb"/>
+                                    <constraint firstItem="Wlm-b5-hii" firstAttribute="top" secondItem="yYJ-bd-z1J" secondAttribute="bottom" constant="50" id="9lq-SJ-0Rb"/>
                                     <constraint firstItem="QFk-So-Aqv" firstAttribute="centerX" secondItem="WaW-e6-Gve" secondAttribute="centerX" id="Bsr-Z6-O2X"/>
+                                    <constraint firstItem="Wlm-b5-hii" firstAttribute="leading" secondItem="WaW-e6-Gve" secondAttribute="leading" constant="30" id="DgB-2j-G2n"/>
                                     <constraint firstItem="QFk-So-Aqv" firstAttribute="top" secondItem="WaW-e6-Gve" secondAttribute="top" constant="50" id="JZ6-tX-Gt4"/>
-                                    <constraint firstItem="yYJ-bd-z1J" firstAttribute="top" secondItem="QFk-So-Aqv" secondAttribute="bottom" constant="30" id="PcD-Sn-RIH"/>
+                                    <constraint firstItem="yYJ-bd-z1J" firstAttribute="top" secondItem="QFk-So-Aqv" secondAttribute="bottom" constant="50" id="PcD-Sn-RIH"/>
+                                    <constraint firstItem="QFk-So-Aqv" firstAttribute="leading" secondItem="WaW-e6-Gve" secondAttribute="leading" constant="30" id="aek-p1-I4T"/>
                                     <constraint firstItem="Wlm-b5-hii" firstAttribute="centerX" secondItem="WaW-e6-Gve" secondAttribute="centerX" id="sBO-4x-a5C"/>
+                                    <constraint firstItem="yYJ-bd-z1J" firstAttribute="leading" secondItem="WaW-e6-Gve" secondAttribute="leading" constant="30" id="y48-I1-5uw"/>
                                 </constraints>
                             </view>
                         </subviews>

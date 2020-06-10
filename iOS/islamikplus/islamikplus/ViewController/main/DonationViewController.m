@@ -218,7 +218,7 @@
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (succeeded) {
-            NSString *message = [NSString stringWithFormat:@"Dear ISLAMIK users, « %@ » just launched a fundraising campaign to « %@ » and is seeking a total amount of « %@ »", mosque, reason, amount];
+            NSString *message = [NSString stringWithFormat:@"Dear ISLAMIK users, « %@ » just launched a fundraising campaign to « %@ » and is seeking a total amount of « $%@ »", mosque, reason, amount];
             [Util sendPushAllNotification:message type:TYPE_RAISE];
             [self initialize:1];
         }else{

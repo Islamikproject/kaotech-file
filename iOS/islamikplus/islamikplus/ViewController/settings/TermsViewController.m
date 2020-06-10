@@ -7,10 +7,12 @@
 //
 
 #import "TermsViewController.h"
+#import <WebKit/WebKit.h>
 
 @interface TermsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
+
 @end
 
 @implementation TermsViewController

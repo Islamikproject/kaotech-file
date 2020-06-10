@@ -68,7 +68,7 @@
     
     NSString *description = [NSString stringWithFormat:@"%@ paid to %@",senderName, receiverName];
     NSString *amount = [NSString stringWithFormat:@"%d", (int)([self.edtAmount.text floatValue] * 100)];
-    NSString *application_fee = [NSString stringWithFormat:@"%d", (int)([self.edtAmount.text floatValue] * 0.05 * 100)];
+    NSString *application_fee = [NSString stringWithFormat:@"%d", (int)([self.edtAmount.text floatValue] * 0.1 * 100)];
     NSString *accountId = self.mSermonObj[PARSE_OWNER][PARSE_ACCOUNT_ID];
     NSMutableDictionary *metadata = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                      @"iOS", @"DeviceType",

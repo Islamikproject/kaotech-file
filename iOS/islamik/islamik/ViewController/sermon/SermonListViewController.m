@@ -9,6 +9,7 @@
 #import "SermonListViewController.h"
 #import "VideoViewController.h"
 #import "SermonListCell.h"
+#import "DonationViewController.h"
 
 @interface SermonListViewController () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -90,6 +91,10 @@
     NSString *url = sermonObj[PARSE_VIDEO];
     if (url != nil && url.length > 0) {
         VideoViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"VideoViewController"];
+        controller.mSermonObj = sermonObj;
+        [self.navigationController pushViewController:controller animated:YES];
+    } else {
+        DonationViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DonationViewController"];
         controller.mSermonObj = sermonObj;
         [self.navigationController pushViewController:controller animated:YES];
     }
