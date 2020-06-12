@@ -118,9 +118,9 @@ PODS:
   - NSString-UrlEncode (2.1.0)
   - PromisesObjC (1.2.9)
   - Reachability (3.2)
-  - SDWebImage (5.8.0):
-    - SDWebImage/Core (= 5.8.0)
-  - SDWebImage/Core (5.8.0)
+  - SDWebImage (5.8.1):
+    - SDWebImage/Core (= 5.8.1)
+  - SDWebImage/Core (5.8.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -206,7 +206,7 @@ SPEC CHECKSUMS:
   NSString-UrlEncode: 92dcb01cac33ef036cda76baf0e4378b18779e47
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
 PODFILE CHECKSUM: 7c827dfb5b97e62ba540527905f15b6212210954
