@@ -61,4 +61,27 @@
         }
     }
 }
+
+- (IBAction)onDeleteClick:(id)sender {
+    NSString *msg = @"Are you sure you want to delete this sermon?";
+    SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+    alert.customViewColor = MAIN_COLOR;
+    alert.horizontalButtons = YES;
+    [alert addButton:@"No" actionBlock:^(void) {
+    }];
+    [alert addButton:@"Yes" actionBlock:^(void) {
+        [SVProgressHUD showWithStatus:@"Please wait..." maskType:SVProgressHUDMaskTypeGradient];
+        self.mSermonObj[PARSE_IS_DELETE] = [NSNumber numberWithBool:YES];
+        [self.mSermonObj saveInBackgroundWithBlock:^(BOOL success, NSError* error){
+            [SVProgressHUD dismiss];
+            if (error) {
+                [Util showAlertTitle:self title:@"Error" message:[error localizedDescription]];
+            } else {
+                [self onBack:nil];
+            }
+        }];
+    }];
+    [alert showQuestion:@"Delete" subTitle:msg closeButtonTitle:nil duration:0.0f];
+}
+
 @end

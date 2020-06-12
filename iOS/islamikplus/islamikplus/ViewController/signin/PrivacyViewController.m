@@ -8,9 +8,10 @@
 
 #import "PrivacyViewController.h"
 #import "LoginViewController.h"
+#import <WebKit/WebKit.h>
 
 @interface PrivacyViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
 @end
 
 @implementation PrivacyViewController
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"PrivacyPolicy" ofType:@"html"];
+    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"TermsConditions" ofType:@"html"];
     NSURL *instructionsURL = [NSURL fileURLWithPath:htmlFile];
     [self.webView loadRequest:[NSURLRequest requestWithURL:instructionsURL]];
 }

@@ -40,6 +40,7 @@ enum {
 #define PARSE_VIDEO                                             @"video"
 #define PARSE_VIDEO_NAME                                        @"videoName"
 #define PARSE_RAISER                                            @"raiser"
+#define PARSE_IS_DELETE                                         @"isDelete"
 
 #define PARSE_TO_USER                                           @"toUser"
 #define PARSE_AMOUNT                                            @"amount"

@@ -213,6 +213,7 @@
     object[PARSE_AMOUNT] = amount;
     object[PARSE_VIDEO] = @"";
     object[PARSE_VIDEO_NAME] = @"";
+    object[PARSE_IS_DELETE] = [NSNumber numberWithBool:NO];
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
