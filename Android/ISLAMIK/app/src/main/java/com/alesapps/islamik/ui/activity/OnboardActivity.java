@@ -23,7 +23,6 @@ public class OnboardActivity extends BaseActionBarActivity implements View.OnCli
 		super.onClick(view);
 		switch (view.getId()) {
 			case R.id.action_next:
-				AppPreference.setBool(AppPreference.KEY.AGREE, true);
 				startActivity(new Intent(instance, TermsConditionActivity.class));
 				break;
 		}

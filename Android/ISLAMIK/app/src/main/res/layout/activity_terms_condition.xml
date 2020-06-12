@@ -17,4 +17,11 @@
             android:textColor="@color/black"
             android:textSize="@dimen/textsize_normal" />
     </ScrollView>
+    <Button
+        android:id="@+id/btn_agree"
+        style="@style/normalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:text="@string/i_agree"/>
 </LinearLayout>
