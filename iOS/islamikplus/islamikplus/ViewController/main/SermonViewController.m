@@ -152,6 +152,7 @@ static SermonViewController *_sharedViewController = nil;
     object[PARSE_MOSQUE] = @"";
     object[PARSE_VIDEO] = videoPath;
     object[PARSE_VIDEO_NAME] = videoName;
+    object[PARSE_IS_DELETE] = [NSNumber numberWithBool:NO];
     
     int index = [self.edtAmount.selectedItem intValue];
     object[PARSE_AMOUNT] = ARRAY_AMOUNT[index];
