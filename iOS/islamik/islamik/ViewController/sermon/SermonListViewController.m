@@ -35,6 +35,7 @@
 
     PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_SERMON];
     [query whereKey:PARSE_OWNER equalTo:self.mUserObj];
+    [query whereKey:PARSE_IS_DELETE notEqualTo:[NSNumber numberWithBool:YES]];
     [query includeKey:PARSE_OWNER];
     [query orderByDescending:PARSE_FIELD_CREATED_AT];
     [query setLimit:1000];

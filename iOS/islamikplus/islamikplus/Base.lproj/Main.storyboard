@@ -38,24 +38,11 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFN-F4-jNu">
-                                        <rect key="frame" x="329" y="14" width="34" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onAgreeClick:" destination="qtE-9l-iMO" eventType="touchUpInside" id="hAC-ge-9A9"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="YFN-F4-jNu" firstAttribute="centerY" secondItem="226-SZ-YLf" secondAttribute="centerY" id="Jtp-xw-olo"/>
-                                    <constraint firstAttribute="trailing" secondItem="YFN-F4-jNu" secondAttribute="trailing" constant="12" id="KCD-Za-lwF"/>
                                     <constraint firstItem="aXQ-xF-Kzl" firstAttribute="centerX" secondItem="226-SZ-YLf" secondAttribute="centerX" id="RKV-DA-fky"/>
                                     <constraint firstItem="aXQ-xF-Kzl" firstAttribute="centerY" secondItem="226-SZ-YLf" secondAttribute="centerY" id="ct0-fH-jzU"/>
-                                    <constraint firstItem="YFN-F4-jNu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aXQ-xF-Kzl" secondAttribute="trailing" constant="8" symbolic="YES" id="oMy-sj-2Qe"/>
                                     <constraint firstAttribute="height" constant="60" id="s4t-wl-Z0h"/>
                                 </constraints>
                             </view>
@@ -63,20 +50,37 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="708"/>
                                 <subviews>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHf-i0-vZH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="708"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="620"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3A-gH-jaP">
+                                        <rect key="frame" x="30" y="628" width="315" height="50"/>
+                                        <color key="backgroundColor" red="0.054901960780000002" green="0.3803921569" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TuB-yK-ebb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="I agree">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onAgreeClick:" destination="qtE-9l-iMO" eventType="touchUpInside" id="WxL-JT-SJx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bHf-i0-vZH" firstAttribute="top" secondItem="eis-DE-Hgd" secondAttribute="top" id="Bd9-o2-8k3"/>
-                                    <constraint firstAttribute="bottom" secondItem="bHf-i0-vZH" secondAttribute="bottom" id="iNp-wk-hAU"/>
+                                    <constraint firstAttribute="bottom" secondItem="c3A-gH-jaP" secondAttribute="bottom" constant="30" id="Xy2-te-q4g"/>
+                                    <constraint firstItem="c3A-gH-jaP" firstAttribute="top" secondItem="bHf-i0-vZH" secondAttribute="bottom" constant="8" id="e9U-Vu-Epa"/>
+                                    <constraint firstItem="c3A-gH-jaP" firstAttribute="centerX" secondItem="eis-DE-Hgd" secondAttribute="centerX" id="eQf-oh-T0R"/>
                                     <constraint firstAttribute="trailing" secondItem="bHf-i0-vZH" secondAttribute="trailing" id="m51-2V-8GH"/>
                                     <constraint firstItem="bHf-i0-vZH" firstAttribute="leading" secondItem="eis-DE-Hgd" secondAttribute="leading" id="vdX-qn-DgF"/>
+                                    <constraint firstItem="c3A-gH-jaP" firstAttribute="leading" secondItem="eis-DE-Hgd" secondAttribute="leading" constant="30" id="wHZ-hH-96g"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -886,7 +890,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWA-QR-GMs">
-                                        <rect key="frame" x="316" y="14" width="47" height="32"/>
+                                        <rect key="frame" x="308" y="14" width="47" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Delete">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -901,7 +905,7 @@
                                     <constraint firstItem="TWA-QR-GMs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UC4-Ym-D2b" secondAttribute="trailing" constant="8" symbolic="YES" id="3xR-aU-0du"/>
                                     <constraint firstItem="UC4-Ym-D2b" firstAttribute="centerX" secondItem="FHk-HW-UKq" secondAttribute="centerX" id="Gdw-Fk-HYE"/>
                                     <constraint firstItem="UC4-Ym-D2b" firstAttribute="centerY" secondItem="FHk-HW-UKq" secondAttribute="centerY" id="LO9-ee-jGW"/>
-                                    <constraint firstAttribute="trailing" secondItem="TWA-QR-GMs" secondAttribute="trailing" constant="12" id="QRV-dX-HzS"/>
+                                    <constraint firstAttribute="trailing" secondItem="TWA-QR-GMs" secondAttribute="trailing" constant="20" id="QRV-dX-HzS"/>
                                     <constraint firstItem="1Y4-y6-HTx" firstAttribute="centerY" secondItem="FHk-HW-UKq" secondAttribute="centerY" id="U3m-hz-om2"/>
                                     <constraint firstItem="TWA-QR-GMs" firstAttribute="centerY" secondItem="FHk-HW-UKq" secondAttribute="centerY" id="ias-f4-prf"/>
                                     <constraint firstItem="1Y4-y6-HTx" firstAttribute="leading" secondItem="FHk-HW-UKq" secondAttribute="leading" constant="8" id="nrt-d9-zkx"/>

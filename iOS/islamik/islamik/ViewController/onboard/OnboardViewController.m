@@ -7,7 +7,7 @@
 //
 
 #import "OnboardViewController.h"
-#import "MainViewController.h"
+#import "TermsViewController.h"
 
 @interface OnboardViewController ()
 
@@ -30,11 +30,8 @@
 }
 */
 - (IBAction)onNextClick:(id)sender {
-    NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
-     [userDefault setBool:YES forKey:SYSTEM_KEY_AGREE];
-     [userDefault synchronize];
-     MainViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
-     [self.navigationController pushViewController:controller animated:YES];
+    TermsViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TermsViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

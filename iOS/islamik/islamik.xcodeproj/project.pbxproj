@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A816C3A2493735E0086C968 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A816C392493735E0086C968 /* TermsViewController.m */; };
+		5A816C3E249377A40086C968 /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3C249377A40086C968 /* PrivacyPolicy.html */; };
+		5A816C3F249377A40086C968 /* TermsConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3D249377A40086C968 /* TermsConditions.html */; };
 		78008902247CC546007CAB87 /* FajrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78008901247CC546007CAB87 /* FajrDetailViewController.m */; };
 		7800AC31247D0770006F47B5 /* ZuhrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */; };
 		7800AC34247D0E98006F47B5 /* MaghribDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */; };
@@ -156,6 +159,10 @@
 /* Begin PBXFileReference section */
 		2C64822167334A118E93EB38 /* Pods-islamik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-islamik.release.xcconfig"; path = "Target Support Files/Pods-islamik/Pods-islamik.release.xcconfig"; sourceTree = "<group>"; };
 		30E37A2F5930F4EB511DB3E2 /* Pods_islamik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_islamik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A816C382493735E0086C968 /* TermsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
+		5A816C392493735E0086C968 /* TermsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
+		5A816C3C249377A40086C968 /* PrivacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
+		5A816C3D249377A40086C968 /* TermsConditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TermsConditions.html; sourceTree = "<group>"; };
 		78008900247CC546007CAB87 /* FajrDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FajrDetailViewController.h; sourceTree = "<group>"; };
 		78008901247CC546007CAB87 /* FajrDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FajrDetailViewController.m; sourceTree = "<group>"; };
 		7800AC2F247D0770006F47B5 /* ZuhrDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZuhrDetailViewController.h; sourceTree = "<group>"; };
@@ -434,6 +441,15 @@
 				2C64822167334A118E93EB38 /* Pods-islamik.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A816C3B249377A40086C968 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				5A816C3C249377A40086C968 /* PrivacyPolicy.html */,
+				5A816C3D249377A40086C968 /* TermsConditions.html */,
+			);
+			path = html;
 			sourceTree = "<group>";
 		};
 		780F61F224786C7B0027CDB4 = {
@@ -738,6 +754,7 @@
 		780F62F3247873C00027CDB4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5A816C3B249377A40086C968 /* html */,
 				78F681CC247C946200B6B955 /* img_circle.png */,
 				78F681C7247C428900B6B955 /* ic_dropdown.png */,
 				780F630C247874010027CDB4 /* app_icon.png */,
@@ -838,6 +855,8 @@
 			children = (
 				780F633E247875480027CDB4 /* OnboardViewController.h */,
 				780F633F247875480027CDB4 /* OnboardViewController.m */,
+				5A816C382493735E0086C968 /* TermsViewController.h */,
+				5A816C392493735E0086C968 /* TermsViewController.m */,
 			);
 			path = onboard;
 			sourceTree = "<group>";
@@ -985,6 +1004,7 @@
 			files = (
 				781633552484F0C70073D07B /* LICENSE in Resources */,
 				780F6311247874020027CDB4 /* check_off.png in Resources */,
+				5A816C3F249377A40086C968 /* TermsConditions.html in Resources */,
 				780F620E24786C7C0027CDB4 /* LaunchScreen.storyboard in Resources */,
 				780F631C247874020027CDB4 /* com_loading_arrow.png in Resources */,
 				78F681C8247C428900B6B955 /* ic_dropdown.png in Resources */,
@@ -1005,6 +1025,7 @@
 				780F632A247874020027CDB4 /* img_text_logo.png in Resources */,
 				780F631D247874020027CDB4 /* img_prayers.png in Resources */,
 				780F6314247874020027CDB4 /* ic_action_back.png in Resources */,
+				5A816C3E249377A40086C968 /* PrivacyPolicy.html in Resources */,
 				780F6326247874020027CDB4 /* img_zikr.png in Resources */,
 				780F632D247874020027CDB4 /* ic_action_language.png in Resources */,
 				780F631A247874020027CDB4 /* img_salat.png in Resources */,
@@ -1096,6 +1117,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A816C3A2493735E0086C968 /* TermsViewController.m in Sources */,
 				780F62AA247870D90027CDB4 /* JSQMessagesCollectionViewFlowLayout.m in Sources */,
 				78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */,
 				780F62DC247870D90027CDB4 /* SCLAlertViewResponder.m in Sources */,
