@@ -26,6 +26,7 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 	public View action_button_back;
 	public View action_button_logout;
 	public TextView action_text_next;
+	public TextView action_text_delete;
 	public View action_button_language;
 	public View action_button_add;
 	public View action_button_done;
@@ -67,6 +68,8 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_button_logout.setVisibility(View.GONE);
 			action_text_next = v.findViewById(R.id.action_next);
 			action_text_next.setVisibility(View.GONE);
+			action_text_delete = v.findViewById(R.id.action_delete);
+			action_text_delete.setVisibility(View.GONE);
 			action_button_language = v.findViewById(R.id.action_language);
 			action_button_language.setVisibility(View.GONE);
 			action_button_add = v.findViewById(R.id.action_add);
@@ -77,6 +80,7 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_button_back.setOnClickListener(this);
 			action_button_logout.setOnClickListener(this);
 			action_text_next.setOnClickListener(this);
+			action_text_delete.setOnClickListener(this);
 			action_button_language.setOnClickListener(this);
 			action_button_add.setOnClickListener(this);
 			action_button_done.setOnClickListener(this);
@@ -133,6 +137,7 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_button_back.setVisibility(View.GONE);
 			action_button_logout.setVisibility(View.GONE);
 			action_text_next.setVisibility(View.GONE);
+			action_text_delete.setVisibility(View.GONE);
 			action_button_language.setVisibility(View.GONE);
 			action_button_add.setVisibility(View.GONE);
 			action_button_done.setVisibility(View.GONE);
@@ -148,6 +153,9 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 							break;
 						case R.id.action_next:
 							action_text_next.setVisibility(View.VISIBLE);
+							break;
+						case R.id.action_delete:
+							action_text_delete.setVisibility(View.VISIBLE);
 							break;
 						case R.id.action_language:
 							action_button_language.setVisibility(View.VISIBLE);

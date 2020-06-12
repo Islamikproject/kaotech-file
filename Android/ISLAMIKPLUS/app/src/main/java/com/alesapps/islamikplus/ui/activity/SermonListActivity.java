@@ -20,7 +20,7 @@ import java.util.List;
 
 public class SermonListActivity extends BaseActionBarActivity implements View.OnClickListener, DragListView.OnRefreshLoadingMoreListener {
 	public static SermonListActivity instance;
-	DragListView list_sermon;
+	public DragListView list_sermon;
 	ListAdapter adapter;
 	ArrayList<ParseObject> mDataList = new ArrayList<>();
 	public static int type = SermonModel.TYPE_JUMAH;

@@ -21,6 +21,7 @@ public class SermonModel {
 	public String raiser = "";
 	public String mosque = "";
 	public Double amount = 0.0;
+	public boolean isDelete = false;
 
 	public void parse(ParseObject object) {
 		if (object == null)
@@ -33,11 +34,13 @@ public class SermonModel {
 		raiser = object.getString(ParseConstants.KEY_RAISER);
 		mosque = object.getString(ParseConstants.KEY_MOSQUE);
 		amount = object.getDouble(ParseConstants.KEY_AMOUNT);
+		isDelete = object.getBoolean(ParseConstants.KEY_IS_DELETE);
 	}
 
 	public static void GetSermonList(final ParseUser userObj, final ObjectListListener listener) {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery(ParseConstants.TBL_SERMON);
 		query.whereEqualTo(ParseConstants.KEY_OWNER, userObj);
+		query.whereNotEqualTo(ParseConstants.KEY_IS_DELETE, true);
 		query.include(ParseConstants.KEY_OWNER);
 		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
 		query.setLimit(ParseConstants.QUERY_FETCH_MAX_COUNT);

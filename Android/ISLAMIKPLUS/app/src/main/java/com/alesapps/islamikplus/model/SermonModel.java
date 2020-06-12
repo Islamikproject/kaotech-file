@@ -2,6 +2,7 @@ package com.alesapps.islamikplus.model;
 
 import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.listener.ObjectListListener;
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -23,6 +24,7 @@ public class SermonModel {
 	public String raiser = "";
 	public String mosque = "";
 	public Double amount = 0.0;
+	public boolean isDelete = false;
 
 	public void parse(ParseObject object) {
 		if (object == null)
@@ -35,12 +37,14 @@ public class SermonModel {
 		raiser = object.getString(ParseConstants.KEY_RAISER);
 		mosque = object.getString(ParseConstants.KEY_MOSQUE);
 		amount = object.getDouble(ParseConstants.KEY_AMOUNT);
+		isDelete = object.getBoolean(ParseConstants.KEY_IS_DELETE);
 	}
 
 	public static void GetSermonList(final ParseUser userObj, final int type, final ObjectListListener listener) {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery(ParseConstants.TBL_SERMON);
 		query.whereEqualTo(ParseConstants.KEY_OWNER, userObj);
 		query.whereEqualTo(ParseConstants.KEY_TYPE, type);
+		query.whereNotEqualTo(ParseConstants.KEY_IS_DELETE, true);
 		query.include(ParseConstants.KEY_OWNER);
 		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
 		query.setLimit(ParseConstants.QUERY_FETCH_MAX_COUNT);
@@ -61,11 +65,23 @@ public class SermonModel {
 		sermonObj.put(ParseConstants.KEY_RAISER, model.raiser);
 		sermonObj.put(ParseConstants.KEY_MOSQUE, model.mosque);
 		sermonObj.put(ParseConstants.KEY_AMOUNT, model.amount);
+		sermonObj.put(ParseConstants.KEY_IS_DELETE, model.isDelete);
 		if (model.video != null) {
 			sermonObj.put(ParseConstants.KEY_VIDEO, model.video);
 			sermonObj.put(ParseConstants.KEY_VIDEO_NAME, model.videoName);
 		}
 		sermonObj.saveInBackground(new SaveCallback() {
+			public void done(ParseException e) {
+				if (listener != null)
+					listener.done(ParseErrorHandler.handle(e));
+			}
+		});
+	}
+
+	public static void Delete(final ParseObject sermonObj, final ExceptionListener listener) {
+		sermonObj.put(ParseConstants.KEY_IS_DELETE, true);
+		sermonObj.saveInBackground(new SaveCallback() {
+			@Override
 			public void done(ParseException e) {
 				if (listener != null)
 					listener.done(ParseErrorHandler.handle(e));

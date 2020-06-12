@@ -47,6 +47,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.alesapps.islamik.ui.activity.OnboardActivity" />
+        <activity android:name="com.alesapps.islamik.ui.activity.TermsConditionActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SelectLanguageActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.MainActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SermonActivity" />

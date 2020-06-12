@@ -59,6 +59,7 @@ public class SelectLanguageActivity extends BaseActionBarActivity implements Vie
 		if (!isMain) {
 			startActivity(new Intent(instance, MainActivity.class));
 			OnboardActivity.instance.finish();
+			TermsConditionActivity.instance.finish();
 		} else {
 			MainActivity.instance.recreate();
 			CommonUtil.SetLocale(MainActivity.instance);

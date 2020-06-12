@@ -34,6 +34,7 @@ public class ParseConstants {
 	public static final String KEY_VIDEO = "video";
 	public static final String KEY_VIDEO_NAME = "videoName";
 	public static final String KEY_RAISER = "raiser";
+	public static final String KEY_IS_DELETE = "isDelete";
 	// Payment
 	public static final String KEY_TO_USER = "toUser";
 	public static final String KEY_AMOUNT = "amount";

@@ -24,8 +24,7 @@ public class OnboardActivity extends BaseActionBarActivity implements View.OnCli
 		switch (view.getId()) {
 			case R.id.action_next:
 				AppPreference.setBool(AppPreference.KEY.AGREE, true);
-				SelectLanguageActivity.isMain = false;
-				startActivity(new Intent(instance, SelectLanguageActivity.class));
+				startActivity(new Intent(instance, TermsConditionActivity.class));
 				break;
 		}
 	}
