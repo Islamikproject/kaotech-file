@@ -43,8 +43,10 @@ public class AppConstant {
 	public static final int TYPE_QURAN = 5;
 	public static final int TYPE_SALAT = 6;
 
-	public static final String STRIPE_PUBLISHABLE_KEY = "pk_test_PiltFhS6q66sDDlXeJl4WrPC004sWB9QP1"; // "pk_live_EZ0kJnLAYT3o3Wo5ZEnG3FYH00a1tkGc2g";
-	public static final String STRIPE_API_KEY = "sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK"; // "sk_live_qVuyy0H09fbrm45dSr5ZPTBE";
+//	public static final String STRIPE_PUBLISHABLE_KEY = "pk_test_PiltFhS6q66sDDlXeJl4WrPC004sWB9QP1";
+//	public static final String STRIPE_API_KEY = "sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK";
+	public static final String STRIPE_PUBLISHABLE_KEY = "pk_live_EZ0kJnLAYT3o3Wo5ZEnG3FYH00a1tkGc2g";
+	public static final String STRIPE_API_KEY = "sk_live_xFVtiA6eN5gGeci46vQYeezm005G3nSxFr";
 	public static final String STRIPE_CURRENCY = "usd";
 	public static final String STRIPE_CONNECT_URL = "https://stripe.kaotech.org?";
 }
