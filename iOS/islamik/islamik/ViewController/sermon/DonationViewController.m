@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSNumber *amount = self.mSermonObj[PARSE_AMOUNT];
+    self.edtAmount.text = [NSString stringWithFormat:@"%.2f", amount.floatValue];
 }
 
 /*
