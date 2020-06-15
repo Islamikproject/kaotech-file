@@ -7,7 +7,6 @@ target 'islamikplus' do
 
   # Pods for screenbreak
 pod 'GooglePlaces'
-pod 'GooglePlacePicker'
 pod 'Firebase/Analytics'
 pod 'Firebase/Storage'
 pod 'IQKeyboardManager'
@@ -15,12 +14,12 @@ pod 'MBProgressHUD'
 pod 'SVProgressHUD'
 pod 'IQDropDownTextField'
 pod 'AAPullToRefresh'
-pod 'AFNetworking'
-pod 'AFNetworking+ImageActivityIndicator'
+pod 'AFNetworking', '~> 4.0'
 pod 'NSString-Email'
 pod 'NSString-UrlEncode'
 pod 'Reachability'
 pod 'NSDate-Time-Ago'
 pod 'MGSwipeTableCell'
-pod 'SDWebImage', '~> 5.0'
+pod 'SDWebImage'
+pod 'Parse'
 end

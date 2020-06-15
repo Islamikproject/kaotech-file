@@ -1,6 +1,0 @@
-framework module AFNetworking_ImageActivityIndicator {
-  umbrella header "AFNetworking+ImageActivityIndicator-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -54,12 +54,8 @@
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error){
         [SVProgressHUD dismiss];
-        if (error){
-            [Util showAlertTitle:self title:@"Error" message:error.localizedDescription];
-        } else {
-            self->mDataList = (NSMutableArray *) array;
-            [self.tblData reloadData];
-        }
+        self->mDataList = (NSMutableArray *) array;
+        [self.tblData reloadData];
     }];
 }
 

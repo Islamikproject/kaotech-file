@@ -5,8 +5,6 @@
 #import "SCLAlertView.h"
 #import "Reachability.h"
 #import "UIImageView+AFNetworking.h"
-#import "UIImageView+AFNetworking_UIActivityIndicatorView.h"
-
 @implementation Util
 
 + (BOOL) isConnectableInternet {

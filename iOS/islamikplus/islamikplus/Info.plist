@@ -22,6 +22,12 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This app requires GPS to search positions.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app requires GPS to search positions.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app requires GPS to search positions.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app requires access to the camera for upload video.</string>
 	<key>NSMicrophoneUsageDescription</key>

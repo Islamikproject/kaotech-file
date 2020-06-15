@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [GMSPlacesClient provideAPIKey:@"AIzaSyDxZ0qrWBRaC5Lb4IieW-pN0f0PpEGqlj4"];
+    [GMSPlacesClient provideAPIKey:@"AIzaSyABAD3vwg9Vx2TumwRMEf2RjKreg41Wg8Q"];
     [PFUser enableAutomaticUser];
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         configuration.applicationId = @"b0484b2d-2135-4a2d-a924-b916750cf001";

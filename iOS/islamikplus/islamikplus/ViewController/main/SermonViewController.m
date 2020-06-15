@@ -7,6 +7,7 @@
 //
 
 #import "SermonViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 static SermonViewController *_sharedViewController = nil;
 
@@ -154,20 +155,20 @@ static SermonViewController *_sharedViewController = nil;
     object[PARSE_VIDEO_NAME] = videoName;
     object[PARSE_IS_DELETE] = [NSNumber numberWithBool:NO];
     
-    int index = [self.edtAmount.selectedItem intValue];
+    int index = (int)[self.edtAmount selectedRow];
     object[PARSE_AMOUNT] = ARRAY_AMOUNT[index];
     
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
-        if (succeeded) {
+        if (error) {
+            [Util showAlertTitle:self title:@"Error" message:[error localizedDescription]];
+        }else{
             NSString *message = [NSString stringWithFormat:@"Imam %@ is going live for JUMAH SERMON and will talk about \n %@", [PFUser currentUser][PARSE_MOSQUE], topic];
             if (self.type == TYPE_REGULAR) {
                 message = [NSString stringWithFormat:@"Imam %@ is going live for REGULAR SERMON and will talk about \n %@", [PFUser currentUser][PARSE_MOSQUE], topic];
             }
             [Util sendPushAllNotification:message type:self.type];
             [self.navigationController popViewControllerAnimated:YES];
-        }else{
-            [Util showAlertTitle:self title:@"Error" message:[error localizedDescription]];
         }
     }];
 }

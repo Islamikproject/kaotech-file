@@ -37,15 +37,13 @@ static HttpRest* restManager = NULL;
         [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:STRIPE_KEY password:@""];
     }
     
-    [manager GET:urlString
-      parameters:paramDict
-         success:^(NSURLSessionTask *task, id responseObject) {
-             NSLog(@"%@", responseObject);
-             completionBlock (responseObject, nil);
-         } failure:^(NSURLSessionTask *operation, NSError *error) {
-             NSLog(@"%@", error);
-             completionBlock (nil, error);
-         }];
+    [manager GET:urlString parameters:paramDict headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        completionBlock (responseObject, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+        completionBlock (nil, error);
+    }];
 }
 
 - (void) RestPostRequest:(NSString *) urlString paramDict:(NSMutableDictionary *)paramDict completionBlock: (void (^)(id, NSError *))completionBlock {
@@ -55,15 +53,13 @@ static HttpRest* restManager = NULL;
         [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:STRIPE_KEY password:@""];
     }
     
-    [manager POST:urlString
-       parameters:paramDict
-          success:^(NSURLSessionTask *task, id responseObject) {
-              NSLog(@"%@", responseObject);
-              completionBlock (responseObject, nil);
-          } failure:^(NSURLSessionTask *operation, NSError *error) {
-              NSLog(@"%@", error);
-              completionBlock (nil, error);
-          }];
+    [manager POST:urlString parameters:paramDict headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        completionBlock (responseObject, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+        completionBlock (nil, error);
+    }];
 }
 
 @end

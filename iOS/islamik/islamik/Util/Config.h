@@ -5,13 +5,13 @@
 #define PUSH_NOTIFICATION_TYPE                                  @"type"
 #define PUSH_NOTIFICATION_DATA                                  @"data"
 
-#define STRIPE_KEY                              @"sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK"
-//#define STRIPE_KEY                              @"sk_live_CeT8D45eqwRqFnAGgmCwinoy"
-#define STRIPE_URL                              @"https://api.stripe.com/v1"
-#define STRIPE_CHARGES                          @"charges"
-#define STRIPE_CUSTOMERS                        @"customers"
-#define STRIPE_TOKENS                           @"tokens"
-#define STRIPE_ACCOUNTS                         @"accounts"
+//#define STRIPE_KEY                                              @"sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK"
+#define STRIPE_KEY                                              @"sk_live_xFVtiA6eN5gGeci46vQYeezm005G3nSxFr"
+#define STRIPE_URL                                              @"https://api.stripe.com/v1"
+#define STRIPE_CHARGES                                          @"charges"
+#define STRIPE_CUSTOMERS                                        @"customers"
+#define STRIPE_TOKENS                                           @"tokens"
+#define STRIPE_ACCOUNTS                                         @"accounts"
 
 enum {
     TYPE_JUMAH = 0,
