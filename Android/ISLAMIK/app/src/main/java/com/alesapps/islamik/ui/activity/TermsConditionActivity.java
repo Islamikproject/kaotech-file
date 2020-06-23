@@ -20,7 +20,7 @@ public class TermsConditionActivity extends BaseActionBarActivity {
 		super.onCreate(savedInstanceState);
 		instance = this;;
 		SetTitle(R.string.terms_conditions, -1);
-		ShowActionBarIcons(true, R.id.action_back);
+		ShowActionBarIcons(true, -1);
 		setContentView(R.layout.activity_terms_condition);
 		txt_content = findViewById(R.id.txt_content);
 		txt_content.setText(Html.fromHtml(getString(R.string.terms_label)));
@@ -37,6 +37,7 @@ public class TermsConditionActivity extends BaseActionBarActivity {
 				AppPreference.setBool(AppPreference.KEY.AGREE, true);
 				SelectLanguageActivity.isMain = false;
 				startActivity(new Intent(instance, SelectLanguageActivity.class));
+				finish();
 				return;
 		}
 	}

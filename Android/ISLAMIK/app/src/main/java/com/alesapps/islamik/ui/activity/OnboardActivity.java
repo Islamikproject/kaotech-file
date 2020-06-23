@@ -3,7 +3,6 @@ package com.alesapps.islamik.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 
 public class OnboardActivity extends BaseActionBarActivity implements View.OnClickListener {
@@ -23,7 +22,8 @@ public class OnboardActivity extends BaseActionBarActivity implements View.OnCli
 		super.onClick(view);
 		switch (view.getId()) {
 			case R.id.action_next:
-				startActivity(new Intent(instance, TermsConditionActivity.class));
+				startActivity(new Intent(instance, PrivacyPolicyActivity.class));
+				finish();
 				break;
 		}
 	}

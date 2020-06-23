@@ -51,15 +51,12 @@ public class SettingsActivity extends BaseActionBarActivity implements View.OnCl
 				CommonUtil.SendEmail(instance, AppConstant.ADMIN_EMAIL, getString(R.string.send_feedback),	"", "");
 				return;
 			case R.id.layout_about:
-				TermsConditionActivity.type = 0;
-				startActivity(new Intent(instance, TermsConditionActivity.class));
+				startActivity(new Intent(instance, AboutActivity.class));
 				return;
 			case R.id.layout_privacy:
-				TermsConditionActivity.type = 1;
-				startActivity(new Intent(instance, TermsConditionActivity.class));
+				startActivity(new Intent(instance, PrivacyPolicyActivity.class));
 				return;
 			case R.id.layout_terms:
-				TermsConditionActivity.type = 2;
 				startActivity(new Intent(instance, TermsConditionActivity.class));
 				return;
 			case R.id.layout_logout:

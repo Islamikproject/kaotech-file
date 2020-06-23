@@ -28,10 +28,14 @@ public class SelectLanguageActivity extends BaseActionBarActivity implements Vie
 		initialize(AppPreference.getBool(AppPreference.KEY.LANGUAGE_ARABIC, false));
 	}
 
-	private void initialize(boolean isarabic) {
+	private void initialize(boolean isArabic) {
+		if (isMain)
+			ShowActionBarIcons(true, R.id.action_back, R.id.action_done);
+		else
+			ShowActionBarIcons(true, R.id.action_done);
 		check_english.setChecked(false);
 		check_arabic.setChecked(false);
-		if (isarabic) {
+		if (isArabic) {
 			check_arabic.setChecked(true);
 		} else {
 			check_english.setChecked(true);
@@ -58,8 +62,6 @@ public class SelectLanguageActivity extends BaseActionBarActivity implements Vie
 		AppPreference.setBool(AppPreference.KEY.LANGUAGE_ARABIC, check_arabic.isChecked());
 		if (!isMain) {
 			startActivity(new Intent(instance, MainActivity.class));
-			OnboardActivity.instance.finish();
-			TermsConditionActivity.instance.finish();
 		} else {
 			MainActivity.instance.recreate();
 			CommonUtil.SetLocale(MainActivity.instance);

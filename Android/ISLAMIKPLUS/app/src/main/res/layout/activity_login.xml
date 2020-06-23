@@ -94,6 +94,7 @@
             android:layout_marginBottom="@dimen/margin_large"
             android:gravity="center"
             android:textColor="@color/text_normal"
-            android:text="@string/no_account_signup_here"/>
+            android:text="@string/no_account_signup_here"
+            android:visibility="gone"/>
     </LinearLayout>
 </LinearLayout>
