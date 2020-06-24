@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A19D02124A31A16002925C8 /* TermsConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A19D02024A31A16002925C8 /* TermsConditionsViewController.m */; };
 		78066DBB24761C94007F04A9 /* check_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 78066D9724761C91007F04A9 /* check_on.png */; };
 		78066DBC24761C94007F04A9 /* ic_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 78066D9824761C91007F04A9 /* ic_phone.png */; };
 		78066DBD24761C94007F04A9 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 78066D9924761C91007F04A9 /* splash.png */; };
@@ -147,6 +148,8 @@
 
 /* Begin PBXFileReference section */
 		1DC022A0176332EB2BE98D9A /* Pods_islamikplus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_islamikplus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A19D01F24A31A16002925C8 /* TermsConditionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsConditionsViewController.h; sourceTree = "<group>"; };
+		5A19D02024A31A16002925C8 /* TermsConditionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsConditionsViewController.m; sourceTree = "<group>"; };
 		78066D9724761C91007F04A9 /* check_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_on.png; sourceTree = "<group>"; };
 		78066D9824761C91007F04A9 /* ic_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_phone.png; sourceTree = "<group>"; };
 		78066D9924761C91007F04A9 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
@@ -723,6 +726,8 @@
 			children = (
 				78066F002476444C007F04A9 /* PrivacyViewController.h */,
 				78066F012476444C007F04A9 /* PrivacyViewController.m */,
+				5A19D01F24A31A16002925C8 /* TermsConditionsViewController.h */,
+				5A19D02024A31A16002925C8 /* TermsConditionsViewController.m */,
 				78066F08247656F6007F04A9 /* LoginViewController.h */,
 				78066F09247656F6007F04A9 /* LoginViewController.m */,
 				78066F0F247672A0007F04A9 /* SignUpViewController.h */,
@@ -1051,6 +1056,7 @@
 				78066EB024761D4D007F04A9 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				78066EAD24761D4D007F04A9 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				78066EC724761D4D007F04A9 /* JSQMessagesCellTextView.m in Sources */,
+				5A19D02124A31A16002925C8 /* TermsConditionsViewController.m in Sources */,
 				78FAFDFF2476FD51008A7151 /* SettingsViewController.m in Sources */,
 				78066EB224761D4D007F04A9 /* JSQLocationMediaItem.m in Sources */,
 				78066F1424767359007F04A9 /* ResetPasswordViewController.m in Sources */,
