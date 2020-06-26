@@ -346,7 +346,7 @@
 		7851A0482477970200C3E380 /* BasketCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasketCell.h; sourceTree = "<group>"; };
 		7851A0492477970200C3E380 /* BasketCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasketCell.m; sourceTree = "<group>"; };
 		7851A04E2477B12500C3E380 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		788A168A24750ABA007DCA57 /* ISLAMIK+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ISLAMIK+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		788A168A24750ABA007DCA57 /* ISLAMIK PLUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ISLAMIK PLUS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		788A168D24750ABA007DCA57 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		788A168E24750ABA007DCA57 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		788A169724750ABA007DCA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -785,7 +785,7 @@
 		788A168B24750ABA007DCA57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				788A168A24750ABA007DCA57 /* ISLAMIK+.app */,
+				788A168A24750ABA007DCA57 /* ISLAMIK PLUS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -883,7 +883,7 @@
 			);
 			name = islamikplus;
 			productName = islamikplus;
-			productReference = 788A168A24750ABA007DCA57 /* ISLAMIK+.app */;
+			productReference = 788A168A24750ABA007DCA57 /* ISLAMIK PLUS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1276,7 +1276,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamikplus;
-				PRODUCT_NAME = "ISLAMIK+";
+				PRODUCT_NAME = "ISLAMIK PLUS";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1303,7 +1303,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamikplus;
-				PRODUCT_NAME = "ISLAMIK+";
+				PRODUCT_NAME = "ISLAMIK PLUS";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
