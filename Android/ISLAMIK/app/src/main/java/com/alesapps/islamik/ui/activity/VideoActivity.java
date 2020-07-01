@@ -4,10 +4,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.utils.MessageUtil;
@@ -127,8 +130,9 @@ public class VideoActivity extends BaseActionBarActivity{
 				.setMessage(message)
 				.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						DonationActivity.mSermonObj = mSermonObj;
-						startActivity(new Intent(instance, DonationActivity.class));
+						String url = AppConstant.STRIPE_CONNECT_URL + mSermonObj.getObjectId();
+						Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+						startActivity(browserIntent);
 						finish();
 					}
 				})

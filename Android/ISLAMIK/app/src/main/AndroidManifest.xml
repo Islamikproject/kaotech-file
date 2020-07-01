@@ -68,7 +68,6 @@
         <activity android:name="com.alesapps.islamik.ui.activity.QuranDetailActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
-        <activity android:name="com.alesapps.islamik.ui.activity.DonationActivity" />
 
         <activity android:name="com.alesapps.islamik.ui.activity.VerseActivity" />
 

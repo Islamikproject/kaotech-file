@@ -35,6 +35,9 @@ Route::group(['middleware' => 'guest'], function() {
 Route::get('/', 'HomeController@login');
 Route::post('/login', 'HomeController@postLogin');
 
+Route::get('donation', 'HomeController@donation');
+Route::post('donation', 'HomeController@postDonation');
+
 // Route::get('/register', 'HomeController@register');
 // Route::post('/register', 'HomeController@postRegister');
 

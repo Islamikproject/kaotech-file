@@ -20,6 +20,8 @@ use Session;
 use Stripe\Stripe as Stripe;
 use Stripe\Account as StripeAccount;
 use Stripe\Error\Base as Stripe_Error;
+use Stripe\Token as StripeToken;
+use Stripe\Charge as StripeCharge;
 
 class HomeController extends Controller
 {
@@ -28,7 +30,7 @@ class HomeController extends Controller
     public $STRIPE_CLIENT_ID = 'ca_HAu0nFiHFKWtYrCs8x2Nn4AwiQOcqC23'; // dev
 
     //Live Keys
-    //public $STRIPE_SECRET_KEY = 'sk_live_38jWbIQc9WLirGH3PU429uzi';
+    //public $STRIPE_SECRET_KEY = 'sk_live_xFVtiA6eN5gGeci46vQYeezm005G3nSxFr';
     //public STRIPE_CLIENT_ID = 'ca_Ad4xfP7ici4qlstU7omGbtBNrVxYvuLi'; // live
 
     public $STRIPE_CONNECT_URL    = 'https://connect.stripe.com/oauth/authorize';
@@ -46,7 +48,7 @@ class HomeController extends Controller
       $rest_key = 'b0bae137-c18c-4a73-aceb-51726922b001';
       $master_key = 'b054d1ea-0128-4a27-b107-59b61b4db001';
       ParseClient::initialize($app_id, $rest_key, $master_key);
-      ParseClient::setServerURL('http://parse.kaotech.org:20001/','parse');
+      ParseClient::setServerURL('https://parse.kaotech.org:20001/','parse');
 
       // init Stripe
       Stripe::setApiKey($this->STRIPE_SECRET_KEY);
@@ -70,15 +72,20 @@ class HomeController extends Controller
 
         $data = array();
         foreach ($results as $log) {
-		  if(!$log->renterUser) continue;
-          $one['time'] = $log->getUpdatedAt()->format('Y-m-d H:i');
-          $one['from'] = $log->renterUser->firstName." ".$log->renterUser->lastName;
-          $one['amount'] = $log->amount;
-          $one['status'] = 1;
-          $data[] = $one;
+          if(!$log->renterUser) continue;
+              $one['time'] = $log->getUpdatedAt()->format('Y-m-d H:i');
+              $one['from'] = $log->renterUser->firstName." ".$log->renterUser->lastName;
+              $one['amount'] = $log->amount;
+              $one['status'] = 1;
+              $data[] = $one;
         }
 
         return view('dashboard.home', ['data'=>$data]);
+    }
+
+    public function donation(Request $request)
+    {
+        return view('dashboard.donation');
     }
 
     public function login(Request $request){
@@ -114,13 +121,6 @@ class HomeController extends Controller
               Session::put('stripe_user', $stripe_id);
 
               $parse_user_id = $request->session()->get('parse_user');
-
-              // $query = ParseUser::query();
-              // $parse_user = $query->get($parse_user_id);
-              //
-              // $currentUser = ParseUser::getCurrentUser();
-              // var_dump($currentUser->getObjectId());
-              // var_dump($parse_user_id);
 
               $parse_email = $request->session()->get('parse_email');
               $parse_password = $request->session()->get('parse_password');
@@ -199,7 +199,7 @@ class HomeController extends Controller
         $query->EqualTo("toUser", $user);
         $query->descending("updatedAt");
         $query->limit($this->GET_DATA_COUNT);
-		$query->skip($request->input('count'));
+		    $query->skip($request->input('count'));
         $results = $query->find();
 
         $data = array();
@@ -214,5 +214,49 @@ class HomeController extends Controller
 
       return $data;
     }
+
+    public function postDonation(Request $request) {
+      $query = new ParseQuery("Sermon");
+      $query->includeKey("owner");
+      $sermon = $query->get($request['sermon']);
+
+      try {
+        $token = StripeToken::create([
+          'card' => [
+            'number' => $request->number,
+            'exp_month' => intval(explode('/', $request->expiry)[0]),
+            'exp_year' => intval('20' + explode('/', $request->expiry)[1]),
+            'cvc' => $request->cvc,
+          ],
+        ]);      
+  
+        $charge = StripeCharge::create([
+          'amount' => $request->amount * 100,
+          'currency' => 'usd',
+          'source' => $token->id,
+          'application_fee' => $request->amount * 10,
+          'destination' => $sermon->owner->accountId,
+          'description' => $request->name . ' paid $' . $request->amount,
+        ]);
+      } catch (Stripe_Error $e) {
+        $error = $e->getMessage();
+        return redirect()->back()->withErrors([$error]);
+      }
+
+
+
+      $payment = new ParseObject("Payment");
+      $payment->toUser = $sermon->owner;
+      $payment->name = $request->name;
+      $payment->sermon = $sermon;
+      $payment->chargeId = $charge->id;
+      $payment->amount = intval($request->amount);
+      $payment->type = $sermon->type;
+
+      $payment->save();
+
+      return redirect()->back()->with('success', 'success');
+    }
+
 
 }

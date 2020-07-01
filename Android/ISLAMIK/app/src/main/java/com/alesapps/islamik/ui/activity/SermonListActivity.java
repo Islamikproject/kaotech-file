@@ -3,11 +3,14 @@ package com.alesapps.islamik.ui.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ObjectListListener;
 import com.alesapps.islamik.model.ParseConstants;
@@ -152,8 +155,9 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 				.setMessage(message)
 				.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						DonationActivity.mSermonObj = sermonObj;
-						startActivity(new Intent(instance, DonationActivity.class));
+						String url = AppConstant.STRIPE_CONNECT_URL + sermonObj.getObjectId();
+						Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+						startActivity(browserIntent);
 					}
 				})
 				.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {

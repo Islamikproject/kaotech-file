@@ -9,7 +9,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>BoothRent</title>
+    <title>ISLAMIK</title>
     <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, Vendroid" />
     <meta name="description" content="Layouts Medium Profile - Responsive Admin HTML Template">
     <meta name="author" content="Venmond">
@@ -51,6 +51,7 @@
       <link href="{{url('assets/plugins/daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css">
       <link href="{{url('assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet" type="text/css">
       <link href="{{url('assets/plugins/colorpicker/css/colorpicker.css')}}" rel="stylesheet" type="text/css">
+      <link href="{{url('assets/card/card.css')}}" rel="stylesheet" type="text/css">
 
   	   <!-- Specific CSS -->
       <link href="{{url('assets/plugins/dataTables/css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css">
