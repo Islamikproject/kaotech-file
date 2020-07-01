@@ -27,7 +27,6 @@
         configuration.server = @"https://parse.kaotech.org:20001/parse";
     }]];
     [PFUser enableRevocableSessionInBackground];
-    [Stripe setDefaultPublishableKey:@"pk_test_TYooMQauvdEDq54NiTphI7jx"];
     
     // Push Notification
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {

@@ -11,6 +11,7 @@
 		5A816C3A2493735E0086C968 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A816C392493735E0086C968 /* TermsViewController.m */; };
 		5A816C3E249377A40086C968 /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3C249377A40086C968 /* PrivacyPolicy.html */; };
 		5A816C3F249377A40086C968 /* TermsConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3D249377A40086C968 /* TermsConditions.html */; };
+		5A92B7AB24ACFD77008AB387 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A92B7AA24ACFD77008AB387 /* SafariServices.framework */; };
 		78008902247CC546007CAB87 /* FajrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78008901247CC546007CAB87 /* FajrDetailViewController.m */; };
 		7800AC31247D0770006F47B5 /* ZuhrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */; };
 		7800AC34247D0E98006F47B5 /* MaghribDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */; };
@@ -123,9 +124,6 @@
 		780F633C247874CE0027CDB4 /* MainNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F6339247874CE0027CDB4 /* MainNavViewController.m */; };
 		780F6340247875480027CDB4 /* OnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F633F247875480027CDB4 /* OnboardViewController.m */; };
 		780F63432478758D0027CDB4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F63422478758D0027CDB4 /* MainViewController.m */; };
-		781633352484EF580073D07B /* StripeRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633342484EF580073D07B /* StripeRest.m */; };
-		7816333A2484EF7B0073D07B /* HttpRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633372484EF7B0073D07B /* HttpRest.m */; };
-		7816333B2484EF7B0073D07B /* HttpApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633382484EF7B0073D07B /* HttpApi.m */; };
 		7816334A2484F01F0073D07B /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816333D2484F01E0073D07B /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7816334B2484F01F0073D07B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633402484F01E0073D07B /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7816334C2484F01F0073D07B /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 781633412484F01E0073D07B /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -144,7 +142,6 @@
 		78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0742478FE650082D0A7 /* SermonListViewController.m */; };
 		78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA0772478FEC90082D0A7 /* SermonListCell.m */; };
 		78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA07924790CFB0082D0A7 /* VideoViewController.m */; };
-		78EDA07E247911480082D0A7 /* DonationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78EDA07D247911480082D0A7 /* DonationViewController.m */; };
 		78F681C6247C35E700B6B955 /* PrayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F681C5247C35E700B6B955 /* PrayersViewController.m */; };
 		78F681C8247C428900B6B955 /* ic_dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F681C7247C428900B6B955 /* ic_dropdown.png */; };
 		78F681CB247C927A00B6B955 /* ReadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F681CA247C927A00B6B955 /* ReadyViewController.m */; };
@@ -164,6 +161,7 @@
 		5A816C392493735E0086C968 /* TermsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
 		5A816C3C249377A40086C968 /* PrivacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
 		5A816C3D249377A40086C968 /* TermsConditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TermsConditions.html; sourceTree = "<group>"; };
+		5A92B7AA24ACFD77008AB387 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		78008900247CC546007CAB87 /* FajrDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FajrDetailViewController.h; sourceTree = "<group>"; };
 		78008901247CC546007CAB87 /* FajrDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FajrDetailViewController.m; sourceTree = "<group>"; };
 		7800AC2F247D0770006F47B5 /* ZuhrDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZuhrDetailViewController.h; sourceTree = "<group>"; };
@@ -354,12 +352,6 @@
 		780F633F247875480027CDB4 /* OnboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnboardViewController.m; sourceTree = "<group>"; };
 		780F63412478758D0027CDB4 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		780F63422478758D0027CDB4 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		781633332484EF580073D07B /* StripeRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StripeRest.h; sourceTree = "<group>"; };
-		781633342484EF580073D07B /* StripeRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StripeRest.m; sourceTree = "<group>"; };
-		781633362484EF7B0073D07B /* HttpApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpApi.h; sourceTree = "<group>"; };
-		781633372484EF7B0073D07B /* HttpRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRest.m; sourceTree = "<group>"; };
-		781633382484EF7B0073D07B /* HttpApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpApi.m; sourceTree = "<group>"; };
-		781633392484EF7B0073D07B /* HttpRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRest.h; sourceTree = "<group>"; };
 		7816333D2484F01E0073D07B /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
 		7816333E2484F01E0073D07B /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
 		7816333F2484F01E0073D07B /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
@@ -395,8 +387,6 @@
 		78EDA0772478FEC90082D0A7 /* SermonListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SermonListCell.m; sourceTree = "<group>"; };
 		78EDA07924790CFB0082D0A7 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		78EDA07A24790CFB0082D0A7 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
-		78EDA07C247911480082D0A7 /* DonationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DonationViewController.h; sourceTree = "<group>"; };
-		78EDA07D247911480082D0A7 /* DonationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonationViewController.m; sourceTree = "<group>"; };
 		78F681C4247C35E700B6B955 /* PrayersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrayersViewController.h; sourceTree = "<group>"; };
 		78F681C5247C35E700B6B955 /* PrayersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrayersViewController.m; sourceTree = "<group>"; };
 		78F681C7247C428900B6B955 /* ic_dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_dropdown.png; sourceTree = "<group>"; };
@@ -417,6 +407,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A92B7AB24ACFD77008AB387 /* SafariServices.framework in Frameworks */,
 				780F62ED247871AD0027CDB4 /* libxml2.2.tbd in Frameworks */,
 				780F62EB2478719C0027CDB4 /* libsqlite3.tbd in Frameworks */,
 				78A21CAB2483713A00A1C3A5 /* AVFoundation.framework in Frameworks */,
@@ -780,12 +771,6 @@
 		780F632E247874C50027CDB4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				781633362484EF7B0073D07B /* HttpApi.h */,
-				781633382484EF7B0073D07B /* HttpApi.m */,
-				781633392484EF7B0073D07B /* HttpRest.h */,
-				781633372484EF7B0073D07B /* HttpRest.m */,
-				781633332484EF580073D07B /* StripeRest.h */,
-				781633342484EF580073D07B /* StripeRest.m */,
 				780F632F247874C50027CDB4 /* Utils.h */,
 				780F6332247874C50027CDB4 /* Utils.m */,
 				780F6331247874C50027CDB4 /* Config.h */,
@@ -859,8 +844,6 @@
 				78EDA0742478FE650082D0A7 /* SermonListViewController.m */,
 				78EDA07A24790CFB0082D0A7 /* VideoViewController.h */,
 				78EDA07924790CFB0082D0A7 /* VideoViewController.m */,
-				78EDA07C247911480082D0A7 /* DonationViewController.h */,
-				78EDA07D247911480082D0A7 /* DonationViewController.m */,
 			);
 			path = sermon;
 			sourceTree = "<group>";
@@ -919,6 +902,7 @@
 		C9289895EF8C0E5FB1BF617D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A92B7AA24ACFD77008AB387 /* SafariServices.framework */,
 				78A21CAA2483713A00A1C3A5 /* AVFoundation.framework */,
 				780F62F0247871C30027CDB4 /* libz.tbd */,
 				780F62EE247871B40027CDB4 /* libxml2.tbd */,
@@ -1124,19 +1108,16 @@
 				780F62DA247870D90027CDB4 /* SCLTimerDisplay.m in Sources */,
 				78FC72E12478E367000F0671 /* SermonViewController.m in Sources */,
 				7869B86A247DBC8A00A5DE6E /* QuranDetailViewController.m in Sources */,
-				7816333B2484EF7B0073D07B /* HttpApi.m in Sources */,
 				780F62B4247870D90027CDB4 /* JSQMessage.m in Sources */,
 				780F6340247875480027CDB4 /* OnboardViewController.m in Sources */,
 				780F62C6247870D90027CDB4 /* JSQMessagesCellTextView.m in Sources */,
 				780F62CF247870D90027CDB4 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
-				78EDA07E247911480082D0A7 /* DonationViewController.m in Sources */,
 				780F62E1247870D90027CDB4 /* UIImage+ImageEffects.m in Sources */,
 				780F62AD247870D90027CDB4 /* JSQMessagesToolbarButtonFactory.m in Sources */,
 				780F62CE247870D90027CDB4 /* UIColor+JSQMessages.m in Sources */,
 				780F62DE247870D90027CDB4 /* SCLSwitchView.m in Sources */,
 				7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */,
 				780F62E2247870D90027CDB4 /* SCLAlertView.m in Sources */,
-				7816333A2484EF7B0073D07B /* HttpRest.m in Sources */,
 				780F6334247874C50027CDB4 /* AppStateManager.m in Sources */,
 				780F62BB247870D90027CDB4 /* JSQMessagesComposerTextView.m in Sources */,
 				78F681C6247C35E700B6B955 /* PrayersViewController.m in Sources */,
@@ -1163,7 +1144,6 @@
 				780F633B247874CE0027CDB4 /* BaseViewController.m in Sources */,
 				7869B867247DBC5F00A5DE6E /* QuranViewController.m in Sources */,
 				780F62CA247870D90027CDB4 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
-				781633352484EF580073D07B /* StripeRest.m in Sources */,
 				780F62C2247870D90027CDB4 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				780F621124786C7C0027CDB4 /* main.m in Sources */,
 				780F62C9247870D90027CDB4 /* JSQMessagesCollectionView.m in Sources */,

@@ -9,9 +9,9 @@
 #import "SermonListViewController.h"
 #import "VideoViewController.h"
 #import "SermonListCell.h"
-#import "DonationViewController.h"
+#import <SafariServices/SafariServices.h>
 
-@interface SermonListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SermonListViewController () <UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate>
 {
     NSMutableArray * mDataList;
 }
@@ -95,9 +95,11 @@
         controller.mSermonObj = sermonObj;
         [self.navigationController pushViewController:controller animated:YES];
     } else {
-        DonationViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DonationViewController"];
-        controller.mSermonObj = sermonObj;
-        [self.navigationController pushViewController:controller animated:YES];
+        NSString * url = [NSString stringWithFormat:@"https://stripe.kaotech.org/donation?sermon=%@", sermonObj.objectId];
+        NSURL *nsUrl = [NSURL URLWithString:url];
+        SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:nsUrl];
+        svc.delegate = self;
+        [self presentViewController:svc animated:YES completion:nil];
     }
 }
 /*
@@ -109,5 +111,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 @end

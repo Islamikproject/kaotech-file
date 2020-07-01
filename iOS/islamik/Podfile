@@ -19,6 +19,5 @@ pod 'Reachability'
 pod 'NSDate-Time-Ago'
 pod 'MGSwipeTableCell'
 pod 'SDWebImage'
-pod 'Stripe'
 pod 'Parse'
 end

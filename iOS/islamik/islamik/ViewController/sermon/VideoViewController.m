@@ -8,9 +8,9 @@
 
 #import "VideoViewController.h"
 #import <AVKit/AVKit.h>
-#import "DonationViewController.h"
+#import <SafariServices/SafariServices.h>
 
-@interface VideoViewController ()
+@interface VideoViewController () <SFSafariViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *videoView;
 @property (nonatomic, retain) AVPlayer *player;
 @property (nonatomic, retain) AVPlayerLayer *playerLayer;
@@ -71,10 +71,16 @@
     alert.horizontalButtons = YES;
     [alert addButton:@"NO" actionBlock:^(void) {}];
     [alert addButton:@"YES" actionBlock:^(void) {
-        DonationViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DonationViewController"];
-        controller.mSermonObj = self.mSermonObj;
-        [self.navigationController pushViewController:controller animated:YES];
+        NSString * url = [NSString stringWithFormat:@"https://stripe.kaotech.org/donation?sermon=%@", self.mSermonObj.objectId];
+        NSURL *nsUrl = [NSURL URLWithString:url];
+        SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:nsUrl];
+        svc.delegate = self;
+        [self presentViewController:svc animated:YES completion:nil];
     }];
     [alert showQuestion:@"ISLAMIK" subTitle:message closeButtonTitle:nil duration:0.0f];
+}
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 @end

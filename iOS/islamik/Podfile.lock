@@ -34,7 +34,6 @@ PODS:
   - SDWebImage (5.8.1):
     - SDWebImage/Core (= 5.8.1)
   - SDWebImage/Core (5.8.1)
-  - Stripe (17.0.3)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -51,7 +50,6 @@ DEPENDENCIES:
   - Parse
   - Reachability
   - SDWebImage
-  - Stripe
   - SVProgressHUD
 
 SPEC REPOS:
@@ -71,7 +69,6 @@ SPEC REPOS:
     - Parse
     - Reachability
     - SDWebImage
-    - Stripe
     - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -90,9 +87,8 @@ SPEC CHECKSUMS:
   Parse: 79bdda34fdb7eb2a707a43a951c8aae236cb3e34
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
-  Stripe: 30ba9a2ac7297e93de561fed695222ef980ee521
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 4302c226ab9a3a494de8d2ee1e750aaf5ac6672b
+PODFILE CHECKSUM: 201f02b79c5ba9b4c87a1ed810e93f7d33bbef92
 
 COCOAPODS: 1.9.3
