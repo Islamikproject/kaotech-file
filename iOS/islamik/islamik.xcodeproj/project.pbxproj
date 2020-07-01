@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A19D01E24A315A9002925C8 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A19D01D24A315A9002925C8 /* PrivacyViewController.m */; };
 		5A816C3A2493735E0086C968 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A816C392493735E0086C968 /* TermsViewController.m */; };
 		5A816C3E249377A40086C968 /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3C249377A40086C968 /* PrivacyPolicy.html */; };
 		5A816C3F249377A40086C968 /* TermsConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3D249377A40086C968 /* TermsConditions.html */; };
@@ -157,6 +158,8 @@
 /* Begin PBXFileReference section */
 		2C64822167334A118E93EB38 /* Pods-islamik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-islamik.release.xcconfig"; path = "Target Support Files/Pods-islamik/Pods-islamik.release.xcconfig"; sourceTree = "<group>"; };
 		30E37A2F5930F4EB511DB3E2 /* Pods_islamik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_islamik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A19D01C24A315A9002925C8 /* PrivacyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
+		5A19D01D24A315A9002925C8 /* PrivacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
 		5A816C382493735E0086C968 /* TermsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
 		5A816C392493735E0086C968 /* TermsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
 		5A816C3C249377A40086C968 /* PrivacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
@@ -841,6 +844,8 @@
 				780F633F247875480027CDB4 /* OnboardViewController.m */,
 				5A816C382493735E0086C968 /* TermsViewController.h */,
 				5A816C392493735E0086C968 /* TermsViewController.m */,
+				5A19D01C24A315A9002925C8 /* PrivacyViewController.h */,
+				5A19D01D24A315A9002925C8 /* PrivacyViewController.m */,
 			);
 			path = onboard;
 			sourceTree = "<group>";
@@ -1164,6 +1169,7 @@
 				780F62C9247870D90027CDB4 /* JSQMessagesCollectionView.m in Sources */,
 				780F633C247874CE0027CDB4 /* MainNavViewController.m in Sources */,
 				78EDA0752478FE650082D0A7 /* SermonListViewController.m in Sources */,
+				5A19D01E24A315A9002925C8 /* PrivacyViewController.m in Sources */,
 				780F62A9247870D90027CDB4 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				7816334F2484F01F0073D07B /* NSString+SBJSON.m in Sources */,
 				780F62B6247870D90027CDB4 /* JSQVideoMediaItem.m in Sources */,
@@ -1336,7 +1342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1361,7 +1367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

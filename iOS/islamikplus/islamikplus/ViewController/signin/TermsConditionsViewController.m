@@ -1,21 +1,20 @@
 //
-//  TermsViewController.m
-//  islamik
+//  TermsConditionsViewController.m
+//  islamikplus
 //
-//  Created by Ales Gabrysz on 6/12/20.
+//  Created by Ales Gabrysz on 6/23/20.
 //  Copyright © 2020 Ales Gabrysz. All rights reserved.
 //
 
-#import "TermsViewController.h"
+#import "TermsConditionsViewController.h"
+#import "LoginViewController.h"
 #import <WebKit/WebKit.h>
-#import "MainViewController.h"
 
-@interface TermsViewController ()
+@interface TermsConditionsViewController ()
 @property (weak, nonatomic) IBOutlet WKWebView *webView;
-
 @end
 
-@implementation TermsViewController
+@implementation TermsConditionsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +28,7 @@
     NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setBool:YES forKey:SYSTEM_KEY_AGREE];
     [userDefault synchronize];
-    MainViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
+    LoginViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 @end

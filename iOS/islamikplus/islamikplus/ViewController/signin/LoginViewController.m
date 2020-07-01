@@ -102,16 +102,7 @@
             }];
         } else {
             [SVProgressHUD dismiss];
-            NSString *msg = @"Email entered is not registered. Create an account now?";
-            SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
-            alert.customViewColor = MAIN_COLOR;
-            alert.horizontalButtons = YES;
-            [alert addButton:@"Not now" actionBlock:^(void) {
-            }];
-            [alert addButton:@"Sign Up" actionBlock:^(void) {
-                [self gotoNextScreen:NO];
-            }];
-            [alert showError:@"Sign Up" subTitle:msg closeButtonTitle:nil duration:0.0f];
+            [Util showAlertTitle:self title:@"Login Failed" message:@"Phone number entered is not registered."];
         }
     }];
 }
