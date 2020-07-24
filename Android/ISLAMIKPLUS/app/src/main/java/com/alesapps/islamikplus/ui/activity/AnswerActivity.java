@@ -37,7 +37,7 @@ public class AnswerActivity extends BaseActionBarActivity implements View.OnClic
 	private void initialize() {
 		txt_topic.setText(mMessagesObj.getParseObject(ParseConstants.KEY_SERMON).getString(ParseConstants.KEY_TOPIC));
 		txt_question.setText(mMessagesObj.getString(ParseConstants.KEY_QUESTION));
-		edt_answer.setText("");
+		edt_answer.setText(mMessagesObj.getString(ParseConstants.KEY_ANSWER));
 	}
 
 	@Override
