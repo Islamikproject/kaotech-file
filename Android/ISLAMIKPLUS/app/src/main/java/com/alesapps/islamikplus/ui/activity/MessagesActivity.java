@@ -1,5 +1,6 @@
 package com.alesapps.islamikplus.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,8 +113,15 @@ public class MessagesActivity extends BaseActionBarActivity implements View.OnCl
 			holder.txt_name.setText(UserModel.GetFullName(model.owner));
 			holder.txt_date.setText(DateTimeUtils.dateToString(mDataList.get(position).getCreatedAt(), DateTimeUtils.DATE_STRING_FORMAT));
 			holder.txt_topic.setText(model.sermon.getString(ParseConstants.KEY_TOPIC));
-			holder.txt_question.setText("Question: " + model.question);
-			holder.txt_answer.setText("Answer: " + model.answer);
+			holder.txt_question.setText(getString(R.string.question) + " " + model.question);
+			holder.txt_answer.setText(getString(R.string.answer) + " " + model.answer);
+			holder.layout_container.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					AnswerActivity.mMessagesObj = mDataList.get(position);
+					startActivity(new Intent(instance, AnswerActivity.class));
+				}
+			});
 			return convertView;
 		}
 	}

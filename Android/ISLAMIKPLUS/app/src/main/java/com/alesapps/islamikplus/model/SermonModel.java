@@ -1,8 +1,6 @@
 package com.alesapps.islamikplus.model;
 
 import android.text.TextUtils;
-import android.widget.TextView;
-
 import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.listener.ObjectListListener;
 import com.parse.FindCallback;

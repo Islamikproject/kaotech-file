@@ -80,6 +80,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name="com.alesapps.islamikplus.ui.activity.MessagesActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamikplus.ui.activity.AnswerActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name="com.alesapps.islamikplus.ui.activity.CameraActivity"
             android:theme="@style/ThemeFullscreen" />

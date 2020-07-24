@@ -98,6 +98,12 @@
     <string name="valid_No_amount">Please enter amount.</string>
     <string name="topic">Topic</string>
     <string name="no_basket">No Basket</string>
+    <!-- Answer -->
+    <string name="topic_">Topic:</string>
+    <string name="question">Question:</string>
+    <string name="answer">Answer:</string>
+    <string name="valid_No_answer">Please enter answer.</string>
+    <string name="submit">Submit</string>
     <!-- Settings -->
     <string name="edit_profile">Edit Profile</string>
     <string name="payment_information">Payment Information</string>

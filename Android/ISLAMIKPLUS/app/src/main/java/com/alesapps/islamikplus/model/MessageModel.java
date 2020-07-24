@@ -1,11 +1,14 @@
 package com.alesapps.islamikplus.model;
 
+import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.listener.ObjectListListener;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
 import java.util.List;
 
 public class MessageModel {
@@ -42,4 +45,14 @@ public class MessageModel {
 		});
 	}
 
+	public static void RegisterAnswer(ParseObject messageObj, String answer, final ExceptionListener listener) {
+		messageObj.put(ParseConstants.KEY_ANSWER, answer);
+		messageObj.saveInBackground(new SaveCallback() {
+			@Override
+			public void done(ParseException e) {
+				if (listener != null)
+					listener.done(ParseErrorHandler.handle(e));
+			}
+		});
+	}
 }
