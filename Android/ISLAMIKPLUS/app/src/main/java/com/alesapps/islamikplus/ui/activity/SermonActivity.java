@@ -24,6 +24,7 @@ import com.alesapps.islamikplus.model.FileModel;
 import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.model.SermonModel;
 import com.alesapps.islamikplus.push.PushNoti;
+import com.alesapps.islamikplus.utils.CommonUtil;
 import com.alesapps.islamikplus.utils.MessageUtil;
 import com.alesapps.islamikplus.utils.ResourceUtil;
 import com.parse.ParseUser;
@@ -32,10 +33,13 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 	public static SermonActivity instance = null;
 	EditText edt_topic;
 	Spinner sp_amount;
+	Spinner sp_language;
 	Button btn_next;
 	Button btn_save;
 	public static int type = SermonModel.TYPE_JUMAH;
 	final int VIDEO_PICK = 1000;
+	String[] languageCode;
+	String[] languageName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		setContentView(R.layout.activity_sermon);
 		edt_topic = findViewById(R.id.edt_topic);
 		sp_amount = findViewById(R.id.sp_amount);
+		sp_language = findViewById(R.id.sp_language);
 		btn_next = findViewById(R.id.btn_next);
 		btn_save = findViewById(R.id.btn_save);
 
@@ -63,6 +68,11 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		ArrayAdapter<String> adapterAmount = new ArrayAdapter<>(instance, android.R.layout.simple_spinner_dropdown_item, AppConstant.STRING_AMOUNT);
 		sp_amount.setAdapter(adapterAmount);
 		sp_amount.setSelection(0);
+		languageCode = CommonUtil.getAllLanguageCode();
+		languageName = CommonUtil.getAllLanguageName();
+		ArrayAdapter<String> adapterLanguage = new ArrayAdapter<>(instance, android.R.layout.simple_spinner_dropdown_item, languageName);
+		sp_language.setAdapter(adapterLanguage);
+		sp_language.setSelection(0);
 	}
 
 	@Override
@@ -163,6 +173,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		model.amount = AppConstant.ARRAY_AMOUNT[sp_amount.getSelectedItemPosition()];
 		model.video = video_path;
 		model.videoName = video_name;
+		model.language = languageCode[sp_language.getSelectedItemPosition()];
 		SermonModel.Register(model, new ExceptionListener() {
 			@Override
 			public void done(String error) {

@@ -1,9 +1,7 @@
 package com.alesapps.islamikplus.model;
 
 import com.alesapps.islamikplus.listener.ExceptionListener;
-import com.alesapps.islamikplus.listener.UserListListener;
 import com.alesapps.islamikplus.listener.UserListener;
-import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.LogInCallback;
 import com.parse.LogOutCallback;
@@ -15,9 +13,10 @@ import com.parse.ParseUser;
 import com.parse.RequestPasswordResetCallback;
 import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
-import java.util.List;
 
 public class UserModel {
+	public static int TYPE_MOSQUE = 100;
+	public static int TYPE_USER = 200;
 	public String username = "";
 	public String email = "";
 	public String password = "";
@@ -29,6 +28,7 @@ public class UserModel {
 	public ParseGeoPoint lonLat = new ParseGeoPoint();
 	public String address = "";
 	public String accountId = "";
+	public int type = TYPE_MOSQUE;
 
 	public void parse(ParseUser user) {
 		if (user == null)
@@ -44,6 +44,7 @@ public class UserModel {
 		lonLat = user.getParseGeoPoint(ParseConstants.KEY_LON_LAT);
 		address = user.getString(ParseConstants.KEY_ADDRESS);
 		accountId = user.getString(ParseConstants.KEY_ACCOUNT_ID);
+		type = user.getInt(ParseConstants.KEY_TYPE);
 	}
 
 	public static void RequestPasswordReset(String strEmail, final ExceptionListener listener) {
@@ -68,6 +69,7 @@ public class UserModel {
 		userObj.put(ParseConstants.KEY_LON_LAT, model.lonLat);
 		userObj.put(ParseConstants.KEY_ADDRESS, model.address);
 		userObj.put(ParseConstants.KEY_ACCOUNT_ID, model.accountId);
+		userObj.put(ParseConstants.KEY_TYPE, model.type);
 
 		userObj.signUpInBackground(new SignUpCallback() {
 			@Override
@@ -160,23 +162,6 @@ public class UserModel {
 				// TODO Auto-generated method stub
 				if (listener != null)
 					listener.done(user, ParseErrorHandler.handle(e));
-			}
-		});
-	}
-
-	public static void GetAllUsers(final UserListListener listener) {
-		ParseQuery<ParseUser> userQuery = ParseUser.getQuery();
-		userQuery.whereNotEqualTo(ParseConstants.KEY_OBJECT_ID, ParseUser.getCurrentUser().getObjectId());
-		userQuery.whereExists(ParseConstants.KEY_FIRST_NAME);
-		userQuery.setLimit(ParseConstants.QUERY_FETCH_MAX_COUNT);
-		userQuery.orderByAscending(ParseConstants.KEY_FIRST_NAME);
-
-		userQuery.findInBackground(new FindCallback<ParseUser>() {
-			@Override
-			public void done(List<ParseUser> users, ParseException e) {
-				// TODO Auto-generated method stub
-				if (listener != null)
-					listener.done(users, ParseErrorHandler.handle(e));
 			}
 		});
 	}

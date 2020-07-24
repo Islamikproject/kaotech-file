@@ -5,6 +5,7 @@ public class ParseConstants {
 
 	public static final String TBL_PAYMENT = "Payment";
 	public static final String TBL_SERMON = "Sermon";
+	public static final String TBL_MESSAGES = "Messages";
 
 	public static final String KEY_CREATED_AT = "createdAt";
 	public static final String KEY_UPDATED_AT = "updatedAt";
@@ -35,10 +36,13 @@ public class ParseConstants {
 	public static final String KEY_VIDEO_NAME = "videoName";
 	public static final String KEY_RAISER = "raiser";
 	public static final String KEY_IS_DELETE = "isDelete";
+	public static final String KEY_LANGUAGE = "language";
 	// Payment
 	public static final String KEY_TO_USER = "toUser";
 	public static final String KEY_AMOUNT = "amount";
 	public static final String KEY_SERMON = "sermon";
 	public static final String KEY_NAME = "name";
-
+	// Messages
+	public static final String KEY_QUESTION = "question";
+	public static final String KEY_ANSWER = "answer";
 }

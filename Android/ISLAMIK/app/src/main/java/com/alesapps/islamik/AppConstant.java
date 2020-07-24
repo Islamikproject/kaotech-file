@@ -42,6 +42,6 @@ public class AppConstant {
 	public static final int TYPE_ISHA = 4;
 	public static final int TYPE_QURAN = 5;
 	public static final int TYPE_SALAT = 6;
-
+	public static String ADMIN_EMAIL = "admin@osseniapp.com";
 	public static final String STRIPE_CONNECT_URL = "https://stripe.kaotech.org/donation?sermon=";
 }

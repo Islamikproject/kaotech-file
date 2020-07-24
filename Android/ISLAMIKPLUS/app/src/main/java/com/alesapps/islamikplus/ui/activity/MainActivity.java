@@ -29,6 +29,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		findViewById(R.id.layout_jumah).setOnClickListener(this);
 		findViewById(R.id.layout_regular).setOnClickListener(this);
 		findViewById(R.id.layout_donation).setOnClickListener(this);
+		findViewById(R.id.layout_messages).setOnClickListener(this);
 		findViewById(R.id.layout_settings).setOnClickListener(this);
 	}
 
@@ -54,6 +55,9 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				break;
 			case R.id.layout_donation:
 				startActivity(new Intent(instance, DonationActivity.class));
+				break;
+			case R.id.layout_messages:
+				startActivity(new Intent(instance, MessagesActivity.class));
 				break;
 			case R.id.layout_settings:
 				startActivity(new Intent(instance, SettingsActivity.class));

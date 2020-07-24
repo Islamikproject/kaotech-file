@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.ObjectListListener;
@@ -12,6 +15,7 @@ import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.model.SermonModel;
 import com.alesapps.islamikplus.model.UserModel;
 import com.alesapps.islamikplus.ui.view.DragListView;
+import com.alesapps.islamikplus.utils.CommonUtil;
 import com.alesapps.islamikplus.utils.DateTimeUtils;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -20,10 +24,13 @@ import java.util.List;
 
 public class SermonListActivity extends BaseActionBarActivity implements View.OnClickListener, DragListView.OnRefreshLoadingMoreListener {
 	public static SermonListActivity instance;
+	Spinner sp_language;
 	public DragListView list_sermon;
 	ListAdapter adapter;
 	ArrayList<ParseObject> mDataList = new ArrayList<>();
 	public static int type = SermonModel.TYPE_JUMAH;
+	String[] languageCode;
+	String[] languageName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +42,37 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 			SetTitle(R.string.regular_sermon, -1);
 		ShowActionBarIcons(true, R.id.action_back, R.id.action_add);
 		setContentView(R.layout.activity_sermon_list);
+		sp_language = findViewById(R.id.sp_language);
 		list_sermon = findViewById(R.id.listView);
 		adapter = new ListAdapter();
 		list_sermon.setAdapter(adapter);
 		list_sermon.setOnRefreshListener(this);
+		sp_language.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				list_sermon.refresh();
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {}
+		});
+		initialize();
+	}
+
+	private void initialize() {
+		String[] strLanguageCodes = CommonUtil.getAllLanguageCode();
+		String[] strLanguageNames = CommonUtil.getAllLanguageName();
+		languageCode = new String[strLanguageCodes.length + 1];
+		languageName = new String[strLanguageNames.length + 1];
+		languageCode[0] = "";
+		languageName[0] = "";
+		for (int i = 0; i < strLanguageCodes.length; i ++) {
+			languageCode[i + 1] = strLanguageCodes[i];
+			languageName[i + 1] = strLanguageNames[i];
+		}
+		ArrayAdapter<String> adapterLanguage = new ArrayAdapter<>(instance, android.R.layout.simple_spinner_dropdown_item, languageName);
+		sp_language.setAdapter(adapterLanguage);
+		sp_language.setSelection(0);
 		list_sermon.refresh();
 	}
 
@@ -62,7 +96,7 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 	public void onDragLoadMore() {}
 
 	private void getServerData() {
-		SermonModel.GetSermonList(ParseUser.getCurrentUser(), type, new ObjectListListener() {
+		SermonModel.GetSermonList(ParseUser.getCurrentUser(), type, languageCode[sp_language.getSelectedItemPosition()], new ObjectListListener() {
 			@Override
 			public void done(List<ParseObject> objects, String error) {
 				mDataList.clear();
@@ -133,7 +167,7 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 			}
 			holder.txt_mosque.setText(mosque + " (" + raiser + ")");
 			holder.txt_date.setText(DateTimeUtils.dateToString(mDataList.get(position).getCreatedAt(), DateTimeUtils.DATE_STRING_FORMAT));
-			holder.txt_topic.setText(model.topic);
+			holder.txt_topic.setText(CommonUtil.getLanguageName(model.language) + ": " + model.topic);
 
 			holder.layout_container.setOnClickListener(new View.OnClickListener() {
 				@Override

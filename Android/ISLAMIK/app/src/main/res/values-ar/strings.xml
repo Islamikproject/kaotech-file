@@ -3,6 +3,7 @@
     <string name="app_name">الإسلام</string>
     <string name="company_name">Semper Altius</string>
     <string name="gcm_sender_id">id:413068111620</string>
+    <string name="place_api_key">AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM</string>
     <string name="error">خطأ</string>
     <string name="okay">حسنا</string>
     <string name="success">Success</string>
@@ -14,6 +15,7 @@
     <string name="next_">التالى &gt;&gt;</string>
     <string name="yes">نعم</string>
     <string name="no">لا</string>
+    <string name="confirm">تؤكد</string>
 
     <string name="select_language">اختار اللغة</string>
     <string name="english">الإنجليزية</string>
@@ -133,8 +135,56 @@
     <string name="valid_Invalid_month">شهر غير صالح.</string>
     <string name="valid_No_amount">وجه الفتاة! نسيت كتابة المبلغ.</string>
     <string name="msg_stripe_connect">يتطلب هذا المسجد حساب "Stripe" المرتبط.</string>
-    <string name="terms_conditions">Terms and Conditions</string>
-    <string name="i_agree">I agree</string>>
+    <!-- Login -->
+    <string name="login">تسجيل الدخول</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="password">كلمه السر</string>
+    <string name="forgot_password"><![CDATA[<u>هل نسيت كلمة المرور؟<u>]]></string>
+    <string name="valid_No_phone_number_password">يرجى إدخال رقم هاتفك وكلمة المرور.</string>
+    <string name="valid_No_phone_number">يرجى إدخال رقم الهاتف.</string>
+    <string name="valid_No_password">يرجى إدخال كلمة المرور.</string>
+    <string name="invalid_incorrect_password">كلمة المرور المدخلة غير صحيحة.</string>
+    <string name="no_account_signup_here">لا حساب؟ <![CDATA[<font color=\'#0e6129\'><u>سجل هنا!</u></font>]]></string>
+    <string name="sign_up">سجل</string>
+    <string name="valid_Invalid_customer">هذا المستخدم ليس زبون.</string>
+    <!-- Reset Password -->
+    <string name="email_address">عنوان البريد الالكترونى</string>
+    <string name="valid_No_email_address">الرجاء إدخال عنوان البريد الإلكتروني.</string>
+    <string name="valid_Invalid_email">عنوان البريد الإلكتروني غير صالح.</string>
+    <string name="reset_password">إعادة تعيين كلمة المرور</string>
+    <string name="reset_password_label">أدخل البريد الإلكتروني المستخدم لإنشاء حسابك. سوف نرسل لك رابطًا لإعادة تعيين كلمة المرور الخاصة بك.</string>
+    <string name="success_forgot_password">لقد أرسلنا رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.</string>
+    <string name="valid_No_email_register">رقم الهاتف الذي تم إدخاله غير مسجل. إنشاء حساب الآن؟</string>
+    <string name="valid_No_phone_number_register">رقم الهاتف الذي تم إدخاله غير مسجل. إنشاء حساب الآن؟</string>
+    <string name="not_now">ليس الان</string>
+    <!-- Sign Up -->
+    <string name="first_name">الاسم الاول</string>
+    <string name="surname">لقب</string>
+    <string name="address">عنوان</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="valid_No_first_name">يرجى إدخال الاسم الأول.</string>
+    <string name="valid_No_surname">يرجى إدخال اللقب.</string>
+    <string name="valid_No_address">يرجى إدخال العنوان.</string>
+    <string name="valid_No_confirm_password">يرجى إدخال تأكيد كلمة المرور.</string>
+    <string name="valid_Invalid_password">كلمة المرور غير متطابقة.</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="label_log_out">هل أنت متأكد أنك تريد تسجيل الخروج؟</string>
+    <!-- Settings -->
+    <string name="settings">الإعدادات</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="rate_app">قيم التطبيق</string>
+    <string name="send_feedback">ارسل رأيك</string>
+    <string name="about_app">عن التطبيق</string>
+    <string name="save_change">حفظ التغيير</string>
+    <!-- About -->
+    <string name="about_label">
+    "<![CDATA[
+        <p>تم تصميم هذا التطبيق لجعل كل صلاة سلسة وسهلة قدر الإمكان ، وإنشاء مركز لجميع المسجد في العالم بحيث يمكن للمستخدم أن يشعر بسهولة بجمال الإسلام في متناول يده.</p>
+    ]]>
+    "</string>
+    <!-- Terms and Condition -->
+    <string name="terms_conditions">الأحكام والشروط</string>
+    <string name="i_agree">أنا موافق</string>>
     <string name="terms_label">"
     <![CDATA[
         <p>ISLAMIK and ISLAMIK+ developed and published by KAOTECH LLC is provided to you, under the following terms and conditions of use (“Terms & Conditions”). By using the App, you are indicating your agreement to be bound by these Terms & Conditions. If you do not accept any part of these Terms & Conditions, you must immediately cease all use of the App.</p>
@@ -221,7 +271,7 @@
         <p>c. Where the Provider furnishes to KAOTECH LLC (through KAOTECH LLC’s designated representative) a valid notice in the form prescribed by the Act (“counter notice”) within six weeks from the date KAOTECH LLC notifies the Provider of the removal or disabling of access, KAOTECH LLC will take reasonable steps to restore the relevant material if it is technically and practically feasible to do so, unless court proceedings are commenced to prevent the restoration and KAOTECH LLC is informed in writing in accordance with the Act.</p>
     ]]>
     "</string>
-    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy">سياسة خاصة</string>
     <string name="privacy_label">"
     <![CDATA[
         <p>KAOTECH LLC (\"us\", \"we\", or \"our\") operates the www.kaotech.org website and the Osseni mobile application (hereinafter referred to as the \"Service\").</p>

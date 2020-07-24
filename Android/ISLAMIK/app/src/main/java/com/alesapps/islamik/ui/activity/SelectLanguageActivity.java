@@ -61,7 +61,7 @@ public class SelectLanguageActivity extends BaseActionBarActivity implements Vie
 	private void gotoNextActivity() {
 		AppPreference.setBool(AppPreference.KEY.LANGUAGE_ARABIC, check_arabic.isChecked());
 		if (!isMain) {
-			startActivity(new Intent(instance, MainActivity.class));
+			startActivity(new Intent(instance, LoginActivity.class));
 		} else {
 			MainActivity.instance.recreate();
 			CommonUtil.SetLocale(MainActivity.instance);

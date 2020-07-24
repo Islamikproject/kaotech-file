@@ -3,6 +3,7 @@
     <string name="app_name">ISLAMIK</string>
     <string name="company_name">Semper Altius</string>
     <string name="gcm_sender_id">id:413068111620</string>
+    <string name="place_api_key">AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM</string>
     <string name="error">Error</string>
     <string name="okay">Okay</string>
     <string name="success">Success</string>
@@ -14,6 +15,7 @@
     <string name="next_">NEXT &gt;&gt;</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
+    <string name="confirm">CONFIRM</string>
 
     <string name="select_language">Select Language</string>
     <string name="english">English</string>
@@ -133,6 +135,54 @@
     <string name="valid_Invalid_month">Invalid month.</string>
     <string name="valid_No_amount">Oops! You forgot to type amount.</string>
     <string name="msg_stripe_connect">This mosque requires a connected ‘Stripe’ account.</string>
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="forgot_password"><![CDATA[<u>Forgot Password?<u>]]></string>
+    <string name="valid_No_phone_number_password">Please enter your phone number and password.</string>
+    <string name="valid_No_phone_number">Please enter phone number.</string>
+    <string name="valid_No_password">Please enter password.</string>
+    <string name="invalid_incorrect_password">Password entered is incorrect.</string>
+    <string name="no_account_signup_here">No account? <![CDATA[<font color=\'#0e6129\'><u>Sign Up Here!</u></font>]]></string>
+    <string name="sign_up">Sign Up</string>
+    <string name="valid_Invalid_customer">This user is no customer.</string>
+    <!-- Reset Password -->
+    <string name="email_address">Email address</string>
+    <string name="valid_No_email_address">Please enter email address.</string>
+    <string name="valid_Invalid_email">Email address is invalid.</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="reset_password_label">Input the email used to create your account. We will send you a link to reset your password.</string>
+    <string name="success_forgot_password">We have sent a reset password link to your email.</string>
+    <string name="valid_No_email_register">Phone number entered is not registered. Create an account now?</string>
+    <string name="valid_No_phone_number_register">Phone number entered is not registered. Create an account now?</string>
+    <string name="not_now">Not now</string>
+    <!-- Sign Up -->
+    <string name="first_name">First name</string>
+    <string name="surname">Surname</string>
+    <string name="address">Address</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="valid_No_first_name">Please enter first name.</string>
+    <string name="valid_No_surname">Please enter surname.</string>
+    <string name="valid_No_address">Please enter address.</string>
+    <string name="valid_No_confirm_password">Please enter confirm password.</string>
+    <string name="valid_Invalid_password">Password doesn\'t match.</string>
+    <string name="logout">Log Out</string>
+    <string name="label_log_out">Are you sure you want to log out?</string>
+    <!-- Settings -->
+    <string name="settings">SETTINGS</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="rate_app">Rate App</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="about_app">About App</string>
+    <string name="save_change">Save Change</string>
+    <!-- About -->
+    <string name="about_label">
+    "<![CDATA[
+        <p>This app was built to make every salat as smooth and easy as possible, and create a hub for all the mosque in the world so the user could easily feel the beauty of Islam at his fingertips.</p>
+    ]]>
+    "</string>
+    <!-- Terms and Condition -->
     <string name="terms_conditions">Terms and Conditions</string>
     <string name="i_agree">I agree</string>>
     <string name="terms_label">"

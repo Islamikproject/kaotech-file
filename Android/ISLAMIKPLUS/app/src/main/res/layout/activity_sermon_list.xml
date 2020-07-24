@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/margin_normal"
-    android:paddingRight="@dimen/margin_normal"
-    android:paddingBottom="@dimen/margin_normal"
     android:orientation="vertical"
     android:background="@color/white">
-    <com.alesapps.islamikplus.ui.view.DragListView
-        android:id="@+id/listView"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/green_light" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/green">
+        <TextView
+            style="@style/normalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/language_"
+            android:textColor="@color/white" />
+        <Spinner
+            android:id="@+id/sp_language"
+            style="@style/spinnerWhiteItemStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:gravity="center" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="1dp"
-        android:divider="@color/gray"/>
-</RelativeLayout>
+        android:paddingLeft="@dimen/margin_normal"
+        android:paddingRight="@dimen/margin_normal"
+        android:paddingBottom="@dimen/margin_normal"
+        android:orientation="vertical" >
+        <com.alesapps.islamikplus.ui.view.DragListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="1dp"
+            android:divider="@color/gray"/>
+    </LinearLayout>
+</LinearLayout>

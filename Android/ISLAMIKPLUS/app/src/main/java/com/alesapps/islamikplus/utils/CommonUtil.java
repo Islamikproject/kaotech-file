@@ -12,6 +12,8 @@ import android.view.inputmethod.InputMethodManager;
 import com.alesapps.islamikplus.AppPreference;
 import com.alesapps.islamikplus.IslamikPlusApp;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class CommonUtil {
@@ -19,15 +21,6 @@ public class CommonUtil {
 		String lang = "en";
 		if (AppPreference.getBool(AppPreference.KEY.LANGUAGE_ARABIC, false))
 			lang = "ar";
-		Locale myLocale = new Locale(lang);
-		Resources res = context.getResources();
-		DisplayMetrics dm = res.getDisplayMetrics();
-		Configuration conf = res.getConfiguration();
-		conf.locale = myLocale;
-		res.updateConfiguration(conf, dm);
-	}
-
-	public static void SetLocale(Context context, String lang) {
 		Locale myLocale = new Locale(lang);
 		Resources res = context.getResources();
 		DisplayMetrics dm = res.getDisplayMetrics();
@@ -74,5 +67,44 @@ public class CommonUtil {
 
 	public static String getStrDouble(double value) {
 		return  String.format("%.2f", value);
+	}
+
+	public static String[] getAllLanguageCode() {
+		Locale[] locales = Locale.getAvailableLocales();
+		List<String>languageList = new ArrayList<>();
+		String selectedLanguage = "";
+		for (int i = 0; i < locales.length; i ++) {
+			if (!selectedLanguage.equals(locales[i].getLanguage())) {
+				languageList.add(locales[i].getLanguage());
+				selectedLanguage = locales[i].getLanguage();
+			}
+		}
+		String[] languages = new String[languageList.size()];
+		for (int i = 0; i < languageList.size(); i ++) {
+			languages[i] = languageList.get(i);
+		}
+		return languages;
+	}
+
+	public static String[] getAllLanguageName() {
+		Locale[] locales = Locale.getAvailableLocales();
+		List<String>languageList = new ArrayList<>();
+		String selectedLanguage = "";
+		for (int i = 0; i < locales.length; i ++) {
+			if (!selectedLanguage.equals(locales[i].getLanguage())) {
+				languageList.add(locales[i].getDisplayLanguage(locales[i]));
+				selectedLanguage = locales[i].getLanguage();
+			}
+		}
+		String[] languages = new String[languageList.size()];
+		for (int i = 0; i < languageList.size(); i ++) {
+			languages[i] = languageList.get(i);
+		}
+		return languages;
+	}
+
+	public static String getLanguageName(String code) {
+		Locale locale = new Locale(code);
+		return locale.getDisplayLanguage(locale);
 	}
 }

@@ -40,6 +40,16 @@
         <item name="android:padding">@dimen/margin_small</item>
         <item name="android:textSize">@dimen/textsize_normal</item>
     </style>
+    <style name="spinnerWhiteItemStyle" parent="Base.Widget.AppCompat.Spinner.Underlined">
+        <item name="android:padding">@dimen/margin_small</item>
+        <item name="android:textSize">@dimen/textsize_normal</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="theme">@style/ThemeSpinner</item>
+    </style>
+    <style name="ThemeSpinner">
+        <item name="colorAccent">#ffffff</item>
+        <item name="colorControlNormal">#ffffff</item>
+    </style>
     <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem" />
     <!-- Slide Menu -->
     <attr name="slideMenuStyle" format="reference" />

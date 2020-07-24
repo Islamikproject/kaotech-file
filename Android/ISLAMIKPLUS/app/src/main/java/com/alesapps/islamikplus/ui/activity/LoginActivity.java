@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.alesapps.islamikplus.AppPreference;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.UserListener;
+import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.model.UserModel;
 import com.alesapps.islamikplus.utils.CommonUtil;
 import com.alesapps.islamikplus.utils.MessageUtil;
@@ -96,11 +97,14 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 			@Override
 			public void done(ParseUser userObj, String error) {
 				// TODO Auto-generated method stub
+				ParseUser currentUser = ParseUser.getCurrentUser();
 				if (error == null) {
 					dlg_progress.cancel();
-					gotoNextActivity();
+					if (currentUser.getInt(ParseConstants.KEY_TYPE) == UserModel.TYPE_USER)
+						gotoNextActivity();
+					else
+						MessageUtil.showError(instance, R.string.valid_Invalid_mosque);
 				} else {
-					ParseUser currentUser = ParseUser.getCurrentUser();
 					if (currentUser != null)
 						currentUser.logOut();
 					UserModel.GetUserFromPhone(phone, new UserListener() {

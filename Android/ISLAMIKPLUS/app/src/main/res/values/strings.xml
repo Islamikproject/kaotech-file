@@ -3,6 +3,7 @@
     <string name="app_name">ISLAMIK+</string>
     <string name="company_name">Semper Altius</string>
     <string name="gcm_sender_id">id:413068111620</string>
+    <string name="place_api_key">AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM</string>
     <string name="error">Error</string>
     <string name="okay">Okay</string>
     <string name="success">Success</string>
@@ -32,6 +33,7 @@
     <string name="invalid_incorrect_password">Password entered is incorrect.</string>
     <string name="no_account_signup_here">No account? <![CDATA[<font color=\'#0e6129\'><u>Sign Up Here!</u></font>]]></string>
     <string name="sign_up">Sign Up</string>
+    <string name="valid_Invalid_mosque">This user is no mosque.</string>
     <!-- Reset Password -->
     <string name="email_address">Email address</string>
     <string name="valid_No_email_address">Please enter email address.</string>
@@ -59,9 +61,11 @@
     <string name="regular_sermon">REGULAR SERMON</string>
     <string name="manage_donation">MANAGE DONATION</string>
     <string name="settings">SETTINGS</string>
+    <string name="messages">MESSAGES</string>
     <string name="logout">Log Out</string>
     <string name="label_log_out">Are you sure you want to log out?</string>
     <!-- Sermon -->
+    <string name="language_">Language:</string>
     <string name="upload_video">Upload video</string>
     <string name="take_new_video">Take a new video</string>
     <string name="select_gallery">Select from gallery</string>
@@ -71,6 +75,7 @@
     <string name="success_regular_message">Imam %1$s is going live for REGULAR SERMON and will talk about \n %2$s</string>
     <string name="delete">Delete</string>
     <string name="confirm_delete_sermon">Are you sure you want to delete this sermon?</string>
+    <string name="select_language_sermon">Select the language of your sermon</string>
     <!-- Donation -->
     <string name="amount_donated">Amount Donated</string>
     <string name="raise_funds">Raise Funds</string>

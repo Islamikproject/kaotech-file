@@ -26,12 +26,12 @@ use Stripe\Charge as StripeCharge;
 class HomeController extends Controller
 {
     // Test Keys
-    public $STRIPE_SECRET_KEY = 'sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK';
-    public $STRIPE_CLIENT_ID = 'ca_HAu0nFiHFKWtYrCs8x2Nn4AwiQOcqC23'; // dev
+    //public $STRIPE_SECRET_KEY = 'sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK';
+    //public $STRIPE_CLIENT_ID = 'ca_HAu0nFiHFKWtYrCs8x2Nn4AwiQOcqC23'; // dev
 
     //Live Keys
-    //public $STRIPE_SECRET_KEY = 'sk_live_xFVtiA6eN5gGeci46vQYeezm005G3nSxFr';
-    //public STRIPE_CLIENT_ID = 'ca_Ad4xfP7ici4qlstU7omGbtBNrVxYvuLi'; // live
+    public $STRIPE_SECRET_KEY = 'sk_live_Sxb4YVSMgXYNpy7y8X3jsh9T00stzJO6fd';
+    public $STRIPE_CLIENT_ID = 'ca_HAu0bYJWn03oOjJass23LkHVURAcUtTs'; // live
 
     public $STRIPE_CONNECT_URL    = 'https://connect.stripe.com/oauth/authorize';
     public $STRIPE_TOKEN_URL      = 'https://connect.stripe.com/oauth/token';
@@ -240,6 +240,8 @@ class HomeController extends Controller
         ]);
       } catch (Stripe_Error $e) {
         $error = $e->getMessage();
+        var_dump($e);
+        var_dump($e->getCode());die;
         return redirect()->back()->withErrors([$error]);
       }
 

@@ -9,6 +9,11 @@ import android.os.Handler;
 import androidx.core.app.ActivityCompat;
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
+import com.alesapps.islamik.listener.UserListener;
+import com.alesapps.islamik.model.UserModel;
+import com.alesapps.islamik.utils.BaseTask;
+import com.alesapps.islamik.utils.MessageUtil;
+import com.parse.ParseUser;
 
 public class SplashActivity extends BaseActivity {
 	public static SplashActivity instance = null;
@@ -43,17 +48,65 @@ public class SplashActivity extends BaseActivity {
 			new Handler().postDelayed(new Runnable() {
 				@Override
 				public void run() {
-					gotoNextActivity();
+					boolean signedAuto = AppPreference.getBool(AppPreference.KEY.SIGN_IN_AUTO, false);
+					if (!signedAuto)
+						gotoNextActivity(true);
+					else
+						login();
 				}
 			}, 1000);
 		}
 	}
 
-	private void gotoNextActivity() {
-		if (AppPreference.getBool(AppPreference.KEY.AGREE, false))
-			startActivity(new Intent(instance, MainActivity.class));
-		else
+
+	private void login() {
+		final String username = AppPreference.getStr(AppPreference.KEY.PHONE_NUMBER, null);
+		final String password = AppPreference.getStr(AppPreference.KEY.PASSWORD, null);
+		dlg_progress.show();
+		BaseTask.run(new BaseTask.TaskListener() {
+			@Override
+			public Object onTaskRunning(int taskId, Object data) {
+				// TODO Auto-generated method stub
+				try {
+					ParseUser currentUser = ParseUser.getCurrentUser();
+					if (currentUser != null)
+						currentUser.logOut();
+				} catch (Exception ex) {}
+				return null;
+			}
+			@Override
+			public void onTaskResult(int taskId, Object result) {
+				// TODO Auto-generated method stub
+				UserModel.Login(username, password, new UserListener() {
+					@Override
+					public void done(ParseUser user, String error) {
+						dlg_progress.hide();
+						if (error == null) {
+							gotoNextActivity(false);
+						} else {
+							MessageUtil.showToast(instance, error, true);
+							gotoNextActivity(true);
+						}
+					}
+				});
+			}
+			@Override
+			public void onTaskProgress(int taskId, Object... values) {}
+			@Override
+			public void onTaskPrepare(int taskId, Object data) {}
+			@Override
+			public void onTaskCancelled(int taskId) {}
+		});
+	}
+
+	private void gotoNextActivity(boolean isLogin) {
+		if (!AppPreference.getBool(AppPreference.KEY.AGREE, false)) {
 			startActivity(new Intent(instance, OnboardActivity.class));
+		} else if (isLogin) {
+			startActivity(new Intent(instance, LoginActivity.class));
+		} else {
+			startActivity(new Intent(instance, MainActivity.class));
+		}
 		finish();
 	}
 }

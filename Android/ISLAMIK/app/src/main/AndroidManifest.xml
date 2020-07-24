@@ -48,6 +48,16 @@
             </intent-filter>
         </activity>
         <activity android:name="com.alesapps.islamik.ui.activity.OnboardActivity" />
+        <activity android:name="com.alesapps.islamik.ui.activity.LoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamik.ui.activity.SignUpActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamik.ui.activity.ResetPasswordActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamik.ui.activity.EditProfileActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamik.ui.activity.SettingsActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name="com.alesapps.islamik.ui.activity.PrivacyPolicyActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.TermsConditionActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SelectLanguageActivity" />
