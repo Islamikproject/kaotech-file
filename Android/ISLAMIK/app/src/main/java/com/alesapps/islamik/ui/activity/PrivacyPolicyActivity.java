@@ -7,6 +7,8 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 
 public class PrivacyPolicyActivity extends BaseActionBarActivity {
@@ -26,6 +28,17 @@ public class PrivacyPolicyActivity extends BaseActionBarActivity {
 		txt_content.setMovementMethod(LinkMovementMethod.getInstance());
 		btn_agree = findViewById(R.id.btn_agree);
 		btn_agree.setOnClickListener(this);
+		initialize();
+	}
+
+	private void initialize() {
+		if (AppPreference.getBool(AppPreference.KEY.AGREE, false)) {
+			ShowActionBarIcons(true, R.id.action_back);
+			btn_agree.setVisibility(View.GONE);
+		} else {
+			ShowActionBarIcons(true, -1);
+			btn_agree.setVisibility(View.VISIBLE);
+		}
 	}
 
 	@Override

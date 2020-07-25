@@ -1,5 +1,7 @@
 package com.alesapps.islamik.model;
 
+import android.text.TextUtils;
+
 import com.alesapps.islamik.listener.ObjectListListener;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -37,15 +39,18 @@ public class SermonModel {
 		isDelete = object.getBoolean(ParseConstants.KEY_IS_DELETE);
 	}
 
-	public static void GetSermonList(final ParseUser userObj, final ObjectListListener listener) {
+	public static void GetSermonList(final ParseUser userObj, final int type, String language, final ObjectListListener listener) {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery(ParseConstants.TBL_SERMON);
 		query.whereEqualTo(ParseConstants.KEY_OWNER, userObj);
+		query.whereEqualTo(ParseConstants.KEY_TYPE, type);
 		query.whereNotEqualTo(ParseConstants.KEY_IS_DELETE, true);
+		if (!TextUtils.isEmpty(language))
+			query.whereEqualTo(ParseConstants.KEY_LANGUAGE, language);
 		query.include(ParseConstants.KEY_OWNER);
 		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
 		query.setLimit(ParseConstants.QUERY_FETCH_MAX_COUNT);
+
 		query.findInBackground(new FindCallback<ParseObject>() {
-			@Override
 			public void done(List<ParseObject> objects, ParseException e) {
 				if (listener != null)
 					listener.done(objects, ParseErrorHandler.handle(e));

@@ -13,6 +13,8 @@ import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.IslamikApp;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class CommonUtil {
@@ -119,5 +121,45 @@ public class CommonUtil {
 			browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			IslamikApp.getContext().startActivity(browserIntent);
 		}
+	}
+
+
+	public static String[] getAllLanguageCode() {
+		Locale[] locales = Locale.getAvailableLocales();
+		List<String> languageList = new ArrayList<>();
+		String selectedLanguage = "";
+		for (int i = 0; i < locales.length; i ++) {
+			if (!selectedLanguage.equals(locales[i].getLanguage())) {
+				languageList.add(locales[i].getLanguage());
+				selectedLanguage = locales[i].getLanguage();
+			}
+		}
+		String[] languages = new String[languageList.size()];
+		for (int i = 0; i < languageList.size(); i ++) {
+			languages[i] = languageList.get(i);
+		}
+		return languages;
+	}
+
+	public static String[] getAllLanguageName() {
+		Locale[] locales = Locale.getAvailableLocales();
+		List<String>languageList = new ArrayList<>();
+		String selectedLanguage = "";
+		for (int i = 0; i < locales.length; i ++) {
+			if (!selectedLanguage.equals(locales[i].getLanguage())) {
+				languageList.add(locales[i].getDisplayLanguage(locales[i]));
+				selectedLanguage = locales[i].getLanguage();
+			}
+		}
+		String[] languages = new String[languageList.size()];
+		for (int i = 0; i < languageList.size(); i ++) {
+			languages[i] = languageList.get(i);
+		}
+		return languages;
+	}
+
+	public static String getLanguageName(String code) {
+		Locale locale = new Locale(code);
+		return locale.getDisplayLanguage(locale);
 	}
 }

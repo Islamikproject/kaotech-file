@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/margin_normal"
     android:orientation="vertical"
     android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingLeft="@dimen/image_very_small"
+        android:paddingRight="@dimen/image_very_small"
+        android:paddingBottom="@dimen/margin_normal"
+        android:orientation="horizontal"
+        android:background="@color/green">
+        <TextView
+            android:id="@+id/txt_jumah"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:padding="@dimen/margin_normal"
+            android:gravity="center"
+            android:text="@string/jumah"
+            android:textColor="@color/green"
+            android:background="@color/white"/>
+        <TextView
+            android:id="@+id/txt_regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:padding="@dimen/margin_normal"
+            android:gravity="center"
+            android:text="@string/regular"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_rectangle_white_line"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/green">
+        <TextView
+            style="@style/normalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/language"
+            android:textColor="@color/white" />
+        <Spinner
+            android:id="@+id/sp_language"
+            style="@style/spinnerWhiteItemStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:gravity="center" />
+    </LinearLayout>
     <com.alesapps.islamik.ui.view.DragListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingLeft="@dimen/margin_normal"
+        android:paddingRight="@dimen/margin_normal"
+        android:paddingBottom="@dimen/margin_normal"
         android:dividerHeight="1dp"
         android:divider="@color/gray"/>
-</RelativeLayout>
+</LinearLayout>

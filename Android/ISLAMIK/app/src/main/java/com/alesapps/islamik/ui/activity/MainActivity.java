@@ -8,10 +8,10 @@ import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
-
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ExceptionListener;
+import com.alesapps.islamik.model.MessageModel;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.utils.MessageUtil;
 
@@ -33,6 +33,8 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		findViewById(R.id.layout_jumah).setOnClickListener(this);
 		findViewById(R.id.layout_nafilah).setOnClickListener(this);
 		findViewById(R.id.layout_quran).setOnClickListener(this);
+		findViewById(R.id.layout_messages).setOnClickListener(this);
+		findViewById(R.id.layout_settings).setOnClickListener(this);
 	}
 
 	@Override
@@ -64,6 +66,12 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				break;
 			case R.id.layout_quran:
 				startActivity(new Intent(instance, QuranActivity.class));
+				break;
+			case R.id.layout_messages:
+				startActivity(new Intent(instance, MessagesActivity.class));
+				break;
+			case R.id.layout_settings:
+				startActivity(new Intent(instance, SettingsActivity.class));
 				break;
 		}
 	}

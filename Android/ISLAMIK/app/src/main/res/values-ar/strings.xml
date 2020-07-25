@@ -20,6 +20,7 @@
     <string name="select_language">اختار اللغة</string>
     <string name="english">الإنجليزية</string>
     <string name="arabic">عربى</string>
+    <string name="language">لغة:</string>
 
     <string name="onboard_label_a">"كما عزيزي سلام Anleykoum عزيزي ، مهمتنا في Kaotech LLC مهمتنا هي جعل كل عبادة سهلة وسلسة قدر الإمكان ، الله ينيرك ويقبل صلواتك"</string>
     <string name="onboard_label_b">Kaossara OSSENI ، المؤسس.</string>
@@ -27,7 +28,8 @@
     <string name="jumah_and_sermon">جمعة وعظة</string>
     <string name="daily_prayers">صلوات يومية</string>
     <string name="jumah">جمعة</string>
-    <string name="nafilah">NAFILAH</string>
+    <string name="regular">منتظم</string>
+    <string name="nafilah">النافلة</string>
     <string name="salat_layl_tahajjud">صلاة الليل / طاجود</string>
     <string name="salat_layl__tahajjud">صلاة الليل / طاجود</string>
     <string name="zikr">الذكر</string>
@@ -61,7 +63,7 @@
     <string name="zuhr">الظهر</string>
     <string name="asr">ASR</string>
     <string name="maghrib">صلاة المغرب</string>
-    <string name="isha">ISHA</string>
+    <string name="isha">SEI</string>
 
     <string name="witr">الوتر</string>
     <string name="two">الثاني</string>
@@ -169,6 +171,13 @@
     <string name="valid_Invalid_password">كلمة المرور غير متطابقة.</string>
     <string name="logout">تسجيل خروج</string>
     <string name="label_log_out">هل أنت متأكد أنك تريد تسجيل الخروج؟</string>
+    <!-- Message -->
+    <string name="messages">الرسائل</string>
+    <string name="topic_">موضوع:</string>
+    <string name="question">سؤال:</string>
+    <string name="answer">إجابة:</string>
+    <string name="valid_No_question">يرجى إدخال السؤال.</string>
+    <string name="submit">إرسال</string>
     <!-- Settings -->
     <string name="settings">الإعدادات</string>
     <string name="edit_profile">تعديل الملف الشخصي</string>

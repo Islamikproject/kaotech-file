@@ -20,6 +20,7 @@
     <string name="select_language">Select Language</string>
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
+    <string name="language">Language:</string>
 
     <string name="onboard_label_a">“As Salam Anleykoum dear USERS, at Kaotech LLC our mission Is to make every act of worship as easy and smooth as possible, May Allah enlighten you and accept your prayers”</string>
     <string name="onboard_label_b">Kaossara OSSENI, The founder.</string>
@@ -27,6 +28,7 @@
     <string name="jumah_and_sermon">JUMAH AND SERMON</string>
     <string name="daily_prayers">DAILY PRAYERS</string>
     <string name="jumah">JUMAH</string>
+    <string name="regular">REGULAR</string>
     <string name="nafilah">NAFILAH</string>
     <string name="salat_layl_tahajjud">SALAT LAYL/TAHAJJUD</string>
     <string name="salat_layl__tahajjud">SALAT LAYL\nTAHAJJUD</string>
@@ -169,6 +171,13 @@
     <string name="valid_Invalid_password">Password doesn\'t match.</string>
     <string name="logout">Log Out</string>
     <string name="label_log_out">Are you sure you want to log out?</string>
+    <!-- Message -->
+    <string name="messages">MESSAGES</string>
+    <string name="topic_">Topic:</string>
+    <string name="question">Question:</string>
+    <string name="answer">Answer:</string>
+    <string name="valid_No_question">Please enter question.</string>
+    <string name="submit">Submit</string>
     <!-- Settings -->
     <string name="settings">SETTINGS</string>
     <string name="edit_profile">Edit Profile</string>
@@ -176,6 +185,7 @@
     <string name="send_feedback">Send Feedback</string>
     <string name="about_app">About App</string>
     <string name="save_change">Save Change</string>
+
     <!-- About -->
     <string name="about_label">
     "<![CDATA[

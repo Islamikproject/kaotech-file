@@ -7,9 +7,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ObjectListListener;
@@ -17,6 +19,7 @@ import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.model.SermonModel;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.ui.view.DragListView;
+import com.alesapps.islamik.utils.CommonUtil;
 import com.alesapps.islamik.utils.DateTimeUtils;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -25,11 +28,16 @@ import java.util.List;
 
 public class SermonListActivity extends BaseActionBarActivity implements View.OnClickListener, DragListView.OnRefreshLoadingMoreListener {
 	public static SermonListActivity instance;
-	TextView txt_address;
+	TextView txt_jumah;
+	TextView txt_regular;
+	Spinner sp_language;
 	DragListView list_sermon;
 	ListAdapter adapter;
 	ArrayList<ParseObject> mDataList = new ArrayList<>();
 	public static ParseUser mUserObj;
+	int type = SermonModel.TYPE_JUMAH;
+	String[] languageCode;
+	String[] languageName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +45,71 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 		instance = this;
 		SetTitle(R.string.app_name, -1);
 		ShowActionBarIcons(true, R.id.action_back);
-		setContentView(R.layout.activity_sermon);
-		txt_address = findViewById(R.id.txt_address);
-		txt_address.setVisibility(View.GONE);
+		setContentView(R.layout.activity_sermon_list);
+		txt_jumah = findViewById(R.id.txt_jumah);
+		txt_regular = findViewById(R.id.txt_regular);
+		sp_language = findViewById(R.id.sp_language);
 		list_sermon = findViewById(R.id.listView);
 		adapter = new ListAdapter();
 		list_sermon.setAdapter(adapter);
 		list_sermon.setOnRefreshListener(this);
+		sp_language.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				list_sermon.refresh();
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {}
+		});
+		txt_regular.setOnClickListener(this);
+		txt_jumah.setOnClickListener(this);
+		initialize();
+	}
+
+	private void initialize() {
+		String[] strLanguageCodes = CommonUtil.getAllLanguageCode();
+		String[] strLanguageNames = CommonUtil.getAllLanguageName();
+		languageCode = new String[strLanguageCodes.length + 1];
+		languageName = new String[strLanguageNames.length + 1];
+		languageCode[0] = "";
+		languageName[0] = "";
+		for (int i = 0; i < strLanguageCodes.length; i ++) {
+			languageCode[i + 1] = strLanguageCodes[i];
+			languageName[i + 1] = strLanguageNames[i];
+		}
+		ArrayAdapter<String> adapterLanguage = new ArrayAdapter<>(instance, android.R.layout.simple_spinner_dropdown_item, languageName);
+		sp_language.setAdapter(adapterLanguage);
+		sp_language.setSelection(0);
+		setType(SermonModel.TYPE_JUMAH);
+	}
+
+	@Override
+	public void onClick(View view) {
+		super.onClick(view);
+		switch (view.getId()) {
+			case R.id.txt_jumah:
+				setType(SermonModel.TYPE_JUMAH);
+				return;
+			case R.id.txt_regular:
+				setType(SermonModel.TYPE_REGULAR);
+				break;
+		}
+	}
+
+	private void setType(int index) {
+		type = index;
+		txt_jumah.setBackgroundResource(R.drawable.bg_rectangle_white_line);
+		txt_jumah.setTextColor(getResources().getColor(R.color.white));
+		txt_regular.setBackgroundResource(R.drawable.bg_rectangle_white_line);
+		txt_regular.setTextColor(getResources().getColor(R.color.white));
+		if (type == SermonModel.TYPE_JUMAH) {
+			txt_jumah.setBackgroundColor(getResources().getColor(R.color.white));
+			txt_jumah.setTextColor(getResources().getColor(R.color.green));
+		} else if (type == SermonModel.TYPE_REGULAR) {
+			txt_regular.setBackgroundColor(getResources().getColor(R.color.white));
+			txt_regular.setTextColor(getResources().getColor(R.color.green));
+		}
 		list_sermon.refresh();
 	}
 
@@ -56,7 +122,7 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 	public void onDragLoadMore() {}
 
 	private void getServerData() {
-		SermonModel.GetSermonList(mUserObj, new ObjectListListener() {
+		SermonModel.GetSermonList(mUserObj, type, languageCode[sp_language.getSelectedItemPosition()], new ObjectListListener() {
 			@Override
 			public void done(List<ParseObject> objects, String error) {
 				mDataList.clear();
