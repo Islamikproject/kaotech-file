@@ -62,5 +62,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_action_done"/>
+        <ImageView
+            android:id="@+id/action_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_action_share"/>
+        <ImageView
+            android:id="@+id/action_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_action_rate"/>
     </LinearLayout>
 </RelativeLayout>

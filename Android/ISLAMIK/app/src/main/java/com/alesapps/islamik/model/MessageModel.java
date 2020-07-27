@@ -16,6 +16,7 @@ public class MessageModel {
 	public ParseUser mosque;
 	public String question = "";
 	public String answer = "";
+	public int rate = 0;
 
 	public void parse(ParseObject object) {
 		if (object == null)
@@ -25,6 +26,7 @@ public class MessageModel {
 		mosque = object.getParseUser(ParseConstants.KEY_MOSQUE);
 		question = object.getString(ParseConstants.KEY_QUESTION);
 		answer = object.getString(ParseConstants.KEY_ANSWER);
+		rate = object.getInt(ParseConstants.KEY_RATE);
 	}
 
 	public static void GetMessageList(final ObjectListListener listener) {
@@ -51,6 +53,7 @@ public class MessageModel {
 		messageObj.put(ParseConstants.KEY_MOSQUE, model.mosque);
 		messageObj.put(ParseConstants.KEY_QUESTION, model.question);
 		messageObj.put(ParseConstants.KEY_ANSWER, model.answer);
+		messageObj.put(ParseConstants.KEY_RATE, model.rate);
 
 		messageObj.saveInBackground(new SaveCallback() {
 			@Override

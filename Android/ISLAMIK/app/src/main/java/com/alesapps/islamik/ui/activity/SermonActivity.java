@@ -14,7 +14,7 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SermonActivity extends BaseActionBarActivity implements View.OnClickListener, DragListView.OnRefreshLoadingMoreListener {
+public class SermonActivity extends BaseActionBarActivity implements DragListView.OnRefreshLoadingMoreListener {
 	public static SermonActivity instance;
 	DragListView list_sermon;
 	ListAdapter adapter;
@@ -31,7 +31,19 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		adapter = new ListAdapter();
 		list_sermon.setAdapter(adapter);
 		list_sermon.setOnRefreshListener(this);
+		findViewById(R.id.btn_near).setOnClickListener(this);
 		list_sermon.refresh();
+	}
+
+	@Override
+	public void onClick(View view) {
+		// TODO Auto-generated method stub]
+		super.onClick(view);
+		switch (view.getId()) {
+			case R.id.btn_near:
+				startActivity(new Intent(instance, MapActivity.class));
+				break;
+		}
 	}
 
 	@Override

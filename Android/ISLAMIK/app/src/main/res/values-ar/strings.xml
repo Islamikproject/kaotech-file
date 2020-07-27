@@ -4,6 +4,7 @@
     <string name="company_name">Semper Altius</string>
     <string name="gcm_sender_id">id:413068111620</string>
     <string name="place_api_key">AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM</string>
+    <string name="google_map_api_key">AIzaSyB29V4KQhFMeGx_q50rlYbfPnaYrp97o-o</string>
     <string name="error">خطأ</string>
     <string name="okay">حسنا</string>
     <string name="success">Success</string>
@@ -185,6 +186,7 @@
     <string name="send_feedback">ارسل رأيك</string>
     <string name="about_app">عن التطبيق</string>
     <string name="save_change">حفظ التغيير</string>
+    <string name="mosque_near_me">مسجد قريب مني</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[

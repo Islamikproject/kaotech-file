@@ -10,10 +10,12 @@ import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.model.MessageModel;
 import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.utils.MessageUtil;
+import com.hedgehog.ratingbar.RatingBar;
 import com.parse.ParseObject;
 
 public class AnswerActivity extends BaseActionBarActivity implements View.OnClickListener {
 	public static AnswerActivity instance = null;
+	RatingBar ratingBar;
 	TextView txt_topic;
 	TextView txt_question;
 	EditText edt_answer;
@@ -26,6 +28,7 @@ public class AnswerActivity extends BaseActionBarActivity implements View.OnClic
 		SetTitle("", -1);
 		ShowActionBarIcons(true, R.id.action_back);
 		setContentView(R.layout.activity_answer);
+		ratingBar = findViewById(R.id.ratingBar);
 		txt_topic = findViewById(R.id.txt_topic);
 		txt_question = findViewById(R.id.txt_question);
 		edt_answer = findViewById(R.id.edt_answer);
@@ -35,6 +38,8 @@ public class AnswerActivity extends BaseActionBarActivity implements View.OnClic
 	}
 
 	private void initialize() {
+		int rate = mMessagesObj.getInt(ParseConstants.KEY_RATE);
+		ratingBar.setStar(rate);
 		txt_topic.setText(mMessagesObj.getParseObject(ParseConstants.KEY_SERMON).getString(ParseConstants.KEY_TOPIC));
 		txt_question.setText(mMessagesObj.getString(ParseConstants.KEY_QUESTION));
 		edt_answer.setText(mMessagesObj.getString(ParseConstants.KEY_ANSWER));

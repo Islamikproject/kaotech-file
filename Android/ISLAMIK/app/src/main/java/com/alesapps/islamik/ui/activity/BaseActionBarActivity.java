@@ -29,6 +29,8 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 	public TextView action_text_next;
 	public View action_button_language;
 	public View action_button_done;
+	public View action_button_share;
+	public View action_button_rate;
 	public MyProgressDialog dlg_progress;
 
 	@SuppressLint({ "InflateParams", "NewApi" })
@@ -71,12 +73,18 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_button_language.setVisibility(View.GONE);
 			action_button_done = v.findViewById(R.id.action_done);
 			action_button_done.setVisibility(View.GONE);
+			action_button_share = v.findViewById(R.id.action_share);
+			action_button_share.setVisibility(View.GONE);
+			action_button_rate = v.findViewById(R.id.action_rate);
+			action_button_rate.setVisibility(View.GONE);
 
 			action_button_back.setOnClickListener(this);
 			action_button_logout.setOnClickListener(this);
 			action_text_next.setOnClickListener(this);
 			action_button_language.setOnClickListener(this);
 			action_button_done.setOnClickListener(this);
+			action_button_share.setOnClickListener(this);
+			action_button_rate.setOnClickListener(this);
 			actionBar.setCustomView(v);
 		}
 		dlg_progress = new MyProgressDialog(this);
@@ -131,6 +139,8 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_text_next.setVisibility(View.GONE);
 			action_button_language.setVisibility(View.GONE);
 			action_button_done.setVisibility(View.GONE);
+			action_button_share.setVisibility(View.GONE);
+			action_button_rate.setVisibility(View.GONE);
 
 			if (res_id_arr != null) {
 				for (int i = 0; i < res_id_arr.length; i++) {
@@ -149,6 +159,12 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 							break;
 						case R.id.action_done:
 							action_button_done.setVisibility(View.VISIBLE);
+							break;
+						case R.id.action_share:
+							action_button_share.setVisibility(View.VISIBLE);
+							break;
+						case R.id.action_rate:
+							action_button_rate.setVisibility(View.VISIBLE);
 							break;
 					}
 				}

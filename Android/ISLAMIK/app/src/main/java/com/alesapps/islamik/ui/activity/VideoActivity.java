@@ -6,13 +6,19 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import androidx.core.app.ShareCompat;
+import androidx.core.content.FileProvider;
 
 import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.model.ParseConstants;
+import com.alesapps.islamik.utils.CommonUtil;
 import com.alesapps.islamik.utils.MessageUtil;
 import com.alesapps.islamik.utils.ResourceUtil;
 import com.parse.ParseObject;
@@ -36,10 +42,26 @@ public class VideoActivity extends BaseActionBarActivity{
 		super.onCreate(savedInstanceState);
 		instance = this;
 		SetTitle(null, 0);
-		ShowActionBarIcons(true, R.id.action_back);
+		ShowActionBarIcons(true, R.id.action_back, R.id.action_share, R.id.action_rate);
 		setContentView(R.layout.activity_video);
 		videoView = findViewById(R.id.videoView);
 		videoDownload();
+	}
+
+	@Override
+	public void onClick(View view) {
+		// TODO Auto-generated method stub]
+		super.onClick(view);
+		switch (view.getId()) {
+			case R.id.action_share:
+				shareVideo();
+				break;
+			case R.id.action_rate:
+				QuestionActivity.mMessagesObj = null;
+				QuestionActivity.mSermonObj = mSermonObj;
+				startActivity(new Intent(instance, QuestionActivity.class));
+				break;
+		}
 	}
 
 	private void videoDownload() {
@@ -133,12 +155,23 @@ public class VideoActivity extends BaseActionBarActivity{
 						String url = AppConstant.STRIPE_CONNECT_URL + mSermonObj.getObjectId();
 						Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 						startActivity(browserIntent);
-						finish();
 					}
 				})
 				.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {}
 				}).show();
+	}
+
+	private void shareVideo() {
+		String video_name = mSermonObj.getString(ParseConstants.KEY_VIDEO_NAME) + ".mp4";
+		String local_path = ResourceUtil.getVideoFilePath(video_name);
+		File videoFile = new File(local_path);
+		Uri videoURI = FileProvider.getUriForFile(getApplicationContext(), getPackageName()+".provider", videoFile);
+		ShareCompat.IntentBuilder.from(this)
+				.setStream(videoURI)
+				.setType("video/mp4")
+				.setChooserTitle("Share video...")
+				.startChooser();
 	}
 }
 

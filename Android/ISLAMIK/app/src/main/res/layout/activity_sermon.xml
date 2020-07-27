@@ -10,7 +10,15 @@
     <com.alesapps.islamik.ui.view.DragListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:dividerHeight="1dp"
         android:divider="@color/gray"/>
+    <Button
+        android:id="@+id/btn_near"
+        style="@style/normalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:text="@string/mosque_near_me"/>
 </LinearLayout>

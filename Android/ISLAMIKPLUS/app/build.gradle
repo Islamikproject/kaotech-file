@@ -7,7 +7,7 @@ android {
         applicationId "com.alesapps.islamikplus"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 3
+        versionCode 4
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,6 +44,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-places:17.0.0'
     implementation 'com.google.android.libraries.places:places:2.2.0'
     implementation 'com.github.florent37:camerafragment:1.0.9'
+    implementation 'com.hedgehog.ratingbar:app:1.1.2'
     testImplementation 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

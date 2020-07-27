@@ -19,7 +19,10 @@ public class SplashActivity extends BaseActivity {
 	public static SplashActivity instance = null;
 	private static final int REQUEST_PERMISSION = 1;
 	private static String[] PERMISSIONS = {
-			Manifest.permission.WRITE_EXTERNAL_STORAGE};
+			Manifest.permission.WRITE_EXTERNAL_STORAGE,
+			Manifest.permission.ACCESS_FINE_LOCATION,
+			Manifest.permission.ACCESS_COARSE_LOCATION
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +40,12 @@ public class SplashActivity extends BaseActivity {
 
 	public void verifyStoragePermissions(Activity activity) {
 		int permission0 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+		int permission1 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION);
+		int permission2 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION);
 
-		if (permission0 != PackageManager.PERMISSION_GRANTED) {
+		if (permission0 != PackageManager.PERMISSION_GRANTED
+				|| permission1 != PackageManager.PERMISSION_GRANTED
+				|| permission2 != PackageManager.PERMISSION_GRANTED) {
 			ActivityCompat.requestPermissions(
 					activity,
 					PERMISSIONS,

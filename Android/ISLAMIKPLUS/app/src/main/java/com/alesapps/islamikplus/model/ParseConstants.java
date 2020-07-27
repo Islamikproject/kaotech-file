@@ -45,4 +45,5 @@ public class ParseConstants {
 	// Messages
 	public static final String KEY_QUESTION = "question";
 	public static final String KEY_ANSWER = "answer";
+	public static final String KEY_RATE = "rate";
 }

@@ -2,9 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:hedgehog="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/margin_normal"
+    android:gravity="center_horizontal"
     android:background="@color/white"
     android:orientation="vertical">
+    <com.hedgehog.ratingbar.RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        hedgehog:clickable="true"
+        hedgehog:halfstart="false"
+        hedgehog:starCount="5"
+        hedgehog:starEmpty="@drawable/ic_rate_unselect"
+        hedgehog:starFill="@drawable/ic_rate_select"
+        hedgehog:starImageHeight="@dimen/image_small"
+        hedgehog:starImageWidth="@dimen/image_small"
+        hedgehog:starImagePadding="@dimen/margin_normal" />
     <TextView
         style="@style/normalText"
         android:layout_width="match_parent"

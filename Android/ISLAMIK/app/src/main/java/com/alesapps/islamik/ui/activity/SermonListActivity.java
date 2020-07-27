@@ -43,7 +43,7 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		instance = this;
-		SetTitle(R.string.app_name, -1);
+		SetTitle(mUserObj.getString(ParseConstants.KEY_MOSQUE), -1);
 		ShowActionBarIcons(true, R.id.action_back);
 		setContentView(R.layout.activity_sermon_list);
 		txt_jumah = findViewById(R.id.txt_jumah);
