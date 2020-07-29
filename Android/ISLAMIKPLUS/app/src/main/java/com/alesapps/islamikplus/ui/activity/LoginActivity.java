@@ -100,7 +100,7 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 				ParseUser currentUser = ParseUser.getCurrentUser();
 				if (error == null) {
 					dlg_progress.cancel();
-					if (currentUser.getInt(ParseConstants.KEY_TYPE) == UserModel.TYPE_USER)
+					if (currentUser.getInt(ParseConstants.KEY_TYPE) == UserModel.TYPE_MOSQUE)
 						gotoNextActivity();
 					else
 						MessageUtil.showError(instance, R.string.valid_Invalid_mosque);
