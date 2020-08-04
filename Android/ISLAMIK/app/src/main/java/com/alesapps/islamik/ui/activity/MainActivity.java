@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ExceptionListener;
-import com.alesapps.islamik.model.MessageModel;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.utils.MessageUtil;
 
