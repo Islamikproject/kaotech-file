@@ -226,4 +226,33 @@
     else
         return YES;
 }
+
++ (NSMutableArray *) getLanguageCodeList {
+    NSArray *allLocales = [NSLocale availableLocaleIdentifiers];
+    NSMutableArray *languageCode = [NSMutableArray new];
+    for (int i = 0; i < [allLocales count]; i++) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:allLocales[i]];
+        NSString *code = [locale objectForKey:NSLocaleLanguageCode];
+        if(![languageCode containsObject:code]){
+            [languageCode addObject:code];
+        }
+    }
+    return languageCode;
+}
+
++ (NSMutableArray *) getLanguageNameList {
+    NSArray *allLocales = [NSLocale availableLocaleIdentifiers];
+    NSMutableArray *languageCode = [NSMutableArray new];
+    NSMutableArray *languageName = [NSMutableArray new];
+    for (int i = 0; i < [allLocales count]; i++) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:allLocales[i]];
+        NSString *code = [locale objectForKey:NSLocaleLanguageCode];
+        NSString *name = [locale displayNameForKey:NSLocaleIdentifier value:code];
+        if(![languageCode containsObject:code]){
+            [languageCode addObject:code];
+            [languageName addObject:name];
+        }
+    }
+    return languageName;
+}
 @end

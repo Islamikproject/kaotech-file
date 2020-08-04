@@ -90,6 +90,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.6.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.4.0)
+  - HCSStarRatingView (1.5)
   - IQDropDownTextField (2.0)
   - IQKeyboardManager (6.5.5)
   - MBProgressHUD (1.2.0)
@@ -119,6 +120,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Storage
   - GooglePlaces
+  - HCSStarRatingView
   - IQDropDownTextField
   - IQKeyboardManager
   - MBProgressHUD
@@ -151,6 +153,7 @@ SPEC REPOS:
     - GooglePlaces
     - GoogleUtilities
     - GTMSessionFetcher
+    - HCSStarRatingView
     - IQDropDownTextField
     - IQKeyboardManager
     - MBProgressHUD
@@ -184,6 +187,7 @@ SPEC CHECKSUMS:
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   IQDropDownTextField: 79293d19042b6f2ee6f02decf4a0e68e59e4f327
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -198,6 +202,6 @@ SPEC CHECKSUMS:
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 7e0c5c676b4cefb0ef5b70b39f8516e456308ed0
+PODFILE CHECKSUM: 365673630976ae94d7b62d758e538c2a82a05990
 
 COCOAPODS: 1.9.3

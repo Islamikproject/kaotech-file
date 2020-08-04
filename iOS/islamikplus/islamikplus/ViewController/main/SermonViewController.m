@@ -13,11 +13,14 @@ static SermonViewController *_sharedViewController = nil;
 
 @interface SermonViewController () <IQDropDownTextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
     BOOL isCameraOpen;
+    NSMutableArray * languageCode;
+    NSMutableArray * languageName;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UITextView *edtTopic;
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *edtAmount;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *edtLanguage;
 @property (weak, nonatomic) IBOutlet UIButton *btnNext;
 @end
 
@@ -33,13 +36,23 @@ static SermonViewController *_sharedViewController = nil;
     } else {
         self.lblTitle.text = @"REGULAR SERMON";
     }
-    self.edtAmount.itemList = STRING_AMOUNT;
-    self.edtAmount.isOptionalDropDown = YES;
+
     self.edtTopic.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.edtTopic.layer.borderWidth = 1.f;
     self.edtTopic.layer.cornerRadius = 4.f;
+    [self initialize];
+}
+
+- (void) initialize {
+    self.edtAmount.itemList = STRING_AMOUNT;
+    self.edtAmount.isOptionalDropDown = YES;
     self.edtTopic.text = @"";
     _edtAmount.selectedItem = @"";
+    languageCode = [Util getLanguageCodeList];
+    languageName = [Util getLanguageNameList];
+    self.edtLanguage.itemList = languageName;
+    self.edtLanguage.isOptionalDropDown = YES;
+    self.edtLanguage.delegate = self;
 }
 
 + (SermonViewController *) getInstance {
@@ -58,6 +71,8 @@ static SermonViewController *_sharedViewController = nil;
     NSString *topic = [Util trim:_edtTopic.text];
     if (topic.length == 0) {
         [Util showAlertTitle:self title:@"Error" message:@"Please enter topic."];
+    } else if (self.edtLanguage.selectedItem.length == 0) {
+        [Util showAlertTitle:self title:@"Error" message:@"Please enter language."];
     } else {
         UIAlertController *actionsheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         [actionsheet addAction:[UIAlertAction actionWithTitle:@"Take a new video" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
@@ -145,6 +160,8 @@ static SermonViewController *_sharedViewController = nil;
 }
 - (void) registerSermon:(NSString *)videoName videoPath:(NSString *)videoPath {
     NSString *topic = [Util trim:_edtTopic.text];;
+    NSString *language = languageCode[(int)[self.edtLanguage selectedRow]];
+    
     PFObject *object = [PFObject objectWithClassName:PARSE_TABLE_SERMON];
     object[PARSE_OWNER] = [PFUser currentUser];
     object[PARSE_TYPE] = [NSNumber numberWithInt:self.type];
@@ -154,7 +171,7 @@ static SermonViewController *_sharedViewController = nil;
     object[PARSE_VIDEO] = videoPath;
     object[PARSE_VIDEO_NAME] = videoName;
     object[PARSE_IS_DELETE] = [NSNumber numberWithBool:NO];
-    
+    object[PARSE_LANGUAGE] = language;
     int index = (int)[self.edtAmount selectedRow];
     object[PARSE_AMOUNT] = ARRAY_AMOUNT[index];
     

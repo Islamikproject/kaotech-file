@@ -25,4 +25,6 @@
 
 + (BOOL) isPhotoAvaileble;
 + (BOOL) isCameraAvailable;
++ (NSMutableArray *) getLanguageCodeList;
++ (NSMutableArray *) getLanguageNameList;
 @end

@@ -119,6 +119,7 @@
     user[PARSE_MOSQUE] = [Util trim:_edtMosque.text];
     user[PARSE_ADDRESS] = [Util trim:_edtAddress.text];
     user[PARSE_ACCOUNT_ID] = @"";
+    user[PARSE_TYPE] = [NSNumber numberWithInt:TYPE_MOSQUE];
     [user setObject:[PFGeoPoint geoPointWithLocation:[[CLLocation alloc] initWithLatitude:mLatLng.latitude longitude:mLatLng.longitude]] forKey:PARSE_LON_LAT];
     
     [SVProgressHUD showWithStatus:@"Please wait..." maskType:SVProgressHUDMaskTypeGradient];

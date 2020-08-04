@@ -11,12 +11,15 @@
 #import "SermonCell.h"
 #import "VideoViewController.h"
 
-@interface SermonListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SermonListViewController () <IQDropDownTextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableArray * mDataList;
+    NSMutableArray * languageCode;
+    NSMutableArray * languageName;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tblData;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *edtLanguage;
 
 @end
 
@@ -30,7 +33,16 @@
     } else {
         self.lblTitle.text = @"REGULAR SERMON";
     }
+    [self initialize];
 }
+- (void) initialize {
+    languageCode = [Util getLanguageCodeList];
+    languageName = [Util getLanguageNameList];
+    self.edtLanguage.itemList = languageName;
+    self.edtLanguage.isOptionalDropDown = YES;
+    self.edtLanguage.delegate = self;
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -41,12 +53,20 @@
         [Util showAlertTitle:self title:@"Network Error" message:@"Please check your network state."];
         return;
     }
+    NSString *language = @"";
+    if (self.edtLanguage.selectedItem.length > 0) {
+        int index = (int)[self.edtLanguage selectedRow];
+        language = languageCode[index];
+    }
     mDataList = [NSMutableArray new];
 
     PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_SERMON];
     [query whereKey:PARSE_OWNER equalTo:[PFUser currentUser]];
     [query whereKey:PARSE_TYPE equalTo:[NSNumber numberWithInt:self.type]];
     [query whereKey:PARSE_IS_DELETE notEqualTo:[NSNumber numberWithBool:YES]];
+    if (language.length > 0) {
+        [query whereKey:PARSE_LANGUAGE equalTo:language];
+    }
     [query includeKey:PARSE_OWNER];
     [query orderByDescending:PARSE_FIELD_CREATED_AT];
     [query setLimit:1000];
@@ -117,4 +137,8 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+#pragma mark    IQDropDownTextField
+- (void)textField:(IQDropDownTextField *)textField didSelectItem:(NSString *)item {
+    [self getServerData];
+}
 @end

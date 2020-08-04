@@ -91,8 +91,13 @@
             [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
                 [SVProgressHUD dismiss];
                 if (user) {
-                    [Util setLoginUserName:phonenumber password:password];
-                    [self gotoNextScreen:YES];
+                    int userType = [user[PARSE_TYPE] intValue];
+                    if (userType == TYPE_MOSQUE) {
+                        [Util setLoginUserName:phonenumber password:password];
+                        [self gotoNextScreen:YES];
+                    } else {
+                        [Util showAlertTitle:self title:@"Login Failed" message:@"This user is no mosque."];
+                    }
                 } else {
                     NSString *errorString = @"Password entered is incorrect.";
                     [Util showAlertTitle:self title:@"Login Failed" message:errorString finish:^{

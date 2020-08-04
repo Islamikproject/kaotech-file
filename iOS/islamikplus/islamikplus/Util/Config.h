@@ -9,6 +9,11 @@ enum {
     TYPE_REGULAR = 1,
     TYPE_RAISE = 2
 };
+
+enum {
+    TYPE_MOSQUE = 100,
+    TYPE_USER = 200
+};
 #define STRING_AMOUNT                                           [[NSArray alloc] initWithObjects:@"", @"$1", @"$4", @"$8", @"$12", @"$20", nil]
 #define ARRAY_AMOUNT                                            [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f], [NSNumber numberWithFloat:4.0f],[NSNumber numberWithFloat:8.0f], [NSNumber numberWithFloat:12.0f], [NSNumber numberWithFloat:20.0f], nil]
 #define MAIN_COLOR                                              [UIColor colorWithRed:14/255.f green:97/255.f blue:41/255.f alpha:1.f]
@@ -21,6 +26,7 @@ enum {
 
 #define PARSE_TABLE_PAYMENT                                     @"Payment"
 #define PARSE_TABLE_SERMON                                      @"Sermon"
+#define PARSE_TABLE_MESSAGES                                    @"Messages"
 
 #define PARSE_TYPE                                              @"type"
 #define PARSE_FIRSTNAME                                         @"firstName"
@@ -46,3 +52,8 @@ enum {
 #define PARSE_AMOUNT                                            @"amount"
 #define PARSE_SERMON                                            @"sermon"
 #define PARSE_NAME                                              @"name"
+#define PARSE_LANGUAGE                                          @"language"
+
+#define PARSE_QUESTION                                          @"question"
+#define PARSE_ANSWER                                            @"answer"
+#define PARSE_RATE                                              @"rate"

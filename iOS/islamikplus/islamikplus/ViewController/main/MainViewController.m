@@ -11,6 +11,7 @@
 #import "SettingsViewController.h"
 #import "SermonListViewController.h"
 #import "DonationViewController.h"
+#import "MessagesViewController.h"
 
 @interface MainViewController ()
 
@@ -72,6 +73,10 @@
 }
 - (IBAction)onDonationClick:(id)sender {
     DonationViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DonationViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onMessagesClick:(id)sender {
+    MessagesViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MessagesViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onSettingsClick:(id)sender {
