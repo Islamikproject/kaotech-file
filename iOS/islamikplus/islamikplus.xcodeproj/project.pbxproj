@@ -1297,6 +1297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamikplus;
 				PRODUCT_NAME = "ISLAMIK PLUS";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1324,6 +1325,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamikplus;
 				PRODUCT_NAME = "ISLAMIK PLUS";
 				PROVISIONING_PROFILE_SPECIFIER = "";
