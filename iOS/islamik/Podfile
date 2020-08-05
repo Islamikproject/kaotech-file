@@ -21,4 +21,5 @@ pod 'MGSwipeTableCell'
 pod 'SDWebImage'
 pod 'Parse'
 pod 'HCSStarRatingView'
+pod 'DMActivityInstagram'
 end

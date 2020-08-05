@@ -9,6 +9,7 @@
 #import "SermonViewController.h"
 #import "SermonListViewController.h"
 #import "SermonCell.h"
+#import "MapViewController.h"
 
 @interface SermonViewController () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -91,6 +92,7 @@
 }
 */
 - (IBAction)onNearClick:(id)sender {
-    
+    MapViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MapViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 @end

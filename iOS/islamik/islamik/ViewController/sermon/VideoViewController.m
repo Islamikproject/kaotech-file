@@ -9,6 +9,8 @@
 #import "VideoViewController.h"
 #import <AVKit/AVKit.h>
 #import <SafariServices/SafariServices.h>
+#import "QuestionViewController.h"
+#import "DMActivityInstagram.h"
 
 @interface VideoViewController () <SFSafariViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *videoView;
@@ -82,5 +84,27 @@
 
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+- (IBAction)onShareClick:(id)sender {
+    [self shareVideo:self.mSermonObj[PARSE_VIDEO] title:self.mSermonObj[PARSE_TOPIC]];
+}
+- (IBAction)onRateClick:(id)sender {
+    QuestionViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"QuestionViewController"];
+    controller.mSermonObj = self.mSermonObj;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void) shareVideo:(NSString*)url title:(NSString*)title
+{
+    DMActivityInstagram * instagramActivity = [[DMActivityInstagram alloc] init];
+    NSArray *activityItems = @[title, [NSURL URLWithString:url]];
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[instagramActivity]];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        activityController.popoverPresentationController.sourceView = self.view;
+        activityController.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/4, 0, 0);
+    }
+    
+    [self presentViewController:activityController animated:YES completion:nil];
 }
 @end

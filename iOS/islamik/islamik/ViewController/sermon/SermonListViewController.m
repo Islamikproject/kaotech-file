@@ -11,11 +11,18 @@
 #import "SermonListCell.h"
 #import <SafariServices/SafariServices.h>
 
-@interface SermonListViewController () <UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate>
+@interface SermonListViewController () <UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate, IQDropDownTextFieldDelegate>
 {
     NSMutableArray * mDataList;
+    NSMutableArray * languageCode;
+    NSMutableArray * languageName;
+    int type;
 }
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UITableView *tblData;
+@property (weak, nonatomic) IBOutlet UIButton *btnJumah;
+@property (weak, nonatomic) IBOutlet UIButton *btnRegular;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *edtLanguage;
 
 @end
 
@@ -24,6 +31,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.lblTitle.text = self.mUserObj[PARSE_MOSQUE];
+    [self initialize];
+}
+- (void) initialize {
+    languageCode = [Util getLanguageCodeList];
+    languageName = [Util getLanguageNameList];
+    self.edtLanguage.itemList = languageName;
+    self.edtLanguage.isOptionalDropDown = YES;
+    self.edtLanguage.delegate = self;
+    [self setType:TYPE_JUMAH];
+}
+- (void) setType:(int) index {
+    type = index;
+    
+    self.btnJumah.layer.borderColor = UIColor.whiteColor.CGColor;
+    self.btnJumah.layer.borderWidth = 1;
+    self.btnJumah.backgroundColor = UIColor.clearColor;
+    [self.btnJumah setTitleColor:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0] forState:UIControlStateNormal];
+    
+    self.btnRegular.layer.borderColor = UIColor.whiteColor.CGColor;
+    self.btnRegular.layer.borderWidth = 1;
+    self.btnRegular.backgroundColor = UIColor.clearColor;
+    [self.btnRegular setTitleColor:[UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0] forState:UIControlStateNormal];
+    
+    if (type == TYPE_JUMAH) {
+        self.btnJumah.backgroundColor = UIColor.whiteColor;
+        [self.btnJumah setTitleColor:[UIColor colorWithRed:14/255.0 green:97/255.0 blue:41/255.0 alpha:1.0] forState:UIControlStateNormal];
+    } else if (type == TYPE_REGULAR) {
+        self.btnRegular.backgroundColor = UIColor.whiteColor;
+        [self.btnRegular setTitleColor:[UIColor colorWithRed:14/255.0 green:97/255.0 blue:41/255.0 alpha:1.0] forState:UIControlStateNormal];
+    }
     [self getServerData];
 }
 - (void) getServerData{
@@ -32,10 +70,18 @@
         return;
     }
     mDataList = [NSMutableArray new];
-
+    NSString *language = @"";
+    if (self.edtLanguage.selectedItem.length > 0) {
+        int index = (int)[self.edtLanguage selectedRow];
+        language = languageCode[index];
+    }
     PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_SERMON];
     [query whereKey:PARSE_OWNER equalTo:self.mUserObj];
+    [query whereKey:PARSE_TYPE equalTo:[NSNumber numberWithInt:self->type]];
     [query whereKey:PARSE_IS_DELETE notEqualTo:[NSNumber numberWithBool:YES]];
+    if (language.length > 0) {
+        [query whereKey:PARSE_LANGUAGE equalTo:language];
+    }
     [query includeKey:PARSE_OWNER];
     [query orderByDescending:PARSE_FIELD_CREATED_AT];
     [query setLimit:1000];
@@ -113,5 +159,15 @@
 */
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+- (IBAction)onJumahClick:(id)sender {
+    [self setType:TYPE_JUMAH];
+}
+- (IBAction)onRegularClick:(id)sender {
+    [self setType:TYPE_REGULAR];
+}
+#pragma mark    IQDropDownTextField
+- (void)textField:(IQDropDownTextField *)textField didSelectItem:(NSString *)item {
+    [self getServerData];
 }
 @end

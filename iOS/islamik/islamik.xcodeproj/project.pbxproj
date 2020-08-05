@@ -58,6 +58,8 @@
 		5A544B6E24DA9AFC00894CD5 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A544B6B24DA9AFC00894CD5 /* MessagesViewController.m */; };
 		5A544B6F24DA9AFC00894CD5 /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A544B6C24DA9AFC00894CD5 /* AnswerViewController.m */; };
 		5A544B7224DA9B1000894CD5 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A544B7124DA9B1000894CD5 /* MessageCell.m */; };
+		5A544B7524DAA14700894CD5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A544B7424DAA14700894CD5 /* MapViewController.m */; };
+		5A544B7824DAAFE200894CD5 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A544B7724DAAFE200894CD5 /* QuestionViewController.m */; };
 		5A58335E24D9F7C00031E62A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58334A24D9F7C00031E62A /* LoginViewController.m */; };
 		5A58335F24D9F7C00031E62A /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58334B24D9F7C00031E62A /* SignUpViewController.m */; };
 		5A58336024D9F7C00031E62A /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58334C24D9F7C00031E62A /* ResetPasswordViewController.m */; };
@@ -236,6 +238,10 @@
 		5A544B6D24DA9AFC00894CD5 /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
 		5A544B7024DA9B1000894CD5 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
 		5A544B7124DA9B1000894CD5 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		5A544B7324DAA14700894CD5 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		5A544B7424DAA14700894CD5 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		5A544B7624DAAFE200894CD5 /* QuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		5A544B7724DAAFE200894CD5 /* QuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		5A58334A24D9F7C00031E62A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5A58334B24D9F7C00031E62A /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		5A58334C24D9F7C00031E62A /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
@@ -949,6 +955,10 @@
 				78EDA0742478FE650082D0A7 /* SermonListViewController.m */,
 				78EDA07A24790CFB0082D0A7 /* VideoViewController.h */,
 				78EDA07924790CFB0082D0A7 /* VideoViewController.m */,
+				5A544B7324DAA14700894CD5 /* MapViewController.h */,
+				5A544B7424DAA14700894CD5 /* MapViewController.m */,
+				5A544B7624DAAFE200894CD5 /* QuestionViewController.h */,
+				5A544B7724DAAFE200894CD5 /* QuestionViewController.m */,
 			);
 			path = sermon;
 			sourceTree = "<group>";
@@ -1222,6 +1232,7 @@
 				78EDA0782478FEC90082D0A7 /* SermonListCell.m in Sources */,
 				780F62DC247870D90027CDB4 /* SCLAlertViewResponder.m in Sources */,
 				780F62CD247870D90027CDB4 /* UIImage+JSQMessages.m in Sources */,
+				5A544B7824DAAFE200894CD5 /* QuestionViewController.m in Sources */,
 				780F62B2247870D90027CDB4 /* JSQMessagesBubbleImage.m in Sources */,
 				780F62D9247870D90027CDB4 /* BIZPopupViewController.m in Sources */,
 				780F62C8247870D90027CDB4 /* JSQMessagesCollectionViewCell.m in Sources */,
@@ -1237,6 +1248,7 @@
 				78FC72E12478E367000F0671 /* SermonViewController.m in Sources */,
 				5A544B7224DA9B1000894CD5 /* MessageCell.m in Sources */,
 				7869B86A247DBC8A00A5DE6E /* QuranDetailViewController.m in Sources */,
+				5A544B7524DAA14700894CD5 /* MapViewController.m in Sources */,
 				780F62B4247870D90027CDB4 /* JSQMessage.m in Sources */,
 				780F6340247875480027CDB4 /* OnboardViewController.m in Sources */,
 				780F62C6247870D90027CDB4 /* JSQMessagesCellTextView.m in Sources */,
