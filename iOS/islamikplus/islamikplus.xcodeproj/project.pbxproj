@@ -160,6 +160,7 @@
 		5A58334324D9E2A70031E62A /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		5A58334524D9EAE20031E62A /* AnswerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
 		5A58334624D9EAE20031E62A /* AnswerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
+		5AF0A12924DAFC6900914BAF /* ISLAMIK PLUS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ISLAMIK PLUS.entitlements"; sourceTree = "<group>"; };
 		5AF51CC424D074FA00F606AF /* ic_rate_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_rate_select.png; sourceTree = "<group>"; };
 		5AF51CC524D074FA00F606AF /* img_message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_message.png; sourceTree = "<group>"; };
 		5AF51CC624D074FA00F606AF /* ic_rate_unselect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_rate_unselect.png; sourceTree = "<group>"; };
@@ -809,6 +810,7 @@
 		788A168C24750ABA007DCA57 /* islamikplus */ = {
 			isa = PBXGroup;
 			children = (
+				5AF0A12924DAFC6900914BAF /* ISLAMIK PLUS.entitlements */,
 				7851A04B2477B0FF00C3E380 /* GoogleService */,
 				78066DE124761D4C007F04A9 /* framework */,
 				78066DE424761D4C007F04A9 /* libs */,
@@ -1282,9 +1284,10 @@
 			baseConfigurationReference = F8B49D749D5C508630E2A191 /* Pods-islamikplus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "islamikplus/ISLAMIK PLUS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1310,9 +1313,10 @@
 			baseConfigurationReference = CCA8EC713BAB46110443B79F /* Pods-islamikplus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "islamikplus/ISLAMIK PLUS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

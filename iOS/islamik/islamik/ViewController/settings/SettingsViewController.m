@@ -44,7 +44,7 @@
     alert.horizontalButtons = YES;
     
     [alert addButton:@"RATE APP" actionBlock:^(void) {
-        NSString * url = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"xxxxxxxxxx"];
+        NSString * url = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", @"1518362497"];
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: url]]){
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }
