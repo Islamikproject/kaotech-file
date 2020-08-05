@@ -67,6 +67,39 @@
         [alert showQuestion:vc title:title subTitle:message closeButtonTitle:@"OK" duration:0.0f];
 }
 
++ (NSString*) getLoginUserName {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *userName = [defaults objectForKey:SYSTEM_KEY_USERNAME];
+    return userName;
+}
+
++ (NSString*) getLoginUserPassword {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *password = [defaults objectForKey:SYSTEM_KEY_PASSWORD];
+    return password;
+}
++ (void) setLoginUserName:(NSString*) userName password:(NSString*) password {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:userName forKey:SYSTEM_KEY_USERNAME];
+    [defaults setObject:password forKey:SYSTEM_KEY_PASSWORD];
+    if (userName.length > 0) {
+        [defaults setBool:YES forKey:SYSTEM_KEY_AUTO];
+    } else {
+        [defaults setBool:NO forKey:SYSTEM_KEY_AUTO];
+    }
+    [defaults synchronize];
+    // Installation
+    if (userName.length > 0 && password.length > 0) {
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        [currentInstallation setObject:[PFUser currentUser] forKey:@"owner"];
+        [currentInstallation saveInBackground];
+    } else {
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        [currentInstallation removeObjectForKey:@"owner"];
+        [currentInstallation saveInBackground];
+    }
+}
+
 + (NSString *) trim:(NSString *) string {
     NSString *newString = [string stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     return newString;
@@ -174,6 +207,35 @@
     }
     else
         return YES;
+}
+
++ (NSMutableArray *) getLanguageCodeList {
+    NSArray *allLocales = [NSLocale availableLocaleIdentifiers];
+    NSMutableArray *languageCode = [NSMutableArray new];
+    for (int i = 0; i < [allLocales count]; i++) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:allLocales[i]];
+        NSString *code = [locale objectForKey:NSLocaleLanguageCode];
+        if(![languageCode containsObject:code]){
+            [languageCode addObject:code];
+        }
+    }
+    return languageCode;
+}
+
++ (NSMutableArray *) getLanguageNameList {
+    NSArray *allLocales = [NSLocale availableLocaleIdentifiers];
+    NSMutableArray *languageCode = [NSMutableArray new];
+    NSMutableArray *languageName = [NSMutableArray new];
+    for (int i = 0; i < [allLocales count]; i++) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:allLocales[i]];
+        NSString *code = [locale objectForKey:NSLocaleLanguageCode];
+        NSString *name = [locale displayNameForKey:NSLocaleIdentifier value:code];
+        if(![languageCode containsObject:code]){
+            [languageCode addObject:code];
+            [languageName addObject:name];
+        }
+    }
+    return languageName;
 }
 
 + (NSArray *) getEnglishVerseArray:(NSString *)key {

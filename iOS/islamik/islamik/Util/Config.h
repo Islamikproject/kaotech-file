@@ -1,22 +1,22 @@
 
 #define SYSTEM_KEY_AGREE                                        @"AGREE"
+#define SYSTEM_KEY_AUTO                                         @"AUTO"
+#define SYSTEM_KEY_USERNAME                                     @"USERNAME"
+#define SYSTEM_KEY_PASSWORD                                     @"PASSWORD"
+
 #define NOTIFICATION_ACTIVE                                     @"NOTIFICATION_ACTIVE"
 #define NOTIFICATION_BACKGROUND                                 @"NOTIFICATION_BACKGROUND"
 #define PUSH_NOTIFICATION_TYPE                                  @"type"
 #define PUSH_NOTIFICATION_DATA                                  @"data"
 
-//#define STRIPE_KEY                                              @"sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK"
-#define STRIPE_KEY                                              @"sk_live_xFVtiA6eN5gGeci46vQYeezm005G3nSxFr"
-#define STRIPE_URL                                              @"https://api.stripe.com/v1"
-#define STRIPE_CHARGES                                          @"charges"
-#define STRIPE_CUSTOMERS                                        @"customers"
-#define STRIPE_TOKENS                                           @"tokens"
-#define STRIPE_ACCOUNTS                                         @"accounts"
-
 enum {
     TYPE_JUMAH = 0,
     TYPE_REGULAR = 1,
     TYPE_RAISE = 2
+};
+enum {
+    TYPE_MOSQUE = 100,
+    TYPE_USER = 200
 };
 enum {
     TYPE_FAJR = 0,
@@ -46,6 +46,7 @@ enum {
 #define PARSE_TABLE_USER                                        @"User"
 #define PARSE_TABLE_PAYMENT                                     @"Payment"
 #define PARSE_TABLE_SERMON                                      @"Sermon"
+#define PARSE_TABLE_MESSAGES                                    @"Messages"
 
 #define PARSE_TYPE                                              @"type"
 #define PARSE_FIRSTNAME                                         @"firstName"
@@ -72,6 +73,11 @@ enum {
 #define PARSE_SERMON                                            @"sermon"
 #define PARSE_NAME                                              @"name"
 #define PARSE_CHARGE_ID                                         @"chargeId"
+#define PARSE_LANGUAGE                                          @"language"
+
+#define PARSE_QUESTION                                          @"question"
+#define PARSE_ANSWER                                            @"answer"
+#define PARSE_RATE                                              @"rate"
 
 #define LANGUAGE_ARRAY                                          [[NSArray alloc] initWithObjects:@"English", @"Arabic", nil]
 #define SPEED_ARRAY                                             [[NSArray alloc] initWithObjects:@"SLOW", @"INTERMEDIATE", @"FAST", @"SUPER FAST", nil]

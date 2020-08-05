@@ -109,7 +109,7 @@
         errorMsg = @"Password doesn't match.";
     }
     if (errorMsg.length > 0) {
-        [Util showAlertTitle:self title:@"Sign Up" message:errorMsg];
+        [Util showAlertTitle:self title:@"Edit Profile" message:errorMsg];
         return NO;
     } else if (![Util isConnectableInternet]){
         [Util showAlertTitle:self title:@"Network Error" message:@"Please check your network state."];
@@ -129,7 +129,6 @@
     me[PARSE_LASTSTNAME] = [Util trim:_edtSurname.text];
     me[PARSE_MOSQUE] = [Util trim:_edtMosque.text];
     me[PARSE_ADDRESS] = [Util trim:_edtAddress.text];
-    me[PARSE_ACCOUNT_ID] = @"";
     [me setObject:[PFGeoPoint geoPointWithLocation:[[CLLocation alloc] initWithLatitude:mLatLng.latitude longitude:mLatLng.longitude]] forKey:PARSE_LON_LAT];
     
     [SVProgressHUD showWithStatus:@"Please wait..." maskType:SVProgressHUDMaskTypeGradient];

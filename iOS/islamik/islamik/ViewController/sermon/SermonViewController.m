@@ -10,19 +10,15 @@
 #import "SermonListViewController.h"
 #import "SermonCell.h"
 
-@interface SermonViewController () <UITableViewDelegate, UITableViewDataSource, GMSAutocompleteViewControllerDelegate>
+@interface SermonViewController () <UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableArray * mDataList;
-    CLLocationCoordinate2D mLatLng;
 }
-@property (weak, nonatomic) IBOutlet UITextField *edtAddress;
 @property (weak, nonatomic) IBOutlet UITableView *tblData;
 
 @end
 
-@implementation SermonViewController{
-    GMSAutocompleteFilter *_filter;
-}
+@implementation SermonViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +33,7 @@
     mDataList = [NSMutableArray new];
 
     PFQuery *query = [PFUser query];
+    [query whereKey:PARSE_TYPE equalTo:[NSNumber numberWithInt:TYPE_MOSQUE]];
     [query orderByAscending:PARSE_FIRSTNAME];
     [query setLimit:1000];
     
@@ -93,51 +90,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)onAddressClick:(id)sender {
-    GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
-    acController.delegate = self;
-
-    // Specify the place data types to return.
-    GMSPlaceField fields = (GMSPlaceFieldFormattedAddress | GMSPlaceFieldCoordinate);
-    acController.placeFields = fields;
-
-    // Specify a filter.
-    _filter = [[GMSAutocompleteFilter alloc] init];
-    _filter.type = kGMSPlacesAutocompleteTypeFilterAddress;
-    acController.autocompleteFilter = _filter;
-
-    // Display the autocomplete view controller.
-    [self presentViewController:acController animated:YES completion:nil];
-}
-
-// Handle the user's selection.
-- (void)viewController:(GMSAutocompleteViewController *)viewController didAutocompleteWithPlace:(GMSPlace *)place {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"Place name %@", place.name);
-    NSLog(@"Place address %@", place.formattedAddress);
-    NSLog(@"Place attributions %@", place.attributions.string);
-
-    _edtAddress.text = place.formattedAddress;
-    mLatLng = place.coordinate;
-}
-
-- (void)viewController:(GMSAutocompleteViewController *)viewController didFailAutocompleteWithError:(NSError *)error {
-  [self dismissViewControllerAnimated:YES completion:nil];
-  // TODO: handle the error.
-  NSLog(@"Error: %@", [error description]);
-}
-
-  // User canceled the operation.
-- (void)wasCancelled:(GMSAutocompleteViewController *)viewController {
-  [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-  // Turn the network activity indicator on and off again.
-- (void)didRequestAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
-  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-}
-
-- (void)didUpdateAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
-  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+- (IBAction)onNearClick:(id)sender {
+    
 }
 @end

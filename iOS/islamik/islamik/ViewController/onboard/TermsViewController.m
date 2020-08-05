@@ -8,7 +8,7 @@
 
 #import "TermsViewController.h"
 #import <WebKit/WebKit.h>
-#import "MainViewController.h"
+#import "LoginViewController.h"
 
 @interface TermsViewController ()
 @property (weak, nonatomic) IBOutlet WKWebView *webView;
@@ -29,7 +29,7 @@
     NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setBool:YES forKey:SYSTEM_KEY_AGREE];
     [userDefault synchronize];
-    MainViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
+    LoginViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 @end

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "OnboardViewController.h"
-#import "MainViewController.h"
+#import "LoginViewController.h"
 #import "Config.h"
 
 @interface AppDelegate ()
@@ -43,7 +43,7 @@
         OnboardViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OnboardViewController"];
         [mainNav setViewControllers:@[controller] animated:NO];
     } else{
-        MainViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
+        LoginViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
         [mainNav setViewControllers:@[controller] animated:NO];
     }
     self.window.rootViewController = mainNav;

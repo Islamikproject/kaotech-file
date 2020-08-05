@@ -20,4 +20,5 @@ pod 'NSDate-Time-Ago'
 pod 'MGSwipeTableCell'
 pod 'SDWebImage'
 pod 'Parse'
+pod 'HCSStarRatingView'
 end

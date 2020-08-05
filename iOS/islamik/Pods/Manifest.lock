@@ -19,6 +19,7 @@ PODS:
   - GoogleMaps/Base (3.1.0)
   - GooglePlaces (3.1.0):
     - GoogleMaps/Base (= 3.1.0)
+  - HCSStarRatingView (1.5)
   - IQDropDownTextField (2.0)
   - IQKeyboardManager (6.5.5)
   - MBProgressHUD (1.2.0)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - AAPullToRefresh
   - AFNetworking (~> 4.0)
   - GooglePlaces
+  - HCSStarRatingView
   - IQDropDownTextField
   - IQKeyboardManager
   - MBProgressHUD
@@ -59,6 +61,7 @@ SPEC REPOS:
     - Bolts
     - GoogleMaps
     - GooglePlaces
+    - HCSStarRatingView
     - IQDropDownTextField
     - IQKeyboardManager
     - MBProgressHUD
@@ -77,6 +80,7 @@ SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
+  HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   IQDropDownTextField: 79293d19042b6f2ee6f02decf4a0e68e59e4f327
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -89,6 +93,6 @@ SPEC CHECKSUMS:
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 201f02b79c5ba9b4c87a1ed810e93f7d33bbef92
+PODFILE CHECKSUM: fdb58d9f5b8a775ab16c6b5c09820fa756fc3038
 
 COCOAPODS: 1.9.3
