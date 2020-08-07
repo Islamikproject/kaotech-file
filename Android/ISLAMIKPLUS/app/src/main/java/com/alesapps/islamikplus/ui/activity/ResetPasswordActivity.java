@@ -85,26 +85,9 @@ public class ResetPasswordActivity extends BaseActionBarActivity implements View
 					});
 				} else {
 					dlg_progress.hide();
-					showConfirmRegisterDialog();
+					MessageUtil.showError(instance, R.string.valid_No_email_register);
 				}
 			}
 		});
-	}
-
-	private void showConfirmRegisterDialog() {
-		new AlertDialog.Builder(instance)
-				.setTitle(R.string.confirm)
-				.setMessage(R.string.valid_No_email_register)
-				.setPositiveButton(R.string.sign_up, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						startActivity(new Intent(instance, SignUpActivity.class));
-					}
-				})
-				.setNegativeButton(R.string.not_now, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						edt_email.requestFocus();
-					}
-				})
-				.show();
 	}
 }

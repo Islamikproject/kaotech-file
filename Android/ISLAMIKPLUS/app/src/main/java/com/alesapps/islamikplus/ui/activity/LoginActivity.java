@@ -114,30 +114,13 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 							if (error == null) {
 								MessageUtil.showError(instance, R.string.invalid_incorrect_password);
 							} else {
-								showConfirmRegisterDialog();
+								MessageUtil.showError(instance, R.string.valid_No_phone_number_register);
 							}
 						}
 					});
 				}
 			}
 		});
-	}
-
-	private void showConfirmRegisterDialog() {
-		new AlertDialog.Builder(instance)
-				.setTitle(R.string.confirm)
-				.setMessage(R.string.valid_No_phone_number_register)
-				.setPositiveButton(R.string.sign_up, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						startActivity(new Intent(instance, SignUpActivity.class));
-					}
-				})
-				.setNegativeButton(R.string.not_now, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						edt_phone_number.requestFocus();
-					}
-				})
-				.show();
 	}
 
 	private void gotoNextActivity() {
