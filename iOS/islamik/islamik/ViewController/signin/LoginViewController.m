@@ -83,7 +83,7 @@
     [SVProgressHUD setForegroundColor:MAIN_COLOR];
     [SVProgressHUD showWithStatus:@"Please wait..." maskType:SVProgressHUDMaskTypeGradient];
     PFQuery *query = [PFUser query];
-    [query whereKey:PARSE_USER_NAME equalTo:phonenumber];
+    [query whereKey:PARSE_PHONE_NUMBER equalTo:phonenumber];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!error && object) {
             PFUser *user = (PFUser *)object;
