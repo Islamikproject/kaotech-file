@@ -19,9 +19,7 @@ import java.util.Locale;
 
 public class CommonUtil {
 	public static void SetLocale(Context context) {
-		String lang = "en";
-		if (AppPreference.getBool(AppPreference.KEY.LANGUAGE_ARABIC, false))
-			lang = "ar";
+		String lang = AppPreference.getStr(AppPreference.KEY.LANGUAGE_SYMBOL, "en");
 		Locale myLocale = new Locale(lang);
 		Resources res = context.getResources();
 		DisplayMetrics dm = res.getDisplayMetrics();

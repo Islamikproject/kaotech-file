@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.UserListener;

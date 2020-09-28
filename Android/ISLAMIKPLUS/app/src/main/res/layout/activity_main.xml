@@ -11,26 +11,6 @@
         android:layout_marginTop="@dimen/margin_large"
         android:orientation="horizontal" >
         <LinearLayout
-            android:id="@+id/layout_jumah"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:gravity="center"
-            android:orientation="vertical" >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/img_jumah" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_large"
-                android:text="@string/jumah_sermon"
-                android:textColor="@color/green"
-                android:textSize="@dimen/textsize_large" />
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/layout_regular"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -49,13 +29,6 @@
                 android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_really_large"
-        android:orientation="horizontal" >
         <LinearLayout
             android:id="@+id/layout_donation"
             android:layout_width="0dp"
@@ -75,6 +48,13 @@
                 android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_really_large"
+        android:orientation="horizontal" >
         <LinearLayout
             android:id="@+id/layout_messages"
             android:layout_width="0dp"
@@ -94,18 +74,11 @@
                 android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_really_large"
-        android:gravity="center"
-        android:orientation="horizontal" >
         <LinearLayout
             android:id="@+id/layout_settings"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="0.5"
             android:gravity="center"
             android:orientation="vertical" >
             <ImageView
@@ -117,6 +90,72 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/settings"
+                android:textColor="@color/green"
+                android:textSize="@dimen/textsize_large" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_really_large"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <LinearLayout
+            android:id="@+id/layout_jumah"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical" >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/img_jumah" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/jumah_sermon"
+                android:textColor="@color/green"
+                android:textSize="@dimen/textsize_large" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_book"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical" >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/img_book" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/book_session"
+                android:textColor="@color/green"
+                android:textSize="@dimen/textsize_large" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical" >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/img_daily" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/daily_post"
                 android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />
         </LinearLayout>

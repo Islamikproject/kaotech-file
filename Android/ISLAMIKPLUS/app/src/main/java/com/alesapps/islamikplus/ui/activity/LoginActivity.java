@@ -1,7 +1,5 @@
 package com.alesapps.islamikplus.ui.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -100,10 +98,10 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 				ParseUser currentUser = ParseUser.getCurrentUser();
 				if (error == null) {
 					dlg_progress.cancel();
-					if (currentUser.getInt(ParseConstants.KEY_TYPE) == UserModel.TYPE_MOSQUE)
-						gotoNextActivity();
-					else
+					if (currentUser.getInt(ParseConstants.KEY_TYPE) == UserModel.TYPE_USER)
 						MessageUtil.showError(instance, R.string.valid_Invalid_mosque);
+					else
+						gotoNextActivity();
 				} else {
 					if (currentUser != null)
 						currentUser.logOut();

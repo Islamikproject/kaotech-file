@@ -80,16 +80,12 @@
         <activity android:name="com.alesapps.islamik.ui.activity.SermonActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SermonListActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.DailyPrayersActivity" />
-        <activity android:name="com.alesapps.islamik.ui.activity.SalatActivity" />
-        <activity android:name="com.alesapps.islamik.ui.activity.JumahActivity" />
-        <activity android:name="com.alesapps.islamik.ui.activity.NafilahActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.QuranActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.PrayersActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.ReadyActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.FajrDetailActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.ZuhrDetailActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.MaghribDetailActivity" />
-        <activity android:name="com.alesapps.islamik.ui.activity.SalatDetailActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.QuranDetailActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>

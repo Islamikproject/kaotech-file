@@ -33,7 +33,7 @@
     <string name="invalid_incorrect_password">Password entered is incorrect.</string>
     <string name="no_account_signup_here">No account? <![CDATA[<font color=\'#0e6129\'><u>Sign Up Here!</u></font>]]></string>
     <string name="sign_up">Sign Up</string>
-    <string name="valid_Invalid_mosque">This user is no mosque.</string>
+    <string name="valid_Invalid_mosque">This user is customer.</string>
     <!-- Reset Password -->
     <string name="email_address">Email address</string>
     <string name="valid_No_email_address">Please enter email address.</string>
@@ -62,8 +62,24 @@
     <string name="manage_donation">MANAGE DONATION</string>
     <string name="settings">SETTINGS</string>
     <string name="messages">MESSAGES</string>
+    <string name="book_session">BOOK A SESSION</string>
+    <string name="daily_post">DAILY POST</string>
     <string name="logout">Log Out</string>
     <string name="label_log_out">Are you sure you want to log out?</string>
+    <string name="manage_quranic_islamic">MANAGE QURANIC/ISLAMIC STUDIES SESSION</string>
+    <string name="price_person_session_label">PLEASE SELECT PRICE PER HOUR FOR 1/1 SESSION:</string>
+    <string name="price_group_session_label">PLEASE SELECT PRICE PER HOUR FOR GROUP SESSION:</string>
+    <!-- Daily Post -->
+    <string name="create_post">Create Post</string>
+    <string name="edit_post">EDIT POST</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="valid_No_title">Please enter title.</string>
+    <string name="valid_No_description">Please enter description.</string>
+    <string name="valid_No_photo">Please upload_photo.</string>
+    <string name="confirm_delete_post">Are you sure you want to delete this post?</string>
+    <string name="upload_photo">Upload Photo</string>
+    <string name="take_new_photo">Take a new photo</string>
     <!-- Sermon -->
     <string name="language_">Language:</string>
     <string name="upload_video">Upload video</string>

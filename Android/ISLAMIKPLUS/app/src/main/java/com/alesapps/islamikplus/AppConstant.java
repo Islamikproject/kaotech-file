@@ -11,4 +11,8 @@ public class AppConstant {
 	public static final String[] STRING_AMOUNT = {"", "$1", "$4", "$8", "$12", "$20"};
 	public static final String URL_STORAGE_REFERENCE = "gs://islamik-by-kaotech.appspot.com";
 	public static final String STORAGE_FILE = "file";
+	public static final Double[] ARRAY_SESSION_PRICE = {0.00, 4.88, 8.88, 10.88, 14.44, 18.88, 22.22, 33.44};
+	public static final String[] STRING_SESSION_PRICE = {"$0.00", "$4.88", "$8.88", "$10.88", "$14.44", "$18.88", "$22.22", "$33.44"};
+	public static final Double[] ARRAY_SESSION_GROUP = {0.00, 2.44, 4.44, 5.44, 9.88, 11.11, 16.44};
+	public static final String[] STRING_SESSION_GROUP = {"$0.00", "$2.44", "$4.44", "$5.44", "$9.88", "$11.11", "$16.44"};
 }

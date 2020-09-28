@@ -7,16 +7,22 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.alesapps.islamikplus.AppPreference;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.ExceptionListener;
+import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.model.SermonModel;
 import com.alesapps.islamikplus.model.UserModel;
 import com.alesapps.islamikplus.utils.MessageUtil;
+import com.parse.ParseUser;
 
 public class MainActivity extends BaseActionBarActivity implements OnClickListener {
 	public static MainActivity instance = null;
+	LinearLayout layout_jumah;
+	LinearLayout layout_book;
+	LinearLayout layout_post;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +32,32 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		SetTitle(null, 0);
 		ShowActionBarIcons(true, R.id.action_logout);
 		setContentView(R.layout.activity_main);
+		layout_jumah = findViewById(R.id.layout_jumah);
+		layout_book = findViewById(R.id.layout_book);
+		layout_post = findViewById(R.id.layout_post);
 		findViewById(R.id.layout_jumah).setOnClickListener(this);
 		findViewById(R.id.layout_regular).setOnClickListener(this);
 		findViewById(R.id.layout_donation).setOnClickListener(this);
 		findViewById(R.id.layout_messages).setOnClickListener(this);
 		findViewById(R.id.layout_settings).setOnClickListener(this);
+		findViewById(R.id.layout_book).setOnClickListener(this);
+		findViewById(R.id.layout_post).setOnClickListener(this);
+		initialize();
+	}
+
+	private void initialize() {
+		layout_jumah.setVisibility(View.GONE);
+		layout_book.setVisibility(View.GONE);
+		layout_post.setVisibility(View.GONE);
+		int type = ParseUser.getCurrentUser().getInt(ParseConstants.KEY_TYPE);
+		if (type == UserModel.TYPE_ADMIN) {
+			layout_jumah.setVisibility(View.VISIBLE);
+			layout_post.setVisibility(View.VISIBLE);
+		} else if (type == UserModel.TYPE_MOSQUE) {
+			layout_jumah.setVisibility(View.VISIBLE);
+		} else if (type == UserModel.TYPE_INFLUENCER_KID || type == UserModel.TYPE_INFLUENCER_OTHER) {
+			layout_book.setVisibility(View.VISIBLE);
+		}
 	}
 
 	@Override
@@ -61,6 +88,12 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				break;
 			case R.id.layout_settings:
 				startActivity(new Intent(instance, SettingsActivity.class));
+				break;
+			case R.id.layout_book:
+				startActivity(new Intent(instance, BookActivity.class));
+				break;
+			case R.id.layout_post:
+				startActivity(new Intent(instance, PostListActivity.class));
 				break;
 		}
 	}

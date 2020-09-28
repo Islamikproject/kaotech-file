@@ -3,19 +3,45 @@ package com.alesapps.islamik.ui.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
+import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ExceptionListener;
+import com.alesapps.islamik.listener.ObjectListener;
+import com.alesapps.islamik.model.ParseConstants;
+import com.alesapps.islamik.model.SermonModel;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.utils.MessageUtil;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainActivity extends BaseActionBarActivity implements OnClickListener {
 	public static MainActivity instance = null;
+	TextView txt_fajr_time;
+	TextView txt_zuhr_time;
+	TextView txt_asr_time;
+	TextView txt_maghrib_time;
+	TextView txt_isha_time;
+	TextView txt_location;
+	VideoView videoView;
+	ImageView img_main;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +52,47 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		ShowActionBarIcons(true, R.id.action_logout, R.id.action_language);
 		setContentView(R.layout.activity_main);
 
+		txt_fajr_time = findViewById(R.id.txt_fajr_time);
+		txt_zuhr_time = findViewById(R.id.txt_zuhr_time);
+		txt_asr_time = findViewById(R.id.txt_asr_time);
+		txt_maghrib_time = findViewById(R.id.txt_maghrib_time);
+		txt_isha_time = findViewById(R.id.txt_isha_time);
+		txt_location = findViewById(R.id.txt_location);
+		videoView = findViewById(R.id.videoView);
+		img_main = findViewById(R.id.img_main);
+
 		findViewById(R.id.layout_sermon).setOnClickListener(this);
 		findViewById(R.id.layout_prayers).setOnClickListener(this);
-		findViewById(R.id.layout_salat).setOnClickListener(this);
-		findViewById(R.id.layout_jumah).setOnClickListener(this);
-		findViewById(R.id.layout_nafilah).setOnClickListener(this);
 		findViewById(R.id.layout_quran).setOnClickListener(this);
 		findViewById(R.id.layout_messages).setOnClickListener(this);
 		findViewById(R.id.layout_settings).setOnClickListener(this);
+		findViewById(R.id.layout_order).setOnClickListener(this);
+		initialize();
+	}
+
+	private void initialize() {
+		txt_location.setText(ParseUser.getCurrentUser().getString(ParseConstants.KEY_ADDRESS));
+		new PrayerTimeConnectAsyncTask().execute();
+		getVideo();
+	}
+
+	private void getVideo() {
+		SermonModel.GetLatestVideo(new ObjectListener() {
+			@Override
+			public void done(ParseObject object, String error) {
+				if (error == null && object != null) {
+					String video_path = object.getString(ParseConstants.KEY_VIDEO);
+					videoView.setVideoPath(video_path);
+					videoView.setMediaController(new MediaController(instance));
+					videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+						@Override
+						public void onPrepared(MediaPlayer mediaPlayer) {
+							videoView.start();
+						}
+					});
+				}
+			}
+		});
 	}
 
 	@Override
@@ -54,15 +113,6 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 			case R.id.layout_prayers:
 				startActivity(new Intent(instance, DailyPrayersActivity.class));
 				break;
-			case R.id.layout_salat:
-				startActivity(new Intent(instance, SalatActivity.class));
-				break;
-			case R.id.layout_jumah:
-				startActivity(new Intent(instance, JumahActivity.class));
-				break;
-			case R.id.layout_nafilah:
-				startActivity(new Intent(instance, NafilahActivity.class));
-				break;
 			case R.id.layout_quran:
 				startActivity(new Intent(instance, QuranActivity.class));
 				break;
@@ -72,6 +122,54 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 			case R.id.layout_settings:
 				startActivity(new Intent(instance, SettingsActivity.class));
 				break;
+			case R.id.layout_order:
+				break;
+		}
+	}
+
+	private class PrayerTimeConnectAsyncTask extends AsyncTask<Void, Void, Connection.Response> {
+		Document document;
+		private ArrayList<String> timeList = new ArrayList<>();
+		private PrayerTimeConnectAsyncTask() {}
+
+		protected void onPreExecute() {
+			super.onPreExecute();
+		}
+
+		protected Connection.Response doInBackground(Void... params) {
+			try {
+				document = Jsoup.connect(AppConstant.PRAYER_TIME_URL).userAgent("Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0").timeout(10000).get();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			if (document != null) {
+				Elements lis = document.select("span");
+				for (int i = 0; i < lis.size(); i ++) {
+					String key = lis.get(i).attr("class");
+					String value = lis.get(i).html();
+					if (key.equals("todayPrayerTime")) {
+						timeList.add(value);
+					}
+				}
+			}
+			return null;
+		}
+
+		protected void onPostExecute(Connection.Response response) {
+			if (response == null) {
+				for (int i = 0; i < timeList.size(); i ++) {
+					if (i == 0)
+						txt_fajr_time.setText(timeList.get(i));
+					else if (i == 1)
+						txt_zuhr_time.setText(timeList.get(i));
+					else if (i == 3)
+						txt_asr_time.setText(timeList.get(i));
+					else if (i == 4)
+						txt_maghrib_time.setText(timeList.get(i));
+					else if (i == 5)
+						txt_isha_time.setText(timeList.get(i));
+				}
+			}
 		}
 	}
 

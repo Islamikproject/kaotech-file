@@ -7,7 +7,7 @@ public class AppPreference {
 
 	public static class KEY {
 		public static final String AGREE = "AGREE";
-		public static final String LANGUAGE_ARABIC = "LANGUAGE_ARABIC";
+		public static final String LANGUAGE_SYMBOL = "LANGUAGE_SYMBOL";
 		public static final String SIGN_IN_AUTO = "SIGN_IN_AUTO";
 		public static final String PHONE_NUMBER = "PHONE_NUMBER";
 		public static final String PASSWORD = "PASSWORD";

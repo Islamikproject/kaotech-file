@@ -10,6 +10,7 @@ import androidx.core.app.ActivityCompat;
 import com.alesapps.islamikplus.AppPreference;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.UserListener;
+import com.alesapps.islamikplus.model.ParseConstants;
 import com.alesapps.islamikplus.model.UserModel;
 import com.alesapps.islamikplus.utils.BaseTask;
 import com.alesapps.islamikplus.utils.MessageUtil;
@@ -91,7 +92,13 @@ public class SplashActivity extends BaseActivity {
 					public void done(ParseUser user, String error) {
 						dlg_progress.hide();
 						if (error == null) {
-							gotoNextActivity(false);
+							ParseUser currentUser = ParseUser.getCurrentUser();
+							if (currentUser.getInt(ParseConstants.KEY_TYPE) == UserModel.TYPE_USER) {
+								MessageUtil.showToast(instance, R.string.valid_Invalid_mosque);
+								gotoNextActivity(true);
+							} else {
+								gotoNextActivity(false);
+							}
 						} else {
 							MessageUtil.showToast(instance, error, true);
 							gotoNextActivity(true);

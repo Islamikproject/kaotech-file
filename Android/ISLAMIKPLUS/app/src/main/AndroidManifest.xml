@@ -45,6 +45,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
         </provider>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat"/>
         <activity
             android:name="com.alesapps.islamikplus.ui.activity.SplashActivity"
             android:windowSoftInputMode="stateHidden">
@@ -85,6 +87,12 @@
         <activity
             android:name="com.alesapps.islamikplus.ui.activity.CameraActivity"
             android:theme="@style/ThemeFullscreen" />
+        <activity android:name="com.alesapps.islamikplus.ui.activity.PostListActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamikplus.ui.activity.PostActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamikplus.ui.activity.BookActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <receiver android:name="com.alesapps.islamikplus.service.Starter"
             android:enabled="true"
             android:exported="true"

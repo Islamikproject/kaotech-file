@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_large"
+    android:orientation="vertical"
+    android:background="@color/white" >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:gravity="center"
+        android:text="@string/manage_quranic_islamic"
+        android:textSize="@dimen/textsize_large"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="@color/text_normal"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_extra_large"
+        android:text="@string/price_person_session_label"
+        android:textSize="@dimen/textsize_normal"
+        android:textAllCaps="true"
+        android:textColor="@color/text_normal"/>
+    <Spinner
+        android:id="@+id/sp_price"
+        style="@style/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/price_group_session_label"
+        android:textColor="@color/text_normal"
+        android:textAllCaps="true"
+        android:textSize="@dimen/textsize_normal" />
+    <Spinner
+        android:id="@+id/sp_group"
+        style="@style/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/normalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:text="@string/save_change"/>
+</LinearLayout>

@@ -3,7 +3,9 @@ package com.alesapps.islamik.model;
 import android.text.TextUtils;
 
 import com.alesapps.islamik.listener.ObjectListListener;
+import com.alesapps.islamik.listener.ObjectListener;
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -54,6 +56,19 @@ public class SermonModel {
 			public void done(List<ParseObject> objects, ParseException e) {
 				if (listener != null)
 					listener.done(objects, ParseErrorHandler.handle(e));
+			}
+		});
+	}
+
+	public static void GetLatestVideo(final ObjectListener listener) {
+		ParseQuery<ParseObject> query = ParseQuery.getQuery(ParseConstants.TBL_SERMON);
+		query.whereNotEqualTo(ParseConstants.KEY_IS_DELETE, true);
+		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
+		query.getFirstInBackground(new GetCallback<ParseObject>() {
+			@Override
+			public void done(ParseObject object, ParseException e) {
+				if (listener != null)
+					listener.done(object, ParseErrorHandler.handle(e));
 			}
 		});
 	}

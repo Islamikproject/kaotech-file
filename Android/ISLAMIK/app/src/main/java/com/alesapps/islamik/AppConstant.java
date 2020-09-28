@@ -41,7 +41,8 @@ public class AppConstant {
 	public static final int TYPE_MAGHRIB = 3;
 	public static final int TYPE_ISHA = 4;
 	public static final int TYPE_QURAN = 5;
-	public static final int TYPE_SALAT = 6;
 	public static String ADMIN_EMAIL = "admin@osseniapp.com";
 	public static final String STRIPE_CONNECT_URL = "https://stripe.kaotech.org/donation?sermon=";
+	public static final String PRAYER_TIME_URL = "https://www.islamicfinder.org/";
+	public static final String DAILY_POST = "https://kaotech.org/islamik-daily-post";
 }

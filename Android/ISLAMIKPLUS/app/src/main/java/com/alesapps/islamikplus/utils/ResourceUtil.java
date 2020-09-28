@@ -3,12 +3,16 @@ package com.alesapps.islamikplus.utils;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ResourceUtil {
@@ -31,6 +35,9 @@ public class ResourceUtil {
 		return tempDirPath + tempFileName;
 	}
 
+	public static String getPhotoFilePath() {
+		return getVideoFilePath("photo.png");
+	}
 
 	public static String generatePath(Uri uri, Context context) {
 		String filePath = null;
@@ -80,5 +87,67 @@ public class ResourceUtil {
 			cursor.close();
 		}
 		return filePath;
+	}
+
+	public static Bitmap decodeSampledBitmapFromFile(String path, int reqWidth) {
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		options.inPreferredConfig = Bitmap.Config.RGB_565;
+		BitmapFactory.decodeFile(path, options);
+		int reqHeight = reqWidth * options.outHeight / options.outWidth;
+		options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeFile(path, options);
+	}
+
+	public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
+		if (width <= reqWidth && height <= reqHeight)
+			return 1;
+
+		float widthRatio = (float)width / reqWidth;
+		float heightRatio = (float)height / reqHeight;
+		float maxRatio = Math.max(widthRatio, heightRatio);
+		inSampleSize = (int)(maxRatio + 0.5);
+		return inSampleSize;
+	}
+
+	public static Bitmap decodeUri(Context context, Uri selectedImage, int reqSize) throws FileNotFoundException {
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeStream(context.getContentResolver().openInputStream(selectedImage), null, options);
+		int width_tmp = options.outWidth, height_tmp = options.outHeight;
+		int scale = 1;
+		while (true) {
+			if (width_tmp / 2 < reqSize
+					|| height_tmp / 2 < reqSize) {
+				break;
+			}
+			width_tmp /= 2;
+			height_tmp /= 2;
+			scale *= 2;
+		}
+		options = new BitmapFactory.Options();
+		options.inSampleSize = scale;
+		return BitmapFactory.decodeStream(context.getContentResolver().openInputStream(selectedImage), null, options);
+	}
+
+	public static void saveBitmapToSdcard(Bitmap bitmap, String dirPath) {
+		File tempFile = new File(dirPath);
+		if (tempFile.exists())
+			tempFile.delete();
+
+		try {
+			FileOutputStream fOut = new FileOutputStream(tempFile);
+
+			bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
+			fOut.flush();
+			fOut.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -17,6 +17,11 @@ import com.parse.SignUpCallback;
 public class UserModel {
 	public static int TYPE_MOSQUE = 100;
 	public static int TYPE_USER = 200;
+	public static int TYPE_USTHADH = 300;
+	public static int TYPE_INFLUENCER_WOMEN = 400;
+	public static int TYPE_INFLUENCER_KID = 401;
+	public static int TYPE_INFLUENCER_OTHER = 402;
+	public static int TYPE_ADMIN = 500;
 	public String username = "";
 	public String email = "";
 	public String password = "";
@@ -29,6 +34,8 @@ public class UserModel {
 	public String address = "";
 	public String accountId = "";
 	public int type = TYPE_MOSQUE;
+	public int price = 0;
+	public int groupPrice = 0;
 
 	public void parse(ParseUser user) {
 		if (user == null)
@@ -45,6 +52,8 @@ public class UserModel {
 		address = user.getString(ParseConstants.KEY_ADDRESS);
 		accountId = user.getString(ParseConstants.KEY_ACCOUNT_ID);
 		type = user.getInt(ParseConstants.KEY_TYPE);
+		price = user.getInt(ParseConstants.KEY_PRICE);
+		groupPrice = user.getInt(ParseConstants.KEY_GROUP_PRICE);
 	}
 
 	public static void RequestPasswordReset(String strEmail, final ExceptionListener listener) {
@@ -70,6 +79,8 @@ public class UserModel {
 		userObj.put(ParseConstants.KEY_ADDRESS, model.address);
 		userObj.put(ParseConstants.KEY_ACCOUNT_ID, model.accountId);
 		userObj.put(ParseConstants.KEY_TYPE, model.type);
+		userObj.put(ParseConstants.KEY_PRICE, model.price);
+		userObj.put(ParseConstants.KEY_GROUP_PRICE, model.groupPrice);
 
 		userObj.signUpInBackground(new SignUpCallback() {
 			@Override

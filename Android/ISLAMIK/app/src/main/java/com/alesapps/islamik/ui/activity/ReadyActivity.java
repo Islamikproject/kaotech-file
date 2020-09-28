@@ -52,11 +52,6 @@ public class ReadyActivity extends BaseActionBarActivity {
 				MaghribDetailActivity.mDataList.addAll(mDataList);
 				MaghribDetailActivity.language = language;
 				startActivity(new Intent(instance, MaghribDetailActivity.class));
-			} else if (type == AppConstant.TYPE_SALAT) {
-				SalatDetailActivity.mDataList.clear();
-				SalatDetailActivity.mDataList.addAll(mDataList);
-				SalatDetailActivity.language = language;
-				startActivity(new Intent(instance, SalatDetailActivity.class));
 			} else if (type == AppConstant.TYPE_QURAN) {
 				QuranDetailActivity.mDataList.clear();
 				QuranDetailActivity.mDataList.addAll(mDataList);

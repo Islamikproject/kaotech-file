@@ -6,11 +6,161 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/margin_extra_large"
+        android:padding="@dimen/margin_large"
         android:orientation="vertical" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_main_fajr" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fajr"
+                    android:textColor="@color/color_fajr"
+                    android:textSize="@dimen/textsize_normal" />
+                <TextView
+                    android:id="@+id/txt_fajr_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/color_fajr"
+                    android:textSize="@dimen/textsize_normal" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_main_asr" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/asr"
+                    android:textColor="@color/color_asr"
+                    android:textSize="@dimen/textsize_normal" />
+                <TextView
+                    android:id="@+id/txt_asr_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/color_asr"
+                    android:textSize="@dimen/textsize_normal" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_main_isha" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/isha"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_normal" />
+                <TextView
+                    android:id="@+id/txt_isha_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal" >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/img_main_zuhr" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zuhr"
+                        android:textColor="@color/color_zuhr"
+                        android:textSize="@dimen/textsize_normal" />
+                    <TextView
+                        android:id="@+id/txt_zuhr_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/color_zuhr"
+                        android:textSize="@dimen/textsize_normal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/img_main_maghrib" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/maghrib"
+                        android:textColor="@color/color_maghrib"
+                        android:textSize="@dimen/textsize_normal" />
+                    <TextView
+                        android:id="@+id/txt_maghrib_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/color_maghrib"
+                        android:textSize="@dimen/textsize_normal" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_location"
+                style="@style/normalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="New York, United State"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="@dimen/margin_normal" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
             android:orientation="horizontal" >
             <LinearLayout
                 android:id="@+id/layout_sermon"
@@ -42,7 +192,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/img_prayers" />
+                    android:background="@drawable/img_daily" />
                 <TextView
                     style="@style/normalText"
                     android:layout_width="wrap_content"
@@ -57,73 +207,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
-            android:orientation="horizontal" >
-            <LinearLayout
-                android:id="@+id/layout_salat"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:orientation="vertical" >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/img_salat" />
-                <TextView
-                    style="@style/normalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/salat_layl__tahajjud"
-                    android:textSize="@dimen/textsize_large"
-                    android:textColor="@color/green"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/layout_jumah"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:orientation="vertical" >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/img_jumah" />
-                <TextView
-                    style="@style/normalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/jumah"
-                    android:textSize="@dimen/textsize_large"
-                    android:textColor="@color/green"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
             android:gravity="center_vertical"
             android:orientation="horizontal" >
-            <LinearLayout
-                android:id="@+id/layout_nafilah"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:orientation="vertical" >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/img_nafilah" />
-                <TextView
-                    style="@style/normalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nafilah"
-                    android:textSize="@dimen/textsize_large"
-                    android:textColor="@color/green"/>
-            </LinearLayout>
             <LinearLayout
                 android:id="@+id/layout_quran"
                 android:layout_width="0dp"
@@ -143,14 +228,6 @@
                     android:textSize="@dimen/textsize_large"
                     android:textColor="@color/green"/>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
             <LinearLayout
                 android:id="@+id/layout_messages"
                 android:layout_width="0dp"
@@ -170,6 +247,14 @@
                     android:textSize="@dimen/textsize_large"
                     android:textColor="@color/green"/>
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
             <LinearLayout
                 android:id="@+id/layout_settings"
                 android:layout_width="0dp"
@@ -189,7 +274,31 @@
                     android:textSize="@dimen/textsize_large"
                     android:textColor="@color/green"/>
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout_order"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_order" />
+                <TextView
+                    style="@style/normalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_prayer"
+                    android:textSize="@dimen/textsize_large"
+                    android:textColor="@color/green"/>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
+        <ImageView
+            android:id="@+id/img_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
 </ScrollView>

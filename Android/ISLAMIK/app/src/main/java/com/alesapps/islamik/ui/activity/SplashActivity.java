@@ -10,6 +10,7 @@ import androidx.core.app.ActivityCompat;
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.UserListener;
+import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.utils.BaseTask;
 import com.alesapps.islamik.utils.MessageUtil;
@@ -89,7 +90,11 @@ public class SplashActivity extends BaseActivity {
 					public void done(ParseUser user, String error) {
 						dlg_progress.hide();
 						if (error == null) {
-							gotoNextActivity(false);
+							ParseUser currentUser = ParseUser.getCurrentUser();
+							if (currentUser.getInt(ParseConstants.KEY_TYPE) == UserModel.TYPE_USER)
+								gotoNextActivity(false);
+							else
+								MessageUtil.showError(instance, R.string.valid_Invalid_customer);
 						} else {
 							MessageUtil.showToast(instance, error, true);
 							gotoNextActivity(true);

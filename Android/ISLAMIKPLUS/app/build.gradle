@@ -7,7 +7,7 @@ android {
         applicationId "com.alesapps.islamikplus"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 5
+        versionCode 6
         versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,6 +45,8 @@ dependencies {
     implementation 'com.google.android.libraries.places:places:2.2.0'
     implementation 'com.github.florent37:camerafragment:1.0.9'
     implementation 'com.hedgehog.ratingbar:app:1.1.2'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     testImplementation 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
