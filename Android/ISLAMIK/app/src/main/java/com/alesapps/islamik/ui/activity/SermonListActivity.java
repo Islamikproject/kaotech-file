@@ -26,16 +26,14 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SermonListActivity extends BaseActionBarActivity implements View.OnClickListener, DragListView.OnRefreshLoadingMoreListener {
+public class SermonListActivity extends BaseActionBarActivity implements DragListView.OnRefreshLoadingMoreListener {
 	public static SermonListActivity instance;
-	TextView txt_jumah;
-	TextView txt_regular;
 	Spinner sp_language;
 	DragListView list_sermon;
 	ListAdapter adapter;
 	ArrayList<ParseObject> mDataList = new ArrayList<>();
 	public static ParseUser mUserObj;
-	int type = SermonModel.TYPE_JUMAH;
+	public static int type = SermonModel.TYPE_JUMAH;
 	String[] languageCode;
 	String[] languageName;
 
@@ -46,8 +44,6 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 		SetTitle(mUserObj.getString(ParseConstants.KEY_MOSQUE), -1);
 		ShowActionBarIcons(true, R.id.action_back);
 		setContentView(R.layout.activity_sermon_list);
-		txt_jumah = findViewById(R.id.txt_jumah);
-		txt_regular = findViewById(R.id.txt_regular);
 		sp_language = findViewById(R.id.sp_language);
 		list_sermon = findViewById(R.id.listView);
 		adapter = new ListAdapter();
@@ -62,8 +58,6 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 			@Override
 			public void onNothingSelected(AdapterView<?> parent) {}
 		});
-		txt_regular.setOnClickListener(this);
-		txt_jumah.setOnClickListener(this);
 		initialize();
 	}
 
@@ -81,35 +75,6 @@ public class SermonListActivity extends BaseActionBarActivity implements View.On
 		ArrayAdapter<String> adapterLanguage = new ArrayAdapter<>(instance, android.R.layout.simple_spinner_dropdown_item, languageName);
 		sp_language.setAdapter(adapterLanguage);
 		sp_language.setSelection(0);
-		setType(SermonModel.TYPE_JUMAH);
-	}
-
-	@Override
-	public void onClick(View view) {
-		super.onClick(view);
-		switch (view.getId()) {
-			case R.id.txt_jumah:
-				setType(SermonModel.TYPE_JUMAH);
-				return;
-			case R.id.txt_regular:
-				setType(SermonModel.TYPE_REGULAR);
-				break;
-		}
-	}
-
-	private void setType(int index) {
-		type = index;
-		txt_jumah.setBackgroundResource(R.drawable.bg_rectangle_white_line);
-		txt_jumah.setTextColor(getResources().getColor(R.color.white));
-		txt_regular.setBackgroundResource(R.drawable.bg_rectangle_white_line);
-		txt_regular.setTextColor(getResources().getColor(R.color.white));
-		if (type == SermonModel.TYPE_JUMAH) {
-			txt_jumah.setBackgroundColor(getResources().getColor(R.color.white));
-			txt_jumah.setTextColor(getResources().getColor(R.color.green));
-		} else if (type == SermonModel.TYPE_REGULAR) {
-			txt_regular.setBackgroundColor(getResources().getColor(R.color.white));
-			txt_regular.setTextColor(getResources().getColor(R.color.green));
-		}
 		list_sermon.refresh();
 	}
 

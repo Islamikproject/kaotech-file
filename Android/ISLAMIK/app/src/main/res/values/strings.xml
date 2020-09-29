@@ -116,28 +116,6 @@
     <string name="text_">Text:</string>
     <string name="success_donation">Thanks for your donation, it has been sent to the mosque account.</string>
     <string name="confirm_mosque_virtual_basket">The mosque has a virtual basket of « %1$s » would you like to make a donation?</string>
-
-    <string name="donation">Donation</string>
-    <string name="name">Name</string>
-    <string name="valid_No_name">Oops! You forgot to type your name.</string>
-    <string name="card_number">Card Number</string>
-    <string name="cvc">CVC</string>
-    <string name="expiration_date">Expiration Date</string>
-    <string name="hint_card_number">0000-0000-0000-0000</string>
-    <string name="hint_cvc">000</string>
-    <string name="enter_year">Enter year</string>
-    <string name="enter_month">Enter month</string>
-    <string name="enter_amount">Enter amount</string>
-    <string name="pay">Pay</string>
-    <string name="amount">Amount</string>
-    <string name="valid_No_card_number">Oops! You forgot to type card number.</string>
-    <string name="valid_No_cvc">Oops! You forgot to type cvc.</string>
-    <string name="valid_No_year">Oops! You forgot to type year.</string>
-    <string name="valid_No_month">Oops! You forgot to type month.</string>
-    <string name="valid_Invalid_year">Invalid year.</string>
-    <string name="valid_Invalid_month">Invalid month.</string>
-    <string name="valid_No_amount">Oops! You forgot to type amount.</string>
-    <string name="msg_stripe_connect">This mosque requires a connected ‘Stripe’ account.</string>
     <!-- Login -->
     <string name="login">Login</string>
     <string name="phone_number">Phone number</string>
@@ -189,6 +167,17 @@
     <string name="about_app">About App</string>
     <string name="save_change">Save Change</string>
     <string name="mosque_near_me">MOSQUE NEAR ME</string>
+    <!-- Jumah Sermons -->
+    <string name="africa">AFRICA</string>
+    <string name="asia">ASIA</string>
+    <string name="america">AMERICA</string>
+    <string name="australia">AUSTRALIA</string>
+    <string name="europa">EUROPA</string>
+    <string name="scholars">SCHOLARS</string>
+    <string name="influencers">INFLUENCERS</string>
+    <string name="women_islam">Women in Islam</string>
+    <string name="kids_islam">Kids in Islam</string>
+    <string name="others">Others</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[

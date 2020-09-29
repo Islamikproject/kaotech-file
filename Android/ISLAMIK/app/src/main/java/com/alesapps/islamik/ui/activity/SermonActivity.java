@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.UserListListener;
+import com.alesapps.islamik.model.ParseConstants;
+import com.alesapps.islamik.model.SermonModel;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.ui.view.DragListView;
 import com.parse.ParseUser;
@@ -19,12 +21,14 @@ public class SermonActivity extends BaseActionBarActivity implements DragListVie
 	DragListView list_sermon;
 	ListAdapter adapter;
 	ArrayList<ParseUser> mDataList = new ArrayList<>();
+	public static int type = SermonModel.TYPE_JUMAH;
+	public static int userType = UserModel.TYPE_USER;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		instance = this;
-		SetTitle(R.string.jumah_and_sermon, -1);
+		SetTitle("", -1);
 		ShowActionBarIcons(true, R.id.action_back);
 		setContentView(R.layout.activity_sermon);
 		list_sermon = findViewById(R.id.listView);
@@ -41,6 +45,9 @@ public class SermonActivity extends BaseActionBarActivity implements DragListVie
 		super.onClick(view);
 		switch (view.getId()) {
 			case R.id.btn_near:
+				MapActivity.mDataList.clear();
+				MapActivity.mDataList.addAll(mDataList);
+				MapActivity.type = type;
 				startActivity(new Intent(instance, MapActivity.class));
 				break;
 		}
@@ -55,12 +62,21 @@ public class SermonActivity extends BaseActionBarActivity implements DragListVie
 	public void onDragLoadMore() {}
 
 	private void getServerData() {
-		UserModel.GetAllUsers(new UserListListener() {
+		UserModel.GetUsersList(userType, new UserListListener() {
 			@Override
 			public void done(List<ParseUser> users, String error) {
 				mDataList.clear();
-				if (error == null && users.size() > 0)
-					mDataList.addAll(users);
+				if (error == null && users.size() > 0) {
+					if (userType == UserModel.TYPE_MOSQUE) {
+						for (int i = 0; i < users.size(); i ++) {
+							int _type = users.get(i).getInt(ParseConstants.KEY_TYPE);
+							if (_type == UserModel.TYPE_MOSQUE || _type == UserModel.TYPE_ADMIN)
+								mDataList.add(users.get(i));
+						}
+					} else {
+						mDataList.addAll(users);
+					}
+				}
 				showData();
 			}
 		});
@@ -119,6 +135,7 @@ public class SermonActivity extends BaseActionBarActivity implements DragListVie
 			holder.layout_container.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
+					SermonListActivity.type = type;
 					SermonListActivity.mUserObj = mDataList.get(position);
 					startActivity(new Intent(instance, SermonListActivity.class));
 				}

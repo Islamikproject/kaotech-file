@@ -44,5 +44,8 @@ public class AppConstant {
 	public static String ADMIN_EMAIL = "admin@osseniapp.com";
 	public static final String STRIPE_CONNECT_URL = "https://stripe.kaotech.org/donation?sermon=";
 	public static final String PRAYER_TIME_URL = "https://www.islamicfinder.org/";
-	public static final String DAILY_POST = "https://kaotech.org/islamik-daily-post";
+	public static final Double[] ARRAY_SESSION_PRICE = {0.00, 4.88, 8.88, 10.88, 14.44, 18.88, 22.22, 33.44};
+	public static final String[] STRING_SESSION_PRICE = {"$0.00", "$4.88", "$8.88", "$10.88", "$14.44", "$18.88", "$22.22", "$33.44"};
+	public static final Double[] ARRAY_SESSION_GROUP = {0.00, 2.44, 4.44, 5.44, 9.88, 11.11, 16.44};
+	public static final String[] STRING_SESSION_GROUP = {"$0.00", "$2.44", "$4.44", "$5.44", "$9.88", "$11.11", "$16.44"};
 }

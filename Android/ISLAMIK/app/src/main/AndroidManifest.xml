@@ -77,6 +77,7 @@
         <activity android:name="com.alesapps.islamik.ui.activity.TermsConditionActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SelectLanguageActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.MainActivity" />
+        <activity android:name="com.alesapps.islamik.ui.activity.JumahSermonActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SermonActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.SermonListActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.DailyPrayersActivity" />

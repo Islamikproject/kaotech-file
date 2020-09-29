@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.UserListListener;
 import com.alesapps.islamik.model.ParseConstants;
+import com.alesapps.islamik.model.SermonModel;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.utils.MyMath;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,7 +26,8 @@ import java.util.List;
 public class MapActivity extends BaseActionBarActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 	public static MapActivity instance;
 	GoogleMap googleMap;
-	List<ParseUser> mDataList = new ArrayList<>();
+	public static int type = SermonModel.TYPE_JUMAH;
+	public static List<ParseUser> mDataList = new ArrayList<>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,31 +53,21 @@ public class MapActivity extends BaseActionBarActivity implements OnMapReadyCall
 		googleMap.getUiSettings().setMyLocationButtonEnabled(true);
 		googleMap.setMyLocationEnabled(true);
 		googleMap.setOnMarkerClickListener(this);
-		getServerData();
-	}
-
-	private void getServerData() {
-		UserModel.GetAllUsers(new UserListListener() {
-			@Override
-			public void done(List<ParseUser> users, String error) {
-				mDataList.clear();
-				if (error == null && users.size() > 0)
-					mDataList.addAll(users);
-				showMap();
-			}
-		});
+		showMap();
 	}
 
 	private void showMap() {
 		for (int i = 0; i < mDataList.size(); i ++) {
 			ParseUser mosque = mDataList.get(i);
 			ParseGeoPoint point = mosque.getParseGeoPoint(ParseConstants.KEY_LON_LAT);
-			googleMap.addMarker(new MarkerOptions()
-					.position(new LatLng(point.getLatitude(), point.getLongitude()))
-					.title(String.valueOf(i))
-					.snippet(mosque.getString(ParseConstants.KEY_MOSQUE))
-					.anchor(0.5f, 90/100f)
-					.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_red)));
+			if (point != null) {
+				googleMap.addMarker(new MarkerOptions()
+						.position(new LatLng(point.getLatitude(), point.getLongitude()))
+						.title(String.valueOf(i))
+						.snippet(mosque.getString(ParseConstants.KEY_MOSQUE))
+						.anchor(0.5f, 90/100f)
+						.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_red)));
+			}
 		}
 		setZoomToMarkers();
 	}
@@ -104,6 +96,7 @@ public class MapActivity extends BaseActionBarActivity implements OnMapReadyCall
 	public boolean onMarkerClick(Marker marker) {
 		ParseUser mosque = mDataList.get(Integer.parseInt(marker.getTitle()));
 		SermonListActivity.mUserObj = mosque;
+		SermonListActivity.type = type;
 		startActivity(new Intent(instance, SermonListActivity.class));
 		return false;
 	}

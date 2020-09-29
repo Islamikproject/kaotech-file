@@ -20,11 +20,14 @@ import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ExceptionListener;
 import com.alesapps.islamik.listener.ObjectListener;
 import com.alesapps.islamik.model.ParseConstants;
+import com.alesapps.islamik.model.PostModel;
 import com.alesapps.islamik.model.SermonModel;
 import com.alesapps.islamik.model.UserModel;
+import com.alesapps.islamik.utils.CommonUtil;
 import com.alesapps.islamik.utils.MessageUtil;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+import com.squareup.picasso.Picasso;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -74,6 +77,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		txt_location.setText(ParseUser.getCurrentUser().getString(ParseConstants.KEY_ADDRESS));
 		new PrayerTimeConnectAsyncTask().execute();
 		getVideo();
+		getPost();
 	}
 
 	private void getVideo() {
@@ -95,6 +99,18 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		});
 	}
 
+	private void getPost() {
+		PostModel.GetPost(new ObjectListener() {
+			@Override
+			public void done(ParseObject object, String error) {
+				if (error == null && object != null) {
+					String path = object.getParseFile(ParseConstants.KEY_PHOTO).getUrl();
+					Picasso.get().load(CommonUtil.getImagePath(path)).into(img_main);
+				}
+			}
+		});
+	}
+
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
@@ -108,7 +124,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				startActivity(new Intent(instance, SelectLanguageActivity.class));
 				break;
 			case R.id.layout_sermon:
-				startActivity(new Intent(instance, SermonActivity.class));
+				startActivity(new Intent(instance, JumahSermonActivity.class));
 				break;
 			case R.id.layout_prayers:
 				startActivity(new Intent(instance, DailyPrayersActivity.class));
