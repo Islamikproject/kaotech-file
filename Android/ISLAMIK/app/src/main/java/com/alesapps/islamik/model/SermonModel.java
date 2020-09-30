@@ -16,6 +16,7 @@ public class SermonModel {
 	public static final int TYPE_JUMAH = 0;
 	public static final int TYPE_REGULAR = 1;
 	public static final int TYPE_RAISE = 2;
+	public static final int TYPE_ORDER = 3;
 
 	public int type = TYPE_JUMAH;
 	public ParseUser owner;

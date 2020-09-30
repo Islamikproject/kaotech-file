@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.UserListListener;
@@ -12,7 +14,9 @@ import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.model.SermonModel;
 import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.ui.view.DragListView;
+import com.alesapps.islamik.utils.CommonUtil;
 import com.parse.ParseUser;
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,8 +112,10 @@ public class SermonActivity extends BaseActionBarActivity implements DragListVie
 
 		class ViewHolder {
 			View layout_container;
+			ImageView img_avatar;
 			TextView txt_name;
 			TextView txt_address;
+			CheckBox check_select;
 		}
 
 		@Override
@@ -120,17 +126,24 @@ public class SermonActivity extends BaseActionBarActivity implements DragListVie
 
 				holder = new ListAdapter.ViewHolder();
 				holder.layout_container = convertView.findViewById(R.id.layout_container);
+				holder.img_avatar = convertView.findViewById(R.id.img_avatar);
 				holder.txt_name = convertView.findViewById(R.id.txt_name);
 				holder.txt_address = convertView.findViewById(R.id.txt_address);
+				holder.check_select = convertView.findViewById(R.id.check_select);
 				convertView.setTag(holder);
 
 			} else {
 				holder = (ListAdapter.ViewHolder) convertView.getTag();
 			}
+			holder.check_select.setVisibility(View.GONE);
 			UserModel model = new UserModel();
 			model.parse(mDataList.get(position));
 			holder.txt_name.setText(model.mosque);
 			holder.txt_address.setText(model.address);
+			if (model.avatar == null)
+				holder.img_avatar.setBackgroundResource(R.drawable.default_profile);
+			else
+				Picasso.get().load(CommonUtil.getImagePath(model.avatar.getUrl())).into(holder.img_avatar);
 
 			holder.layout_container.setOnClickListener(new View.OnClickListener() {
 				@Override

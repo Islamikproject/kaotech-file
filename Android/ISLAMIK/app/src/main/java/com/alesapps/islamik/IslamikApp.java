@@ -35,7 +35,7 @@ public class IslamikApp extends MultiDexApplication {
         defaultACL.setPublicWriteAccess(true);
         ParseACL.setDefaultACL(defaultACL, true);
         Places.initialize(getApplicationContext(), getString(R.string.place_api_key));
-        PlacesClient placesClient = Places.createClient(this);
+        Places.createClient(this);
         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
         installation.put("GCMSenderId", "413068111620");
         installation.saveInBackground();

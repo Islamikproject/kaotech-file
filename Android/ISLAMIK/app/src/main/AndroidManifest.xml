@@ -90,8 +90,8 @@
         <activity android:name="com.alesapps.islamik.ui.activity.QuranDetailActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
-
         <activity android:name="com.alesapps.islamik.ui.activity.VerseActivity" />
+        <activity android:name="com.alesapps.islamik.ui.activity.OrderActivity" />
 
         <receiver android:name="com.alesapps.islamik.service.Starter"
             android:enabled="true"

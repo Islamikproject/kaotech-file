@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ISLAMIK</string>
-    <string name="company_name">Semper Altius</string>
     <string name="gcm_sender_id">id:413068111620</string>
     <string name="place_api_key">AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM</string>
     <string name="google_map_api_key">AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM</string>
@@ -65,12 +64,6 @@
     <string name="asr">ASR</string>
     <string name="maghrib">MAGHRIB</string>
     <string name="isha">ISHA</string>
-
-    <string name="witr">WITR</string>
-    <string name="two">TWO</string>
-    <string name="four">FOUR</string>
-    <string name="two_rakah">2 RAKAH</string>
-    <string name="four_rakah">4 RAKAH</string>
 
     <string name="choose_display_language">Choose the display language</string>
     <string name="choose_chapter_first">Choose your Surah(Chapter) for the first rakah</string>
@@ -178,6 +171,20 @@
     <string name="women_islam">Women in Islam</string>
     <string name="kids_islam">Kids in Islam</string>
     <string name="others">Others</string>
+    <!-- Order Prayer -->
+    <string name="mosque">Mosque</string>
+    <string name="usthadh">Usthadh</string>
+    <string name="type_name">Type Name</string>
+    <string name="type_subject">Type Subject</string>
+    <string name="type_message">Type Message</string>
+    <string name="offer_donation">Offer donation:</string>
+    <string name="type_amount">Type Amount</string>
+    <string name="valid_No_name">Please enter name.</string>
+    <string name="valid_No_subject">Please enter subject.</string>
+    <string name="valid_No_message">Please enter message.</string>
+    <string name="valid_No_amount">Please enter amount.</string>
+    <string name="valid_No_mosque">Please select mosque.</string>
+    <string name="valid_No_usthadh">Please select usthadh.</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[
@@ -267,7 +274,7 @@
         <p>19.9 Without prejudice to the generality of Clause 19.8 above, KAOTECH LLC’s right to vary, amend or rescind these Terms & Conditions in accordance with these Terms & Conditions may be exercised without the consent of any person or entity who is not a party to these Terms & Conditions.</p>
         <p>19.10 You agree and acknowledge that these Terms & Conditions and the Service do not include the provision of Internet access or other telecommunication services by KAOTECH LLC . Any Internet access or telecommunications services (such as mobile data connectivity) required by you to access and use the Service shall be your sole responsibility and shall be separately obtained by you, at your own cost, from the appropriate telecommunications or internet access service provider.</p>
         <h2>Notice and Take Down Policy</h2>
-        <p>The Copyright Act, Section 512  of United STATES OF AMERICA  (the “Act”) contains provisions related to limiting the liability of network service providers such as KAOTECH LLC.</p>
+        <p>The Copyright Act, Section 512 of United STATES OF AMERICA  (the “Act”) contains provisions related to limiting the liability of network service providers such as KAOTECH LLC.</p>
         <h3>1. Take-down and counter notices</h3>
         <p>a. Where a copyright owner or an exclusive licensee or an agent of the foregoing parties (“Complainant”) furnishes to KAOTECH LLC (through KAOTECH LLC designated representative) a valid notice in the form prescribed by the Act (“take-down notice”), KAOTECH LLC will take reasonable steps to remove or disable access to the relevant material in accordance with the Act.</p>
         <p>b. Following the removal of or disabling of access to the relevant material, KAOTECH LLC will take reasonable steps to notify the person who made available such material (“Provider”) in accordance with the Act.</p>

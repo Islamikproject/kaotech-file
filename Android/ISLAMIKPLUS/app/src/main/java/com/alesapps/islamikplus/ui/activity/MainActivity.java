@@ -55,7 +55,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 			layout_post.setVisibility(View.VISIBLE);
 		} else if (type == UserModel.TYPE_MOSQUE) {
 			layout_jumah.setVisibility(View.VISIBLE);
-		} else if (type == UserModel.TYPE_INFLUENCER_KID || type == UserModel.TYPE_INFLUENCER_OTHER) {
+		} else if (type == UserModel.TYPE_INFLUENCER_WOMEN || type == UserModel.TYPE_INFLUENCER_KID || type == UserModel.TYPE_INFLUENCER_OTHER) {
 			layout_book.setVisibility(View.VISIBLE);
 		}
 	}

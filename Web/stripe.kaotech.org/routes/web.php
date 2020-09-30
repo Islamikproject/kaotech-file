@@ -37,6 +37,8 @@ Route::post('/login', 'HomeController@postLogin');
 
 Route::get('donation', 'HomeController@donation');
 Route::post('donation', 'HomeController@postDonation');
+Route::get('order', 'HomeController@order');
+Route::post('order', 'HomeController@postOrder');
 
 // Route::get('/register', 'HomeController@register');
 // Route::post('/register', 'HomeController@postRegister');

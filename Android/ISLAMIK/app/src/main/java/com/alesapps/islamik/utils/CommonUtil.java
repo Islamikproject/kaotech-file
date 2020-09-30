@@ -156,11 +156,6 @@ public class CommonUtil {
 		return languages;
 	}
 
-	public static String getLanguageName(String code) {
-		Locale locale = new Locale(code);
-		return locale.getDisplayLanguage(locale);
-	}
-
 	public static String getImagePath(String path) {
 		return path.replaceAll("https://parse.kaotech.org:20001/", "http://parse.kaotech.org:20002/");
 	}

@@ -8,6 +8,7 @@ import com.parse.GetCallback;
 import com.parse.LogInCallback;
 import com.parse.LogOutCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseInstallation;
 import com.parse.ParseQuery;
@@ -39,6 +40,7 @@ public class UserModel {
 	public int type = TYPE_USER;
 	public int price = 0;
 	public int groupPrice = 0;
+	public ParseFile avatar;
 
 	public void parse(ParseUser user) {
 		if (user == null)
@@ -57,6 +59,7 @@ public class UserModel {
 		type = user.getInt(ParseConstants.KEY_TYPE);
 		price = user.getInt(ParseConstants.KEY_PRICE);
 		groupPrice = user.getInt(ParseConstants.KEY_GROUP_PRICE);
+		avatar = user.getParseFile(ParseConstants.KEY_AVATAR);
 	}
 
 	public static void GetUsersList(final int type, final UserListListener listener) {

@@ -186,7 +186,7 @@ public class SermonListActivity extends BaseActionBarActivity implements DragLis
 				.setMessage(message)
 				.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						String url = AppConstant.STRIPE_CONNECT_URL + sermonObj.getObjectId();
+						String url = AppConstant.STRIPE_CONNECT_URL + "donation?sermon=" + sermonObj.getObjectId();
 						Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 						startActivity(browserIntent);
 					}

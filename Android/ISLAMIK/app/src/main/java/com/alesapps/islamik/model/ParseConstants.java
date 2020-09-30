@@ -7,6 +7,7 @@ public class ParseConstants {
 	public static final String TBL_SERMON = "Sermon";
 	public static final String TBL_MESSAGES = "Messages";
 	public static final String TBL_POST = "Post";
+	public static final String TBL_ORDER = "Order";
 
 	public static final String KEY_CREATED_AT = "createdAt";
 	public static final String KEY_UPDATED_AT = "updatedAt";
@@ -32,6 +33,7 @@ public class ParseConstants {
 	public static final String KEY_ACCOUNT_ID = "accountId";
 	public static final String KEY_PRICE = "price";
 	public static final String KEY_GROUP_PRICE = "groupPrice";
+	public static final String KEY_AVATAR = "avatar";
 	// Sermon
 	public static final String KEY_OWNER = "owner";
 	public static final String KEY_TOPIC = "topic";
@@ -46,6 +48,7 @@ public class ParseConstants {
 	public static final String KEY_SERMON = "sermon";
 	public static final String KEY_NAME = "name";
 	public static final String KEY_CHARGE_ID = "chargeId";
+	public static final String KEY_ORDER = "order";
 	// Messages
 	public static final String KEY_QUESTION = "question";
 	public static final String KEY_ANSWER = "answer";
@@ -54,4 +57,7 @@ public class ParseConstants {
 	public static final String KEY_TITLE = "title";
 	public static final String KEY_DESCRIPTION = "description";
 	public static final String KEY_PHOTO = "photo";
+	// Order
+	public static final String KEY_SUBJECT = "subject";
+	public static final String KEY_MESSAGE = "message";
 }

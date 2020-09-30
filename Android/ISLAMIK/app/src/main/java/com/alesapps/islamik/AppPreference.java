@@ -31,27 +31,7 @@ public class AppPreference {
 		editor.putBoolean(key, value);
 		editor.commit();
 	}
-	
-	// int
-	public static int getInt(String key, int def) {
-		return instance.getInt(key, def);
-	}
-	public static void setInt(String key, int value) {
-		SharedPreferences.Editor editor = instance.edit();
-		editor.putInt(key, value);
-		editor.commit();
-	}
-	
-	// long
-	public static long getLong(String key, long def) {
-		return instance.getLong(key, def);
-	}
-	public static void setLong(String key, long value) {
-		SharedPreferences.Editor editor = instance.edit();
-		editor.putLong(key, value);
-		editor.commit();
-	}
-	
+
 	// string
 	public static String getStr(String key, String def) {
 		return instance.getString(key, def);
@@ -59,13 +39,6 @@ public class AppPreference {
 	public static void setStr(String key, String value) {
 		SharedPreferences.Editor editor = instance.edit();
 		editor.putString(key, value);
-		editor.commit();
-	}
-	
-	// remove
-	public static void removeKey(String key) {
-		SharedPreferences.Editor editor = instance.edit();
-		editor.remove(key);
 		editor.commit();
 	}
 }

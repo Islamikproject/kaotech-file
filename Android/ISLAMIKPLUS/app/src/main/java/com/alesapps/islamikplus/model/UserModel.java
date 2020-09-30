@@ -2,10 +2,12 @@ package com.alesapps.islamikplus.model;
 
 import com.alesapps.islamikplus.listener.ExceptionListener;
 import com.alesapps.islamikplus.listener.UserListener;
+import com.alesapps.islamikplus.utils.BaseTask;
 import com.parse.GetCallback;
 import com.parse.LogInCallback;
 import com.parse.LogOutCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseInstallation;
 import com.parse.ParseQuery;
@@ -15,6 +17,7 @@ import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 public class UserModel {
+	public static final int AVATAR_SIZE = 256;
 	public static int TYPE_MOSQUE = 100;
 	public static int TYPE_USER = 200;
 	public static int TYPE_USTHADH = 300;
@@ -36,6 +39,7 @@ public class UserModel {
 	public int type = TYPE_MOSQUE;
 	public int price = 0;
 	public int groupPrice = 0;
+	public ParseFile avatar;
 
 	public void parse(ParseUser user) {
 		if (user == null)
@@ -54,6 +58,7 @@ public class UserModel {
 		type = user.getInt(ParseConstants.KEY_TYPE);
 		price = user.getInt(ParseConstants.KEY_PRICE);
 		groupPrice = user.getInt(ParseConstants.KEY_GROUP_PRICE);
+		avatar = user.getParseFile(ParseConstants.KEY_AVATAR);
 	}
 
 	public static void RequestPasswordReset(String strEmail, final ExceptionListener listener) {
@@ -66,40 +71,67 @@ public class UserModel {
 	}
 
 	public static void Register(final UserModel model, final UserListener listener) {
-		final ParseUser userObj = new ParseUser();
-		userObj.setUsername(model.username);
-		userObj.setEmail(model.email);
-		userObj.setPassword(model.password);
-		userObj.put(ParseConstants.KEY_EMAIL_ADDRESS, model.emailAddress);
-		userObj.put(ParseConstants.KEY_FIRST_NAME, model.firstName);
-		userObj.put(ParseConstants.KEY_LAST_NAME, model.lastName);
-		userObj.put(ParseConstants.KEY_PHONE_NUMBER, model.phoneNumber);
-		userObj.put(ParseConstants.KEY_MOSQUE, model.mosque);
-		userObj.put(ParseConstants.KEY_LON_LAT, model.lonLat);
-		userObj.put(ParseConstants.KEY_ADDRESS, model.address);
-		userObj.put(ParseConstants.KEY_ACCOUNT_ID, model.accountId);
-		userObj.put(ParseConstants.KEY_TYPE, model.type);
-		userObj.put(ParseConstants.KEY_PRICE, model.price);
-		userObj.put(ParseConstants.KEY_GROUP_PRICE, model.groupPrice);
-
-		userObj.signUpInBackground(new SignUpCallback() {
+		BaseTask.run(new BaseTask.TaskListener() {
 			@Override
-			public void done(ParseException e) {
+			public Object onTaskRunning(int taskId, Object data) {
 				// TODO Auto-generated method stub
-				if (e == null) {
-					Login(model.username, model.password, new UserListener() {
-						@Override
-						public void done(ParseUser userObj, String error) {
-							// TODO Auto-generated method stub
-							if (listener != null)
-								listener.done(userObj, error);
-						}
-					});
-				} else {
-					if (listener != null)
-						listener.done(userObj, ParseErrorHandler.handle(e));
+				try {
+					if (model.avatar != null)
+						model.avatar.save();
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
 				}
+				return null;
 			}
+
+			@Override
+			public void onTaskResult(int taskId, Object result) {
+				// TODO Auto-generated method stub
+				final ParseUser userObj = new ParseUser();
+				userObj.setUsername(model.username);
+				userObj.setEmail(model.email);
+				userObj.setPassword(model.password);
+				userObj.put(ParseConstants.KEY_EMAIL_ADDRESS, model.emailAddress);
+				userObj.put(ParseConstants.KEY_FIRST_NAME, model.firstName);
+				userObj.put(ParseConstants.KEY_LAST_NAME, model.lastName);
+				userObj.put(ParseConstants.KEY_PHONE_NUMBER, model.phoneNumber);
+				userObj.put(ParseConstants.KEY_MOSQUE, model.mosque);
+				userObj.put(ParseConstants.KEY_LON_LAT, model.lonLat);
+				userObj.put(ParseConstants.KEY_ADDRESS, model.address);
+				userObj.put(ParseConstants.KEY_ACCOUNT_ID, model.accountId);
+				userObj.put(ParseConstants.KEY_TYPE, model.type);
+				userObj.put(ParseConstants.KEY_PRICE, model.price);
+				userObj.put(ParseConstants.KEY_GROUP_PRICE, model.groupPrice);
+				if (model.avatar != null)
+					userObj.put(ParseConstants.KEY_AVATAR, model.avatar);
+
+				userObj.signUpInBackground(new SignUpCallback() {
+					@Override
+					public void done(ParseException e) {
+						// TODO Auto-generated method stub
+						if (e == null) {
+							Login(model.username, model.password, new UserListener() {
+								@Override
+								public void done(ParseUser userObj, String error) {
+									// TODO Auto-generated method stub
+									if (listener != null)
+										listener.done(userObj, error);
+								}
+							});
+						} else {
+							if (listener != null)
+								listener.done(userObj, ParseErrorHandler.handle(e));
+						}
+					}
+				});
+			}
+			@Override
+			public void onTaskProgress(int taskId, Object... values) {}
+			@Override
+			public void onTaskPrepare(int taskId, Object data) {}
+			@Override
+			public void onTaskCancelled(int taskId) {}
 		});
 	}
 

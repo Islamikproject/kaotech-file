@@ -34,7 +34,9 @@ public class ResourceUtil {
 			}
 		return tempDirPath + tempFileName;
 	}
-
+	public static String getAvatarFilePath() {
+		return getVideoFilePath("avatar.png");
+	}
 	public static String getPhotoFilePath() {
 		return getVideoFilePath("photo.png");
 	}

@@ -15,11 +15,7 @@ public class MessageUtil {
 	public static void showError(Context context, int messageId) {
 		showAlertDialog(context, TYPE_ERROR, messageId);
 	}
-	
-	public static void showError(Context context, String message) {
-		showAlertDialog(context, TYPE_ERROR, message);
-	}
-	
+
 	public static void showAlertDialog(Context context, int type, int messageId) {
 		if (messageId == 0)
 			showAlertDialog(context, type, null);
@@ -30,14 +26,7 @@ public class MessageUtil {
 	public static void showAlertDialog(Context context, int type, String message) {
 		showAlertDialog(context, type, message, null);
 	}
-	
-	public static void showAlertDialog(Context context, int type, int messageId, DialogInterface.OnClickListener listener) {
-		if (messageId == 0)
-			showAlertDialog(context, type, null, listener);
-		else
-			showAlertDialog(context, type, context.getString(messageId), listener);
-	}
-	
+
 	public static void showAlertDialog(Context context, int type, String message, DialogInterface.OnClickListener listener) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		switch (type) {
@@ -71,9 +60,5 @@ public class MessageUtil {
 		} else {
 			showToast(context, message);
 		}
-	}
-	
-	public static void showToast(Context context, int messageId, boolean isLong) {
-		showToast(context, context.getString(messageId), isLong);
 	}
 }

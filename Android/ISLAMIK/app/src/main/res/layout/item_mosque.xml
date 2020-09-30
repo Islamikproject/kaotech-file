@@ -5,19 +5,36 @@
     android:layout_height="match_parent"
     android:padding="@dimen/margin_normal"
     android:gravity="center_vertical"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:background="@color/white">
-    <TextView
-        android:id="@+id/txt_name"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="@dimen/image_small"
+        android:layout_height="@dimen/image_small" />
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/textsize_normal"
-        android:textColor="@color/text_normal"/>
-    <TextView
-        android:id="@+id/txt_address"
-        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/image_very_small"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_normal"
+            android:textColor="@color/text_normal"/>
+        <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:textSize="@dimen/textsize_small"
+            android:textColor="@color/text_normal"/>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/check_select"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_small"
-        android:textSize="@dimen/textsize_small"
-        android:textColor="@color/text_normal"/>
+        android:enabled="false"
+        android:button="@drawable/bg_checkbox"/>
 </LinearLayout>

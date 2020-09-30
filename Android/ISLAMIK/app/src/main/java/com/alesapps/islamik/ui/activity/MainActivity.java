@@ -139,6 +139,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				startActivity(new Intent(instance, SettingsActivity.class));
 				break;
 			case R.id.layout_order:
+				startActivity(new Intent(instance, OrderActivity.class));
 				break;
 		}
 	}

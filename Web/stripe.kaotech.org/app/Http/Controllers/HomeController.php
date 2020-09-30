@@ -23,15 +23,14 @@ use Stripe\Error\Base as Stripe_Error;
 use Stripe\Token as StripeToken;
 use Stripe\Charge as StripeCharge;
 
-class HomeController extends Controller
-{
+class HomeController extends Controller{
     // Test Keys
-    //public $STRIPE_SECRET_KEY = 'sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK';
-    //public $STRIPE_CLIENT_ID = 'ca_HAu0nFiHFKWtYrCs8x2Nn4AwiQOcqC23'; // dev
+    public $STRIPE_SECRET_KEY = 'sk_test_v0xKIeyGxMWyL3dqhebbUXAh00AQfnhZpK';
+    public $STRIPE_CLIENT_ID = 'ca_HAu0nFiHFKWtYrCs8x2Nn4AwiQOcqC23'; // dev
 
     //Live Keys
-    public $STRIPE_SECRET_KEY = 'sk_live_Sxb4YVSMgXYNpy7y8X3jsh9T00stzJO6fd';
-    public $STRIPE_CLIENT_ID = 'ca_HAu0bYJWn03oOjJass23LkHVURAcUtTs'; // live
+    //public $STRIPE_SECRET_KEY = 'sk_live_Sxb4YVSMgXYNpy7y8X3jsh9T00stzJO6fd';
+    //public $STRIPE_CLIENT_ID = 'ca_HAu0bYJWn03oOjJass23LkHVURAcUtTs'; // live
 
     public $STRIPE_CONNECT_URL    = 'https://connect.stripe.com/oauth/authorize';
     public $STRIPE_TOKEN_URL      = 'https://connect.stripe.com/oauth/token';
@@ -86,6 +85,11 @@ class HomeController extends Controller
     public function donation(Request $request)
     {
         return view('dashboard.donation');
+    }
+
+    public function order(Request $request)
+    {
+        return view('dashboard.order');
     }
 
     public function login(Request $request){
@@ -234,14 +238,12 @@ class HomeController extends Controller
           'amount' => $request->amount * 100,
           'currency' => 'usd',
           'source' => $token->id,
-          'application_fee' => $request->amount * 10,
+          'application_fee' => $request->amount * 20,
           'destination' => $sermon->owner->accountId,
           'description' => $request->name . ' paid $' . $request->amount,
         ]);
       } catch (Stripe_Error $e) {
         $error = $e->getMessage();
-        var_dump($e);
-        var_dump($e->getCode());die;
         return redirect()->back()->withErrors([$error]);
       }
 
@@ -260,5 +262,46 @@ class HomeController extends Controller
       return redirect()->back()->with('success', 'success');
     }
 
+    public function postOrder(Request $request) {
+      $query = new ParseQuery("Order");
+      $query->includeKey("owner");
+      $order = $query->get($request['order']);
 
+      try {
+        $token = StripeToken::create([
+          'card' => [
+            'number' => $request->number,
+            'exp_month' => intval(explode('/', $request->expiry)[0]),
+            'exp_year' => intval('20' + explode('/', $request->expiry)[1]),
+            'cvc' => $request->cvc,
+          ],
+        ]);      
+  
+        $charge = StripeCharge::create([
+          'amount' => $request->amount * 100,
+          'currency' => 'usd',
+          'source' => $token->id,
+          'application_fee' => $request->amount * 20,
+          'destination' => $order->owner->accountId,
+          'description' => $request->name . ' paid $' . $request->amount,
+        ]);
+      } catch (Stripe_Error $e) {
+        $error = $e->getMessage();
+        return redirect()->back()->withErrors([$error]);
+      }
+
+
+
+      $payment = new ParseObject("Payment");
+      $payment->toUser = $order->toUser;
+      $payment->name = $request->name;
+      $payment->order = $order;
+      $payment->chargeId = $charge->id;
+      $payment->amount = intval($request->amount);
+      $payment->type = 3;
+
+      $payment->save();
+
+      return redirect()->back()->with('success', 'success');
+    }
 }
