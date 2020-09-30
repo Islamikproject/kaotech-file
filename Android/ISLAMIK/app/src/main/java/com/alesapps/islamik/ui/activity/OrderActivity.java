@@ -95,9 +95,8 @@ public class OrderActivity extends BaseActionBarActivity implements View.OnClick
 				showData();
 				break;
 			case R.id.btn_submit:
-				gotoDonation("Otyx88TL3C");
-//				if (isValid())
-//					submit();
+				if (isValid())
+					submit();
 				break;
 		}
 	}
