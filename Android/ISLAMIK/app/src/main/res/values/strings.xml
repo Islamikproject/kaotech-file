@@ -185,6 +185,8 @@
     <string name="valid_No_amount">Please enter amount.</string>
     <string name="valid_No_mosque">Please select mosque.</string>
     <string name="valid_No_usthadh">Please select usthadh.</string>
+    <!-- Book a session -->
+    <string name="book_session">BOOK A SESSION</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[

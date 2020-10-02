@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +15,7 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+import androidx.core.content.FileProvider;
 import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
@@ -23,8 +25,11 @@ import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.model.PostModel;
 import com.alesapps.islamik.model.SermonModel;
 import com.alesapps.islamik.model.UserModel;
+import com.alesapps.islamik.ui.dialog.PhotoDialog;
 import com.alesapps.islamik.utils.CommonUtil;
 import com.alesapps.islamik.utils.MessageUtil;
+import com.alesapps.islamik.utils.ResourceUtil;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.squareup.picasso.Picasso;
@@ -32,7 +37,14 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class MainActivity extends BaseActionBarActivity implements OnClickListener {
@@ -45,6 +57,8 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 	TextView txt_location;
 	VideoView videoView;
 	ImageView img_main;
+
+	ParseFile mMainImage;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +84,9 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		findViewById(R.id.layout_messages).setOnClickListener(this);
 		findViewById(R.id.layout_settings).setOnClickListener(this);
 		findViewById(R.id.layout_order).setOnClickListener(this);
+		findViewById(R.id.layout_book).setOnClickListener(this);
+		findViewById(R.id.btn_full).setOnClickListener(this);
+		findViewById(R.id.btn_share).setOnClickListener(this);
 		initialize();
 	}
 
@@ -104,7 +121,8 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 			@Override
 			public void done(ParseObject object, String error) {
 				if (error == null && object != null) {
-					String path = object.getParseFile(ParseConstants.KEY_PHOTO).getUrl();
+					mMainImage = object.getParseFile(ParseConstants.KEY_PHOTO);
+					String path = mMainImage.getUrl();
 					Picasso.get().load(CommonUtil.getImagePath(path)).into(img_main);
 				}
 			}
@@ -141,7 +159,66 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 			case R.id.layout_order:
 				startActivity(new Intent(instance, OrderActivity.class));
 				break;
+			case R.id.layout_book:
+
+				break;
+			case R.id.btn_full:
+				if (mMainImage != null) {
+					PhotoDialog.photoFile = mMainImage;
+					startActivity(new Intent(instance, PhotoDialog.class));
+				}
+				break;
+			case R.id.btn_share:
+				if (mMainImage != null) {
+					dlg_progress.show();
+					new DownloadFile().execute(CommonUtil.getImagePath(mMainImage.getUrl()), ResourceUtil.getVideoFilePath("share.png"));
+				}
+				break;
 		}
+	}
+
+	private class DownloadFile extends AsyncTask<String, String, String> {
+		String path = "";
+		@Override
+		protected String doInBackground(String... url) {
+			int count;
+			try {
+				path = url[1];
+				URL path = new URL(url[0]);
+				URLConnection conexion = path.openConnection();
+				conexion.connect();
+				InputStream input = new BufferedInputStream(path.openStream());
+				OutputStream output = new FileOutputStream(url[1]);
+				byte data[] = new byte[1024];
+				while ((count = input.read(data)) != -1) {
+					output.write(data, 0, count);
+				}
+				output.flush();
+				output.close();
+				input.close();
+			} catch (Exception e) {
+				return e.toString();
+			}
+			return null;
+		}
+
+		protected void onPostExecute(String result) {
+			dlg_progress.cancel();
+			if (result == null) {
+				shareImage(path);
+			} else {
+				MessageUtil.showToast(instance, result);
+			}
+		}
+	}
+
+	private void shareImage(String path) {
+		File imageFile = new File(path);
+		Uri imageURI = FileProvider.getUriForFile(getApplicationContext(), getPackageName()+".provider", imageFile);
+		Intent i = new Intent(Intent.ACTION_SEND);
+		i.setType("image/*");
+		i.putExtra(Intent.EXTRA_STREAM, imageURI);
+		startActivity(Intent.createChooser(i, "Share Image"));
 	}
 
 	private class PrayerTimeConnectAsyncTask extends AsyncTask<Void, Void, Connection.Response> {
@@ -177,7 +254,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				for (int i = 0; i < timeList.size(); i ++) {
 					if (i == 0)
 						txt_fajr_time.setText(timeList.get(i));
-					else if (i == 1)
+					else if (i == 2)
 						txt_zuhr_time.setText(timeList.get(i));
 					else if (i == 3)
 						txt_asr_time.setText(timeList.get(i));
@@ -189,7 +266,6 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 			}
 		}
 	}
-
 
 	private void logout() {
 		new AlertDialog.Builder(instance)

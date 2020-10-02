@@ -37,163 +37,165 @@
     <string name="ablution">الوضوء</string>
     <string name="ablution_label">الوضوء أو الوضوء هو طقوس تطهير لتطهير أجزاء من الجسم قبل أداء أي صلاة رسمية والتعامل مع القرآن وقراءته. يمكن لبعض الأنشطة أن تبطل الإغراء مثل التبول والتغوط وانتفاخ البطن والنوم العميق والجماع والنزيف الخفيف. لذلك يوصى بشدة بإجراء الوضوء / الوضوء بعد تناول الوجبات.</string>
     <string name="daily_prayers_label">الصلاة واجب ديني إلزامي على كل مسلم. إنها عبادة جسدية وروحية يجب مراعاتها 5 مرات في اليوم أثناء مواجهة القبلة (اتبع البوصلة أعلاه) في مكة. إنه إلزامي لكل مسلم ، باستثناء الحائض ، أو قبل سن البلوغ ، أو في غضون الأربعين يومًا الأولى بعد الولادة.</string>
-    <string name="tutorial_title_a">Step 1: Make niyyah (intention) to perform WUDU</string>
-    <string name="tutorial_detail_a">Niyyah is the Islamic concept of performing an act for the sake of Allah. To truly perform Wudu, you should center yourself and quiet your thoughts, focusing seriously on what you are doing. Niyyah doesn\'t necessarily involve saying anything out loud, but focusing on the phrase \'Bismillah\' (In the name of Allah) is a good way to accomplish the centering necessary. Say it out loud or silently to yourself, whichever makes you comfortable.</string>
-    <string name="tutorial_title_b">Step 2: Watch your hands.</string>
-    <string name="tutorial_detail_b">Use your left hand to wash your right hand. Do this three times. After that, use your right hand to wash your left hand three times. Make sure to wash in between your fingers and all the way up to your wrists.</string>
-    <string name="tutorial_title_c">Step 3: Take water into your mouth.</string>
-    <string name="tutorial_detail_c">Use your right hand to cup water into your mouth three times. Swish it around in your cheeks and the back of your throat. Do this thoroughly to get all the remaining food in your mouth out.</string>
-    <string name="tutorial_title_d">Step 4: Inhale water into your nose.</string>
-    <string name="tutorial_detail_d">Use your right hand to cup water and inhale it into your nose three times. You can use your left hand to close one nostril and blow out if you need to. Snort sharply and abruptly without taking too much water into your nose and choking yourself. If you cannot inhale water into your nose, you can wet your fingers and put water on the lower part of your nostril. Make sure to use safe water to perform this ritual; in some warmer areas of the world, water may contain naegleria fowleri, an amoeba that, if inhaled into the nostrils, can cause a rare but usually fatal type of brain infection. Even tap water may be contaminated; to avoid this illness, boil water for one minute (three minutes at higher elevations) and leave it to cool before rinsing your nose with the water.</string>
-    <string name="tutorial_title_e">Step 5: Wash your face.</string>
-    <string name="tutorial_detail_e">Wash your face three times by spreading your hands from your right ear to the left, and from the edge of the hair to the chin.</string>
-    <string name="tutorial_title_f">Step 6: Wash your lower arms from wrists to elbows, leaving no part dry. </string>
-    <string name="tutorial_detail_f">From your wrist to your elbow, wash your right arm with your left hand three times and then wash your left arm with your right hand three times.</string>
-    <string name="tutorial_title_g">Step 7: Clean your head.</string>
-    <string name="tutorial_detail_g">Using your wet hands, gently wipe your forehead from the eyebrow to the hairline. Also wipe down your hair, the back of your neck, and your temples. Do this one time.</string>
-    <string name="tutorial_title_h">Step 8: Wipe your ears inside and out.</string>
-    <string name="tutorial_detail_h">With the same water, use your finger to clean all the crevices of your ear. Use your thumb to clean behind your ears from the bottom upward. This is also done one time.</string>
-    <string name="tutorial_title_i">Step 9: Wash each of your feet.</string>
-    <string name="tutorial_detail_i">Clean up to the the ankles and be sure water goes between the toes. Use your pinky finger and go through each toe to eliminate anything between. Start with your right foot and scrub each foot three times.</string>
-    <string name="tutorial_title_j">Step 10: While pointing the right index finger to the sky</string>
-    <string name="tutorial_detail_j">Generally, the prayer is as follows: \'Ash-hadu anlaa ilaaha illALLAHu wahdahuu laa shariikalahu, wa ash-hadu anna Muhammadan \'abduhuu wa rasuuluhu.\'  In English, this is translated as \' I bear witness that there is no deity other than Allah alone; He is One; He has no partner and I bear witness that (Hadrat) Muhammad (sallallahu ala Muhammadu sallallahu alaihu Wasallam) is His (chosen) servant and (true) Messenger.\'</string>
-    <string name="tutorial_title_k">Step 11: Repeat WUDU after it has been nullified.</string>
-    <string name="tutorial_detail_k">Actions that nullify Wudu include natural discharges, including urination, defecation, excessive bleeding, and gas. Deep sleep also nullifies WUDU.</string>
-    <string name="fajr">FAJR</string>
+    <string name="tutorial_title_a">الخطوة 1: جعل niyyah لأداء WUDU</string>
+    <string name="tutorial_detail_a">النية هو المفهوم الإسلامي لأداء عمل في سبيل الله. لأداء الوضوء حقًا ، يجب أن تركز نفسك وتهدئة أفكارك ، والتركيز بجدية على ما تفعله. لا تعني كلمة "نية" بالضرورة قول أي شيء بصوت عالٍ ، لكن التركيز على عبارة "بسم الله" هو وسيلة جيدة لتحقيق التمركز اللازم. قلها بصوت عالٍ أو بصمت لنفسك ، أيهما يجعلك مرتاحًا.</string>
+    <string name="tutorial_title_b">الخطوة الثانية: راقب يديك.</string>
+    <string name="tutorial_detail_b">استخدم يدك اليسرى لغسل يدك اليمنى. افعل هذا ثلاث مرات. بعد ذلك ، استخدم يدك اليمنى لغسل يدك اليسرى ثلاث مرات. تأكد من الغسل بين أصابعك وحتى معصميك.</string>
+    <string name="tutorial_title_c">الخطوة 3: خذ الماء في فمك.</string>
+    <string name="tutorial_detail_c">استخدم يدك اليمنى لكوب الماء في فمك ثلاث مرات. تمضمض به في خديك ومؤخرة حلقك. افعل ذلك جيدًا لإخراج كل الطعام المتبقي من فمك.</string>
+    <string name="tutorial_title_d">الخطوة 4: استنشق الماء في أنفك.</string>
+    <string name="tutorial_detail_d">استخدم يدك اليمنى لكوب الماء واستنشقه في أنفك ثلاث مرات. يمكنك استخدام يدك اليسرى لإغلاق إحدى فتحات الأنف وتفجيرها إذا احتجت لذلك. اشم بشكل حاد ومفاجئ دون أن تأخذ الكثير من الماء في أنفك وتخنق نفسك. إذا لم تستطع استنشاق الماء في أنفك ، يمكنك تبليل أصابعك ووضع الماء في الجزء السفلي من أنفك. تأكد من استخدام المياه الصالحة للشرب لأداء هذه الطقوس ؛ في بعض المناطق الأكثر دفئًا في العالم ، قد تحتوي المياه على نيجلريا فوليري ، وهي أميبا يمكن أن تسبب عدوى دماغية نادرة ولكنها مميتة إذا استنشقت في فتحات الأنف. حتى مياه الصنبور قد تكون ملوثة ؛ لتجنب هذا المرض ، قم بغلي الماء لمدة دقيقة واحدة (ثلاث دقائق على ارتفاعات أعلى) واتركه ليبرد قبل شطف أنفك بالماء.</string>
+    <string name="tutorial_title_e">الخطوة 5: اغسل وجهك.</string>
+    <string name="tutorial_detail_e">اغسلي وجهك ثلاث مرات بمد يديك من أذنك اليمنى إلى اليسرى ، ومن حافة الشعر إلى الذقن.</string>
+    <string name="tutorial_title_f">الخطوة 6: اغسل أسفل ذراعيك من الرسغ إلى المرفقين ، دون ترك أي جزء منه جافًا.</string>
+    <string name="tutorial_detail_f">من معصمك إلى مرفقك ، اغسل ذراعك الأيمن بيدك اليسرى ثلاث مرات ثم اغسل ذراعك اليسرى بيدك اليمنى ثلاث مرات.</string>
+    <string name="tutorial_title_g">الخطوة 7: نظف رأسك.</string>
+    <string name="tutorial_detail_g">باستخدام يديك المبللة ، امسح برفق جبهتك من الحاجب إلى خط الشعر. امسحي أيضًا شعرك وظهر رقبتك وصدغيك. افعل هذا مرة واحدة.</string>
+    <string name="tutorial_title_h">الخطوة 8: امسح أذنيك من الداخل والخارج.</string>
+    <string name="tutorial_detail_h">باستخدام نفس الماء ، استخدم إصبعك لتنظيف جميع شقوق أذنك. استخدم إبهامك للتنظيف خلف أذنيك من الأسفل إلى الأعلى. يتم هذا أيضًا مرة واحدة.</string>
+    <string name="tutorial_title_i">الخطوة 9: اغسل كل قدم من قدميك.</string>
+    <string name="tutorial_detail_i">نظف الكاحلين وتأكد من انتقال الماء بين أصابع القدم. استخدم إصبعك الخنصر ومر عبر كل إصبع لإزالة أي شيء بينهما. ابدأ بقدمك اليمنى وفرك كل قدم ثلاث مرات.</string>
+    <string name="tutorial_title_j">الخطوة 10: أثناء توجيه السبابة اليمنى إلى السماء</string>
+    <string name="tutorial_detail_j">بشكل عام ، تكون الصلاة كما يلي: Ash-hadu anlaa ilaaha illALLAHu wahdahu laa shariikalahu، wa ash-hadu anna Muhammadan abduhuu wa rasuuluhu. إلا الله وحده. إنه واحد؛ ليس له شريك وأشهد أن محمد (صلى الله عليه وسلم) خادمه ورسوله (صلى الله عليه وسلم).</string>
+    <string name="tutorial_title_k">الخطوة 11: كرر WUDU بعد إبطالها.</string>
+    <string name="tutorial_detail_k">وتشمل التصرفات التي تنقض الوضوء: الإفرازات الطبيعية ، ومنها التبول والتغوط والنزيف الشديد والغازات. النوم العميق يبطل أيضا WUDU.</string>
+    <string name="fajr">الفجر</string>
     <string name="zuhr">ZUHR</string>
     <string name="asr">ASR</string>
-    <string name="maghrib">MAGHRIB</string>
+    <string name="maghrib">مغرب</string>
     <string name="isha">ISHA</string>
 
-    <string name="choose_display_language">Choose the display language</string>
-    <string name="choose_chapter_first">Choose your Surah(Chapter) for the first rakah</string>
-    <string name="choose_verses_first">Choose your Āyāt (Verses) for the first rakah</string>
-    <string name="choose_chapter_second">Choose your Surah (Chapter) for the second rakah</string>
-    <string name="choose_verses_second">Choose your Āyāt (Verses) for the second rakah</string>
-    <string name="choose_chapter_third">Choose your Surah (Chapter) for the third rakah</string>
-    <string name="choose_verses_third">Choose your Āyāt (Verses) for the third rakah</string>
-    <string name="choose_chapter_fourth">Choose your Surah (Chapter) for the fourth rakah</string>
-    <string name="choose_verses_fourth">Choose your Āyāt (Verses) for the fourth rakah</string>
-    <string name="choose_speed">Choose your Speed</string>
-    <string name="valid_Invalid_start_end">Start Āyāt (Verses) must be &lt;= End Āyāt (Verses).</string>
+    <string name="choose_display_language">اختر لغة العرض</string>
+    <string name="choose_chapter_first">اختر سورة في الركعة الأولى</string>
+    <string name="choose_verses_first">اختر حياتك في الركعة الأولى</string>
+    <string name="choose_chapter_second">اختر سورة (سورة) في الركعة الثانية</string>
+    <string name="choose_verses_second">اختر حياتك في الركعة الثانية</string>
+    <string name="choose_chapter_third">اختر سورة في الركعة الثالثة</string>
+    <string name="choose_verses_third">اختر حياتك في الركعة الثالثة</string>
+    <string name="choose_chapter_fourth">اختر سرتك في الركعة الرابعة</string>
+    <string name="choose_verses_fourth">اختر حياتك في الركعة الرابعة</string>
+    <string name="choose_speed">اختر سرعتك</string>
+    <string name="valid_Invalid_start_end">يجب أن تكون بداية yāt (آيات)&lt;= End yāt (آيات).</string>
 
-    <string name="choose_between_recommended_dhikr">Choose between the recommended Dhikr (remembrance)</string>
-    <string name="type_own_dhikr">Type your own Dhikr (remembrance)</string>
-    <string name="or">Or</string>
-    <string name="choose_quranic_surat_verse">Choose a Quranic Surat or Verse</string>
-    <string name="type_number_times_display_dhikr">Type the number of times to display the Dhikr</string>
-    <string name="electronic_beads">Electronic BEADS</string>
+    <string name="choose_between_recommended_dhikr">اختر بين اذكار الموصى بها</string>
+    <string name="type_own_dhikr">اكتب اذكارك بنفسك</string>
+    <string name="or">أو</string>
+    <string name="choose_quranic_surat_verse">اختر سورة أو آية قرآنية</string>
+    <string name="type_number_times_display_dhikr">اكتب عدد المرات لعرض الاذكار</string>
+    <string name="electronic_beads">حبات إلكترونية</string>
 
-    <string name="allah_akbar">Allah Akbar</string>
-    <string name="subhana_rabbiyal_adhim">SUBHANA  RABBIYAL  ADHIM</string>
-    <string name="sami_allahou_liman_hamidah">SAMI’ ALLAHOU LIMAN HAMIDAH</string>
-    <string name="rabanna_lakal_hamd">RABANNA LAKAL HAMD</string>
-    <string name="subhana_rabiyal_a_la">“SUBHANNA RABIYAL A’La,” *3</string>
-    <string name="slowly_whisper_your_wishes">“Slowly whisper your wishes”</string>
+    <string name="allah_akbar">الله أكبر</string>
+    <string name="subhana_rabbiyal_adhim">سبحانه ربيّال عظيم</string>
+    <string name="sami_allahou_liman_hamidah">سامي الله ليمان حميده</string>
+    <string name="rabanna_lakal_hamd">ربانا لكال حمد</string>
+    <string name="subhana_rabiyal_a_la">"سبحان ربيع الأعلى" * 3</string>
+    <string name="slowly_whisper_your_wishes">"تهمس ببطء رغباتك"</string>
     <string name="rabbighfir_li">“Rabbighfir li”</string>
-    <string name="fajr_last">“At-Tahiyyatu lillahi was- Salawatu wat-Tayyibatu. As-Salamu\' wa rahmatullahi wa barakatuhu. Assalamu \'alaina wa\’ala ibadil-Lahis -Salihin ash hadu al-La ilaha il-Lal lahu wa ash hadu anna Muhammadan abduhu wa rasuluhu." Allahumma salli 'ala Muhammadin Wa \'ala ali Muhammadin Kama sallaita \'ala Ibrahima wa \'ala ali Ibrahima wa barik \'ala Muhammadin wa \'ala ali Muhammadin Kama barakta \' ala Ibrahima Wa \' ala ali Ibrahima Fil a\'lamina Innaka hamidun Majid."</string>
-    <string name="zuhr_last">“At-Tahiyyatu lillahi was- Salawatu wat-Tayyibatu. As-Salamu \' wa rahmatullahi wa barakatuhu. Assalamu \'alaina wa\’ala ibadil-Lahis -Salihin ash hadu al-La ilaha il-Lal lahu wa ash hadu anna Muhammadan abduhu wa rasuluhu."</string>
+    <string name="fajr_last">“التحية لله كان- Salawatu wat-Tayyibatu. السلام عليكم ورحمة الله وبركاته. السلام علينا وعليه عبد الله صالح - صالحين الهدوء الذي لا إله إلا الله لله واشهد آنا محمدان عبده ورسولو. إبراهيما وبارك على محمد وعلى كاما بركة على إبراهيم وعلى إبراهيم في عالمنا إناكا حميدون ماجد."</string>
+    <string name="zuhr_last">“التحية لله كان- Salawatu wat-Tayyibatu. السلام عليكم ورحمة الله وبركاته. السلام علينا واعلا اباديل لاهيس-صالحين حدو لا إله إلا الله الله واشهد أنا محمدان عبده وراسلوه."</string>
 
-    <string name="choose_chapter">Choose your Surah(Chapter)</string>
-    <string name="choose_verses">Choose your Āyāt (Verses)</string>
-    <string name="choose_reciter">Choose the reciter</string>
+    <string name="choose_chapter">اختر سورة (سورة)</string>
+    <string name="choose_verses">اختر حياتك</string>
+    <string name="choose_reciter">اختر القارئ</string>
 
-    <string name="choose_your_address">Choose Your Address:</string>
-    <string name="valid_Invalid_mosque_connected">Oops! There\'s no mosque connected in this neighborhood at this moment.</string>
-    <string name="confirm_another_mosque">Would you like to be connected with another mosque in our network instead?</string>
-    <string name="save_sermon">Save sermon</string>
-    <string name="send_inquiries_imam">Send inquiries to the imam</string>
-    <string name="name_">Name:</string>
-    <string name="subject_">Subject:</string>
-    <string name="email_">Email:</string>
-    <string name="text_">Text:</string>
-    <string name="success_donation">Thanks for your donation, it has been sent to the mosque account.</string>
-    <string name="confirm_mosque_virtual_basket">The mosque has a virtual basket of « %1$s » would you like to make a donation?</string>
+    <string name="choose_your_address">اختر عنوانك:</string>
+    <string name="valid_Invalid_mosque_connected">وجه الفتاة! لا يوجد مسجد متصل في هذا الحي في الوقت الحالي.</string>
+    <string name="confirm_another_mosque">هل ترغب في الاتصال بمسجد آخر في شبكتنا بدلاً من ذلك؟</string>
+    <string name="save_sermon">حفظ الخطبة</string>
+    <string name="send_inquiries_imam">إرسال الاستفسارات إلى الإمام</string>
+    <string name="name_">اسم:</string>
+    <string name="subject_">موضوع:</string>
+    <string name="email_">البريد الإلكتروني:</string>
+    <string name="text_">نص:</string>
+    <string name="success_donation">شكرا لتبرعك ، لقد تم إرساله إلى حساب المسجد.</string>
+    <string name="confirm_mosque_virtual_basket">المسجد به سلة افتراضية «%1$s» هل تريد التبرع بها؟</string>
     <!-- Login -->
-    <string name="login">Login</string>
-    <string name="phone_number">Phone number</string>
-    <string name="password">Password</string>
-    <string name="forgot_password"><![CDATA[<u>Forgot Password?<u>]]></string>
-    <string name="valid_No_phone_number_password">Please enter your phone number and password.</string>
-    <string name="valid_No_phone_number">Please enter phone number.</string>
-    <string name="valid_No_password">Please enter password.</string>
-    <string name="invalid_incorrect_password">Password entered is incorrect.</string>
-    <string name="no_account_signup_here">No account? <![CDATA[<font color=\'#0e6129\'><u>Sign Up Here!</u></font>]]></string>
-    <string name="sign_up">Sign Up</string>
-    <string name="valid_Invalid_customer">This user is no customer.</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="password">كلمه السر</string>
+    <string name="forgot_password"><![CDATA[<u>هل نسيت كلمة المرور؟<u>]]></string>
+    <string name="valid_No_phone_number_password">الرجاء إدخال رقم هاتفك وكلمة المرور.</string>
+    <string name="valid_No_phone_number">الرجاء إدخال رقم الهاتف.</string>
+    <string name="valid_No_password">الرجاء إدخال كلمة المرور.</string>
+    <string name="invalid_incorrect_password">كلمة المرور التي تم إدخالها غير صحيحة.</string>
+    <string name="no_account_signup_here"> <![CDATA[لا حساب؟<font color=\'#0e6129\'><u>سجل هنا!</u></font>]]></string>
+    <string name="sign_up">سجل</string>
+    <string name="valid_Invalid_customer">هذا المستخدم ليس زبون</string>
     <!-- Reset Password -->
-    <string name="email_address">Email address</string>
-    <string name="valid_No_email_address">Please enter email address.</string>
-    <string name="valid_Invalid_email">Email address is invalid.</string>
-    <string name="reset_password">Reset Password</string>
-    <string name="reset_password_label">Input the email used to create your account. We will send you a link to reset your password.</string>
-    <string name="success_forgot_password">We have sent a reset password link to your email.</string>
-    <string name="valid_No_email_register">Phone number entered is not registered. Create an account now?</string>
-    <string name="valid_No_phone_number_register">Phone number entered is not registered. Create an account now?</string>
-    <string name="not_now">Not now</string>
+    <string name="email_address">عنوان البريد الإلكتروني</string>
+    <string name="valid_No_email_address">الرجاء إدخال عنوان البريد الإلكتروني.</string>
+    <string name="valid_Invalid_email">عنوان البريد الإلكتروني غير صالح.</string>
+    <string name="reset_password">إعادة تعيين كلمة المرور</string>
+    <string name="reset_password_label">أدخل البريد الإلكتروني المستخدم لإنشاء حسابك. سنرسل لك رابطًا لإعادة تعيين كلمة المرور الخاصة بك.</string>
+    <string name="success_forgot_password">لقد أرسلنا رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.</string>
+    <string name="valid_No_email_register">رقم الهاتف الذي تم إدخاله غير مسجل. إنشاء حساب الآن؟</string>
+    <string name="valid_No_phone_number_register">رقم الهاتف الذي تم إدخاله غير مسجل. إنشاء حساب الآن؟</string>
+    <string name="not_now">ليس الان</string>
     <!-- Sign Up -->
-    <string name="first_name">First name</string>
-    <string name="surname">Surname</string>
-    <string name="address">Address</string>
-    <string name="confirm_password">Confirm password</string>
-    <string name="valid_No_first_name">Please enter first name.</string>
-    <string name="valid_No_surname">Please enter surname.</string>
-    <string name="valid_No_address">Please enter address.</string>
-    <string name="valid_No_confirm_password">Please enter confirm password.</string>
-    <string name="valid_Invalid_password">Password doesn\'t match.</string>
-    <string name="logout">Log Out</string>
-    <string name="label_log_out">Are you sure you want to log out?</string>
+    <string name="first_name">الاسم الاول</string>
+    <string name="surname">لقب</string>
+    <string name="address">عنوان</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="valid_No_first_name">الرجاء إدخال الاسم الأول.</string>
+    <string name="valid_No_surname">الرجاء إدخال اللقب.</string>
+    <string name="valid_No_address">الرجاء إدخال العنوان.</string>
+    <string name="valid_No_confirm_password">الرجاء إدخال تأكيد كلمة المرور.</string>
+    <string name="valid_Invalid_password">كلمة المرور غير متطابقة.</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="label_log_out">هل أنت متأكد أنك تريد تسجيل الخروج؟</string>
     <!-- Message -->
-    <string name="messages">MESSAGES</string>
-    <string name="topic_">Topic:</string>
-    <string name="question">Question:</string>
-    <string name="answer">Answer:</string>
-    <string name="valid_No_question">Please enter question.</string>
-    <string name="submit">Submit</string>
+    <string name="messages">الرسائل</string>
+    <string name="topic_">موضوع:</string>
+    <string name="question">سؤال:</string>
+    <string name="answer">إجابة:</string>
+    <string name="valid_No_question">الرجاء إدخال السؤال.</string>
+    <string name="submit">إرسال</string>
     <!-- Order Prayer -->
-    <string name="order_prayer">ORDER A PRAYER</string>
+    <string name="order_prayer">تأمر بالصلاة</string>
     <!-- Settings -->
-    <string name="settings">SETTINGS</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="rate_app">Rate App</string>
-    <string name="send_feedback">Send Feedback</string>
-    <string name="about_app">About App</string>
-    <string name="save_change">Save Change</string>
-    <string name="mosque_near_me">MOSQUE NEAR ME</string>
+    <string name="settings">إعدادات</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="rate_app">قيم التطبيق</string>
+    <string name="send_feedback">ارسل رأيك</string>
+    <string name="about_app">حول التطبيق</string>
+    <string name="save_change">حفظ التغيير</string>
+    <string name="mosque_near_me">مسجد بالقرب مني</string>
     <!-- Jumah Sermons -->
-    <string name="africa">AFRICA</string>
-    <string name="asia">ASIA</string>
-    <string name="america">AMERICA</string>
-    <string name="australia">AUSTRALIA</string>
-    <string name="europa">EUROPA</string>
-    <string name="scholars">SCHOLARS</string>
-    <string name="influencers">INFLUENCERS</string>
-    <string name="women_islam">Women in Islam</string>
-    <string name="kids_islam">Kids in Islam</string>
-    <string name="others">Others</string>
+    <string name="africa">أفريقيا</string>
+    <string name="asia">آسيا</string>
+    <string name="america">أمريكا</string>
+    <string name="australia">أستراليا</string>
+    <string name="europa">أوروبا</string>
+    <string name="scholars">العالمين</string>
+    <string name="influencers">المؤثرون</string>
+    <string name="women_islam">المرأة في الإسلام</string>
+    <string name="kids_islam">الاطفال في الاسلام</string>
+    <string name="others">الآخرين</string>
     <!-- Order Prayer -->
-    <string name="mosque">Mosque</string>
-    <string name="usthadh">Usthadh</string>
-    <string name="type_name">Type Name</string>
-    <string name="type_subject">Type Subject</string>
-    <string name="type_message">Type Message</string>
-    <string name="offer_donation">Offer donation:</string>
-    <string name="type_amount">Type Amount</string>
-    <string name="valid_No_name">Please enter name.</string>
-    <string name="valid_No_subject">Please enter subject.</string>
-    <string name="valid_No_message">Please enter message.</string>
-    <string name="valid_No_amount">Please enter amount.</string>
-    <string name="valid_No_mosque">Please select mosque.</string>
-    <string name="valid_No_usthadh">Please select usthadh.</string>
+    <string name="mosque">مسجد</string>
+    <string name="usthadh">استاد</string>
+    <string name="type_name">أكتب اسم</string>
+    <string name="type_subject">اكتب الموضوع</string>
+    <string name="type_message">اكتب الرسالة</string>
+    <string name="offer_donation">عرض التبرع:</string>
+    <string name="type_amount">اكتب المبلغ</string>
+    <string name="valid_No_name">الرجاء إدخال الاسم.</string>
+    <string name="valid_No_subject">الرجاء إدخال الموضوع.</string>
+    <string name="valid_No_message">الرجاء إدخال الرسالة.</string>
+    <string name="valid_No_amount">الرجاء إدخال المبلغ.</string>
+    <string name="valid_No_mosque">الرجاء تحديد مسجد.</string>
+    <string name="valid_No_usthadh">الرجاء تحديد usthad.</string>
+    <!-- Book a session -->
+    <string name="book_session">احجز جلسة</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[
-        <p>This app was built to make every salat as smooth and easy as possible, and create a hub for all the mosque in the world so the user could easily feel the beauty of Islam at his fingertips.</p>
+        <p>تم إنشاء هذا التطبيق لجعل كل صلاة سلسة وسهلة قدر الإمكان ، وإنشاء مركز لجميع المساجد في العالم حتى يتمكن المستخدم من الشعور بجمال الإسلام بسهولة في متناول يده.</p>
     ]]>
     "</string>
     <!-- Terms and Condition -->
-    <string name="terms_conditions">Terms and Conditions</string>
-    <string name="i_agree">I agree</string>>
+    <string name="terms_conditions">الأحكام والشروط</string>
+    <string name="i_agree">أنا موافق</string>>
     <string name="terms_label">"
     <![CDATA[
         <p>ISLAMIK and ISLAMIK+ developed and published by KAOTECH LLC  is provided to you, under the following terms and conditions of use (“Terms & Conditions”). By using the App, you are indicating your agreement to be bound by these Terms & Conditions. If you do not accept any part of these Terms & Conditions, you must immediately cease all use of the App.</p>
@@ -281,7 +283,7 @@
         <p>c. Where the Provider furnishes to KAOTECH LLC (through KAOTECH LLC’s designated representative) a valid notice in the form prescribed by the Act (“counter notice”) within six weeks from the date KAOTECH LLC notifies the Provider of the removal or disabling of access, KAOTECH LLC will take reasonable steps to restore the relevant material if it is technically and practically feasible to do so, unless court proceedings are commenced to prevent the restoration and KAOTECH LLC is informed in writing in accordance with the Act.</p>
     ]]>
     "</string>
-    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy">سياسة خاصة</string>
     <string name="privacy_label">"
     <![CDATA[
         <p>KAOTECH LLC (\"us\", \"we\", or \"our\") operates the www.kaotech.org website and the Osseni mobile application (hereinafter referred to as the \"Service\").</p>

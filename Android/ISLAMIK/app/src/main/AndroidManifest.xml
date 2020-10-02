@@ -92,7 +92,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name="com.alesapps.islamik.ui.activity.VerseActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.OrderActivity" />
-
+        <activity
+            android:name="com.alesapps.islamik.ui.dialog.PhotoDialog" />
         <receiver android:name="com.alesapps.islamik.service.Starter"
             android:enabled="true"
             android:exported="true"
