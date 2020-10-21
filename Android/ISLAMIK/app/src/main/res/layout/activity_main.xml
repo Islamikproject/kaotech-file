@@ -202,7 +202,7 @@
 
                 <TextView
                     style="@style/normalText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/jumah_and_sermon"
@@ -225,8 +225,9 @@
 
                 <TextView
                     style="@style/normalText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="@string/daily_prayers"
                     android:textColor="@color/green"
                     android:textSize="@dimen/textsize_large" />
@@ -255,8 +256,9 @@
 
                 <TextView
                     style="@style/normalText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="@string/quran"
                     android:textColor="@color/green"
                     android:textSize="@dimen/textsize_large" />
@@ -277,8 +279,9 @@
 
                 <TextView
                     style="@style/normalText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="@string/messages"
                     android:textColor="@color/green"
                     android:textSize="@dimen/textsize_large" />
@@ -307,8 +310,9 @@
 
                 <TextView
                     style="@style/normalText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="@string/settings"
                     android:textColor="@color/green"
                     android:textSize="@dimen/textsize_large" />
@@ -329,8 +333,9 @@
 
                 <TextView
                     style="@style/normalText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="@string/order_prayer"
                     android:textColor="@color/green"
                     android:textSize="@dimen/textsize_large" />
@@ -355,6 +360,7 @@
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/book_session"
                 android:textColor="@color/green"
                 android:textSize="@dimen/textsize_large" />

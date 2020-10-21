@@ -28,8 +28,8 @@ public class AppConstant {
 			R.array.chapter_091_verses, R.array.chapter_092_verses, R.array.chapter_093_verses, R.array.chapter_094_verses, R.array.chapter_095_verses, R.array.chapter_096_verses, R.array.chapter_097_verses, R.array.chapter_098_verses, R.array.chapter_099_verses, R.array.chapter_100_verses,
 			R.array.chapter_101_verses, R.array.chapter_102_verses, R.array.chapter_103_verses, R.array.chapter_104_verses, R.array.chapter_105_verses, R.array.chapter_106_verses, R.array.chapter_107_verses, R.array.chapter_108_verses, R.array.chapter_109_verses, R.array.chapter_110_verses,
 			R.array.chapter_111_verses, R.array.chapter_112_verses, R.array.chapter_113_verses, R.array.chapter_114_verses};
-	public static final String[] LANGUAGE_ARRAY = {"English", "Arabic", "French", "Bengali", "Urdu", "Spanish"};
-	public static final String[] LANGUAGE_SYMBOL = {"en", "ar", "fr", "bn", "ur", "es"};
+	public static final String[] LANGUAGE_ARRAY = {"English", "Arabic", "French"};
+	public static final String[] LANGUAGE_SYMBOL = {"en", "ar", "fr"};
 	public static final String[] SPEED_ARRAY = {"SLOW", "INTERMEDIATE", "FAST", "SUPER FAST"};
 	public static final int[] SPEED_VALUE_ARRAY = {50, 30, 20, 10};
 	public static final int TIME_SPEED = 15000;

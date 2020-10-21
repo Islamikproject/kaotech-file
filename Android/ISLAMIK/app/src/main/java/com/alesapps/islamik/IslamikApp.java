@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import androidx.multidex.MultiDexApplication;
 import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.net.PlacesClient;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseCrashReporting;
