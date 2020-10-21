@@ -30,7 +30,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 
 		instance = this;
 		SetTitle(null, 0);
-		ShowActionBarIcons(true, R.id.action_logout);
+		ShowActionBarIcons(true, R.id.action_logout, R.id.action_notification);
 		setContentView(R.layout.activity_main);
 		layout_jumah = findViewById(R.id.layout_jumah);
 		layout_book = findViewById(R.id.layout_book);
@@ -67,6 +67,9 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		switch (view.getId()) {
 			case R.id.action_logout:
 				logout();
+				break;
+			case R.id.action_notification:
+				startActivity(new Intent(instance, NotificationActivity.class));
 				break;
 			case R.id.action_language:
 				SelectLanguageActivity.isMain = true;

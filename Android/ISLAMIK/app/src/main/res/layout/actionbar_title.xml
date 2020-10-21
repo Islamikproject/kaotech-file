@@ -36,6 +36,12 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_action_logout" />
+        <ImageView
+            android:id="@+id/action_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_action_notification" />
     </LinearLayout>
 
     <LinearLayout

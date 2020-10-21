@@ -46,6 +46,13 @@
             {
               "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "413068111620-sk1uen6nts2safokm435kghlbdts1lrd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.alesapps.islamikplus"
+              }
             }
           ]
         }
@@ -91,6 +98,13 @@
             {
               "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "413068111620-sk1uen6nts2safokm435kghlbdts1lrd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.alesapps.islamikplus"
+              }
             }
           ]
         }

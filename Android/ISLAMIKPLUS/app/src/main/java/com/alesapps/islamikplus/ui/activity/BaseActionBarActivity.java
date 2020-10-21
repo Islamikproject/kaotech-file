@@ -30,6 +30,7 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 	public View action_button_language;
 	public View action_button_add;
 	public View action_button_done;
+	public View action_button_notification;
 
 	public MyProgressDialog dlg_progress;
 
@@ -76,6 +77,8 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_button_add.setVisibility(View.GONE);
 			action_button_done = v.findViewById(R.id.action_done);
 			action_button_done.setVisibility(View.GONE);
+			action_button_notification = v.findViewById(R.id.action_notification);
+			action_button_notification.setVisibility(View.GONE);
 
 			action_button_back.setOnClickListener(this);
 			action_button_logout.setOnClickListener(this);
@@ -84,6 +87,7 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_button_language.setOnClickListener(this);
 			action_button_add.setOnClickListener(this);
 			action_button_done.setOnClickListener(this);
+			action_button_notification.setOnClickListener(this);
 			actionBar.setCustomView(v);
 
 			dlg_progress = new MyProgressDialog(this);
@@ -141,6 +145,7 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 			action_button_language.setVisibility(View.GONE);
 			action_button_add.setVisibility(View.GONE);
 			action_button_done.setVisibility(View.GONE);
+			action_button_notification.setVisibility(View.GONE);
 
 			if (res_id_arr != null) {
 				for (int i = 0; i < res_id_arr.length; i++) {
@@ -165,6 +170,9 @@ public class BaseActionBarActivity extends AppCompatActivity implements OnClickL
 							break;
 						case R.id.action_done:
 							action_button_done.setVisibility(View.VISIBLE);
+							break;
+						case R.id.action_notification:
+							action_button_notification.setVisibility(View.VISIBLE);
 							break;
 					}
 				}

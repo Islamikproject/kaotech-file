@@ -1,5 +1,6 @@
 package com.alesapps.islamikplus.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -62,7 +63,7 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.flash_switch_view:
-                onFlashSwitcClicked();
+                onFlashSwitchClicked();
                 break;
             case R.id.front_back_camera_switcher:
                 onSwitchCameraClicked();
@@ -79,7 +80,7 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
         }
     }
 
-    public void onFlashSwitcClicked() {
+    public void onFlashSwitchClicked() {
         final CameraFragmentApi cameraFragment = getCameraFragment();
         if (cameraFragment != null) {
             cameraFragment.toggleFlashMode();
@@ -100,7 +101,7 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
                 @Override
                 public void onVideoRecorded(String filePath) {
                     Toast.makeText(getBaseContext(), "onVideoRecorded " + filePath, Toast.LENGTH_SHORT).show();
-                    SermonActivity.instance.uploadVideo(filePath);
+                    SermonActivity.instance.uploadVideo(filePath, false);
                     myBack();
                 }
 
@@ -131,6 +132,7 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
     public void addCamera() {
         cameraLayout.setVisibility(View.VISIBLE);
 
+        @SuppressLint("MissingPermission")
         final CameraFragment cameraFragment = CameraFragment.newInstance(new Configuration.Builder()
                 .setCamera(Configuration.CAMERA_FACE_REAR).build());
         getSupportFragmentManager().beginTransaction()

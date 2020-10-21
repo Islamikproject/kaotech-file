@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_normal"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="@dimen/image_small"
+        android:layout_height="@dimen/image_small" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/image_very_small"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/txt_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_normal"
+            android:textColor="@color/text_normal"/>
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:textSize="@dimen/textsize_small"
+            android:textColor="@color/text_light"/>
+        <LinearLayout
+            android:id="@+id/layout_accept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/txt_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/margin_normal"
+                android:paddingLeft="@dimen/margin_large"
+                android:paddingRight="@dimen/margin_large"
+                android:paddingBottom="@dimen/margin_normal"
+                android:text="@string/accept"
+                android:textSize="@dimen/textsize_normal"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:background="@drawable/bg_rectangle_green"/>
+            <TextView
+                android:id="@+id/txt_reject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:paddingTop="@dimen/margin_normal"
+                android:paddingLeft="@dimen/margin_large"
+                android:paddingRight="@dimen/margin_large"
+                android:paddingBottom="@dimen/margin_normal"
+                android:text="@string/reject"
+                android:textSize="@dimen/textsize_normal"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:background="@drawable/bg_rectangle_green"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

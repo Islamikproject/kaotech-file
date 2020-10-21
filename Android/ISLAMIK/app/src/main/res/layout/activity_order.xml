@@ -50,7 +50,7 @@
         <com.alesapps.islamik.ui.view.DragListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="@dimen/image_count"
             android:divider="@color/gray"
             android:dividerHeight="1dp"/>
         <TextView

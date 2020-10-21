@@ -82,9 +82,11 @@
     <string name="take_new_photo">Take a new photo</string>
     <!-- Sermon -->
     <string name="language_">Language:</string>
-    <string name="upload_video">Upload video</string>
+    <string name="upload_video_audio">Upload Video or Audio</string>
     <string name="take_new_video">Take a new video</string>
     <string name="select_gallery">Select from gallery</string>
+    <string name="select_video_gallery">Select video from gallery</string>
+    <string name="select_audio_gallery">Select audio from gallery</string>
     <string name="type_topic_sermon">Type the topic of the sermon:</string>
     <string name="valid_No_topic">Please enter topic.</string>
     <string name="success_jumah_message">Imam %1$s is going live for JUMAH SERMON and will talk about \n %2$s</string>
@@ -129,6 +131,15 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="terms_conditions">Terms and Conditions</string>
     <string name="save_change">Save Change</string>
+    <!-- Notification -->
+    <string name="notification">NOTIFICATION</string>
+    <string name="msg_notification_book">%1$s just book a session for (%2$s and $%3$s).</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="msg_notification_accepted">%1$s session request has been accepted.</string>
+    <string name="msg_notification_declined">%1$s session requested has been rejected, please select another date or message the %2$s directly.</string>
+    <string name="you_accepted_request">You have accepted the request.</string>
+    <string name="you_rejected_request">You have rejected the request.</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[

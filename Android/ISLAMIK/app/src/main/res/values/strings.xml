@@ -187,6 +187,25 @@
     <string name="valid_No_usthadh">Please select usthadh.</string>
     <!-- Book a session -->
     <string name="book_session">BOOK A SESSION</string>
+    <string name="book_session_quranic_islamic">Book a session of Quranic/Islamic studies</string>
+    <string name="choose_mosque_usthadh_influencer">Please select mosque or usthadh or influencer</string>
+    <string name="choose_day_time_slot">Please choose a day and time slot</string>
+    <string name="choose_session_prefer">Please select the type of session you prefer</string>
+    <string name="type_name_children">Please type name of children</string>
+    <string name="type_payment_info">Please enter payment info</string>
+    <string name="book_message">Someone just booked a paid quranic session</string>
+    <string name="one_session">1/1</string>
+    <string name="group_session">Group session(5 children maximum)</string>
+    <string name="valid_No_date">Please choose date.</string>
+    <string name="valid_No_time">Please choose time.</string>
+    <string name="valid_No_children">Please enter children.</string>
+    <!-- Notification -->
+    <string name="notification">NOTIFICATION</string>
+    <string name="msg_notification_book">%1$s just book a session for (%2$s and $%3$s).</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="msg_notification_accepted">%1$s session request has been accepted.</string>
+    <string name="msg_notification_declined">%1$s session requested has been rejected, please select another date or message the %2$s directly.</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[

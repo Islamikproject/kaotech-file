@@ -81,7 +81,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		switch (view.getId()) {
 			case R.id.btn_next:
 				if (isValid())
-					showVideoDialog();
+					showUploadDialog();
 				return;
 		}
 	}
@@ -96,10 +96,16 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		return true;
 	}
 
-	private void showVideoDialog() {
+	private void showUploadDialog() {
 		new AlertDialog.Builder(instance)
-				.setTitle(R.string.upload_video)
-				.setPositiveButton(R.string.select_gallery, new DialogInterface.OnClickListener() {
+				.setTitle(R.string.upload_video_audio)
+				.setPositiveButton(R.string.take_new_video, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						startActivity(new Intent(instance, ReadyActivity.class));
+					}
+				})
+				.setNegativeButton(R.string.select_video_gallery, new DialogInterface.OnClickListener() {
+					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						if (Build.VERSION.SDK_INT < 19) {
 							Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -114,9 +120,19 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 						}
 					}
 				})
-				.setNegativeButton(R.string.take_new_video, new DialogInterface.OnClickListener() {
+				.setNeutralButton(R.string.select_audio_gallery, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						startActivity(new Intent(instance, ReadyActivity.class));
+						if (Build.VERSION.SDK_INT < 19) {
+							Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+							intent.setType("audio/*");
+							startActivityForResult(intent, VIDEO_PICK);
+						} else {
+							Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+							intent.addCategory(Intent.CATEGORY_OPENABLE);
+							intent.setType("audio/*");
+							intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[] {"audio/*"});
+							startActivityForResult(intent, VIDEO_PICK);
+						}
 					}
 				})
 				.show();
@@ -144,19 +160,23 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 			if(mimeType.startsWith("video")) {
 				Uri selectedImageUri = data.getData();
 				String selectedImagePath = ResourceUtil.generatePath(selectedImageUri, this);
-				uploadVideo(selectedImagePath);
+				uploadVideo(selectedImagePath, false);
+			} else if (mimeType.startsWith("audio")) {
+				Uri selectedImageUri = data.getData();
+				String selectedImagePath = ResourceUtil.generatePath(selectedImageUri, this);
+				uploadVideo(selectedImagePath, true);
 			}
 		}
 	}
 
-	public void uploadVideo(String path){
+	public void uploadVideo(String path, final boolean isAudio){
 		Uri video_uri = Uri.parse("file://" + path);
 		dlg_progress.show();
 		FileModel.UploadVideo(video_uri, new BooleanListener() {
 			@Override
 			public void done(boolean flag, String fileName, String error) {
 				if (flag) {
-					save(fileName, error);
+					save(fileName, error, isAudio);
 				} else {
 					dlg_progress.cancel();
 					MessageUtil.showToast(instance, error);
@@ -165,7 +185,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		});
 	}
 
-	private void save(String video_name, String video_path) {
+	private void save(String video_name, String video_path, boolean isAudio) {
 		final SermonModel model = new SermonModel();
 		model.owner = ParseUser.getCurrentUser();
 		model.type = type;
@@ -174,6 +194,7 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 		model.video = video_path;
 		model.videoName = video_name;
 		model.language = languageCode[sp_language.getSelectedItemPosition()];
+		model.isAudio = isAudio;
 		SermonModel.Register(model, new ExceptionListener() {
 			@Override
 			public void done(String error) {

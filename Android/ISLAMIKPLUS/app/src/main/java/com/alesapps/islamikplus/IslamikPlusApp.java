@@ -10,6 +10,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseCrashReporting;
+import com.parse.ParseInstallation;
 
 public class IslamikPlusApp extends MultiDexApplication {
     public static Context mContext;
@@ -36,6 +37,7 @@ public class IslamikPlusApp extends MultiDexApplication {
         ParseACL.setDefaultACL(defaultACL, true);
         Places.initialize(getApplicationContext(), getString(R.string.place_api_key));
         PlacesClient placesClient = Places.createClient(this);
+        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
         AppGlobals.mFirebaseStorage = FirebaseStorage.getInstance();
         AppGlobals.mStorageReference = FirebaseStorage.getInstance().getReferenceFromUrl(AppConstant.URL_STORAGE_REFERENCE).child(AppConstant.STORAGE_FILE);
 

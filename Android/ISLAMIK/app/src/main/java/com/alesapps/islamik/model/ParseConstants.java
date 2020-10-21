@@ -8,6 +8,8 @@ public class ParseConstants {
 	public static final String TBL_MESSAGES = "Messages";
 	public static final String TBL_POST = "Post";
 	public static final String TBL_ORDER = "Order";
+	public static final String TBL_BOOK = "Book";
+	public static final String TBL_NOTIFICATION = "Notification";
 
 	public static final String KEY_CREATED_AT = "createdAt";
 	public static final String KEY_UPDATED_AT = "updatedAt";
@@ -60,4 +62,10 @@ public class ParseConstants {
 	// Order
 	public static final String KEY_SUBJECT = "subject";
 	public static final String KEY_MESSAGE = "message";
+	// Book
+	public static final String KEY_BOOK_DATE = "bookDate";
+	public static final String KEY_CHILD_NAME = "childName";
+	// Notification
+	public static final String KEY_STATE = "state";
+	public static final String KEY_BOOK_OBJ = "bookObj";
 }

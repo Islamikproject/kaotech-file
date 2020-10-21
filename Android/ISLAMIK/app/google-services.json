@@ -46,6 +46,65 @@
             {
               "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "413068111620-sk1uen6nts2safokm435kghlbdts1lrd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.alesapps.islamikplus"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413068111620:android:2dc37866daa22b6840ea51",
+        "android_client_info": {
+          "package_name": "com.alesapps.islamikplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413068111620-vlej8elf1tn9vistr8luqlmuc0itt9b9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alesapps.islamikplus",
+            "certificate_hash": "456dc393eb782705f31b07dff2e573565ee1709f"
+          }
+        },
+        {
+          "client_id": "413068111620-6p5sdq8mrn56kvofr465j35bpkg52snc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alesapps.islamikplus",
+            "certificate_hash": "3bce41820da2c66e5f48c6f4c604154bb20244e3"
+          }
+        },
+        {
+          "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdx1b_1BqKtSNSg04CssVVd5I5O-JiBbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413068111620-6i81i53g8667h5cdl8lgtf5miklsl9dj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "413068111620-sk1uen6nts2safokm435kghlbdts1lrd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.alesapps.islamikplus"
+              }
             }
           ]
         }

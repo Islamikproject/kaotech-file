@@ -17,6 +17,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 import androidx.core.content.FileProvider;
 import com.alesapps.islamik.AppConstant;
+import com.alesapps.islamik.AppGlobals;
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ExceptionListener;
@@ -66,7 +67,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 
 		instance = this;
 		SetTitle(null, 0);
-		ShowActionBarIcons(true, R.id.action_logout, R.id.action_language);
+		ShowActionBarIcons(true, R.id.action_notification, R.id.action_language);
 		setContentView(R.layout.activity_main);
 
 		txt_fajr_time = findViewById(R.id.txt_fajr_time);
@@ -134,8 +135,8 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		// TODO Auto-generated method stub
 		super.onClick(view);
 		switch (view.getId()) {
-			case R.id.action_logout:
-				logout();
+			case R.id.action_notification:
+				startActivity(new Intent(instance, NotificationActivity.class));
 				break;
 			case R.id.action_language:
 				SelectLanguageActivity.isMain = true;
@@ -160,7 +161,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				startActivity(new Intent(instance, OrderActivity.class));
 				break;
 			case R.id.layout_book:
-
+				startActivity(new Intent(instance, BookActivity.class));
 				break;
 			case R.id.btn_full:
 				if (mMainImage != null) {
@@ -252,16 +253,22 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		protected void onPostExecute(Connection.Response response) {
 			if (response == null) {
 				for (int i = 0; i < timeList.size(); i ++) {
-					if (i == 0)
+					if (i == 0) {
 						txt_fajr_time.setText(timeList.get(i));
-					else if (i == 2)
+						AppGlobals.PRAYER_TIME[0] = timeList.get(i);
+					} else if (i == 2) {
 						txt_zuhr_time.setText(timeList.get(i));
-					else if (i == 3)
+						AppGlobals.PRAYER_TIME[1] = timeList.get(i);
+					} else if (i == 3) {
 						txt_asr_time.setText(timeList.get(i));
-					else if (i == 4)
+						AppGlobals.PRAYER_TIME[2] = timeList.get(i);
+					} else if (i == 4) {
 						txt_maghrib_time.setText(timeList.get(i));
-					else if (i == 5)
+						AppGlobals.PRAYER_TIME[3] = timeList.get(i);
+					} else if (i == 5) {
 						txt_isha_time.setText(timeList.get(i));
+						AppGlobals.PRAYER_TIME[4] = timeList.get(i);
+					}
 				}
 			}
 		}

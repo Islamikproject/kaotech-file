@@ -19,13 +19,14 @@ public class SermonModel {
 	public int type = TYPE_JUMAH;
 	public ParseUser owner;
 	public String topic = "";
-	public String video;
+	public String video = "";
 	public String videoName = "";
 	public String raiser = "";
 	public String mosque = "";
 	public Double amount = 0.0;
 	public boolean isDelete = false;
 	public String language = "en";
+	public boolean isAudio = false;
 
 	public void parse(ParseObject object) {
 		if (object == null)
@@ -40,6 +41,7 @@ public class SermonModel {
 		amount = object.getDouble(ParseConstants.KEY_AMOUNT);
 		isDelete = object.getBoolean(ParseConstants.KEY_IS_DELETE);
 		language = object.getString(ParseConstants.KEY_LANGUAGE);
+		isAudio = object.getBoolean(ParseConstants.KEY_IS_AUDIO);
 	}
 
 	public static void GetSermonList(final ParseUser userObj, final int type, String language, final ObjectListListener listener) {
@@ -71,7 +73,8 @@ public class SermonModel {
 		sermonObj.put(ParseConstants.KEY_AMOUNT, model.amount);
 		sermonObj.put(ParseConstants.KEY_IS_DELETE, model.isDelete);
 		sermonObj.put(ParseConstants.KEY_LANGUAGE, model.language);
-		if (model.video != null) {
+		sermonObj.put(ParseConstants.KEY_IS_AUDIO, model.isAudio);
+		if (!TextUtils.isEmpty(model.video)) {
 			sermonObj.put(ParseConstants.KEY_VIDEO, model.video);
 			sermonObj.put(ParseConstants.KEY_VIDEO_NAME, model.videoName);
 		}
