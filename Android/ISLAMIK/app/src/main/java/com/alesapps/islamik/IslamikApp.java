@@ -3,20 +3,28 @@ package com.alesapps.islamik;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 import com.google.android.libraries.places.api.Places;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseCrashReporting;
-import com.parse.ParseInstallation;
 
 public class IslamikApp extends MultiDexApplication {
+    private static IslamikApp instance;
     public static Context mContext;
+
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(context);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onCreate() {
         // TODO Auto-generated method stub
         super.onCreate();
+        instance = this;
         mContext = getApplicationContext();
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(mContext);
@@ -35,12 +43,14 @@ public class IslamikApp extends MultiDexApplication {
         ParseACL.setDefaultACL(defaultACL, true);
         Places.initialize(getApplicationContext(), getString(R.string.place_api_key));
         Places.createClient(this);
-        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
-        installation.put("GCMSenderId", "413068111620");
-        installation.saveInBackground();
     }
 
     public static Context getContext() {
         return mContext;
     }
+
+    public static IslamikApp getInstance() {
+        return instance;
+    }
+
 }

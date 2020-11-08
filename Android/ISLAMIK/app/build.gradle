@@ -5,11 +5,12 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.alesapps.islamik"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 7
         versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -23,6 +24,10 @@ android {
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -46,6 +51,7 @@ dependencies {
     implementation 'com.hedgehog.ratingbar:app:1.1.2'
     implementation 'org.jsoup:jsoup:1.13.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation "com.quickblox:quickblox-android-sdk-videochat-webrtc:3.8.0"
     testImplementation 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

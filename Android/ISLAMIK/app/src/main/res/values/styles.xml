@@ -70,5 +70,4 @@
         </attr>
         <attr name="interpolator" format="reference" />
     </declare-styleable>
-
 </resources>

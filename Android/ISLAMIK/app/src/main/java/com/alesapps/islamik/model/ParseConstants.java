@@ -36,6 +36,7 @@ public class ParseConstants {
 	public static final String KEY_PRICE = "price";
 	public static final String KEY_GROUP_PRICE = "groupPrice";
 	public static final String KEY_AVATAR = "avatar";
+	public static final String KEY_QB_ID = "qbId";
 	// Sermon
 	public static final String KEY_OWNER = "owner";
 	public static final String KEY_TOPIC = "topic";

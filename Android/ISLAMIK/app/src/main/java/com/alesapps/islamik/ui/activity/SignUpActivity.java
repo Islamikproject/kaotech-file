@@ -176,11 +176,8 @@ public class SignUpActivity extends BaseActionBarActivity implements OnClickList
 		AppPreference.setBool(AppPreference.KEY.SIGN_IN_AUTO, true);
 		AppPreference.setStr(AppPreference.KEY.PHONE_NUMBER, edt_phone_number.getText().toString().trim());
 		AppPreference.setStr(AppPreference.KEY.PASSWORD, edt_password.getText().toString().trim());
-		startActivity(new Intent(instance, MainActivity.class));
-		if (LoginActivity.instance != null)
-			LoginActivity.instance.finish();
 		if (ResetPasswordActivity.instance != null)
 			ResetPasswordActivity.instance.finish();
-		finish();
+		myBack();
 	}
 }

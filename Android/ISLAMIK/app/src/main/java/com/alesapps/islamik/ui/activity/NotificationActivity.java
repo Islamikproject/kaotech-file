@@ -88,6 +88,7 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 			ImageView img_avatar;
 			TextView txt_message;
 			TextView txt_date;
+			ImageView btn_call;
 		}
 
 		@Override
@@ -101,11 +102,13 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 				holder.img_avatar = convertView.findViewById(R.id.img_avatar);
 				holder.txt_message = convertView.findViewById(R.id.txt_message);
 				holder.txt_date = convertView.findViewById(R.id.txt_date);
+				holder.btn_call = convertView.findViewById(R.id.btn_call);
 				convertView.setTag(holder);
 
 			} else {
 				holder = (ViewHolder) convertView.getTag();
 			}
+			holder.btn_call.setVisibility(View.GONE);
 			final NotificationModel model = new NotificationModel();
 			model.parse(mDataList.get(position));
 			holder.txt_message.setText(model.message);
@@ -115,13 +118,13 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 				holder.img_avatar.setBackgroundResource(R.drawable.default_profile);
 			else
 				Picasso.get().load(CommonUtil.getImagePath(avatar.getUrl())).into(holder.img_avatar);
+			if (model.type == NotificationModel.TYPE_BOOK && model.state == NotificationModel.STATE_ACCEPT)
+				holder.btn_call.setVisibility(View.VISIBLE);
 
-			holder.layout_container.setOnClickListener(new View.OnClickListener() {
+			holder.btn_call.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					if (model.bookObj != null) {
 
-					}
 				}
 			});
 			return convertView;

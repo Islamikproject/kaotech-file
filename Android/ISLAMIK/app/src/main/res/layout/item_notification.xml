@@ -31,4 +31,9 @@
             android:textSize="@dimen/textsize_small"
             android:textColor="@color/text_normal"/>
     </LinearLayout>
+    <ImageView
+        android:id="@+id/btn_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_video" />
 </LinearLayout>

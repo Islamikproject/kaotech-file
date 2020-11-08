@@ -36,8 +36,7 @@ public class IslamikPlusApp extends MultiDexApplication {
         defaultACL.setPublicWriteAccess(true);
         ParseACL.setDefaultACL(defaultACL, true);
         Places.initialize(getApplicationContext(), getString(R.string.place_api_key));
-        PlacesClient placesClient = Places.createClient(this);
-        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+        Places.createClient(this);
         AppGlobals.mFirebaseStorage = FirebaseStorage.getInstance();
         AppGlobals.mStorageReference = FirebaseStorage.getInstance().getReferenceFromUrl(AppConstant.URL_STORAGE_REFERENCE).child(AppConstant.STORAGE_FILE);
 

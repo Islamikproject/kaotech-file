@@ -41,6 +41,7 @@ public class UserModel {
 	public int price = 0;
 	public int groupPrice = 0;
 	public ParseFile avatar;
+	public int qbId = 0;
 
 	public void parse(ParseUser user) {
 		if (user == null)
@@ -60,6 +61,7 @@ public class UserModel {
 		price = user.getInt(ParseConstants.KEY_PRICE);
 		groupPrice = user.getInt(ParseConstants.KEY_GROUP_PRICE);
 		avatar = user.getParseFile(ParseConstants.KEY_AVATAR);
+		qbId = user.getInt(ParseConstants.KEY_QB_ID);
 	}
 
 	public static void GetUsersList(final int type, final UserListListener listener) {
@@ -107,6 +109,7 @@ public class UserModel {
 		userObj.put(ParseConstants.KEY_TYPE, model.type);
 		userObj.put(ParseConstants.KEY_PRICE, model.price);
 		userObj.put(ParseConstants.KEY_GROUP_PRICE, model.groupPrice);
+		userObj.put(ParseConstants.KEY_QB_ID, model.qbId);
 
 		userObj.signUpInBackground(new SignUpCallback() {
 			@Override
