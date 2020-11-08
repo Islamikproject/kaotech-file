@@ -10,11 +10,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GMSAutocompleteBoundsMode.h"
 #import "GMSAutocompleteFilter.h"
 #import "GMSAutocompletePrediction.h"
 #import "GMSPlace.h"
 #import "GMSPlaceFieldMask.h"
+#import "GMSPlacesDeprecationUtils.h"
 
 @class GMSAutocompleteViewController;
 @class GMSCoordinateBounds;
@@ -116,23 +116,6 @@ NS_ASSUME_NONNULL_BEGIN
 /** Delegate to be notified when a place is selected or picking is cancelled. */
 @property(nonatomic, weak, nullable) IBOutlet id<GMSAutocompleteViewControllerDelegate> delegate;
 
-/**
- * Bounds used to bias or restrict the autocomplete results depending on the value of
- * |autocompleteBoundsMode| (can be nil).
- */
-@property(nonatomic, strong, nullable) GMSCoordinateBounds *autocompleteBounds __deprecated_msg(
-    "autocompleteBounds property is deprecated in favor of GMSAutocompleteFilter.locationBias or "
-    "GMSAutocompleteFilter.locationRestriction");
-
-/**
- * How to treat the |autocompleteBounds| property. Defaults to |kGMSAutocompleteBoundsModeBias|.
- *
- * Has no effect if |autocompleteBounds| is nil.
- */
-@property(nonatomic, assign) GMSAutocompleteBoundsMode autocompleteBoundsMode __deprecated_msg(
-    "autocompleteBoundsMode property is deprecated in favor of GMSAutocompleteFilter.locationBias "
-    "or GMSAutocompleteFilter.locationRestriction");
-
 /** Filter to apply to autocomplete suggestions (can be nil). */
 @property(nonatomic, strong, nullable) GMSAutocompleteFilter *autocompleteFilter;
 
@@ -159,12 +142,6 @@ NS_ASSUME_NONNULL_BEGIN
  * Defaults to returning all details if not overridden.
  */
 @property(nonatomic, assign) GMSPlaceField placeFields;
-
-/**
- * Sets up the autocomplete bounds using the NE and SW corner locations.
- */
-- (void)setAutocompleteBoundsUsingNorthEastCorner:(CLLocationCoordinate2D)NorthEastCorner
-                                  SouthWestCorner:(CLLocationCoordinate2D)SouthWestCorner;
 
 @end
 

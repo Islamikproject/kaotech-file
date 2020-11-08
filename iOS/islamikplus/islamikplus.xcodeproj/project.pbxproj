@@ -48,8 +48,6 @@
 		78066DDC24761C94007F04A9 /* ic_action_language.png in Resources */ = {isa = PBXBuildFile; fileRef = 78066DB824761C94007F04A9 /* ic_action_language.png */; };
 		78066DDD24761C94007F04A9 /* ic_log_out.png in Resources */ = {isa = PBXBuildFile; fileRef = 78066DB924761C94007F04A9 /* ic_log_out.png */; };
 		78066DDE24761C94007F04A9 /* img_jumah.png in Resources */ = {isa = PBXBuildFile; fileRef = 78066DBA24761C94007F04A9 /* img_jumah.png */; };
-		78066E9124761D4D007F04A9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78066DE224761D4C007F04A9 /* Parse.framework */; };
-		78066E9224761D4D007F04A9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78066DE324761D4C007F04A9 /* Bolts.framework */; };
 		78066E9724761D4D007F04A9 /* CircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066DF624761D4C007F04A9 /* CircleImageView.m */; };
 		78066EA824761D4D007F04A9 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066E0D24761D4C007F04A9 /* JSQMessagesCollectionViewLayoutAttributes.m */; };
 		78066EA924761D4D007F04A9 /* JSQMessagesBubblesSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066E0E24761D4C007F04A9 /* JSQMessagesBubblesSizeCalculator.m */; };
@@ -198,8 +196,6 @@
 		78066DB824761C94007F04A9 /* ic_action_language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_action_language.png; sourceTree = "<group>"; };
 		78066DB924761C94007F04A9 /* ic_log_out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_log_out.png; sourceTree = "<group>"; };
 		78066DBA24761C94007F04A9 /* img_jumah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_jumah.png; sourceTree = "<group>"; };
-		78066DE224761D4C007F04A9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		78066DE324761D4C007F04A9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		78066DF524761D4C007F04A9 /* CircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleImageView.h; sourceTree = "<group>"; };
 		78066DF624761D4C007F04A9 /* CircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleImageView.m; sourceTree = "<group>"; };
 		78066E0A24761D4C007F04A9 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
@@ -395,10 +391,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78066EEA24762213007F04A9 /* libsqlite3.tbd in Frameworks */,
-				78066E9124761D4D007F04A9 /* Parse.framework in Frameworks */,
 				78066EE8247621FF007F04A9 /* libc++.tbd in Frameworks */,
 				78066EF024762243007F04A9 /* libz.tbd in Frameworks */,
-				78066E9224761D4D007F04A9 /* Bolts.framework in Frameworks */,
 				78066EE6247621ED007F04A9 /* libc.tbd in Frameworks */,
 				78066EEE24762235007F04A9 /* libxml2.tbd in Frameworks */,
 				DF58A2A10D547EB574247E6B /* Pods_islamikplus.framework in Frameworks */,
@@ -475,15 +469,6 @@
 				78066EF52476245A007F04A9 /* Utils.m */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		78066DE124761D4C007F04A9 /* framework */ = {
-			isa = PBXGroup;
-			children = (
-				78066DE224761D4C007F04A9 /* Parse.framework */,
-				78066DE324761D4C007F04A9 /* Bolts.framework */,
-			);
-			path = framework;
 			sourceTree = "<group>";
 		};
 		78066DE424761D4C007F04A9 /* libs */ = {
@@ -812,7 +797,6 @@
 			children = (
 				5AF0A12924DAFC6900914BAF /* ISLAMIK PLUS.entitlements */,
 				7851A04B2477B0FF00C3E380 /* GoogleService */,
-				78066DE124761D4C007F04A9 /* framework */,
 				78066DE424761D4C007F04A9 /* libs */,
 				78066DE024761CE4007F04A9 /* Util */,
 				78066DDF24761C9B007F04A9 /* ViewController */,
