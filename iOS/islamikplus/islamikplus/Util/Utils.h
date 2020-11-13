@@ -4,6 +4,7 @@
 
 @interface Util : NSObject
 + (void) sendPushAllNotification:(NSString *)message type:(int)type;
++ (void) sendPushNotification:(NSString *)email message:(NSString *)message type:(int)type;
 + (BOOL) isConnectableInternet;
 + (void)showAlertTitle:(UIViewController *)vc title:(NSString *)title message:(NSString *)message;
 + (void)showAlertTitle:(UIViewController *)vc title:(NSString *)title message:(NSString *)message finish:(void (^)(void))finish;
@@ -17,6 +18,7 @@
 + (AppDelegate*) appDelegate;
 
 + (NSString*) convertDateToString:(NSDate*)date;
++ (NSString*) convertNotificationDateTimeToString:(NSDate*)date;
 + (NSString*) convertDateTimeToString:(NSDate*)date;
 
 + (UIImage *)getUploadingImageFromImage:(UIImage *)image;

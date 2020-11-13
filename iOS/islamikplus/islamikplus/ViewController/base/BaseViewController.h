@@ -21,6 +21,7 @@
 #import "CircleImageView.h"
 #import "NSDate+NVTimeAgo.h"
 #import "BIZPopupViewController.h"
+#import <SDWebImage/SDWebImage.h>
 
 @interface BaseViewController : UIViewController
 

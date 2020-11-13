@@ -9,10 +9,14 @@
 #import "EditProfileViewController.h"
 @import GooglePlaces;
 
-@interface EditProfileViewController()<GMSAutocompleteViewControllerDelegate>{
+@interface EditProfileViewController()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, GMSAutocompleteViewControllerDelegate>{
     PFUser *me;
+    BOOL isCamera;
+    BOOL isGallery;
+    BOOL hasPhoto;
     CLLocationCoordinate2D mLatLng;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
 @property (weak, nonatomic) IBOutlet UITextField *edtFirstname;
 @property (weak, nonatomic) IBOutlet UITextField *edtSurname;
 @property (weak, nonatomic) IBOutlet UITextField *edtMosque;
@@ -45,6 +49,8 @@
     _edtEmail.text = me[PARSE_EMAIL_ADDRESS];
     _edtPassword.text = [Util getLoginUserPassword];
     _edtConfirmPassword.text = [Util getLoginUserPassword];
+    PFFileObject *avatarFile = me[PARSE_AVATAR];
+    [_imgAvatar sd_setImageWithURL:[NSURL URLWithString:avatarFile.url] placeholderImage:[UIImage imageNamed:@"default_imag_bg"]];
 }
 /*
 #pragma mark - Navigation
@@ -55,6 +61,73 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)onAvatarClick:(id)sender {
+    UIAlertController *actionsheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [actionsheet addAction:[UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self onTakePhoto:nil];
+    }]];
+    [actionsheet addAction:[UIAlertAction actionWithTitle:@"Choose from Gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self onChoosePhoto:nil];
+    }]];
+    [actionsheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    [self presentViewController:actionsheet animated:YES completion:nil];
+}
+
+- (void)onChoosePhoto:(id)sender {
+    if (![Util isPhotoAvaileble]){
+        [Util showAlertTitle:self title:@"Error" message:@"Check your permissions in Settings > Privacy > Photo"];
+        return;
+    }
+    isGallery = YES;
+    isCamera = NO;
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+- (void)onTakePhoto:(id)sender {
+    if (![Util isCameraAvailable]){
+        [Util showAlertTitle:self title:@"Error" message:@"Check your permissions in Settings > Privacy > Camera"];
+        return;
+    }
+    isCamera = YES;
+    isGallery = NO;
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType =  UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    if (isCamera && ![Util isCameraAvailable]){
+        [Util showAlertTitle:self title:@"Error" message:@"Check your permissions in Settings > Privacy > Camera"];
+        return;
+    }
+    if (isGallery && ![Util isPhotoAvaileble]){
+        [Util showAlertTitle:self title:@"Error" message:@"Check your permissions in Settings > Privacy > Photo"];
+        return;
+    }
+    UIImage *image = (UIImage *)[info valueForKey:UIImagePickerControllerOriginalImage];
+    hasPhoto = YES;
+    [_imgAvatar setImage:[Util getUploadingUserImageFromImage:image]];
+}
+
+- (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    if (isGallery && ![Util isPhotoAvaileble]){
+        [Util showAlertTitle:self title:@"Error" message:@"Check your permissions in Settings > Privacy > Photo"];
+        return;
+    }
+    if (isCamera && ![Util isCameraAvailable]){
+        [Util showAlertTitle:self title:@"Error" message:@"Check your permissions in Settings > Privacy > Camera"];
+        return;
+    }
+}
+
 - (IBAction)onLocationClick:(id)sender {
     GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
     acController.delegate = self;
@@ -72,9 +145,8 @@
     [self presentViewController:acController animated:YES completion:nil];
 }
 - (IBAction)onSaveChangeClick:(id)sender {
-    if ([self isValid]) {
+    if ([self isValid])
         [self save];
-    }
 }
 
 - (BOOL) isValid {
@@ -120,9 +192,9 @@
 
 -(void) save {
     NSString *phoneNumber = [Util trim:_edtPhonenumber.text];
-    me[PARSE_EMAIL] = [Util trim:_edtEmail.text];
-    me[PARSE_USER_NAME] = [Util trim:_edtPhonenumber.text];
-    me[PARSE_PASSWORD] = _edtPassword.text;
+    me.email = [Util trim:_edtEmail.text];
+    me.username = [Util trim:_edtPhonenumber.text];
+    me.password = _edtPassword.text;
     me[PARSE_EMAIL_ADDRESS] = [Util trim:_edtEmail.text];
     me[PARSE_PHONE_NUMBER] = [Util trim:_edtPhonenumber.text];
     me[PARSE_FIRSTNAME] = [Util trim:_edtFirstname.text];
@@ -130,6 +202,11 @@
     me[PARSE_MOSQUE] = [Util trim:_edtMosque.text];
     me[PARSE_ADDRESS] = [Util trim:_edtAddress.text];
     [me setObject:[PFGeoPoint geoPointWithLocation:[[CLLocation alloc] initWithLatitude:mLatLng.latitude longitude:mLatLng.longitude]] forKey:PARSE_LON_LAT];
+    if (hasPhoto){
+        UIImage *profileImage = [Util getUploadingUserImageFromImage:_imgAvatar.image];
+        NSData *imageData = UIImageJPEGRepresentation(profileImage, 0.8);
+        me[PARSE_AVATAR] = [PFFileObject fileObjectWithData:imageData];
+    }
     
     [SVProgressHUD showWithStatus:@"Please wait..." maskType:SVProgressHUDMaskTypeGradient];
     [me saveInBackgroundWithBlock:^(BOOL success, NSError* error){
@@ -137,7 +214,7 @@
             [SVProgressHUD dismiss];
             [Util showAlertTitle:self title:@"Error" message:[error localizedDescription]];
         } else {
-            NSString *password = [Util getLoginUserPassword];
+            NSString *password = self.edtPassword.text;
             [PFUser logInWithUsernameInBackground:phoneNumber password:password block:^(PFObject *object, NSError *error){
                 [SVProgressHUD dismiss];
                 if(!error){

@@ -86,12 +86,15 @@ static SermonViewController *_sharedViewController = nil;
             imagePickerController.mediaTypes = [NSArray arrayWithObjects:(NSString *)kUTTypeMovie, nil];
             [self presentViewController:imagePickerController animated:YES completion:nil];
         }]];
-        [actionsheet addAction:[UIAlertAction actionWithTitle:@"Select from gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [actionsheet addAction:[UIAlertAction actionWithTitle:@"Select video from gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
             UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
             imagePickerController.delegate = self;
             imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
             imagePickerController.mediaTypes = [NSArray arrayWithObjects:(NSString *)kUTTypeMovie, nil];
             [self presentViewController:imagePickerController animated:YES completion:nil];
+        }]];
+        [actionsheet addAction:[UIAlertAction actionWithTitle:@"Select audio from gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            
         }]];
         [actionsheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
             [self dismissViewControllerAnimated:YES completion:nil];

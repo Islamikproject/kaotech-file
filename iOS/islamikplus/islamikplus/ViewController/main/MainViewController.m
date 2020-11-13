@@ -12,8 +12,14 @@
 #import "SermonListViewController.h"
 #import "DonationViewController.h"
 #import "MessagesViewController.h"
+#import "DailyViewController.h"
+#import "NotificationViewController.h"
+#import "BookViewController.h"
 
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet UIView *viewJumah;
+@property (weak, nonatomic) IBOutlet UIView *viewBook;
+@property (weak, nonatomic) IBOutlet UIView *viewDaily;
 
 @end
 
@@ -22,7 +28,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self initialize];
+}
+
+- (void) initialize {
+    int type = [[PFUser currentUser][PARSE_TYPE] intValue];
+    self.viewJumah.hidden = YES;
+    self.viewBook.hidden = YES;
+    self.viewDaily.hidden = YES;
+    if (type == TYPE_ADMIN) {
+        self.viewJumah.hidden = NO;
+        self.viewDaily.hidden = NO;
+    } else if (type == TYPE_MOSQUE) {
+        self.viewJumah.hidden = NO;
+    } else if (type == TYPE_INFLUENCER_WOMEN || type == TYPE_INFLUENCER_KID || type == TYPE_INFLUENCER_OTHER) {
+        self.viewBook.hidden = NO;
+    }
 }
 
 /*
@@ -61,6 +82,10 @@
     }];
     [alert showQuestion:@"ISLAMIK+" subTitle:msg closeButtonTitle:nil duration:0.0f];
 }
+- (IBAction)onNotificationClick:(id)sender {
+    NotificationViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NotificationViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
 - (IBAction)onJumahClick:(id)sender {
     SermonListViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SermonListViewController"];
     controller.type = TYPE_JUMAH;
@@ -83,5 +108,12 @@
     SettingsViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
-
+- (IBAction)onBookClick:(id)sender {
+    BookViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onDailyClick:(id)sender {
+    DailyViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DailyViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
 @end
