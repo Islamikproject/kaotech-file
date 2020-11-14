@@ -58,7 +58,7 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onSignUpClick:(id)sender {
-    [self gotoNextScreen:NO];
+    [self gotoNextScreen];
 }
 - (BOOL) isValid {
     NSString *phonenumber = _edtPhoneNumber.text;
@@ -82,42 +82,26 @@
     }
     [SVProgressHUD setForegroundColor:MAIN_COLOR];
     [SVProgressHUD showWithStatus:@"Please wait..." maskType:SVProgressHUDMaskTypeGradient];
-    PFQuery *query = [PFUser query];
-    [query whereKey:PARSE_USER_NAME equalTo:phonenumber];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        if (!error && object) {
-            PFUser *user = (PFUser *)object;
-            NSString *username = user.username;
-            [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
-                [SVProgressHUD dismiss];
-                if (user) {
-                    int userType = [user[PARSE_TYPE] intValue];
-                    if (userType == TYPE_MOSQUE) {
-                        [Util setLoginUserName:phonenumber password:password];
-                        [self gotoNextScreen:YES];
-                    } else {
-                        [Util showAlertTitle:self title:@"Login Failed" message:@"This user is no mosque."];
-                    }
-                } else {
-                    NSString *errorString = @"Password entered is incorrect.";
-                    [Util showAlertTitle:self title:@"Login Failed" message:errorString finish:^{
-                        [self->_edtPassword becomeFirstResponder];
-                    }];
-                }
-            }];
+    [PFUser logInWithUsernameInBackground:phonenumber password:password block:^(PFUser *user, NSError *error) {
+        [SVProgressHUD dismiss];
+        if (user) {
+            int userType = [user[PARSE_TYPE] intValue];
+            if (userType == TYPE_USER) {
+                [Util showAlertTitle:self title:@"Login Failed" message:@"This user is customer."];
+            } else {
+                [Util setLoginUserName:phonenumber password:password];
+                [self gotoNextScreen];
+            }
         } else {
-            [SVProgressHUD dismiss];
-            [Util showAlertTitle:self title:@"Login Failed" message:@"Phone number entered is not registered."];
+            NSString *errorString = @"Password entered is incorrect.";
+            [Util showAlertTitle:self title:@"Login Failed" message:errorString finish:^{
+                [self->_edtPassword becomeFirstResponder];
+            }];
         }
     }];
 }
-- (void) gotoNextScreen: (BOOL) isMain {
-    if (isMain) {
-        MainViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
-        [self.navigationController pushViewController:controller animated:YES];
-    } else {
-        SignUpViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SignUpViewController"];
-        [self.navigationController pushViewController:controller animated:YES];
-    }
+- (void) gotoNextScreen {
+    MainViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 @end

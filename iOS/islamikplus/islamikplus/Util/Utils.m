@@ -26,6 +26,25 @@
     }];
 }
 
++ (void) sendPushNotification:(NSString *)email message:(NSString *)message type:(int)type{
+    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+                          email, @"email",
+                          message, @"alert",
+                          @"Increment", @"badge",
+                          @"cheering.caf", @"sound",
+                          @"", @"data",
+                          [NSNumber numberWithInt:type], @"type",
+                          nil];
+    
+    [PFCloud callFunctionInBackground:@"SendPush" withParameters:data block:^(id object, NSError *err) {
+        if (err) {
+            NSLog(@"Fail APNS: %@", message);
+        } else {
+            NSLog(@"Success APNS: %@", message);
+        }
+    }];
+}
+
 + (BOOL) isConnectableInternet {
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
@@ -131,6 +150,12 @@
 {
     NSDateFormatter * formatter = [NSDateFormatter new];
     [formatter setDateFormat:@"MMM dd, yyyy"];
+    return [formatter stringFromDate:date];
+}
++ (NSString*) convertNotificationDateTimeToString:(NSDate*)date
+{
+    NSDateFormatter * formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"MMM dd, yyyy hh:mm aa"];
     return [formatter stringFromDate:date];
 }
 + (NSString*) convertDateTimeToString:(NSDate*)date
