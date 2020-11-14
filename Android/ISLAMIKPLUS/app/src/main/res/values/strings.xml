@@ -42,7 +42,7 @@
     <string name="reset_password_label">Input the email used to create your account. We will send you a link to reset your password.</string>
     <string name="success_forgot_password">We have sent a reset password link to your email.</string>
     <string name="valid_No_email_register">Phone number entered is not registered.</string>
-    <string name="valid_No_phone_number_register">Phone number entered is not registered. Create an account now?</string>
+    <string name="valid_No_phone_number_register">Phone number entered is not registered.</string>
     <string name="not_now">Not now</string>
     <!-- Sign Up -->
     <string name="first_name_main_imam">First name of the main imam</string>
