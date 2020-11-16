@@ -1,7 +1,5 @@
 package com.alesapps.islamik.ui.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -18,14 +16,11 @@ import android.widget.VideoView;
 import androidx.core.content.FileProvider;
 import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.AppGlobals;
-import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
-import com.alesapps.islamik.listener.ExceptionListener;
 import com.alesapps.islamik.listener.ObjectListener;
 import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.model.PostModel;
 import com.alesapps.islamik.model.SermonModel;
-import com.alesapps.islamik.model.UserModel;
 import com.alesapps.islamik.ui.dialog.PhotoDialog;
 import com.alesapps.islamik.utils.CommonUtil;
 import com.alesapps.islamik.utils.MessageUtil;
@@ -272,38 +267,6 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				}
 			}
 		}
-	}
-
-	private void logout() {
-		new AlertDialog.Builder(instance)
-				.setTitle(R.string.logout)
-				.setMessage(R.string.label_log_out)
-				.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						dlg_progress.show();
-						UserModel.Logout(new ExceptionListener() {
-							@Override
-							public void done(String error) {
-								// TODO Auto-generated method stub
-								dlg_progress.cancel();
-								if (error == null) {
-									AppPreference.setBool(AppPreference.KEY.SIGN_IN_AUTO, false);
-									AppPreference.setStr(AppPreference.KEY.PHONE_NUMBER, "");
-									AppPreference.setStr(AppPreference.KEY.PASSWORD, "");
-									startActivity(new Intent(instance, LoginActivity.class));
-									finish();
-								} else {
-									MessageUtil.showToast(instance, error, true);
-								}
-							}
-						});
-					}
-				})
-				.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-
-					}
-				}).show();
 	}
 
 	@Override

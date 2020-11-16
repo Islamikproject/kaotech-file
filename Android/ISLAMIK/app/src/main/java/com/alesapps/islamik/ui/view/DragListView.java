@@ -18,9 +18,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.alesapps.islamik.R;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;

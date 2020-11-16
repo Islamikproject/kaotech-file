@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ExceptionListener;
 import com.alesapps.islamik.listener.UserListener;

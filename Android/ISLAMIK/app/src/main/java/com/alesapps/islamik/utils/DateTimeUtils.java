@@ -6,7 +6,6 @@ import java.util.Date;
 
 public class DateTimeUtils {
 	public static String DATE_STRING_FORMAT = "MMM dd, yyyy";
-	public static String TIME_STRING_FORMAT = "HH:mm";
 	public static String DATE_TIME_STRING_FORMAT = "MMM dd, yyyy HH:mm:ss";
 
 	public static String dateToString(Date date, String strformat) {

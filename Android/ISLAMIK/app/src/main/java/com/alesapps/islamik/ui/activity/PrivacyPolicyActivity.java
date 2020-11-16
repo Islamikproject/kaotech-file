@@ -7,7 +7,6 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.alesapps.islamik.AppPreference;
 import com.alesapps.islamik.R;
 
