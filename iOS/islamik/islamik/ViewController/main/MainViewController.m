@@ -9,15 +9,20 @@
 #import "MainViewController.h"
 #import "SermonViewController.h"
 #import "DailyPrayersViewController.h"
-#import "SalatViewController.h"
-#import "PrayersViewController.h"
-#import "NafilahViewController.h"
 #import "QuranViewController.h"
 #import "SettingsViewController.h"
 #import "LoginViewController.h"
 #import "MessagesViewController.h"
 
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *lblFajrTime;
+@property (weak, nonatomic) IBOutlet UILabel *lblZuhrTime;
+@property (weak, nonatomic) IBOutlet UILabel *lblAsrTime;
+@property (weak, nonatomic) IBOutlet UILabel *lblMaghribTime;
+@property (weak, nonatomic) IBOutlet UILabel *lblIshaTime;
+@property (weak, nonatomic) IBOutlet UILabel *lblLocation;
+@property (weak, nonatomic) IBOutlet UIView *viewVideo;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPhoto;
 
 @end
 
@@ -26,8 +31,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initialize];
 }
 
+- (void) initialize {
+    _lblFajrTime.text = @"";
+    _lblZuhrTime.text = @"";
+    _lblAsrTime.text = @"";
+    _lblMaghribTime.text = @"";
+    _lblIshaTime.text = @"";
+    _lblLocation.text = @"";
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -41,21 +56,8 @@
     SermonViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SermonViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
-- (IBAction)onPrayersClick:(id)sender {
+- (IBAction)onDailyClick:(id)sender {
     DailyPrayersViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DailyPrayersViewController"];
-    [self.navigationController pushViewController:controller animated:YES];
-}
-- (IBAction)onSalatClick:(id)sender {
-    SalatViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SalatViewController"];
-    [self.navigationController pushViewController:controller animated:YES];
-}
-- (IBAction)onJumahClick:(id)sender {
-    PrayersViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PrayersViewController"];
-    controller.type = TYPE_JUMAH_FAJR;
-    [self.navigationController pushViewController:controller animated:YES];
-}
-- (IBAction)onNafilahClick:(id)sender {
-    NafilahViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NafilahViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onQuranClick:(id)sender {
@@ -69,6 +71,21 @@
 - (IBAction)onSettingsClick:(id)sender {
     SettingsViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onOrderClick:(id)sender {
+    
+}
+- (IBAction)onBookClick:(id)sender {
+    
+}
+- (IBAction)onFullClick:(id)sender {
+    
+}
+- (IBAction)onShareClick:(id)sender {
+    
+}
+- (IBAction)onNotificationClick:(id)sender {
+    
 }
 - (IBAction)onLogoutClick:(id)sender {
     NSString *msg = @"Are you sure you want to logout?";

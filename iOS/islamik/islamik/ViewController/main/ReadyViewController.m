@@ -10,7 +10,6 @@
 #import "FajrDetailViewController.h"
 #import "ZuhrDetailViewController.h"
 #import "MaghribDetailViewController.h"
-#import "SalatDetailViewController.h"
 #import "QuranDetailViewController.h"
 
 @interface ReadyViewController () {
@@ -60,10 +59,6 @@
         [self.navigationController pushViewController:controller animated:YES];
     } else if (self.type == TYPE_MAGHRIB) {
         MaghribDetailViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MaghribDetailViewController"];
-        controller.mDataList = self.mDataList;
-        [self.navigationController pushViewController:controller animated:YES];
-    } else if (self.type == TYPE_SALAT) {
-        SalatDetailViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SalatDetailViewController"];
         controller.mDataList = self.mDataList;
         [self.navigationController pushViewController:controller animated:YES];
     } else if (self.type == TYPE_QURAN) {

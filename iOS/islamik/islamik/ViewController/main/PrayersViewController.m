@@ -74,10 +74,6 @@
         self.viewFourthHight.constant = 0;
     } else if (self.type == TYPE_ISHA) {
         self.lblTitle.text = @"ISHA";
-    } else if (self.type == TYPE_JUMAH_FAJR) {
-        self.lblTitle.text = @"JUMAH";
-        self.viewThirdHight.constant = 0;
-        self.viewFourthHight.constant = 0;
     }
 }
 -(void) setVerses:(BOOL) isSecond {
@@ -157,11 +153,7 @@
         [dataList addObject:[self getSurahModel:YES]];
         [dataList addObject:[self getSurahModel:NO]];
         ReadyViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ReadyViewController"];
-        if (self.type == TYPE_JUMAH_FAJR) {
-            controller.type = TYPE_FAJR;
-        } else {
-            controller.type = self.type;
-        }
+        controller.type = self.type;
         controller.mDataList = dataList;
         [self.navigationController pushViewController:controller animated:YES];
     }

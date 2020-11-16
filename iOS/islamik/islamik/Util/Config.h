@@ -24,9 +24,7 @@ enum {
     TYPE_ASR = 2,
     TYPE_MAGHRIB = 3,
     TYPE_ISHA = 4,
-    TYPE_QURAN = 5,
-    TYPE_SALAT = 6,
-    TYPE_JUMAH_FAJR = 7
+    TYPE_QURAN = 5
 };
 #define STRING_AMOUNT                                           [[NSArray alloc] initWithObjects:@"", @"$1", @"$4", @"$8", @"$12", @"$20", nil]
 #define ARRAY_AMOUNT                                            [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f], [NSNumber numberWithFloat:4.0f],[NSNumber numberWithFloat:8.0f], [NSNumber numberWithFloat:12.0f], [NSNumber numberWithFloat:20.0f], nil]
