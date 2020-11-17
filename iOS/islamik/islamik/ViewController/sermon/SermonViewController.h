@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SermonViewController : BaseViewController
-
+@property (atomic) int sermonType;
+@property (atomic) int userType;
 @end
 
 NS_ASSUME_NONNULL_END

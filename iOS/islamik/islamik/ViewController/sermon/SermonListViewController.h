@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SermonListViewController : BaseViewController
+@property (atomic) int sermonType;
 @property (nonatomic, retain) PFUser* mUserObj;
 @end
 

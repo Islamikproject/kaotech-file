@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0BB9CC2562782D00D887C3 /* JumahSermonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0BB9CB2562782D00D887C3 /* JumahSermonViewController.m */; };
+		5A195E3025635EAE00D619CF /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A195E2F25635EAE00D619CF /* BookViewController.m */; };
+		5A195E4825637DFB00D619CF /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A195E4725637DFB00D619CF /* NotificationViewController.m */; };
+		5A195E4C25637E3800D619CF /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A195E4B25637E3800D619CF /* NotificationCell.m */; };
 		5A19D01E24A315A9002925C8 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A19D01D24A315A9002925C8 /* PrivacyViewController.m */; };
+		5A3496122562E70A00C31033 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3496112562E70A00C31033 /* PhotoViewController.m */; };
+		5A3496162562E9F800C31033 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3496152562E9F800C31033 /* OrderViewController.m */; };
+		5A3496272562F98A00C31033 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3496262562F98A00C31033 /* OrderCell.m */; };
 		5A544B0D24DA8D1200894CD5 /* TermsConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A544B0B24DA8D1200894CD5 /* TermsConditionViewController.m */; };
 		5A544B6E24DA9AFC00894CD5 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A544B6B24DA9AFC00894CD5 /* MessagesViewController.m */; };
 		5A544B6F24DA9AFC00894CD5 /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A544B6C24DA9AFC00894CD5 /* AnswerViewController.m */; };
@@ -202,8 +209,22 @@
 /* Begin PBXFileReference section */
 		2C64822167334A118E93EB38 /* Pods-islamik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-islamik.release.xcconfig"; path = "Target Support Files/Pods-islamik/Pods-islamik.release.xcconfig"; sourceTree = "<group>"; };
 		30E37A2F5930F4EB511DB3E2 /* Pods_islamik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_islamik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A0BB9CA2562782D00D887C3 /* JumahSermonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumahSermonViewController.h; sourceTree = "<group>"; };
+		5A0BB9CB2562782D00D887C3 /* JumahSermonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumahSermonViewController.m; sourceTree = "<group>"; };
+		5A195E2E25635EAE00D619CF /* BookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		5A195E2F25635EAE00D619CF /* BookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		5A195E4625637DFB00D619CF /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		5A195E4725637DFB00D619CF /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		5A195E4A25637E3800D619CF /* NotificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCell.h; sourceTree = "<group>"; };
+		5A195E4B25637E3800D619CF /* NotificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
 		5A19D01C24A315A9002925C8 /* PrivacyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
 		5A19D01D24A315A9002925C8 /* PrivacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
+		5A3496102562E70A00C31033 /* PhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		5A3496112562E70A00C31033 /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		5A3496142562E9F800C31033 /* OrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		5A3496152562E9F800C31033 /* OrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		5A3496252562F98A00C31033 /* OrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		5A3496262562F98A00C31033 /* OrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
 		5A544B0B24DA8D1200894CD5 /* TermsConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsConditionViewController.m; sourceTree = "<group>"; };
 		5A544B0C24DA8D1200894CD5 /* TermsConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsConditionViewController.h; sourceTree = "<group>"; };
 		5A544B6A24DA9AFC00894CD5 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
@@ -1009,14 +1030,14 @@
 		78B5A8A724848064006C7EFA /* sermon */ = {
 			isa = PBXGroup;
 			children = (
-				78FC72DF2478E367000F0671 /* SermonViewController.h */,
-				78FC72E02478E367000F0671 /* SermonViewController.m */,
 				78EDA0732478FE650082D0A7 /* SermonListViewController.h */,
 				78EDA0742478FE650082D0A7 /* SermonListViewController.m */,
-				78EDA07A24790CFB0082D0A7 /* VideoViewController.h */,
-				78EDA07924790CFB0082D0A7 /* VideoViewController.m */,
+				78FC72DF2478E367000F0671 /* SermonViewController.h */,
+				78FC72E02478E367000F0671 /* SermonViewController.m */,
 				5A544B7324DAA14700894CD5 /* MapViewController.h */,
 				5A544B7424DAA14700894CD5 /* MapViewController.m */,
+				78EDA07A24790CFB0082D0A7 /* VideoViewController.h */,
+				78EDA07924790CFB0082D0A7 /* VideoViewController.m */,
 				5A544B7624DAAFE200894CD5 /* QuestionViewController.h */,
 				5A544B7724DAAFE200894CD5 /* QuestionViewController.m */,
 				5A544B6D24DA9AFC00894CD5 /* AnswerViewController.h */,
@@ -1043,6 +1064,10 @@
 				78FC72E32478E380000F0671 /* SermonCell.m */,
 				78EDA0762478FEC90082D0A7 /* SermonListCell.h */,
 				78EDA0772478FEC90082D0A7 /* SermonListCell.m */,
+				5A3496252562F98A00C31033 /* OrderCell.h */,
+				5A3496262562F98A00C31033 /* OrderCell.m */,
+				5A195E4A25637E3800D619CF /* NotificationCell.h */,
+				5A195E4B25637E3800D619CF /* NotificationCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1050,12 +1075,22 @@
 		78FC72E62478E3C0000F0671 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				5A544B6A24DA9AFC00894CD5 /* MessagesViewController.h */,
-				5A544B6B24DA9AFC00894CD5 /* MessagesViewController.m */,
 				780F63412478758D0027CDB4 /* MainViewController.h */,
 				780F63422478758D0027CDB4 /* MainViewController.m */,
+				5A0BB9CA2562782D00D887C3 /* JumahSermonViewController.h */,
+				5A0BB9CB2562782D00D887C3 /* JumahSermonViewController.m */,
 				7852B7D2247BC9C600A5CFDE /* DailyPrayersViewController.h */,
 				7852B7D3247BC9C600A5CFDE /* DailyPrayersViewController.m */,
+				7869B865247DBC5F00A5DE6E /* QuranViewController.h */,
+				7869B866247DBC5F00A5DE6E /* QuranViewController.m */,
+				5A544B6A24DA9AFC00894CD5 /* MessagesViewController.h */,
+				5A544B6B24DA9AFC00894CD5 /* MessagesViewController.m */,
+				5A3496142562E9F800C31033 /* OrderViewController.h */,
+				5A3496152562E9F800C31033 /* OrderViewController.m */,
+				5A195E2E25635EAE00D619CF /* BookViewController.h */,
+				5A195E2F25635EAE00D619CF /* BookViewController.m */,
+				5A195E4625637DFB00D619CF /* NotificationViewController.h */,
+				5A195E4725637DFB00D619CF /* NotificationViewController.m */,
 				78F681C4247C35E700B6B955 /* PrayersViewController.h */,
 				78F681C5247C35E700B6B955 /* PrayersViewController.m */,
 				78F681C9247C927A00B6B955 /* ReadyViewController.h */,
@@ -1066,10 +1101,10 @@
 				7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */,
 				7800AC32247D0E98006F47B5 /* MaghribDetailViewController.h */,
 				7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */,
-				7869B865247DBC5F00A5DE6E /* QuranViewController.h */,
-				7869B866247DBC5F00A5DE6E /* QuranViewController.m */,
 				7869B868247DBC8A00A5DE6E /* QuranDetailViewController.h */,
 				7869B869247DBC8A00A5DE6E /* QuranDetailViewController.m */,
+				5A3496102562E70A00C31033 /* PhotoViewController.h */,
+				5A3496112562E70A00C31033 /* PhotoViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -1312,8 +1347,10 @@
 				5A544B7824DAAFE200894CD5 /* QuestionViewController.m in Sources */,
 				780F62B2247870D90027CDB4 /* JSQMessagesBubbleImage.m in Sources */,
 				780F62D9247870D90027CDB4 /* BIZPopupViewController.m in Sources */,
+				5A3496272562F98A00C31033 /* OrderCell.m in Sources */,
 				780F62C8247870D90027CDB4 /* JSQMessagesCollectionViewCell.m in Sources */,
 				780F62DD247870D90027CDB4 /* SCLTextView.m in Sources */,
+				5A3496162562E9F800C31033 /* OrderViewController.m in Sources */,
 				780F62E0247870D90027CDB4 /* SCLButton.m in Sources */,
 				780F62D4247870D90027CDB4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				780F62BD247870D90027CDB4 /* JSQMessagesMediaPlaceholderView.m in Sources */,
@@ -1321,6 +1358,7 @@
 				780F620024786C7B0027CDB4 /* AppDelegate.m in Sources */,
 				5A58336024D9F7C00031E62A /* ResetPasswordViewController.m in Sources */,
 				7816334E2484F01F0073D07B /* SBJsonWriter.m in Sources */,
+				5A195E4C25637E3800D619CF /* NotificationCell.m in Sources */,
 				780F62DA247870D90027CDB4 /* SCLTimerDisplay.m in Sources */,
 				78FC72E12478E367000F0671 /* SermonViewController.m in Sources */,
 				5A544B7224DA9B1000894CD5 /* MessageCell.m in Sources */,
@@ -1334,6 +1372,7 @@
 				780F62AD247870D90027CDB4 /* JSQMessagesToolbarButtonFactory.m in Sources */,
 				780F62CE247870D90027CDB4 /* UIColor+JSQMessages.m in Sources */,
 				780F62DE247870D90027CDB4 /* SCLSwitchView.m in Sources */,
+				5A195E3025635EAE00D619CF /* BookViewController.m in Sources */,
 				5A58335F24D9F7C00031E62A /* SignUpViewController.m in Sources */,
 				5A544B6F24DA9AFC00894CD5 /* AnswerViewController.m in Sources */,
 				7852B7D4247BC9C600A5CFDE /* DailyPrayersViewController.m in Sources */,
@@ -1345,10 +1384,12 @@
 				780F62BC247870D90027CDB4 /* JSQMessagesToolbarContentView.m in Sources */,
 				78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */,
 				780F62B5247870D90027CDB4 /* JSQMediaItem.m in Sources */,
+				5A3496122562E70A00C31033 /* PhotoViewController.m in Sources */,
 				78FC72E42478E380000F0671 /* SermonCell.m in Sources */,
 				780F62AE247870D90027CDB4 /* JSQMessagesTimestampFormatter.m in Sources */,
 				780F62AF247870D90027CDB4 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				780F62AB247870D90027CDB4 /* JSQMessagesBubbleImageFactory.m in Sources */,
+				5A0BB9CC2562782D00D887C3 /* JumahSermonViewController.m in Sources */,
 				780F62B1247870D90027CDB4 /* JSQLocationMediaItem.m in Sources */,
 				7800AC31247D0770006F47B5 /* ZuhrDetailViewController.m in Sources */,
 				780F62A7247870D90027CDB4 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
@@ -1375,6 +1416,7 @@
 				5A58336324D9F7C00031E62A /* SettingsViewController.m in Sources */,
 				7816334F2484F01F0073D07B /* NSString+SBJSON.m in Sources */,
 				780F62B6247870D90027CDB4 /* JSQVideoMediaItem.m in Sources */,
+				5A195E4825637DFB00D619CF /* NotificationViewController.m in Sources */,
 				781633572484F0C70073D07B /* NSString+UrlEncode.m in Sources */,
 				780F62B7247870D90027CDB4 /* DemoModelData.m in Sources */,
 				5A58335E24D9F7C00031E62A /* LoginViewController.m in Sources */,

@@ -34,7 +34,12 @@
     mDataList = [NSMutableArray new];
 
     PFQuery *query = [PFUser query];
-    [query whereKey:PARSE_TYPE equalTo:[NSNumber numberWithInt:TYPE_MOSQUE]];
+    if (self.userType == TYPE_MOSQUE) {
+        [query whereKey:PARSE_TYPE notEqualTo:[NSNumber numberWithInt:TYPE_USER]];
+    } else {
+        [query whereKey:PARSE_TYPE equalTo:[NSNumber numberWithInt:self.userType]];
+    }
+    
     [query orderByAscending:PARSE_FIRSTNAME];
     [query setLimit:1000];
     
@@ -44,7 +49,16 @@
         if (error){
             [Util showAlertTitle:self title:@"Error" message:error.localizedDescription];
         } else {
-            self->mDataList = (NSMutableArray *) array;
+            if (self.userType == TYPE_MOSQUE) {
+                for (int i = 0; i < array.count; i ++) {
+                    int _type = [array[i][PARSE_TYPE] intValue];
+                    if (_type == TYPE_MOSQUE || _type == TYPE_ADMIN) {
+                        [self->mDataList addObject:array[i]];
+                    }
+                }
+            } else {
+                self->mDataList = (NSMutableArray *) array;
+            }
             [self.tblData reloadData];
         }
     }];
@@ -70,6 +84,8 @@
         PFUser * userObj = [mDataList objectAtIndex:indexPath.row];
         cell.lblName.text = userObj[PARSE_MOSQUE];
         cell.lblAddress.text = userObj[PARSE_ADDRESS];
+        PFFileObject *photoFile = userObj[PARSE_AVATAR];
+        [cell.imgAvatar sd_setImageWithURL:[NSURL URLWithString:photoFile.url] placeholderImage:[UIImage imageNamed:@"default_profile"]];
     }
     
     return cell;
@@ -79,6 +95,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     PFUser * userObj = [mDataList objectAtIndex:indexPath.row];
     SermonListViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SermonListViewController"];
+    controller.sermonType = self.sermonType;
     controller.mUserObj = userObj;
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -93,6 +110,8 @@
 */
 - (IBAction)onNearClick:(id)sender {
     MapViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MapViewController"];
+    controller.sermonType = self.sermonType;
+    controller.userType = self.userType;
     [self.navigationController pushViewController:controller animated:YES];
 }
 @end

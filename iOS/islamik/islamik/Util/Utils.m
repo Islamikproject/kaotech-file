@@ -18,7 +18,24 @@
         return YES;
     }
 }
-
++ (void) sendPushNotification:(NSString *)email message:(NSString *)message type:(int)type{
+    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+                          email, @"email",
+                          message, @"alert",
+                          @"Increment", @"badge",
+                          @"cheering.caf", @"sound",
+                          @"", @"data",
+                          [NSNumber numberWithInt:type], @"type",
+                          nil];
+    
+    [PFCloud callFunctionInBackground:@"SendPush" withParameters:data block:^(id object, NSError *err) {
+        if (err) {
+            NSLog(@"Fail APNS: %@", message);
+        } else {
+            NSLog(@"Success APNS: %@", message);
+        }
+    }];
+}
 + (void)showAlertTitle:(UIViewController *)vc title:(NSString *)title message:(NSString *)message
 {
     SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
@@ -120,7 +137,13 @@
     [formatter setDateFormat:@"yyyy-MM-dd_hhmmss"];
     return [formatter stringFromDate:date];
 }
-
++ (NSDate*) convertStringToDateTime:(NSString*)date time:(NSString *)time
+{
+    NSString *str = [NSString stringWithFormat:@"%@ %@", date, time];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MM/dd/yyyy hh:mm";
+    return [formatter dateFromString:str];
+}
 + (UIImage *)getUploadingImageFromImage:(UIImage *)image {
     CGFloat maxResolution = 640.f;
     if (image.size.width < maxResolution) {

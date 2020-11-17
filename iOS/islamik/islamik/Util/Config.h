@@ -16,7 +16,12 @@ enum {
 };
 enum {
     TYPE_MOSQUE = 100,
-    TYPE_USER = 200
+    TYPE_USER = 200,
+    TYPE_USTHADH = 300,
+    TYPE_INFLUENCER_WOMEN = 400,
+    TYPE_INFLUENCER_KID = 401,
+    TYPE_INFLUENCER_OTHER = 402,
+    TYPE_ADMIN = 500
 };
 enum {
     TYPE_FAJR = 0,
@@ -26,14 +31,31 @@ enum {
     TYPE_ISHA = 4,
     TYPE_QURAN = 5
 };
+enum {
+    TYPE_ONE = 1,
+    TYPE_GROUP = 2
+};
+enum {
+    TYPE_BOOK = 0,
+    STATE_PENDING = 0,
+    STATE_ACCEPT = 1,
+    STATE_REJECT = 2
+};
 #define STRING_AMOUNT                                           [[NSArray alloc] initWithObjects:@"", @"$1", @"$4", @"$8", @"$12", @"$20", nil]
 #define ARRAY_AMOUNT                                            [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f], [NSNumber numberWithFloat:4.0f],[NSNumber numberWithFloat:8.0f], [NSNumber numberWithFloat:12.0f], [NSNumber numberWithFloat:20.0f], nil]
 #define SPEED_VALUE                                             [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3],[NSNumber numberWithInt:5], nil]
+
+#define STRING_SESSION_PRICE                                    [[NSArray alloc] initWithObjects:@"$0.00", @"$4.88", @"$8.88", @"$10.88", @"$14.44", @"$18.88", @"$22.22", @"$33.44", nil]
+#define ARRAY_SESSION_PRICE                                     [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:4.88f], [NSNumber numberWithFloat:8.88f],[NSNumber numberWithFloat:10.88f], [NSNumber numberWithFloat:14.44f], [NSNumber numberWithFloat:18.88f], [NSNumber numberWithFloat:22.22f], [NSNumber numberWithFloat:33.44f], nil]
+#define STRING_SESSION_GROUP                                    [[NSArray alloc] initWithObjects:@"$0.00", @"$2.44", @"$4.44", @"$5.44", @"$9.88", @"$11.11", @"$16.44", nil]
+#define ARRAY_SESSION_GROUP                                     [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:2.44f], [NSNumber numberWithFloat:4.44f],[NSNumber numberWithFloat:5.44f], [NSNumber numberWithFloat:9.88f], [NSNumber numberWithFloat:11.11f], [NSNumber numberWithFloat:16.44f], nil]
+
 #define ANIMATION_TIME                                          0.1
 #define TIME_SPEED                                              15
 #define MAIN_COLOR                                              [UIColor colorWithRed:14/255.f green:97/255.f blue:41/255.f alpha:1.f]
 #define ARRAY_RECITER                                           [[NSArray alloc] initWithObjects:@"ABDUL HADI KANAKERI", @"AL-HUSSAYNI AL-AZAZY (With Children)", nil]
 #define RECITER_URL                                             @"https://www.quran411.com/quran/kanakeri/"
+#define PRAYER_TIME_URL                                         @"https://www.islamicfinder.org/"
 
 #define PARSE_FIELD_OBJECT_ID                                   @"objectId"
 #define PARSE_FIELD_USER                                        @"user"
@@ -45,6 +67,10 @@ enum {
 #define PARSE_TABLE_PAYMENT                                     @"Payment"
 #define PARSE_TABLE_SERMON                                      @"Sermon"
 #define PARSE_TABLE_MESSAGES                                    @"Messages"
+#define PARSE_TABLE_POST                                        @"Post"
+#define PARSE_TABLE_ORDER                                       @"Order"
+#define PARSE_TABLE_BOOK                                        @"Book"
+#define PARSE_TABLE_NOTIFICATION                                @"Notification"
 
 #define PARSE_TYPE                                              @"type"
 #define PARSE_FIRSTNAME                                         @"firstName"
@@ -58,6 +84,10 @@ enum {
 #define PARSE_LON_LAT                                           @"lonLat"
 #define PARSE_ADDRESS                                           @"address"
 #define PARSE_ACCOUNT_ID                                        @"accountId"
+#define PARSE_PRICE                                             @"price"
+#define PARSE_GROUP_PRICE                                       @"groupPrice"
+#define PARSE_AVATAR                                            @"avatar"
+#define PARSE_QB_ID                                             @"qbId"
 
 #define PARSE_OWNER                                             @"owner"
 #define PARSE_TOPIC                                             @"topic"
@@ -77,7 +107,22 @@ enum {
 #define PARSE_ANSWER                                            @"answer"
 #define PARSE_RATE                                              @"rate"
 
+#define PARSE_TITLE                                             @"title"
+#define PARSE_DESCRIPTION                                       @"description"
+#define PARSE_PHOTO                                             @"photo"
+
+#define PARSE_SUBJECT                                           @"subject"
+#define PARSE_MESSAGE                                           @"message"
+
+#define PARSE_BOOK_DATE                                         @"bookDate"
+#define PARSE_CHILD_NAME                                        @"childName"
+
+#define PARSE_STATE                                             @"state"
+#define PARSE_BOOK_OBJ                                          @"bookObj"
+
 #define LANGUAGE_ARRAY                                          [[NSArray alloc] initWithObjects:@"English", @"Arabic", nil]
+#define LANGUAGE_ORDER_ARRAY                                    [[NSArray alloc] initWithObjects:@"English", @"Arabic", @"French", nil]
+#define LANGUAGE_ORDER_SYMBOL                                   [[NSArray alloc] initWithObjects:@"en", @"ar", @"fr", nil]
 #define SPEED_ARRAY                                             [[NSArray alloc] initWithObjects:@"SLOW", @"INTERMEDIATE", @"FAST", @"SUPER FAST", nil]
 
 #define MAIN_CHAPTER                                            @"001. AL-FATIHA"

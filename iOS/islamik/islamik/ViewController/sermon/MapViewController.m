@@ -33,7 +33,11 @@
     mDataList = [NSMutableArray new];
 
     PFQuery *query = [PFUser query];
-    [query whereKey:PARSE_TYPE equalTo:[NSNumber numberWithInt:TYPE_MOSQUE]];
+    if (self.userType == TYPE_MOSQUE) {
+        [query whereKey:PARSE_TYPE notEqualTo:[NSNumber numberWithInt:TYPE_USER]];
+    } else {
+        [query whereKey:PARSE_TYPE equalTo:[NSNumber numberWithInt:self.userType]];
+    }
     [query orderByAscending:PARSE_FIRSTNAME];
     [query setLimit:1000];
     
@@ -43,7 +47,16 @@
         if (error){
             [Util showAlertTitle:self title:@"Error" message:error.localizedDescription];
         } else {
-            self->mDataList = (NSMutableArray *) array;
+            if (self.userType == TYPE_MOSQUE) {
+                for (int i = 0; i < array.count; i ++) {
+                    int _type = [array[i][PARSE_TYPE] intValue];
+                    if (_type == TYPE_MOSQUE || _type == TYPE_ADMIN) {
+                        [self->mDataList addObject:array[i]];
+                    }
+                }
+            } else {
+                self->mDataList = (NSMutableArray *) array;
+            }
             [self reloadMapData];
         }
     }];

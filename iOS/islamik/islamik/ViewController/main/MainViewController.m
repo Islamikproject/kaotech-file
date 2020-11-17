@@ -7,14 +7,22 @@
 //
 
 #import "MainViewController.h"
-#import "SermonViewController.h"
+#import "JumahSermonViewController.h"
 #import "DailyPrayersViewController.h"
 #import "QuranViewController.h"
 #import "SettingsViewController.h"
 #import "LoginViewController.h"
 #import "MessagesViewController.h"
+#import "PhotoViewController.h"
+#import "OrderViewController.h"
+#import "BookViewController.h"
+#import "NotificationViewController.h"
+#import <AVKit/AVKit.h>
+#import "DMActivityInstagram.h"
 
-@interface MainViewController ()
+@interface MainViewController () {
+    PFObject *mPostObj;
+}
 @property (weak, nonatomic) IBOutlet UILabel *lblFajrTime;
 @property (weak, nonatomic) IBOutlet UILabel *lblZuhrTime;
 @property (weak, nonatomic) IBOutlet UILabel *lblAsrTime;
@@ -23,6 +31,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblLocation;
 @property (weak, nonatomic) IBOutlet UIView *viewVideo;
 @property (weak, nonatomic) IBOutlet UIImageView *imgPhoto;
+
+@property (nonatomic, retain) AVPlayer *player;
+@property (nonatomic, retain) AVPlayerLayer *playerLayer;
 
 @end
 
@@ -35,13 +46,45 @@
 }
 
 - (void) initialize {
-    _lblFajrTime.text = @"";
-    _lblZuhrTime.text = @"";
-    _lblAsrTime.text = @"";
-    _lblMaghribTime.text = @"";
-    _lblIshaTime.text = @"";
-    _lblLocation.text = @"";
+    _lblFajrTime.text = @"05:10 AM";
+    _lblZuhrTime.text = @"11:41 AM";
+    _lblAsrTime.text = @"02:15 PM";
+    _lblMaghribTime.text = @"04:36 PM";
+    _lblIshaTime.text = @"06:06 PM";
+    _lblLocation.text = [PFUser currentUser][PARSE_ADDRESS];
+    [self getVideo];
+    [self getPost];
+}
+
+- (void) getVideo {
+    PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_SERMON];
+    [query whereKey:PARSE_IS_DELETE notEqualTo:[NSNumber numberWithBool:YES]];
+    [query orderByDescending:PARSE_FIELD_CREATED_AT];
     
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
+        if (!error){
+            NSURL *videoURL = [NSURL URLWithString:object[PARSE_VIDEO]];
+            self.player = [AVPlayer playerWithURL:videoURL];
+            [self.player addObserver:self forKeyPath:@"rate" options:0 context:nil];
+            self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+            self.playerLayer.frame = self.viewVideo.bounds;
+            self.playerLayer.needsDisplayOnBoundsChange = true;
+            [self.viewVideo.layer addSublayer:self.playerLayer];
+            [self.player play];
+        }
+    }];
+}
+- (void) getPost {
+    PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_POST];
+    [query orderByDescending:PARSE_FIELD_CREATED_AT];
+    
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
+        if (!error){
+            self->mPostObj = object;
+            PFFileObject *photoFile = object[PARSE_PHOTO];
+            [self.imgPhoto sd_setImageWithURL:[NSURL URLWithString:photoFile.url] placeholderImage:[UIImage imageNamed:@"default_imag_bg"]];
+        }
+    }];
 }
 /*
 #pragma mark - Navigation
@@ -53,7 +96,7 @@
 }
 */
 - (IBAction)onSermonClick:(id)sender {
-    SermonViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SermonViewController"];
+    JumahSermonViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"JumahSermonViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onDailyClick:(id)sender {
@@ -73,19 +116,34 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onOrderClick:(id)sender {
-    
+    OrderViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OrderViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onBookClick:(id)sender {
-    
+    BookViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onFullClick:(id)sender {
-    
+    PhotoViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PhotoViewController"];
+    controller.mPhotoFile = mPostObj[PARSE_PHOTO];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onShareClick:(id)sender {
+    DMActivityInstagram * instagramActivity = [[DMActivityInstagram alloc] init];
+    PFFileObject *photoFile = mPostObj[PARSE_PHOTO];
+    NSArray *activityItems = @[mPostObj[PARSE_TITLE], [NSURL URLWithString:photoFile.url]];
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[instagramActivity]];
     
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        activityController.popoverPresentationController.sourceView = self.view;
+        activityController.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/4, 0, 0);
+    }
+    
+    [self presentViewController:activityController animated:YES completion:nil];
 }
 - (IBAction)onNotificationClick:(id)sender {
-    
+    NotificationViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NotificationViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onLogoutClick:(id)sender {
     NSString *msg = @"Are you sure you want to logout?";
@@ -114,5 +172,18 @@
     }];
     [alert showQuestion:@"ISLAMIK" subTitle:msg closeButtonTitle:nil duration:0.0f];
 }
-
+- (void) viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    self.playerLayer.frame = self.viewVideo.bounds;
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"rate"]) {
+        if ([self.player rate]) {
+            NSLog(@"[self changeToPause];  // This changes the button to Pause");
+        } else {
+            NSLog(@"[self changeToPlay];  // This changes the button to Play");
+        }
+    }
+}
 @end

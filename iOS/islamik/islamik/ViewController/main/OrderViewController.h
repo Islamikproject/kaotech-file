@@ -1,8 +1,8 @@
 //
-//  MapViewController.h
+//  OrderViewController.h
 //  islamik
 //
-//  Created by Ales Gabrysz on 8/5/20.
+//  Created by Ales Gabrysz on 11/16/20.
 //  Copyright © 2020 Ales Gabrysz. All rights reserved.
 //
 
@@ -10,9 +10,8 @@
 #import "BaseViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MapViewController : BaseViewController
-@property (atomic) int sermonType;
-@property (atomic) int userType;
+@interface OrderViewController : BaseViewController
+
 @end
 
 NS_ASSUME_NONNULL_END

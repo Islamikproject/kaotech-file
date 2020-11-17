@@ -1,8 +1,8 @@
 //
-//  SermonCell.h
+//  OrderCell.h
 //  islamik
 //
-//  Created by Ales Gabrysz on 5/22/20.
+//  Created by Ales Gabrysz on 11/16/20.
 //  Copyright © 2020 Ales Gabrysz. All rights reserved.
 //
 
@@ -10,10 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SermonCell : UITableViewCell
+@interface OrderCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *lblName;
 @property (weak, nonatomic) IBOutlet UILabel *lblAddress;
+@property (weak, nonatomic) IBOutlet UIImageView *imgCheck;
 
 @end
 

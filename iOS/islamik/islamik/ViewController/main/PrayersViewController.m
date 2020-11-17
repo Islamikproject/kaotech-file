@@ -139,8 +139,8 @@
     } else if (self.spFirstVerseStart.selectedRow > self.spFirstVerseEnd.selectedRow) {
         errorMsg = @"Start Āyāt (Verses) must be <= End Āyāt (Verses).";
     } else if (self.spSecondVerseStart.selectedRow > self.spSecondVerseEnd.selectedRow) {
-           errorMsg = @"Start Āyāt (Verses) must be <= End Āyāt (Verses).";
-       }
+        errorMsg = @"Start Āyāt (Verses) must be <= End Āyāt (Verses).";
+    }
     if (errorMsg.length > 0) {
         [Util showAlertTitle:self title:@"Error" message:errorMsg];
         return NO;
