@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ExceptionListener;
 import com.alesapps.islamik.listener.ObjectListener;
@@ -57,6 +58,9 @@ public class BookActivity extends BaseActionBarActivity implements View.OnClickL
 	Date mDate = Calendar.getInstance().getTime();
 	int mHour = 0;
 	int mMinute = 0;
+	int price = 0;
+	int groupPrice = 0;
+	boolean isOne = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +102,8 @@ public class BookActivity extends BaseActionBarActivity implements View.OnClickL
 		list_user.refresh();
 	}
 
-	private void setPrefer(boolean isOne) {
+	private void setPrefer(boolean one) {
+		isOne = one;
 		edt_children.setText("");
 		edt_children_a.setText("");
 		edt_children_b.setText("");
@@ -108,11 +113,17 @@ public class BookActivity extends BaseActionBarActivity implements View.OnClickL
 			layout_children.setVisibility(View.GONE);
 		else
 			layout_children.setVisibility(View.VISIBLE);
+		setPrice();
+	}
+
+	private void setPrice() {
 		if (mSelectedUser != null) {
+			price = mSelectedUser.getInt(ParseConstants.KEY_PRICE);
+			groupPrice = mSelectedUser.getInt(ParseConstants.KEY_GROUP_PRICE);
 			if (isOne)
-				edt_amount.setText(String.valueOf(mSelectedUser.getDouble(ParseConstants.KEY_PRICE)));
+				edt_amount.setText(String.valueOf(AppConstant.STRING_SESSION_PRICE[price]));
 			else
-				edt_amount.setText(String.valueOf(mSelectedUser.getDouble(ParseConstants.KEY_GROUP_PRICE)));
+				edt_amount.setText(String.valueOf(AppConstant.STRING_SESSION_GROUP[groupPrice]));
 		}
 	}
 
@@ -229,9 +240,11 @@ public class BookActivity extends BaseActionBarActivity implements View.OnClickL
 		model.toUser = mSelectedUser;
 		model.bookDate = DateTimeUtils.getDateTime(mDate, mHour, mMinute);
 		model.type = BookModel.TYPE_ONE;
-		if (rb_group.isSelected())
+		model.price = price;
+		if (rb_group.isSelected()) {
 			model.type = BookModel.TYPE_GROUP;
-		model.price = Double.parseDouble(edt_amount.getText().toString().trim());
+			model.price = groupPrice;
+		}
 		ArrayList<String> children = new ArrayList<>();
 		children.add(edt_children.getText().toString().trim());
 		if (!TextUtils.isEmpty(edt_children_a.getText().toString().trim()))
@@ -333,10 +346,8 @@ public class BookActivity extends BaseActionBarActivity implements View.OnClickL
 				@Override
 				public void onClick(View v) {
 					mSelectedUser = mDataList.get(position);
-					if (rb_one.isSelected())
-						edt_amount.setText(String.valueOf(mSelectedUser.getDouble(ParseConstants.KEY_PRICE)));
-					else
-						edt_amount.setText(String.valueOf(mSelectedUser.getDouble(ParseConstants.KEY_GROUP_PRICE)));
+					isOne = rb_one.isSelected();
+					setPrice();
 					adapter.notifyDataSetChanged();
 				}
 			});

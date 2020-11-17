@@ -22,7 +22,7 @@ public class BookModel {
 	public ParseUser toUser;
 	public List<String> childName = new ArrayList<>();
 	public Date bookDate = Calendar.getInstance().getTime();
-	public Double price = 0.0;
+	public int price = 0;
 
 	public void parse(ParseObject object) {
 		if (object == null)
@@ -32,7 +32,7 @@ public class BookModel {
 		toUser = object.getParseUser(ParseConstants.KEY_TO_USER);
 		childName = object.getList(ParseConstants.KEY_CHILD_NAME);
 		bookDate = object.getDate(ParseConstants.KEY_BOOK_DATE);
-		price = object.getDouble(ParseConstants.KEY_PRICE);
+		price = object.getInt(ParseConstants.KEY_PRICE);
 	}
 
 	public static void Register(BookModel model, final ObjectListener listener) {
