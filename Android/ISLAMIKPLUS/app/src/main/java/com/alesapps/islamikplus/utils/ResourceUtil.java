@@ -40,7 +40,9 @@ public class ResourceUtil {
 	public static String getPhotoFilePath() {
 		return getVideoFilePath("photo.png");
 	}
-
+	public static String getRecordFilePath() {
+		return getVideoFilePath("record.wav");
+	}
 	public static String generatePath(Uri uri, Context context) {
 		String filePath = null;
 		final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;

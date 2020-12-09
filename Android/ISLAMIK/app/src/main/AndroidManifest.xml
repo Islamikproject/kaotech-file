@@ -11,6 +11,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <!-- Parse push notification -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.VIBRATE"/>
@@ -95,6 +97,8 @@
         <activity android:name="com.alesapps.islamik.ui.activity.OrderActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.BookActivity" />
         <activity android:name="com.alesapps.islamik.ui.activity.NotificationActivity" />
+        <activity android:name=".ui.activity.ChatActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name="com.alesapps.islamik.ui.dialog.PhotoDialog" />
         <receiver android:name="com.alesapps.islamik.service.Starter"

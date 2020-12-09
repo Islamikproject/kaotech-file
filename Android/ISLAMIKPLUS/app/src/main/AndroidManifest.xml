@@ -96,6 +96,8 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name="com.alesapps.islamikplus.ui.activity.NotificationActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamikplus.ui.activity.ChatActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <receiver android:name="com.alesapps.islamikplus.service.Starter"
             android:enabled="true"
             android:exported="true"

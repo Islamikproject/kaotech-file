@@ -3,19 +3,16 @@ package com.alesapps.islamik.model;
 public class ParseConstants {
 	public static final int QUERY_FETCH_MAX_COUNT = 1000;
 
-	public static final String TBL_PAYMENT = "Payment";
 	public static final String TBL_SERMON = "Sermon";
 	public static final String TBL_MESSAGES = "Messages";
 	public static final String TBL_POST = "Post";
 	public static final String TBL_ORDER = "Order";
 	public static final String TBL_BOOK = "Book";
 	public static final String TBL_NOTIFICATION = "Notification";
+	public static final String TBL_CHAT = "Chat";
 
 	public static final String KEY_CREATED_AT = "createdAt";
-	public static final String KEY_UPDATED_AT = "updatedAt";
-	public static final String KEY_EMAIL = "email";
 	public static final String KEY_USERNAME = "username";
-	public static final String KEY_OBJECT_ID = "objectId";
 	// notification
 	public static final String NOTI_ALERT = "alert";
 	public static final String NOTI_DATA = "data";
@@ -69,4 +66,8 @@ public class ParseConstants {
 	// Notification
 	public static final String KEY_STATE = "state";
 	public static final String KEY_BOOK_OBJ = "bookObj";
+	// Chat
+	public static final String KEY_SENDER = "sender";
+	public static final String KEY_RECEIVER = "receiver";
+	public static final String KEY_VOICE_FILE = "voiceFile";
 }

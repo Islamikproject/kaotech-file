@@ -28,6 +28,7 @@ import java.util.List;
 
 public class NotificationModel {
 	public static int TYPE_BOOK = 0;
+	public static int TYPE_CHAT = 1;
 
 	public static int STATE_PENDING = 0;
 	public static int STATE_ACCEPT = 1;

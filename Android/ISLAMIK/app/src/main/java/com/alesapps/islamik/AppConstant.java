@@ -48,10 +48,4 @@ public class AppConstant {
 	public static final String[] STRING_SESSION_PRICE = {"$0.00", "$4.88", "$8.88", "$10.88", "$14.44", "$18.88", "$22.22", "$33.44"};
 	public static final Double[] ARRAY_SESSION_GROUP = {0.00, 2.44, 4.44, 5.44, 9.88, 11.11, 16.44};
 	public static final String[] STRING_SESSION_GROUP = {"$0.00", "$2.44", "$4.44", "$5.44", "$9.88", "$11.11", "$16.44"};
-
-	public static final String APPLICATION_ID = "86704";
-	public static final String AUTH_KEY = "eqmOR5hB3MKYcfj";
-	public static final String AUTH_SECRET = "TQVu-YbNS8UsKcA";
-	public static final String ACCOUNT_KEY = "Jhi52xARtVQbcySjeGrq";
-	public static final String USER_DEFAULT_PASSWORD = "quickblox";
 }

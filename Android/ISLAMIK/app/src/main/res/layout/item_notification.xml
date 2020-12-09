@@ -35,5 +35,5 @@
         android:id="@+id/btn_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_video" />
+        android:background="@drawable/ic_chat" />
 </LinearLayout>

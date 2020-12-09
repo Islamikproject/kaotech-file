@@ -23,4 +23,8 @@ public class ResourceUtil {
 			}
 		return tempDirPath + tempFileName;
 	}
+
+	public static String getRecordFilePath() {
+		return getVideoFilePath("record.wav");
+	}
 }

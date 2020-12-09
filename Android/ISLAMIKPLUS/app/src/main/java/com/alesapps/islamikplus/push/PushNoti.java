@@ -7,7 +7,6 @@ import com.parse.FunctionCallback;
 import com.parse.ParseCloud;
 import com.parse.ParseException;
 import com.parse.ParseUser;
-
 import java.util.HashMap;
 
 public class PushNoti {

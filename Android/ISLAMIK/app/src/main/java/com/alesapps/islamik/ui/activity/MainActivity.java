@@ -1,5 +1,6 @@
 package com.alesapps.islamik.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -173,6 +174,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		}
 	}
 
+	@SuppressLint("StaticFieldLeak")
 	private class DownloadFile extends AsyncTask<String, String, String> {
 		String path = "";
 		@Override
@@ -217,6 +219,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		startActivity(Intent.createChooser(i, "Share Image"));
 	}
 
+	@SuppressLint("StaticFieldLeak")
 	private class PrayerTimeConnectAsyncTask extends AsyncTask<Void, Void, Connection.Response> {
 		Document document;
 		private ArrayList<String> timeList = new ArrayList<>();

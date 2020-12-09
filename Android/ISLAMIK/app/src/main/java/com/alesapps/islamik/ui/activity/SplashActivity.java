@@ -22,7 +22,9 @@ public class SplashActivity extends BaseActivity {
 	private static String[] PERMISSIONS = {
 			Manifest.permission.WRITE_EXTERNAL_STORAGE,
 			Manifest.permission.ACCESS_FINE_LOCATION,
-			Manifest.permission.ACCESS_COARSE_LOCATION
+			Manifest.permission.ACCESS_COARSE_LOCATION,
+			Manifest.permission.RECORD_AUDIO,
+			Manifest.permission.MODIFY_AUDIO_SETTINGS
 	};
 
 	@Override
@@ -43,10 +45,14 @@ public class SplashActivity extends BaseActivity {
 		int permission0 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 		int permission1 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION);
 		int permission2 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION);
+		int permission3 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO);
+		int permission4 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.MODIFY_AUDIO_SETTINGS);
 
 		if (permission0 != PackageManager.PERMISSION_GRANTED
 				|| permission1 != PackageManager.PERMISSION_GRANTED
-				|| permission2 != PackageManager.PERMISSION_GRANTED) {
+				|| permission2 != PackageManager.PERMISSION_GRANTED
+				|| permission3 != PackageManager.PERMISSION_GRANTED
+				|| permission4 != PackageManager.PERMISSION_GRANTED) {
 			ActivityCompat.requestPermissions(
 					activity,
 					PERMISSIONS,

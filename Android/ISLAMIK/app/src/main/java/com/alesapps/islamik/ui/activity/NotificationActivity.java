@@ -1,5 +1,6 @@
 package com.alesapps.islamik.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.alesapps.islamik.utils.CommonUtil;
 import com.alesapps.islamik.utils.DateTimeUtils;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
@@ -124,7 +126,12 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 			holder.btn_call.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-
+					ParseUser friendUser = model.owner;
+					if (friendUser.getObjectId().equals(ParseUser.getCurrentUser().getObjectId()))
+						friendUser = model.toUser;
+					ChatActivity.mFriendObj = friendUser;
+					ChatActivity.mBookObj = model.bookObj;
+					startActivity(new Intent(instance, ChatActivity.class));
 				}
 			});
 			return convertView;

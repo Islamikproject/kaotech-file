@@ -69,4 +69,10 @@
                 android:background="@drawable/bg_rectangle_green"/>
         </LinearLayout>
     </LinearLayout>
+    <ImageView
+        android:id="@+id/btn_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:background="@drawable/ic_chat" />
 </LinearLayout>
