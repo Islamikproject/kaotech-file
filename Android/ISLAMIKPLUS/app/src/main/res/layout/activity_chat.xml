@@ -32,6 +32,13 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_stop"
             android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/btnAttach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:src="@drawable/ic_attach" />
+
         <EditText
             android:id="@+id/edMessage"
             android:layout_width="0dp"

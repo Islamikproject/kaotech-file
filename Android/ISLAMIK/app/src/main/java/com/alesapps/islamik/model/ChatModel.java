@@ -20,6 +20,8 @@ public class ChatModel {
 	public String dateTime;
 	public ParseObject bookObj;
 	public ParseFile voiceFile;
+	public ParseFile photo;
+	public String video = "";
 
 	public void parse(ParseObject object) {
 		if (object == null)
@@ -29,6 +31,8 @@ public class ChatModel {
 		message = object.getString(ParseConstants.KEY_MESSAGE);
 		bookObj = object.getParseObject(ParseConstants.KEY_BOOK_OBJ);
 		voiceFile = object.getParseFile(ParseConstants.KEY_VOICE_FILE);
+		photo = object.getParseFile(ParseConstants.KEY_PHOTO);
+		video = object.getString(ParseConstants.KEY_VIDEO);
 	}
 
 	public static void GetChatList(final ParseObject bookObj, final ObjectListListener listener) {
@@ -50,7 +54,7 @@ public class ChatModel {
 		});
 	}
 
-	public static void sendMessage(final ChatModel model, final String recPath, final ObjectListener listener) {
+	public static void sendMessage(final ChatModel model, final ObjectListener listener) {
 		BaseTask.run(new BaseTask.TaskListener() {
 
 			@Override
@@ -59,6 +63,8 @@ public class ChatModel {
 				try {
 					if (model.voiceFile != null)
 						model.voiceFile.save();
+					if (model.photo != null)
+						model.photo.save();
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -74,8 +80,11 @@ public class ChatModel {
 				chatObj.put(ParseConstants.KEY_RECEIVER, model.receiver);
 				chatObj.put(ParseConstants.KEY_MESSAGE, model.message);
 				chatObj.put(ParseConstants.KEY_BOOK_OBJ, model.bookObj);
+				chatObj.put(ParseConstants.KEY_VIDEO, model.video);
 				if (model.voiceFile != null)
 					chatObj.put(ParseConstants.KEY_VOICE_FILE, model.voiceFile);
+				if (model.photo != null)
+					chatObj.put(ParseConstants.KEY_PHOTO, model.photo);
 
 				chatObj.saveInBackground(new SaveCallback() {
 					@Override
@@ -95,3 +104,4 @@ public class ChatModel {
 		});
 	}
 }
+

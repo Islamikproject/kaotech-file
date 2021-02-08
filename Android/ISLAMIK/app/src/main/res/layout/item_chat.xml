@@ -39,9 +39,8 @@
                     android:padding="@dimen/margin_normal">
                     <ImageView
                         android:id="@+id/img_friend"
-                        android:layout_width="@dimen/image_small"
-                        android:layout_height="@dimen/image_small"
-                        android:background="@drawable/ic_play"/>
+                        android:layout_width="@dimen/image_extra_large"
+                        android:layout_height="@dimen/image_extra_large"/>
                     <TextView
                         android:id="@+id/txtFriendMessage"
                         android:layout_width="wrap_content"
@@ -82,9 +81,8 @@
                 android:padding="@dimen/margin_normal">
                 <ImageView
                     android:id="@+id/img_my"
-                    android:layout_width="@dimen/image_small"
-                    android:layout_height="@dimen/image_small"
-                    android:background="@drawable/ic_play"/>
+                    android:layout_width="@dimen/image_extra_large"
+                    android:layout_height="@dimen/image_extra_large"/>
                 <TextView
                     android:id="@+id/txtMyMessage"
                     android:layout_width="wrap_content"

@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 import com.google.android.libraries.places.api.Places;
+import com.google.firebase.storage.FirebaseStorage;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseCrashReporting;
@@ -43,6 +44,8 @@ public class IslamikApp extends MultiDexApplication {
         ParseACL.setDefaultACL(defaultACL, true);
         Places.initialize(getApplicationContext(), getString(R.string.place_api_key));
         Places.createClient(this);
+        AppGlobals.mFirebaseStorage = FirebaseStorage.getInstance();
+        AppGlobals.mStorageReference = FirebaseStorage.getInstance().getReferenceFromUrl(AppConstant.URL_STORAGE_REFERENCE).child(AppConstant.STORAGE_FILE);
     }
 
     public static Context getContext() {

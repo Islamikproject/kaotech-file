@@ -24,7 +24,8 @@ public class SplashActivity extends BaseActivity {
 			Manifest.permission.ACCESS_FINE_LOCATION,
 			Manifest.permission.ACCESS_COARSE_LOCATION,
 			Manifest.permission.RECORD_AUDIO,
-			Manifest.permission.MODIFY_AUDIO_SETTINGS
+			Manifest.permission.MODIFY_AUDIO_SETTINGS,
+			Manifest.permission.CAMERA
 	};
 
 	@Override
@@ -47,12 +48,14 @@ public class SplashActivity extends BaseActivity {
 		int permission2 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION);
 		int permission3 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO);
 		int permission4 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.MODIFY_AUDIO_SETTINGS);
+		int permission5 = ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA);
 
 		if (permission0 != PackageManager.PERMISSION_GRANTED
 				|| permission1 != PackageManager.PERMISSION_GRANTED
 				|| permission2 != PackageManager.PERMISSION_GRANTED
 				|| permission3 != PackageManager.PERMISSION_GRANTED
-				|| permission4 != PackageManager.PERMISSION_GRANTED) {
+				|| permission4 != PackageManager.PERMISSION_GRANTED
+				|| permission5 != PackageManager.PERMISSION_GRANTED) {
 			ActivityCompat.requestPermissions(
 					activity,
 					PERMISSIONS,

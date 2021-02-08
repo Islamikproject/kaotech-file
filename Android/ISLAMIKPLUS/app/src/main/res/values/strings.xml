@@ -82,6 +82,7 @@
     <string name="take_new_photo">Take a new photo</string>
     <!-- Sermon -->
     <string name="language_">Language:</string>
+    <string name="upload_photo_video">Upload Photo or Video</string>
     <string name="upload_video_audio">Upload Video or Audio</string>
     <string name="take_new_video">Take a new video</string>
     <string name="select_gallery">Select from gallery</string>
@@ -145,6 +146,8 @@
     <string name="insert_message">Please enter message.</string>
     <string name="noti_chat">%1$s sent new message: %2$s</string>
     <string name="attached_voice">Attached Voice</string>
+    <string name="attached_photo">Attached Photo</string>
+    <string name="attached_video">Attached Video</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[

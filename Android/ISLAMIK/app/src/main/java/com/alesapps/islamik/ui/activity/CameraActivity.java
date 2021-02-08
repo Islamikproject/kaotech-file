@@ -1,4 +1,4 @@
-package com.alesapps.islamikplus.ui.activity;
+package com.alesapps.islamik.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -6,8 +6,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.core.view.ViewCompat;
-import com.alesapps.islamikplus.R;
-import com.alesapps.islamikplus.utils.ResourceUtil;
+
+import com.alesapps.islamik.R;
+import com.alesapps.islamik.utils.ResourceUtil;
 import com.github.florent37.camerafragment.CameraFragment;
 import com.github.florent37.camerafragment.CameraFragmentApi;
 import com.github.florent37.camerafragment.configuration.Configuration;
@@ -101,8 +102,6 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
                 @Override
                 public void onVideoRecorded(String filePath) {
                     Toast.makeText(getBaseContext(), "onVideoRecorded " + filePath, Toast.LENGTH_SHORT).show();
-                    if (SermonActivity.instance != null)
-                        SermonActivity.instance.uploadVideo(filePath, false);
                     if (ChatActivity.instance != null)
                         ChatActivity.instance.uploadFile(filePath);
                     myBack();

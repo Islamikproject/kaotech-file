@@ -16,6 +16,10 @@ public class MessageUtil {
 		showAlertDialog(context, TYPE_ERROR, messageId);
 	}
 
+	public static void showError(Context context, String message) {
+		showAlertDialog(context, TYPE_ERROR, message);
+	}
+
 	public static void showAlertDialog(Context context, int type, int messageId) {
 		if (messageId == 0)
 			showAlertDialog(context, type, null);

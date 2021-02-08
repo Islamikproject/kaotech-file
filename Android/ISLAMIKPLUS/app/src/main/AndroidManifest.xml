@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alesapps.islamikplus" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.alesapps.islamikplus">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -98,6 +99,19 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name="com.alesapps.islamikplus.ui.activity.ChatActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.dialog.PhotoDialog"
+            android:label="@string/app_name"
+            android:configChanges="orientation"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dialog.VideoDialog"
+            android:label="@string/app_name"
+            android:configChanges="orientation"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+
         <receiver android:name="com.alesapps.islamikplus.service.Starter"
             android:enabled="true"
             android:exported="true"

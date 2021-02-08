@@ -150,6 +150,7 @@
     <string name="answer">Answer:</string>
     <string name="valid_No_question">Please enter question.</string>
     <string name="submit">Submit</string>
+    <string name="upload_photo_video">Upload Photo or Video</string>
     <!-- Order Prayer -->
     <string name="order_prayer">ORDER A PRAYER</string>
     <!-- Settings -->
@@ -211,6 +212,7 @@
     <string name="insert_message">Please enter message.</string>
     <string name="noti_chat">%1$s sent new message: %2$s</string>
     <string name="attached_voice">Attached Voice</string>
+    <string name="attached_photo">Attached Photo</string>
     <!-- About -->
     <string name="about_label">
     "<![CDATA[
