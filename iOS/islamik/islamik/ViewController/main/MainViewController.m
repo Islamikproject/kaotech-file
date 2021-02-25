@@ -95,6 +95,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)onPlayPauseClick:(id)sender {
+    if ((self.player.rate != 0) && (self.player.error == nil)) {
+        [self.player pause];
+    } else {
+        [self.player play];
+    }
+}
 - (IBAction)onSermonClick:(id)sender {
     JumahSermonViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"JumahSermonViewController"];
     [self.navigationController pushViewController:controller animated:YES];

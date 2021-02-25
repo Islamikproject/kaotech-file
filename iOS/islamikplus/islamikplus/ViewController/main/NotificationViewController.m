@@ -8,6 +8,7 @@
 
 #import "NotificationViewController.h"
 #import "NotificationCell.h"
+#import "ChatViewController.h"
 
 @interface NotificationViewController ()<UITableViewDelegate, UITableViewDataSource, NotificationCellDelegate>
 {
@@ -87,6 +88,10 @@
         cell.lblDate.text = [Util convertNotificationDateTimeToString:notificationObj.createdAt];
         PFFileObject *avatarFile = owner[PARSE_AVATAR];
         [cell.imgAvatar sd_setImageWithURL:[NSURL URLWithString:avatarFile.url] placeholderImage:[UIImage imageNamed:@"default_profile"]];
+        cell.btnVideo.hidden =YES;
+        if (state == STATE_ACCEPT) {
+            cell.btnVideo.hidden =NO;
+        }
         cell.mNotificationObj = notificationObj;
         cell.delegate = self;
     }
@@ -100,6 +105,13 @@
 
 - (void)didTapReject:(PFObject *)notificationObj {
     [self updateState:notificationObj state:STATE_REJECT];
+}
+
+- (void)didTapVideo:(PFObject *)notificationObj {
+    ChatViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChatViewController"];
+    controller.bookObj = notificationObj[PARSE_BOOK_OBJ];
+    controller.toUser = notificationObj[PARSE_OWNER];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void) updateState: (PFObject *) notificationObj state:(int)state {

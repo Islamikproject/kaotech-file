@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "Config.h"
 
+
 @interface AppDelegate ()
 @end
 
@@ -27,6 +28,8 @@
         configuration.server = @"https://parse.kaotech.org:20001/parse";
     }]];
     [PFUser enableRevocableSessionInBackground];
+    
+    [FIRApp configure];
     
     // Push Notification
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge];

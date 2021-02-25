@@ -28,4 +28,9 @@
 - (IBAction)onRejectClick:(id)sender {
     [_delegate didTapReject:self.mNotificationObj];
 }
+
+- (IBAction)onVideoClick:(id)sender {
+    [_delegate didTapVideo:self.mNotificationObj];
+}
+
 @end

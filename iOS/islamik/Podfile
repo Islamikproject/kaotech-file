@@ -7,6 +7,8 @@ target 'islamik' do
 
   # Pods for islamik
 pod 'GooglePlaces'
+pod 'Firebase/Analytics'
+pod 'Firebase/Storage'
 pod 'IQKeyboardManager'
 pod 'MBProgressHUD'
 pod 'SVProgressHUD'
@@ -22,4 +24,5 @@ pod 'SDWebImage'
 pod 'Parse'
 pod 'HCSStarRatingView'
 pod 'DMActivityInstagram'
+pod "IQAudioRecorderController"
 end

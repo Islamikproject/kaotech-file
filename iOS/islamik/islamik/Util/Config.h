@@ -9,6 +9,12 @@
 #define PUSH_NOTIFICATION_TYPE                                  @"type"
 #define PUSH_NOTIFICATION_DATA                                  @"data"
 
+#define kChatReceiveNotificationUsers                           @"ChatReceiveNotificationUsers"
+#define kChatReceiveNotification                                @"ChatReceiveNotification"
+enum {
+    PUSH_TYPE_BOOK = 0,
+    PUSH_TYPE_CHAT = 1
+};
 enum {
     TYPE_JUMAH = 0,
     TYPE_REGULAR = 1,
@@ -71,6 +77,7 @@ enum {
 #define PARSE_TABLE_ORDER                                       @"Order"
 #define PARSE_TABLE_BOOK                                        @"Book"
 #define PARSE_TABLE_NOTIFICATION                                @"Notification"
+#define PARSE_TABLE_CHAT                                        @"Chat"
 
 #define PARSE_TYPE                                              @"type"
 #define PARSE_FIRSTNAME                                         @"firstName"
@@ -119,6 +126,10 @@ enum {
 
 #define PARSE_STATE                                             @"state"
 #define PARSE_BOOK_OBJ                                          @"bookObj"
+
+#define PARSE_SENDER                                            @"sender"
+#define PARSE_RECEIVER                                          @"receiver"
+#define PARSE_VOICE_FILE                                        @"voiceFile"
 
 #define LANGUAGE_ARRAY                                          [[NSArray alloc] initWithObjects:@"English", @"Arabic", nil]
 #define LANGUAGE_ORDER_ARRAY                                    [[NSArray alloc] initWithObjects:@"English", @"Arabic", @"French", nil]

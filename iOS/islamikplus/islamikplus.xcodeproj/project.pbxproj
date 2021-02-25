@@ -65,6 +65,19 @@
 		5AF1017E2558A570007BE257 /* com_loading_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF1014E2558A570007BE257 /* com_loading_arrow.png */; };
 		5AF1017F2558A570007BE257 /* ic_action_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF1014F2558A570007BE257 /* ic_action_logout.png */; };
 		5AF918292559416000A67AEC /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF918282559416000A67AEC /* NotificationViewController.m */; };
+		5AFC4A2225E5A0C4004854E4 /* ic_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC4A1B25E5A0C3004854E4 /* ic_chat.png */; };
+		5AFC4A2325E5A0C4004854E4 /* ic_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC4A1C25E5A0C3004854E4 /* ic_stop.png */; };
+		5AFC4A2425E5A0C4004854E4 /* img_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC4A1D25E5A0C3004854E4 /* img_video.png */; };
+		5AFC4A2525E5A0C4004854E4 /* ic_attach.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC4A1E25E5A0C3004854E4 /* ic_attach.png */; };
+		5AFC4A2625E5A0C4004854E4 /* ic_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC4A1F25E5A0C3004854E4 /* ic_start.png */; };
+		5AFC4A2725E5A0C4004854E4 /* img_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC4A2025E5A0C4004854E4 /* img_voice.png */; };
+		5AFC4A2825E5A0C4004854E4 /* ic_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC4A2125E5A0C4004854E4 /* ic_send.png */; };
+		5AFC4A2D25E5A156004854E4 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC4A2B25E5A156004854E4 /* MessageModel.m */; };
+		5AFC4A3325E5A16A004854E4 /* ChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC4A2F25E5A169004854E4 /* ChatDetailViewController.m */; };
+		5AFC4A3425E5A16A004854E4 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC4A3025E5A169004854E4 /* ChatViewController.m */; };
+		5AFC4A3825E5A237004854E4 /* AppStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC4A3725E5A237004854E4 /* AppStateManager.m */; };
+		5AFC4A8125E5A3D8004854E4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFC4A8025E5A3D8004854E4 /* MobileCoreServices.framework */; };
+		5AFC4A8325E5A3EB004854E4 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFC4A8225E5A3EB004854E4 /* SafariServices.framework */; };
 		78066E9724761D4D007F04A9 /* CircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066DF624761D4C007F04A9 /* CircleImageView.m */; };
 		78066EA824761D4D007F04A9 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066E0D24761D4C007F04A9 /* JSQMessagesCollectionViewLayoutAttributes.m */; };
 		78066EA924761D4D007F04A9 /* JSQMessagesBubblesSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066E0E24761D4C007F04A9 /* JSQMessagesBubblesSizeCalculator.m */; };
@@ -233,6 +246,23 @@
 		5AF1014F2558A570007BE257 /* ic_action_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_action_logout.png; sourceTree = "<group>"; };
 		5AF918272559416000A67AEC /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		5AF918282559416000A67AEC /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		5AFC4A1B25E5A0C3004854E4 /* ic_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_chat.png; sourceTree = "<group>"; };
+		5AFC4A1C25E5A0C3004854E4 /* ic_stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_stop.png; sourceTree = "<group>"; };
+		5AFC4A1D25E5A0C3004854E4 /* img_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_video.png; sourceTree = "<group>"; };
+		5AFC4A1E25E5A0C3004854E4 /* ic_attach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_attach.png; sourceTree = "<group>"; };
+		5AFC4A1F25E5A0C3004854E4 /* ic_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_start.png; sourceTree = "<group>"; };
+		5AFC4A2025E5A0C4004854E4 /* img_voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_voice.png; sourceTree = "<group>"; };
+		5AFC4A2125E5A0C4004854E4 /* ic_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_send.png; sourceTree = "<group>"; };
+		5AFC4A2B25E5A156004854E4 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		5AFC4A2C25E5A156004854E4 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		5AFC4A2F25E5A169004854E4 /* ChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDetailViewController.m; sourceTree = "<group>"; };
+		5AFC4A3025E5A169004854E4 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		5AFC4A3125E5A169004854E4 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		5AFC4A3225E5A16A004854E4 /* ChatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDetailViewController.h; sourceTree = "<group>"; };
+		5AFC4A3625E5A237004854E4 /* AppStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppStateManager.h; sourceTree = "<group>"; };
+		5AFC4A3725E5A237004854E4 /* AppStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppStateManager.m; sourceTree = "<group>"; };
+		5AFC4A8025E5A3D8004854E4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5AFC4A8225E5A3EB004854E4 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		78066DF524761D4C007F04A9 /* CircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleImageView.h; sourceTree = "<group>"; };
 		78066DF624761D4C007F04A9 /* CircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleImageView.m; sourceTree = "<group>"; };
 		78066E0A24761D4C007F04A9 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
@@ -429,6 +459,8 @@
 				78066EF024762243007F04A9 /* libz.tbd in Frameworks */,
 				78066EE6247621ED007F04A9 /* libc.tbd in Frameworks */,
 				78066EEE24762235007F04A9 /* libxml2.tbd in Frameworks */,
+				5AFC4A8325E5A3EB004854E4 /* SafariServices.framework in Frameworks */,
+				5AFC4A8125E5A3D8004854E4 /* MobileCoreServices.framework in Frameworks */,
 				DF58A2A10D547EB574247E6B /* Pods_islamikplus.framework in Frameworks */,
 				78066EEC24762226007F04A9 /* libxml2.2.tbd in Frameworks */,
 			);
@@ -446,9 +478,26 @@
 			path = html;
 			sourceTree = "<group>";
 		};
+		5AFC4A2A25E5A156004854E4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5AFC4A2B25E5A156004854E4 /* MessageModel.m */,
+				5AFC4A2C25E5A156004854E4 /* MessageModel.h */,
+			);
+			name = model;
+			path = ViewController/model;
+			sourceTree = "<group>";
+		};
 		78066D9624761C38007F04A9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC4A1E25E5A0C3004854E4 /* ic_attach.png */,
+				5AFC4A1B25E5A0C3004854E4 /* ic_chat.png */,
+				5AFC4A2125E5A0C4004854E4 /* ic_send.png */,
+				5AFC4A1F25E5A0C3004854E4 /* ic_start.png */,
+				5AFC4A1C25E5A0C3004854E4 /* ic_stop.png */,
+				5AFC4A1D25E5A0C3004854E4 /* img_video.png */,
+				5AFC4A2025E5A0C4004854E4 /* img_voice.png */,
 				5AF101482558A56F007BE257 /* app_icon.png */,
 				5AF101292558A56C007BE257 /* check_off.png */,
 				5AF101402558A56F007BE257 /* check_on.png */,
@@ -515,6 +564,8 @@
 		78066DE024761CE4007F04A9 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC4A3625E5A237004854E4 /* AppStateManager.h */,
+				5AFC4A3725E5A237004854E4 /* AppStateManager.m */,
 				78066EF42476245A007F04A9 /* Config.h */,
 				78066EF12476245A007F04A9 /* Utils.h */,
 				78066EF52476245A007F04A9 /* Utils.m */,
@@ -790,6 +841,10 @@
 		78066F0B24767265007F04A9 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC4A3225E5A16A004854E4 /* ChatDetailViewController.h */,
+				5AFC4A2F25E5A169004854E4 /* ChatDetailViewController.m */,
+				5AFC4A3125E5A169004854E4 /* ChatViewController.h */,
+				5AFC4A3025E5A169004854E4 /* ChatViewController.m */,
 				78066F0C24767278007F04A9 /* MainViewController.h */,
 				78066F0D24767278007F04A9 /* MainViewController.m */,
 				78FAFE0C247712E0008A7151 /* SermonListViewController.h */,
@@ -849,6 +904,7 @@
 				7851A04B2477B0FF00C3E380 /* GoogleService */,
 				78066DE424761D4C007F04A9 /* libs */,
 				78066DE024761CE4007F04A9 /* Util */,
+				5AFC4A2A25E5A156004854E4 /* model */,
 				78066DDF24761C9B007F04A9 /* ViewController */,
 				78066D9624761C38007F04A9 /* Resource */,
 				788A168D24750ABA007DCA57 /* AppDelegate.h */,
@@ -910,6 +966,8 @@
 		A1279539DF500E1C937308D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC4A8225E5A3EB004854E4 /* SafariServices.framework */,
+				5AFC4A8025E5A3D8004854E4 /* MobileCoreServices.framework */,
 				78066EEF2476223E007F04A9 /* libz.tbd */,
 				78066EED2476222E007F04A9 /* libxml2.tbd */,
 				78066EEB2476221C007F04A9 /* libxml2.2.tbd */,
@@ -990,6 +1048,7 @@
 				5AF101772558A570007BE257 /* ic_action_add.png in Resources */,
 				5AF101782558A570007BE257 /* app_icon.png in Resources */,
 				5AF101662558A570007BE257 /* img_logo.png in Resources */,
+				5AFC4A2425E5A0C4004854E4 /* img_video.png in Resources */,
 				5AF1016C2558A570007BE257 /* img_kid.png in Resources */,
 				5AF101642558A570007BE257 /* img_daily.png in Resources */,
 				78066ECD24761D4D007F04A9 /* JSQMessagesAssets.bundle in Resources */,
@@ -997,12 +1056,14 @@
 				5AF101612558A570007BE257 /* ic_about.png in Resources */,
 				5AF1016B2558A570007BE257 /* ic_search.png in Resources */,
 				788A169D24750ABB007DCA57 /* LaunchScreen.storyboard in Resources */,
+				5AFC4A2625E5A0C4004854E4 /* ic_start.png in Resources */,
 				5AF1015D2558A570007BE257 /* ic_action_language.png in Resources */,
 				78066EC824761D4D007F04A9 /* JSQMessagesToolbarContentView.xib in Resources */,
 				5AF101532558A570007BE257 /* ic_mosque.png in Resources */,
 				5AF1016A2558A570007BE257 /* ic_person.png in Resources */,
 				5AF1017C2558A570007BE257 /* ic_money.png in Resources */,
 				5AF101752558A570007BE257 /* PrivacyPolicy.html in Resources */,
+				5AFC4A2725E5A0C4004854E4 /* img_voice.png in Resources */,
 				5AF101702558A570007BE257 /* ic_rate_select.png in Resources */,
 				5AF101562558A570007BE257 /* ic_location.png in Resources */,
 				5AF1017E2558A570007BE257 /* com_loading_arrow.png in Resources */,
@@ -1012,6 +1073,7 @@
 				5AF101762558A570007BE257 /* TermsConditions.html in Resources */,
 				5AF1015C2558A570007BE257 /* splash.png in Resources */,
 				5AF101732558A570007BE257 /* default_image_bg.png in Resources */,
+				5AFC4A2525E5A0C4004854E4 /* ic_attach.png in Resources */,
 				5AF101522558A570007BE257 /* ic_delete.png in Resources */,
 				5AF101712558A570007BE257 /* check_on.png in Resources */,
 				7851A04F2477B12500C3E380 /* GoogleService-Info.plist in Resources */,
@@ -1024,6 +1086,8 @@
 				5AF1016F2558A570007BE257 /* ic_action_notification.png in Resources */,
 				5AF1017D2558A570007BE257 /* upload_photo.png in Resources */,
 				5AF101592558A570007BE257 /* img_text_logo.png in Resources */,
+				5AFC4A2225E5A0C4004854E4 /* ic_chat.png in Resources */,
+				5AFC4A2825E5A0C4004854E4 /* ic_send.png in Resources */,
 				5AF101632558A570007BE257 /* ic_terms.png in Resources */,
 				5AF101682558A570007BE257 /* img_women.png in Resources */,
 				5AF101672558A570007BE257 /* img_settings.png in Resources */,
@@ -1041,6 +1105,7 @@
 				78066EC024761D4D007F04A9 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
 				5AF101652558A570007BE257 /* img_jumah.png in Resources */,
 				5AF101792558A570007BE257 /* img_message.png in Resources */,
+				5AFC4A2325E5A0C4004854E4 /* ic_stop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1114,6 +1179,7 @@
 				78066ED824761D4D007F04A9 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				78066EBE24761D4D007F04A9 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				78066EF72476245A007F04A9 /* Utils.m in Sources */,
+				5AFC4A3425E5A16A004854E4 /* ChatViewController.m in Sources */,
 				78066EB924761D4D007F04A9 /* JSQMessagesViewController.m in Sources */,
 				7851A04A2477970200C3E380 /* BasketCell.m in Sources */,
 				78066F022476444C007F04A9 /* PrivacyViewController.m in Sources */,
@@ -1157,6 +1223,7 @@
 				788A16A024750ABB007DCA57 /* main.m in Sources */,
 				78FAFE14247713B8008A7151 /* DonationViewController.m in Sources */,
 				78066EAC24761D4D007F04A9 /* JSQMessagesBubbleImageFactory.m in Sources */,
+				5AFC4A3325E5A16A004854E4 /* ChatDetailViewController.m in Sources */,
 				78066EA924761D4D007F04A9 /* JSQMessagesBubblesSizeCalculator.m in Sources */,
 				78066EBC24761D4D007F04A9 /* JSQMessagesComposerTextView.m in Sources */,
 				78066EDE24761D4D007F04A9 /* SCLTextView.m in Sources */,
@@ -1172,6 +1239,7 @@
 				78066ECF24761D4D007F04A9 /* UIColor+JSQMessages.m in Sources */,
 				78066ED024761D4D007F04A9 /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
 				78066EAE24761D4D007F04A9 /* JSQMessagesToolbarButtonFactory.m in Sources */,
+				5AFC4A2D25E5A156004854E4 /* MessageModel.m in Sources */,
 				5AF918292559416000A67AEC /* NotificationViewController.m in Sources */,
 				5A12A599255E8A520098E798 /* BookViewController.m in Sources */,
 				78066EB824761D4D007F04A9 /* DemoModelData.m in Sources */,
@@ -1190,6 +1258,7 @@
 				78066EC924761D4D007F04A9 /* JSQMessagesCollectionViewCell.m in Sources */,
 				78066ECB24761D4D007F04A9 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 				78066EC224761D4D007F04A9 /* JSQMessagesInputToolbar.m in Sources */,
+				5AFC4A3825E5A237004854E4 /* AppStateManager.m in Sources */,
 				78066EE224761D4D007F04A9 /* UIImage+ImageEffects.m in Sources */,
 				78066E9724761D4D007F04A9 /* CircleImageView.m in Sources */,
 				5A58334424D9E2A70031E62A /* MessageCell.m in Sources */,
@@ -1339,7 +1408,7 @@
 				CODE_SIGN_ENTITLEMENTS = "islamikplus/ISLAMIK PLUS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1352,7 +1421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamikplus;
 				PRODUCT_NAME = "ISLAMIK PLUS";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1368,7 +1437,7 @@
 				CODE_SIGN_ENTITLEMENTS = "islamikplus/ISLAMIK PLUS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1381,7 +1450,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamikplus;
 				PRODUCT_NAME = "ISLAMIK PLUS";
 				PROVISIONING_PROFILE_SPECIFIER = "";

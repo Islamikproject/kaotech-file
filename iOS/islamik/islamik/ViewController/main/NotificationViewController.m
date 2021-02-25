@@ -8,6 +8,7 @@
 
 #import "NotificationViewController.h"
 #import "NotificationCell.h"
+#import "ChatViewController.h"
 
 @interface NotificationViewController ()<UITableViewDelegate, UITableViewDataSource, NotificationCellDelegate>
 {
@@ -87,7 +88,10 @@
 }
 
 - (void)didTapVideo:(PFObject *)notificationObj {
-    
+    ChatViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChatViewController"];
+    controller.bookObj = notificationObj[PARSE_BOOK_OBJ];
+    controller.toUser = notificationObj[PARSE_OWNER];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

@@ -23,4 +23,6 @@ pod 'MGSwipeTableCell'
 pod 'SDWebImage'
 pod 'Parse'
 pod 'HCSStarRatingView'
+pod 'DMActivityInstagram'
+pod "IQAudioRecorderController"
 end

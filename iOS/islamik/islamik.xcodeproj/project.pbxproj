@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5A0BB9CC2562782D00D887C3 /* JumahSermonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0BB9CB2562782D00D887C3 /* JumahSermonViewController.m */; };
+		5A11C91225E0AB3D00FE53AC /* ic_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A11C90D25E0AB3D00FE53AC /* ic_chat.png */; };
+		5A11C91325E0AB3D00FE53AC /* ic_attach.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A11C90E25E0AB3D00FE53AC /* ic_attach.png */; };
+		5A11C91425E0AB3D00FE53AC /* ic_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A11C90F25E0AB3D00FE53AC /* ic_stop.png */; };
+		5A11C91525E0AB3D00FE53AC /* ic_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A11C91025E0AB3D00FE53AC /* ic_start.png */; };
+		5A11C91625E0AB3D00FE53AC /* ic_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A11C91125E0AB3D00FE53AC /* ic_send.png */; };
+		5A11C91A25E0BC3800FE53AC /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A11C91925E0BC3800FE53AC /* MessageModel.m */; };
 		5A195E3025635EAE00D619CF /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A195E2F25635EAE00D619CF /* BookViewController.m */; };
 		5A195E4825637DFB00D619CF /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A195E4725637DFB00D619CF /* NotificationViewController.m */; };
 		5A195E4C25637E3800D619CF /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A195E4B25637E3800D619CF /* NotificationCell.m */; };
 		5A19D01E24A315A9002925C8 /* PrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A19D01D24A315A9002925C8 /* PrivacyViewController.m */; };
+		5A26215125E0F0F1001244E2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A26215025E0F0F1001244E2 /* MobileCoreServices.framework */; };
+		5A26215325E0F104001244E2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A26215025E0F0F1001244E2 /* MobileCoreServices.framework */; };
+		5A2621B125E10317001244E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A2621B025E10317001244E2 /* GoogleService-Info.plist */; };
 		5A3496122562E70A00C31033 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3496112562E70A00C31033 /* PhotoViewController.m */; };
 		5A3496162562E9F800C31033 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3496152562E9F800C31033 /* OrderViewController.m */; };
 		5A3496272562F98A00C31033 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3496262562F98A00C31033 /* OrderCell.m */; };
@@ -31,6 +40,8 @@
 		5A816C3E249377A40086C968 /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3C249377A40086C968 /* PrivacyPolicy.html */; };
 		5A816C3F249377A40086C968 /* TermsConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3D249377A40086C968 /* TermsConditions.html */; };
 		5A92B7AB24ACFD77008AB387 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A92B7AA24ACFD77008AB387 /* SafariServices.framework */; };
+		5AE630EC25DF9C6B000928E2 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE630E825DF9C6A000928E2 /* ChatViewController.m */; };
+		5AE630ED25DF9C6B000928E2 /* ChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE630E925DF9C6A000928E2 /* ChatDetailViewController.m */; };
 		5AEBCF4E2562165F00EC66E4 /* ic_privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEBCF0B2562162C00EC66E4 /* ic_privacy.png */; };
 		5AEBCF4F2562165F00EC66E4 /* img_main_asr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEBCF0C2562162D00EC66E4 /* img_main_asr.png */; };
 		5AEBCF502562165F00EC66E4 /* fajr_three.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEBCF0D2562162E00EC66E4 /* fajr_three.png */; };
@@ -100,6 +111,8 @@
 		5AEBCF902562165F00EC66E4 /* ic_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEBCF4D2562165F00EC66E4 /* ic_share.png */; };
 		5AEBCF952562275500EC66E4 /* ic_dropdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEBCF942562275400EC66E4 /* ic_dropdown.png */; };
 		5AEBCF982562293200EC66E4 /* img_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEBCF972562293100EC66E4 /* img_circle.png */; };
+		5AFC49F825E5A022004854E4 /* img_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC49F625E5A022004854E4 /* img_video.png */; };
+		5AFC49F925E5A022004854E4 /* img_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC49F725E5A022004854E4 /* img_voice.png */; };
 		78008902247CC546007CAB87 /* FajrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78008901247CC546007CAB87 /* FajrDetailViewController.m */; };
 		7800AC31247D0770006F47B5 /* ZuhrDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC30247D0770006F47B5 /* ZuhrDetailViewController.m */; };
 		7800AC34247D0E98006F47B5 /* MaghribDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7800AC33247D0E98006F47B5 /* MaghribDetailViewController.m */; };
@@ -211,6 +224,13 @@
 		30E37A2F5930F4EB511DB3E2 /* Pods_islamik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_islamik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0BB9CA2562782D00D887C3 /* JumahSermonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumahSermonViewController.h; sourceTree = "<group>"; };
 		5A0BB9CB2562782D00D887C3 /* JumahSermonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumahSermonViewController.m; sourceTree = "<group>"; };
+		5A11C90D25E0AB3D00FE53AC /* ic_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_chat.png; sourceTree = "<group>"; };
+		5A11C90E25E0AB3D00FE53AC /* ic_attach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_attach.png; sourceTree = "<group>"; };
+		5A11C90F25E0AB3D00FE53AC /* ic_stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_stop.png; sourceTree = "<group>"; };
+		5A11C91025E0AB3D00FE53AC /* ic_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_start.png; sourceTree = "<group>"; };
+		5A11C91125E0AB3D00FE53AC /* ic_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_send.png; sourceTree = "<group>"; };
+		5A11C91825E0BC3800FE53AC /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		5A11C91925E0BC3800FE53AC /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		5A195E2E25635EAE00D619CF /* BookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		5A195E2F25635EAE00D619CF /* BookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		5A195E4625637DFB00D619CF /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
@@ -219,6 +239,8 @@
 		5A195E4B25637E3800D619CF /* NotificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
 		5A19D01C24A315A9002925C8 /* PrivacyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyViewController.h; sourceTree = "<group>"; };
 		5A19D01D24A315A9002925C8 /* PrivacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyViewController.m; sourceTree = "<group>"; };
+		5A26215025E0F0F1001244E2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5A2621B025E10317001244E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A3496102562E70A00C31033 /* PhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		5A3496112562E70A00C31033 /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		5A3496142562E9F800C31033 /* OrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
@@ -254,6 +276,10 @@
 		5A816C3C249377A40086C968 /* PrivacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
 		5A816C3D249377A40086C968 /* TermsConditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TermsConditions.html; sourceTree = "<group>"; };
 		5A92B7AA24ACFD77008AB387 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		5AE630E825DF9C6A000928E2 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		5AE630E925DF9C6A000928E2 /* ChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDetailViewController.m; sourceTree = "<group>"; };
+		5AE630EA25DF9C6A000928E2 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		5AE630EB25DF9C6B000928E2 /* ChatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDetailViewController.h; sourceTree = "<group>"; };
 		5AEBCF0B2562162C00EC66E4 /* ic_privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_privacy.png; sourceTree = "<group>"; };
 		5AEBCF0C2562162D00EC66E4 /* img_main_asr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_main_asr.png; sourceTree = "<group>"; };
 		5AEBCF0D2562162E00EC66E4 /* fajr_three.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fajr_three.png; sourceTree = "<group>"; };
@@ -323,6 +349,8 @@
 		5AEBCF4D2562165F00EC66E4 /* ic_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_share.png; sourceTree = "<group>"; };
 		5AEBCF942562275400EC66E4 /* ic_dropdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_dropdown.png; sourceTree = "<group>"; };
 		5AEBCF972562293100EC66E4 /* img_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_circle.png; sourceTree = "<group>"; };
+		5AFC49F625E5A022004854E4 /* img_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_video.png; sourceTree = "<group>"; };
+		5AFC49F725E5A022004854E4 /* img_voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_voice.png; sourceTree = "<group>"; };
 		78008900247CC546007CAB87 /* FajrDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FajrDetailViewController.h; sourceTree = "<group>"; };
 		78008901247CC546007CAB87 /* FajrDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FajrDetailViewController.m; sourceTree = "<group>"; };
 		7800AC2F247D0770006F47B5 /* ZuhrDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZuhrDetailViewController.h; sourceTree = "<group>"; };
@@ -534,11 +562,13 @@
 				5A92B7AB24ACFD77008AB387 /* SafariServices.framework in Frameworks */,
 				780F62ED247871AD0027CDB4 /* libxml2.2.tbd in Frameworks */,
 				780F62EB2478719C0027CDB4 /* libsqlite3.tbd in Frameworks */,
+				5A26215125E0F0F1001244E2 /* MobileCoreServices.framework in Frameworks */,
 				78A21CAB2483713A00A1C3A5 /* AVFoundation.framework in Frameworks */,
 				780F62E9247871870027CDB4 /* libc++.tbd in Frameworks */,
 				780F62EF247871BD0027CDB4 /* libxml2.tbd in Frameworks */,
 				780F62E7247871740027CDB4 /* libc.tbd in Frameworks */,
 				780F62F1247871C80027CDB4 /* libz.tbd in Frameworks */,
+				5A26215325E0F104001244E2 /* MobileCoreServices.framework in Frameworks */,
 				CB28685F4C6BBF730F93F847 /* Pods_islamik.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +643,7 @@
 		780F61FD24786C7B0027CDB4 /* islamik */ = {
 			isa = PBXGroup;
 			children = (
+				5A2621B025E10317001244E2 /* GoogleService-Info.plist */,
 				78EC58A62490DB8100386FC6 /* ISLAMIK.entitlements */,
 				780F632E247874C50027CDB4 /* Util */,
 				780F62F3247873C00027CDB4 /* Resource */,
@@ -886,6 +917,13 @@
 		780F62F3247873C00027CDB4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC49F625E5A022004854E4 /* img_video.png */,
+				5AFC49F725E5A022004854E4 /* img_voice.png */,
+				5A11C90E25E0AB3D00FE53AC /* ic_attach.png */,
+				5A11C90D25E0AB3D00FE53AC /* ic_chat.png */,
+				5A11C91125E0AB3D00FE53AC /* ic_send.png */,
+				5A11C91025E0AB3D00FE53AC /* ic_start.png */,
+				5A11C90F25E0AB3D00FE53AC /* ic_stop.png */,
 				5AEBCF972562293100EC66E4 /* img_circle.png */,
 				5AEBCF942562275400EC66E4 /* ic_dropdown.png */,
 				5AEBCF262562164000EC66E4 /* app_icon.png */,
@@ -1049,6 +1087,8 @@
 		78F681CE247C99A500B6B955 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5A11C91825E0BC3800FE53AC /* MessageModel.h */,
+				5A11C91925E0BC3800FE53AC /* MessageModel.m */,
 				78F681CF247C99BA00B6B955 /* SurahModel.h */,
 				78F681D0247C99BA00B6B955 /* SurahModel.m */,
 			);
@@ -1075,6 +1115,10 @@
 		78FC72E62478E3C0000F0671 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				5AE630EB25DF9C6B000928E2 /* ChatDetailViewController.h */,
+				5AE630E925DF9C6A000928E2 /* ChatDetailViewController.m */,
+				5AE630EA25DF9C6A000928E2 /* ChatViewController.h */,
+				5AE630E825DF9C6A000928E2 /* ChatViewController.m */,
 				780F63412478758D0027CDB4 /* MainViewController.h */,
 				780F63422478758D0027CDB4 /* MainViewController.m */,
 				5A0BB9CA2562782D00D887C3 /* JumahSermonViewController.h */,
@@ -1112,6 +1156,7 @@
 		C9289895EF8C0E5FB1BF617D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A26215025E0F0F1001244E2 /* MobileCoreServices.framework */,
 				5A92B7AA24ACFD77008AB387 /* SafariServices.framework */,
 				78A21CAA2483713A00A1C3A5 /* AVFoundation.framework */,
 				780F62F0247871C30027CDB4 /* libz.tbd */,
@@ -1191,12 +1236,15 @@
 				5AEBCF902562165F00EC66E4 /* ic_share.png in Resources */,
 				5AEBCF7B2562165F00EC66E4 /* img_kid.png in Resources */,
 				5AEBCF8B2562165F00EC66E4 /* ic_marker_blue.png in Resources */,
+				5A11C91325E0AB3D00FE53AC /* ic_attach.png in Resources */,
 				5AEBCF8D2562165F00EC66E4 /* img_main_zuhr.png in Resources */,
 				5AEBCF7F2562165F00EC66E4 /* com_loading_arrow.png in Resources */,
+				5AFC49F825E5A022004854E4 /* img_video.png in Resources */,
 				5AEBCF552562165F00EC66E4 /* ic_rate_unselect.png in Resources */,
 				5AEBCF642562165F00EC66E4 /* ic_rate.png in Resources */,
 				5AEBCF7A2562165F00EC66E4 /* img_daily.png in Resources */,
 				5AEBCF5A2562165F00EC66E4 /* img_main_maghrib.png in Resources */,
+				5A2621B125E10317001244E2 /* GoogleService-Info.plist in Resources */,
 				5AEBCF772562165F00EC66E4 /* fajr_one.png in Resources */,
 				5AEBCF7E2562165F00EC66E4 /* img_europ.png in Resources */,
 				781633552484F0C70073D07B /* LICENSE in Resources */,
@@ -1221,6 +1269,7 @@
 				780F620B24786C7C0027CDB4 /* Assets.xcassets in Resources */,
 				5AEBCF6D2562165F00EC66E4 /* ic_person.png in Resources */,
 				5AEBCF5D2562165F00EC66E4 /* ic_log_out.png in Resources */,
+				5A11C91425E0AB3D00FE53AC /* ic_stop.png in Resources */,
 				5AEBCF6A2562165F00EC66E4 /* img_message.png in Resources */,
 				5AEBCF682562165F00EC66E4 /* img_main_fajr.png in Resources */,
 				5AEBCF712562165F00EC66E4 /* ic_marker_red.png in Resources */,
@@ -1231,6 +1280,7 @@
 				5AEBCF512562165F00EC66E4 /* img_africa.png in Resources */,
 				780F62DF247870D90027CDB4 /* comic-sans.ttf in Resources */,
 				5AEBCF662562165F00EC66E4 /* ic_action_close.png in Resources */,
+				5AFC49F925E5A022004854E4 /* img_voice.png in Resources */,
 				5AEBCF8E2562165F00EC66E4 /* ic_action_notification.png in Resources */,
 				5AEBCF542562165F00EC66E4 /* default_profile.png in Resources */,
 				5AEBCF612562165F00EC66E4 /* ic_action_done.png in Resources */,
@@ -1241,6 +1291,7 @@
 				780F620924786C7B0027CDB4 /* Main.storyboard in Resources */,
 				5AEBCF862562165F00EC66E4 /* ic_action_language.png in Resources */,
 				5AEBCF652562165F00EC66E4 /* img_quran.png in Resources */,
+				5A11C91625E0AB3D00FE53AC /* ic_send.png in Resources */,
 				5A816C3E249377A40086C968 /* PrivacyPolicy.html in Resources */,
 				5AEBCF952562275500EC66E4 /* ic_dropdown.png in Resources */,
 				5AEBCF622562165F00EC66E4 /* img_settings.png in Resources */,
@@ -1263,10 +1314,12 @@
 				5AEBCF982562293200EC66E4 /* img_circle.png in Resources */,
 				780F62CB247870D90027CDB4 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				5AEBCF562562165F00EC66E4 /* img_other.png in Resources */,
+				5A11C91525E0AB3D00FE53AC /* ic_start.png in Resources */,
 				5AEBCF792562165F00EC66E4 /* img_asia.png in Resources */,
 				5AEBCF6C2562165F00EC66E4 /* ic_about.png in Resources */,
 				5AEBCF852562165F00EC66E4 /* fajr_five.png in Resources */,
 				5AEBCF5C2562165F00EC66E4 /* ic_email.png in Resources */,
+				5A11C91225E0AB3D00FE53AC /* ic_chat.png in Resources */,
 				781633562484F0C70073D07B /* README.md in Resources */,
 				5AEBCF8A2562165F00EC66E4 /* ic_edit_profile.png in Resources */,
 			);
@@ -1385,6 +1438,7 @@
 				78EDA07B24790CFB0082D0A7 /* VideoViewController.m in Sources */,
 				780F62B5247870D90027CDB4 /* JSQMediaItem.m in Sources */,
 				5A3496122562E70A00C31033 /* PhotoViewController.m in Sources */,
+				5AE630EC25DF9C6B000928E2 /* ChatViewController.m in Sources */,
 				78FC72E42478E380000F0671 /* SermonCell.m in Sources */,
 				780F62AE247870D90027CDB4 /* JSQMessagesTimestampFormatter.m in Sources */,
 				780F62AF247870D90027CDB4 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
@@ -1418,6 +1472,7 @@
 				780F62B6247870D90027CDB4 /* JSQVideoMediaItem.m in Sources */,
 				5A195E4825637DFB00D619CF /* NotificationViewController.m in Sources */,
 				781633572484F0C70073D07B /* NSString+UrlEncode.m in Sources */,
+				5AE630ED25DF9C6B000928E2 /* ChatDetailViewController.m in Sources */,
 				780F62B7247870D90027CDB4 /* DemoModelData.m in Sources */,
 				5A58335E24D9F7C00031E62A /* LoginViewController.m in Sources */,
 				780F62D2247870D90027CDB4 /* UIView+JSQMessages.m in Sources */,
@@ -1428,6 +1483,7 @@
 				780F62E3247870D90027CDB4 /* JSQSystemSoundPlayer.m in Sources */,
 				780F62D8247870D90027CDB4 /* UIViewController+BIZChildViewController.m in Sources */,
 				780F62C1247870D90027CDB4 /* JSQMessagesInputToolbar.m in Sources */,
+				5A11C91A25E0BC3800FE53AC /* MessageModel.m in Sources */,
 				780F62C5247870D90027CDB4 /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
 				780F62B8247870D90027CDB4 /* JSQMessagesViewController.m in Sources */,
 				780F62B3247870D90027CDB4 /* JSQPhotoMediaItem.m in Sources */,
@@ -1586,7 +1642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1598,7 +1654,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamik;
 				PRODUCT_NAME = ISLAMIK;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1612,7 +1668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1624,7 +1680,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamik;
 				PRODUCT_NAME = ISLAMIK;
 				TARGETED_DEVICE_FAMILY = "1,2";
