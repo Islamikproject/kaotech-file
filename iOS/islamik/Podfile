@@ -25,4 +25,5 @@ pod 'Parse'
 pod 'HCSStarRatingView'
 pod 'DMActivityInstagram'
 pod "IQAudioRecorderController"
+pod 'JSQMessagesViewController'
 end

@@ -187,7 +187,6 @@ static ChatDetailViewController *_sharedViewController = nil;
     {
         NSString *chatText = object[PARSE_MESSAGE];
         MessageModel *message = [[MessageModel alloc] initWithSenderId:senderId senderDisplayName:[self getDisplayName:sender] date:object.createdAt text:chatText];
-        //        JSQMessage *message = [[JSQMessage alloc] initWithSenderId:senderId senderDisplayName:sender[USER_FIELD_FULLNAME] date:object.createdAt text:chatText];
         message.objectId = object.objectId;
         [messages addObject:message];
     }
@@ -213,14 +212,13 @@ static ChatDetailViewController *_sharedViewController = nil;
     
     else if (fileVoice)
     {
-        JSQPhotoMediaItem *mediaItem = [[JSQPhotoMediaItem alloc] initWithImage:nil];
+        JSQPhotoMediaItem *mediaItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"img_voice"]];
         
         mediaItem.appliesMediaViewMaskAsOutgoing = [senderId isEqualToString:me.objectId];
         
         MessageModel *voiceMsg = [[MessageModel alloc] initWithSenderId:senderId senderDisplayName:[self getDisplayName:sender] date:object.createdAt media:mediaItem];
         voiceMsg.objectId = object.objectId;
-        ((UIImageView*)mediaItem.mediaView).image = [UIImage imageNamed:@"img_voice"];
-        voiceMsg.image = mediaItem.image;
+        voiceMsg.image = [UIImage imageNamed:@"img_voice"];
         
         [messages addObject:voiceMsg];
     }
@@ -234,9 +232,11 @@ static ChatDetailViewController *_sharedViewController = nil;
         videoMsg.objectId = object.objectId;
         mediaItem.fileURL = [NSURL URLWithString:fileVideo];
         videoMsg.video = fileVideo;
-        ((UIImageView*)mediaItem.mediaView).image = [UIImage imageNamed:@"img_video"];
+        videoMsg.image = [UIImage imageNamed:@"img_video"];
         [messages addObject:videoMsg];
     }
+    
+    int count = [messages count];
 }
 
 /// Helper methods
@@ -532,6 +532,7 @@ static ChatDetailViewController *_sharedViewController = nil;
     return nil;
 }
 
+
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
 {
     /**
@@ -577,6 +578,8 @@ static ChatDetailViewController *_sharedViewController = nil;
     return nil;
 }
 
+
+
 #pragma mark - UICollectionView DataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -590,20 +593,6 @@ static ChatDetailViewController *_sharedViewController = nil;
      *  Override point for customizing cells
      */
     JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
-    
-    /**
-     *  Configure almost *anything* on the cell
-     *
-     *  Text colors, label text, label colors, etc.
-     *
-     *
-     *  DO NOT set `cell.textView.font` !
-     *  Instead, you need to set `self.collectionView.collectionViewLayout.messageBubbleFont` to the font you want in `viewDidLoad`
-     *
-     *
-     *  DO NOT manipulate cell layout information!
-     *  Instead, override the properties you want on `self.collectionView.collectionViewLayout` from `viewDidLoad`
-     */
     
     JSQMessage *msg = [messages objectAtIndex:indexPath.item];
     
@@ -622,10 +611,40 @@ static ChatDetailViewController *_sharedViewController = nil;
         
         cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
                                               NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
+    }else{
+        if ([msg.senderId isEqualToString:self.senderId]) {
+            PFFileObject *avatarFile = me[PARSE_AVATAR];
+            [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarFile.url] placeholderImage:[UIImage imageNamed:@"default_profile"]];
+        }else{
+            PFFileObject *avatarFile = toUser[PARSE_AVATAR];
+            [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:avatarFile.url] placeholderImage:[UIImage imageNamed:@"default_profile"]];
+        }
+        cell.textView.text = @"Media Message";
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:cell.mediaView.bounds];
+        [cell.mediaView addSubview:imageView];
+        if([msg isKindOfClass:MessageModel.class]){
+            MessageModel * mmodel = (MessageModel*)msg;
+            if(mmodel.image != nil){
+                [imageView setImage:mmodel.image];
+            }
+        }
+        [cell setMediaView:imageView];
     }
     
     return cell;
 }
+- (JSQMessagesBubbleImage *) setupOutgoingBubble {
+   JSQMessagesBubbleImageFactory *bubbleImageFactory = [[JSQMessagesBubbleImageFactory alloc] init];
+   JSQMessagesBubbleImage * imgBubble = [bubbleImageFactory outgoingMessagesBubbleImageWithColor:[UIColor blueColor]];//jsq_messageBubbleBlueColor return imgBubble;
+   return imgBubble;
+}
+
+- (JSQMessagesBubbleImage *) setupIncomingBubble {
+   JSQMessagesBubbleImageFactory *bubbleImageFactory = [[JSQMessagesBubbleImageFactory alloc] init];
+   JSQMessagesBubbleImage * imgBubble = [bubbleImageFactory outgoingMessagesBubbleImageWithColor:[UIColor greenColor]];//jsq_messageBubbleBlueColor return imgBubble;
+   return imgBubble;
+}
+
 
 #pragma mark - UICollectionView Delegate
 
