@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import <UIKit/UIKit.h>
 #import "JSQMessages.h"
-#import "DemoModelData.h"
+#import "MessageModel.h"
 #import "AppStateManager.h"
 
 @class ChatViewController;
