@@ -70,9 +70,14 @@
         </LinearLayout>
     </LinearLayout>
     <ImageView
-        android:id="@+id/btn_chat"
+        android:id="@+id/btn_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_normal"
+        android:background="@drawable/ic_call" />
+    <ImageView
+        android:id="@+id/btn_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/ic_chat" />
 </LinearLayout>

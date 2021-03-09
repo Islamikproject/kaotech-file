@@ -1,7 +1,9 @@
 package com.alesapps.islamikplus.ui.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -96,7 +98,8 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 			LinearLayout layout_accept;
 			TextView txt_accept;
 			TextView txt_reject;
-			ImageView btn_chat;
+			ImageView btn_call;
+			ImageView btn_message;
 		}
 
 		@Override
@@ -113,14 +116,16 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 				holder.layout_accept = convertView.findViewById(R.id.layout_accept);
 				holder.txt_accept = convertView.findViewById(R.id.txt_accept);
 				holder.txt_reject = convertView.findViewById(R.id.txt_reject);
-				holder.btn_chat = convertView.findViewById(R.id.btn_chat);
+				holder.btn_call = convertView.findViewById(R.id.btn_call);
+				holder.btn_message = convertView.findViewById(R.id.btn_message);
 				convertView.setTag(holder);
 
 			} else {
 				holder = (ViewHolder) convertView.getTag();
 			}
 			holder.layout_accept.setVisibility(View.GONE);
-			holder.btn_chat.setVisibility(View.GONE);
+			holder.btn_call.setVisibility(View.GONE);
+			holder.btn_message.setVisibility(View.GONE);
 			final NotificationModel model = new NotificationModel();
 			model.parse(mDataList.get(position));
 			holder.txt_message.setText(model.message);
@@ -132,8 +137,10 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 				Picasso.get().load(CommonUtil.getImagePath(avatar.getUrl())).into(holder.img_avatar);
 			if (model.bookObj != null && model.state == NotificationModel.STATE_PENDING)
 				holder.layout_accept.setVisibility(View.VISIBLE);
-			if (model.type == NotificationModel.TYPE_BOOK && model.state == NotificationModel.STATE_ACCEPT)
-				holder.btn_chat.setVisibility(View.VISIBLE);
+			if (model.type == NotificationModel.TYPE_BOOK && model.state == NotificationModel.STATE_ACCEPT) {
+				holder.btn_call.setVisibility(View.VISIBLE);
+				holder.btn_message.setVisibility(View.VISIBLE);
+			}
 
 			holder.txt_accept.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -147,7 +154,16 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 					updateState(mDataList.get(position), NotificationModel.STATE_REJECT);
 				}
 			});
-			holder.btn_chat.setOnClickListener(new View.OnClickListener() {
+			holder.btn_call.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					ParseUser friendUser = model.owner;
+					if (friendUser.getObjectId().equals(ParseUser.getCurrentUser().getObjectId()))
+						friendUser = model.toUser;
+					call(friendUser.getString(ParseConstants.KEY_PHONE_NUMBER));
+				}
+			});
+			holder.btn_message.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					ParseUser friendUser = model.owner;
@@ -159,6 +175,13 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 				}
 			});
 			return convertView;
+		}
+	}
+
+	private void call(String phone) {
+		if (!TextUtils.isEmpty(phone)) {
+			Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+			startActivity(intent);
 		}
 	}
 

@@ -24,10 +24,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.FileProvider;
-
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.BooleanListener;
 import com.alesapps.islamik.listener.ObjectListListener;
@@ -51,7 +49,6 @@ import com.parse.ParseUser;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

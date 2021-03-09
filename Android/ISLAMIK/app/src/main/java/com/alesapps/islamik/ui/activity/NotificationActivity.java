@@ -1,7 +1,9 @@
 package com.alesapps.islamik.ui.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -91,6 +93,7 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 			TextView txt_message;
 			TextView txt_date;
 			ImageView btn_call;
+			ImageView btn_message;
 		}
 
 		@Override
@@ -105,6 +108,7 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 				holder.txt_message = convertView.findViewById(R.id.txt_message);
 				holder.txt_date = convertView.findViewById(R.id.txt_date);
 				holder.btn_call = convertView.findViewById(R.id.btn_call);
+				holder.btn_message = convertView.findViewById(R.id.btn_message);
 				convertView.setTag(holder);
 
 			} else {
@@ -129,12 +133,28 @@ public class NotificationActivity extends BaseActionBarActivity implements DragL
 					ParseUser friendUser = model.owner;
 					if (friendUser.getObjectId().equals(ParseUser.getCurrentUser().getObjectId()))
 						friendUser = model.toUser;
+					call(friendUser.getString(ParseConstants.KEY_PHONE_NUMBER));
+				}
+			});
+			holder.btn_message.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					ParseUser friendUser = model.owner;
+					if (friendUser.getObjectId().equals(ParseUser.getCurrentUser().getObjectId()))
+						friendUser = model.toUser;
 					ChatActivity.mFriendObj = friendUser;
 					ChatActivity.mBookObj = model.bookObj;
 					startActivity(new Intent(instance, ChatActivity.class));
 				}
 			});
 			return convertView;
+		}
+	}
+
+	private void call(String phone) {
+		if (!TextUtils.isEmpty(phone)) {
+			Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+			startActivity(intent);
 		}
 	}
 }
