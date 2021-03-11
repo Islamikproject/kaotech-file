@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol NotificationCellDelegate <NSObject>
 - (void)didTapVideo:(PFObject *)notificationObj;
+- (void)didTapCall:(PFObject *)notificationObj;
 @end
 
 @interface NotificationCell : UITableViewCell
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *lblMessage;
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
+@property (weak, nonatomic) IBOutlet UIButton *btnCall;
 @property (weak, nonatomic) IBOutlet UIButton *btnVideo;
 
 @end

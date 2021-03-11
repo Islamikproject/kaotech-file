@@ -36,6 +36,7 @@
 		5A58336324D9F7C00031E62A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58335524D9F7C00031E62A /* SettingsViewController.m */; };
 		5A58336424D9F7C00031E62A /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58335624D9F7C00031E62A /* AboutViewController.m */; };
 		5A58336624D9F7C00031E62A /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58335924D9F7C00031E62A /* EditProfileViewController.m */; };
+		5A6F279D25F944A400DE54A7 /* ic_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6F279C25F944A400DE54A7 /* ic_call.png */; };
 		5A816C3A2493735E0086C968 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A816C392493735E0086C968 /* TermsViewController.m */; };
 		5A816C3E249377A40086C968 /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3C249377A40086C968 /* PrivacyPolicy.html */; };
 		5A816C3F249377A40086C968 /* TermsConditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 5A816C3D249377A40086C968 /* TermsConditions.html */; };
@@ -228,6 +229,7 @@
 		5A58335924D9F7C00031E62A /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		5A58335B24D9F7C00031E62A /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		5A58335C24D9F7C00031E62A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		5A6F279C25F944A400DE54A7 /* ic_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_call.png; sourceTree = "<group>"; };
 		5A816C382493735E0086C968 /* TermsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
 		5A816C392493735E0086C968 /* TermsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
 		5A816C3C249377A40086C968 /* PrivacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 		780F62F3247873C00027CDB4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5A6F279C25F944A400DE54A7 /* ic_call.png */,
 				5AFC49F625E5A022004854E4 /* img_video.png */,
 				5AFC49F725E5A022004854E4 /* img_voice.png */,
 				5A11C90E25E0AB3D00FE53AC /* ic_attach.png */,
@@ -982,6 +985,7 @@
 				5AEBCF872562165F00EC66E4 /* ic_action_rate.png in Resources */,
 				5AEBCF7C2562165F00EC66E4 /* ic_action_back.png in Resources */,
 				780F620B24786C7C0027CDB4 /* Assets.xcassets in Resources */,
+				5A6F279D25F944A400DE54A7 /* ic_call.png in Resources */,
 				5AEBCF6D2562165F00EC66E4 /* ic_person.png in Resources */,
 				5AEBCF5D2562165F00EC66E4 /* ic_log_out.png in Resources */,
 				5A11C91425E0AB3D00FE53AC /* ic_stop.png in Resources */,
@@ -1315,7 +1319,7 @@
 				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1327,7 +1331,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamik;
 				PRODUCT_NAME = ISLAMIK;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1343,7 +1347,7 @@
 				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1355,7 +1359,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamik;
 				PRODUCT_NAME = ISLAMIK;
 				PROVISIONING_PROFILE_SPECIFIER = "";

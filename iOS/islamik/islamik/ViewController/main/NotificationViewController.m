@@ -62,7 +62,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80.f;
+    return 90.f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,6 +94,13 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)didTapCall:(PFObject *)notificationObj {
+    NSString *phoneNumber = notificationObj[PARSE_OWNER][PARSE_PHONE_NUMBER];
+    if (phoneNumber != nil && phoneNumber.length > 0) {
+        NSString *url = [NSString stringWithFormat:@"tel://%@", phoneNumber];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

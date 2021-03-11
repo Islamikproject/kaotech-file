@@ -12,6 +12,7 @@
 		5A58334124D9DA710031E62A /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58334024D9DA710031E62A /* MessagesViewController.m */; };
 		5A58334424D9E2A70031E62A /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58334324D9E2A70031E62A /* MessageCell.m */; };
 		5A58334724D9EAE20031E62A /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58334624D9EAE20031E62A /* AnswerViewController.m */; };
+		5A6F27C525F949F200DE54A7 /* ic_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6F27C425F949F100DE54A7 /* ic_call.png */; };
 		5A891337255D1F4F0057E4E7 /* DailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A891336255D1F4F0057E4E7 /* DailyViewController.m */; };
 		5A89133B255D1F8B0057E4E7 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A89133A255D1F8B0057E4E7 /* PostCell.m */; };
 		5A89133F255D25010057E4E7 /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A89133E255D25010057E4E7 /* NotificationCell.m */; };
@@ -142,6 +143,7 @@
 		5A58334324D9E2A70031E62A /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		5A58334524D9EAE20031E62A /* AnswerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
 		5A58334624D9EAE20031E62A /* AnswerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
+		5A6F27C425F949F100DE54A7 /* ic_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_call.png; sourceTree = "<group>"; };
 		5A891335255D1F4F0057E4E7 /* DailyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyViewController.h; sourceTree = "<group>"; };
 		5A891336255D1F4F0057E4E7 /* DailyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyViewController.m; sourceTree = "<group>"; };
 		5A891339255D1F8B0057E4E7 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		78066D9624761C38007F04A9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5A6F27C425F949F100DE54A7 /* ic_call.png */,
 				5AFC4A1E25E5A0C3004854E4 /* ic_attach.png */,
 				5AFC4A1B25E5A0C3004854E4 /* ic_chat.png */,
 				5AFC4A2125E5A0C4004854E4 /* ic_send.png */,
@@ -767,6 +770,7 @@
 				5AF1015D2558A570007BE257 /* ic_action_language.png in Resources */,
 				5AF101532558A570007BE257 /* ic_mosque.png in Resources */,
 				5AF1016A2558A570007BE257 /* ic_person.png in Resources */,
+				5A6F27C525F949F200DE54A7 /* ic_call.png in Resources */,
 				5AF1017C2558A570007BE257 /* ic_money.png in Resources */,
 				5AF101752558A570007BE257 /* PrivacyPolicy.html in Resources */,
 				5AFC4A2725E5A0C4004854E4 /* img_voice.png in Resources */,
@@ -1072,7 +1076,7 @@
 				CODE_SIGN_ENTITLEMENTS = "islamikplus/ISLAMIK PLUS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1085,7 +1089,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamikplus;
 				PRODUCT_NAME = "ISLAMIK PLUS";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1101,7 +1105,7 @@
 				CODE_SIGN_ENTITLEMENTS = "islamikplus/ISLAMIK PLUS.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1114,7 +1118,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alesapps.islamikplus;
 				PRODUCT_NAME = "ISLAMIK PLUS";
 				PROVISIONING_PROFILE_SPECIFIER = "";

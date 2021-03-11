@@ -32,5 +32,7 @@
 - (IBAction)onVideoClick:(id)sender {
     [_delegate didTapVideo:self.mNotificationObj];
 }
-
+- (IBAction)onCallClick:(id)sender {
+    [_delegate didTapCall:self.mNotificationObj];
+}
 @end

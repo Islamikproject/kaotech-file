@@ -65,7 +65,7 @@
     PFObject *bookObj = notificationObj[PARSE_BOOK_OBJ];
     int state = [notificationObj[PARSE_STATE] intValue];
     if (bookObj != nil && state == STATE_PENDING) {
-        return 110.f;
+        return 130.f;
     } else {
         return 90.f;
     }
@@ -114,6 +114,13 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)didTapCall:(PFObject *)notificationObj {
+    NSString *phoneNumber = notificationObj[PARSE_OWNER][PARSE_PHONE_NUMBER];
+    if (phoneNumber != nil && phoneNumber.length > 0) {
+        NSString *url = [NSString stringWithFormat:@"tel://%@", phoneNumber];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
+}
 - (void) updateState: (PFObject *) notificationObj state:(int)state {
     notificationObj[PARSE_STATE] = [NSNumber numberWithInt:state];
     NSString *msg = [NSString stringWithFormat:@"%@\n%@", notificationObj[PARSE_MESSAGE], @"You have accepted the request."];

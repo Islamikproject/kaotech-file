@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didTapAccept:(PFObject *)notificationObj;
 - (void)didTapReject:(PFObject *)notificationObj;
 - (void)didTapVideo:(PFObject *)notificationObj;
+- (void)didTapCall:(PFObject *)notificationObj;
 @end
 
 @interface NotificationCell : UITableViewCell
@@ -24,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightAccept;
 @property (weak, nonatomic) IBOutlet UIButton *btnVideo;
+@property (weak, nonatomic) IBOutlet UIButton *btnCall;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -20,6 +20,10 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)onCallClick:(id)sender {
+    [_delegate didTapCall:self.mNotificationObj];
+}
+
 - (IBAction)onVideoClick:(id)sender {
     [_delegate didTapVideo:self.mNotificationObj];
 }

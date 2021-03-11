@@ -2215,7 +2215,7 @@ SERMON</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="792"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fajr_six.png" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-Z4-AjF">
-                                                <rect key="frame" x="30" y="96.5" width="354" height="599"/>
+                                                <rect key="frame" x="30" y="171.5" width="354" height="449.5"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -7836,19 +7836,30 @@ We will send you a link to reset your password.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjp-Tm-shp">
-                                                    <rect key="frame" x="70" y="10" width="299" height="17"/>
+                                                    <rect key="frame" x="70" y="10" width="269" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 18 2020 20:55:22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxJ-tm-a0x">
-                                                    <rect key="frame" x="70" y="54" width="299" height="16"/>
+                                                    <rect key="frame" x="70" y="54" width="266" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ix-tv-0PN">
+                                                    <rect key="frame" x="344" y="25" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="6HX-qk-gpF"/>
+                                                        <constraint firstAttribute="width" secondItem="6Ix-tv-0PN" secondAttribute="height" multiplier="1:1" id="jMN-XM-dS5"/>
+                                                    </constraints>
+                                                    <state key="normal" image="ic_call.png"/>
+                                                    <connections>
+                                                        <action selector="onCallClick:" destination="G44-Y1-a9D" eventType="touchUpInside" id="m68-sl-JbF"/>
+                                                    </connections>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn6-7U-vFJ">
-                                                    <rect key="frame" x="374" y="25" width="30" height="30"/>
+                                                    <rect key="frame" x="379" y="25" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="QxK-yh-c2d"/>
                                                         <constraint firstAttribute="width" secondItem="Nn6-7U-vFJ" secondAttribute="height" multiplier="1:1" id="uVP-x5-KHB"/>
@@ -7868,14 +7879,17 @@ We will send you a link to reset your password.</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Nn6-7U-vFJ" firstAttribute="centerY" secondItem="Fft-em-TJw" secondAttribute="centerY" id="2g9-0p-9VJ"/>
+                                                <constraint firstItem="6Ix-tv-0PN" firstAttribute="leading" secondItem="Jjp-Tm-shp" secondAttribute="trailing" constant="5" id="8gQ-qi-NQu"/>
+                                                <constraint firstItem="Nn6-7U-vFJ" firstAttribute="leading" secondItem="6Ix-tv-0PN" secondAttribute="trailing" constant="5" id="9dK-Ak-L5p"/>
                                                 <constraint firstItem="RzA-QN-JIt" firstAttribute="centerX" secondItem="Fft-em-TJw" secondAttribute="centerX" id="FCW-PD-T7O"/>
-                                                <constraint firstItem="Nn6-7U-vFJ" firstAttribute="leading" secondItem="Jjp-Tm-shp" secondAttribute="trailing" constant="5" id="JSn-Vp-ASL"/>
-                                                <constraint firstItem="Nn6-7U-vFJ" firstAttribute="leading" secondItem="LxJ-tm-a0x" secondAttribute="trailing" constant="5" id="Ylv-dJ-HLn"/>
+                                                <constraint firstItem="6Ix-tv-0PN" firstAttribute="centerY" secondItem="Fft-em-TJw" secondAttribute="centerY" id="Ik4-9H-NWz"/>
                                                 <constraint firstItem="ZbP-W9-bcB" firstAttribute="centerY" secondItem="Fft-em-TJw" secondAttribute="centerY" id="fEF-YQ-ES6"/>
-                                                <constraint firstAttribute="trailing" secondItem="Nn6-7U-vFJ" secondAttribute="trailing" constant="10" id="g0I-2a-jzU"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nn6-7U-vFJ" secondAttribute="trailing" constant="5" id="g0I-2a-jzU"/>
                                                 <constraint firstItem="ZbP-W9-bcB" firstAttribute="leading" secondItem="Fft-em-TJw" secondAttribute="leading" constant="10" id="gaz-DR-cxU"/>
                                                 <constraint firstAttribute="bottom" secondItem="RzA-QN-JIt" secondAttribute="bottom" id="m6i-O3-fS4"/>
+                                                <constraint firstItem="6Ix-tv-0PN" firstAttribute="leading" secondItem="LxJ-tm-a0x" secondAttribute="trailing" constant="8" id="mal-7G-5hu"/>
                                                 <constraint firstItem="LxJ-tm-a0x" firstAttribute="leading" secondItem="ZbP-W9-bcB" secondAttribute="trailing" constant="10" id="obF-Gx-5Yb"/>
+                                                <constraint firstItem="6Ix-tv-0PN" firstAttribute="width" secondItem="6Ix-tv-0PN" secondAttribute="height" multiplier="1:1" id="pOv-Td-E4N"/>
                                                 <constraint firstAttribute="bottom" secondItem="LxJ-tm-a0x" secondAttribute="bottom" constant="10" id="qDK-kX-hE9"/>
                                                 <constraint firstItem="RzA-QN-JIt" firstAttribute="leading" secondItem="Fft-em-TJw" secondAttribute="leading" constant="10" id="vbd-Sh-DbV"/>
                                                 <constraint firstItem="Jjp-Tm-shp" firstAttribute="leading" secondItem="ZbP-W9-bcB" secondAttribute="trailing" constant="10" id="wTl-xE-JJ8"/>
@@ -7884,6 +7898,7 @@ We will send you a link to reset your password.</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="btnCall" destination="6Ix-tv-0PN" id="LGn-Ni-68y"/>
                                             <outlet property="btnVideo" destination="Nn6-7U-vFJ" id="37H-g5-QTV"/>
                                             <outlet property="imgAvatar" destination="ZbP-W9-bcB" id="70v-T7-mbw"/>
                                             <outlet property="lblDate" destination="LxJ-tm-a0x" id="dgi-H7-w00"/>
@@ -8025,6 +8040,7 @@ We will send you a link to reset your password.</string>
         <image name="ic_action_rate.png" width="64" height="64"/>
         <image name="ic_action_share.png" width="64" height="64"/>
         <image name="ic_calendar.png" width="48" height="48"/>
+        <image name="ic_call.png" width="64" height="64"/>
         <image name="ic_chat.png" width="64" height="64"/>
         <image name="ic_contact.png" width="48" height="48"/>
         <image name="ic_dropdown.png" width="48" height="48"/>

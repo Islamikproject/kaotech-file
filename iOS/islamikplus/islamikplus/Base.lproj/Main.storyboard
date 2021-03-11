@@ -3902,7 +3902,7 @@ We will send you a link to reset your password.</string>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ales Gabrysz" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOB-gt-ma6">
-                                                            <rect key="frame" x="70" y="8" width="257" height="18"/>
+                                                            <rect key="frame" x="70" y="8" width="232" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -3964,8 +3964,18 @@ We will send you a link to reset your password.</string>
                                                                 <constraint firstAttribute="height" constant="1" id="mSi-ob-zxD"/>
                                                             </constraints>
                                                         </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajS-eM-oKT">
+                                                            <rect key="frame" x="307" y="8" width="25" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="UeU-Ux-vIU"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" backgroundImage="ic_call.png"/>
+                                                            <connections>
+                                                                <action selector="onCallClick:" destination="Uoo-PW-FcC" eventType="touchUpInside" id="RtZ-mK-5au"/>
+                                                            </connections>
+                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-cY-FPm">
-                                                            <rect key="frame" x="332" y="8" width="25" height="25"/>
+                                                            <rect key="frame" x="337" y="8" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="B1c-cY-FPm" secondAttribute="height" multiplier="1:1" id="10a-Bg-xDq"/>
                                                                 <constraint firstAttribute="height" constant="25" id="Rkv-VM-meL"/>
@@ -3980,23 +3990,27 @@ We will send you a link to reset your password.</string>
                                                         <constraint firstItem="wbo-SL-EMD" firstAttribute="leading" secondItem="Jwe-tM-g4a" secondAttribute="trailing" constant="10" id="0OH-vT-RnL"/>
                                                         <constraint firstAttribute="trailing" secondItem="x5D-qz-hNe" secondAttribute="trailing" constant="10" id="8ev-gG-DbE"/>
                                                         <constraint firstItem="ZoA-Xv-IGj" firstAttribute="leading" secondItem="B5r-7X-L1Y" secondAttribute="leading" id="C87-QY-Que"/>
-                                                        <constraint firstAttribute="trailing" secondItem="dOB-gt-ma6" secondAttribute="trailing" constant="40" id="CCe-mO-Hbo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dOB-gt-ma6" secondAttribute="trailing" constant="65" id="CCe-mO-Hbo"/>
+                                                        <constraint firstItem="ajS-eM-oKT" firstAttribute="centerY" secondItem="B1c-cY-FPm" secondAttribute="centerY" id="D1E-8f-CGi"/>
                                                         <constraint firstItem="Jwe-tM-g4a" firstAttribute="top" secondItem="B5r-7X-L1Y" secondAttribute="top" constant="10" id="DNI-ZI-bNA"/>
                                                         <constraint firstAttribute="trailing" secondItem="wbo-SL-EMD" secondAttribute="trailing" constant="40" id="Jbf-B1-9X2"/>
-                                                        <constraint firstAttribute="trailing" secondItem="B1c-cY-FPm" secondAttribute="trailing" constant="10" id="Oh1-gN-jsz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="B1c-cY-FPm" secondAttribute="trailing" constant="5" id="Oh1-gN-jsz"/>
                                                         <constraint firstItem="wbo-SL-EMD" firstAttribute="top" secondItem="dOB-gt-ma6" secondAttribute="bottom" constant="4" id="Qfj-lk-JAx"/>
                                                         <constraint firstItem="dOB-gt-ma6" firstAttribute="leading" secondItem="Jwe-tM-g4a" secondAttribute="trailing" constant="10" id="U7W-I6-e9O"/>
+                                                        <constraint firstItem="B1c-cY-FPm" firstAttribute="leading" secondItem="ajS-eM-oKT" secondAttribute="trailing" constant="5" id="XhL-Ih-RC2"/>
                                                         <constraint firstItem="ZoA-Xv-IGj" firstAttribute="centerX" secondItem="B5r-7X-L1Y" secondAttribute="centerX" id="aID-Je-Wdr"/>
                                                         <constraint firstAttribute="bottom" secondItem="ZoA-Xv-IGj" secondAttribute="bottom" id="bJf-R4-LxX"/>
                                                         <constraint firstItem="x5D-qz-hNe" firstAttribute="leading" secondItem="Jwe-tM-g4a" secondAttribute="trailing" constant="10" id="iw5-rp-YQp"/>
                                                         <constraint firstItem="Jwe-tM-g4a" firstAttribute="leading" secondItem="B5r-7X-L1Y" secondAttribute="leading" constant="10" id="rfS-5A-9fu"/>
                                                         <constraint firstItem="B1c-cY-FPm" firstAttribute="top" secondItem="dOB-gt-ma6" secondAttribute="top" id="vib-S4-qQJ"/>
+                                                        <constraint firstItem="ajS-eM-oKT" firstAttribute="width" secondItem="ajS-eM-oKT" secondAttribute="height" multiplier="1:1" id="vmd-sg-Yeh"/>
                                                         <constraint firstItem="dOB-gt-ma6" firstAttribute="top" secondItem="B5r-7X-L1Y" secondAttribute="top" constant="8" id="w22-zh-O0J"/>
                                                         <constraint firstItem="x5D-qz-hNe" firstAttribute="top" secondItem="wbo-SL-EMD" secondAttribute="bottom" constant="4" id="wCJ-4h-uYv"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <outlet property="btnCall" destination="ajS-eM-oKT" id="0fk-jP-TeE"/>
                                                     <outlet property="btnVideo" destination="B1c-cY-FPm" id="Z1A-4O-ttV"/>
                                                     <outlet property="heightAccept" destination="JwZ-Ld-LJR" id="Neo-9y-cV4"/>
                                                     <outlet property="imgAvatar" destination="Jwe-tM-g4a" id="gR1-gA-dI5"/>
@@ -4637,6 +4651,11 @@ We will send you a link to reset your password.</string>
             <point key="canvasLocation" x="-1868" y="-713"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="DL1-1W-GGt">
+            <size key="intrinsicContentSize" width="240" height="44"/>
+        </designable>
+    </designables>
     <resources>
         <image name="ic_about.png" width="48" height="48"/>
         <image name="ic_action_add.png" width="64" height="64"/>
@@ -4644,6 +4663,7 @@ We will send you a link to reset your password.</string>
         <image name="ic_action_done.png" width="64" height="64"/>
         <image name="ic_action_logout.png" width="64" height="64"/>
         <image name="ic_action_notification.png" width="64" height="64"/>
+        <image name="ic_call.png" width="64" height="64"/>
         <image name="ic_chat.png" width="64" height="64"/>
         <image name="ic_contact.png" width="48" height="48"/>
         <image name="ic_dropdown.png" width="48" height="48"/>
