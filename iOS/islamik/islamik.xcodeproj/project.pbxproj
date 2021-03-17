@@ -1319,7 +1319,7 @@
 				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1347,7 +1347,7 @@
 				CODE_SIGN_ENTITLEMENTS = islamik/ISLAMIK.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JJN269569Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

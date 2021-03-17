@@ -65,7 +65,12 @@
     [actionsheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
         [self dismissViewControllerAnimated:YES completion:nil];
     }]];
-    [self presentViewController:actionsheet animated:YES completion:nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:actionsheet animated:YES completion:nil];
+    } else {
+        UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:actionsheet];
+        [popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width/3, self.view.frame.size.height/2, 0, 0)inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
 }
 
 - (void)onChoosePhoto:(id)sender {

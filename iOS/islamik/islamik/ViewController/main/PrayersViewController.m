@@ -49,6 +49,7 @@
     self.spFirstChapter.delegate = self;
     self.spFirstVerseStart.isOptionalDropDown = YES;
     self.spFirstVerseEnd.isOptionalDropDown = YES;
+    [self.spFirstChapter setSelectedItem:[CHAPTER_ARRAY firstObject]];
     [self setVerses:NO];
     
     self.spSecondChapter.itemList = CHAPTER_ARRAY;
@@ -57,6 +58,7 @@
     self.spSecondChapter.delegate = self;
     self.spSecondVerseStart.isOptionalDropDown = YES;
     self.spSecondVerseEnd.isOptionalDropDown = YES;
+    [self.spSecondVerseEnd setSelectedItem:[CHAPTER_ARRAY firstObject]];
     [self setVerses:YES];
     
     self.viewThirdHight.constant = 70;
@@ -79,9 +81,9 @@
 -(void) setVerses:(BOOL) isSecond {
     NSArray *verses = [NSArray new];
     if (!isSecond) {
-        verses = [Util getEnglishVerseArray:self.spFirstChapter.selectedItem];
+        verses = [Util getEnglishVerseArray:self.spFirstChapter.text];
     } else {
-        verses = [Util getEnglishVerseArray:self.spSecondChapter.selectedItem];
+        verses = [Util getEnglishVerseArray:self.spSecondChapter.text];
     }
     NSMutableArray * verseNumber = [NSMutableArray new];
     for (int i = 0; i < verses.count; i ++) {
