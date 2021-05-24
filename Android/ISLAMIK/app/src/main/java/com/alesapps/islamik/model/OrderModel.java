@@ -7,7 +7,10 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 public class OrderModel {
-	public int type = UserModel.TYPE_MOSQUE;
+	public static int TYPE_ORDER = 0;
+	public static int TYPE_DONATION = 1;
+
+	public int type = TYPE_ORDER;
 	public ParseUser owner;
 	public String language = "en";
 	public String name = "";

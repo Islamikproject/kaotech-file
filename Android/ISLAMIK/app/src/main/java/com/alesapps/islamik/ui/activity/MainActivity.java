@@ -79,9 +79,11 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		findViewById(R.id.layout_prayers).setOnClickListener(this);
 		findViewById(R.id.layout_quran).setOnClickListener(this);
 		findViewById(R.id.layout_messages).setOnClickListener(this);
-		findViewById(R.id.layout_settings).setOnClickListener(this);
 		findViewById(R.id.layout_order).setOnClickListener(this);
 		findViewById(R.id.layout_book).setOnClickListener(this);
+		findViewById(R.id.layout_settings).setOnClickListener(this);
+		findViewById(R.id.layout_donation).setOnClickListener(this);
+		findViewById(R.id.layout_gauge).setOnClickListener(this);
 		findViewById(R.id.btn_full).setOnClickListener(this);
 		findViewById(R.id.btn_share).setOnClickListener(this);
 		initialize();
@@ -150,14 +152,20 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 			case R.id.layout_messages:
 				startActivity(new Intent(instance, MessagesActivity.class));
 				break;
-			case R.id.layout_settings:
-				startActivity(new Intent(instance, SettingsActivity.class));
-				break;
 			case R.id.layout_order:
 				startActivity(new Intent(instance, OrderActivity.class));
 				break;
 			case R.id.layout_book:
 				startActivity(new Intent(instance, BookActivity.class));
+				break;
+			case R.id.layout_donation:
+				startActivity(new Intent(instance, DonationActivity.class));
+				break;
+			case R.id.layout_settings:
+				startActivity(new Intent(instance, SettingsActivity.class));
+				break;
+			case R.id.layout_gauge:
+				startActivity(new Intent(instance, GaugeListActivity.class));
 				break;
 			case R.id.btn_full:
 				if (mMainImage != null) {

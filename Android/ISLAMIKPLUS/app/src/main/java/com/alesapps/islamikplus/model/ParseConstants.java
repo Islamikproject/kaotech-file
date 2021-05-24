@@ -8,6 +8,7 @@ public class ParseConstants {
 	public static final String TBL_MESSAGES = "Messages";
 	public static final String TBL_POST = "Post";
 	public static final String TBL_BOOK = "Book";
+	public static final String TBL_GAUGE = "Gauge";
 	public static final String TBL_NOTIFICATION = "Notification";
 	public static final String TBL_CHAT = "Chat";
 
@@ -66,4 +67,10 @@ public class ParseConstants {
 	public static final String KEY_SENDER = "sender";
 	public static final String KEY_RECEIVER = "receiver";
 	public static final String KEY_VOICE_FILE = "voiceFile";
+	// Gauge
+	public static final String KEY_WEB_LINK = "webLink";
+	public static final String KEY_BG_COLOR = "bgColor";
+	public static final String KEY_TEXT_COLOR = "textColor";
+	public static final String KEY_TEXT_SIZE = "textSize";
+	public static final String KEY_TEXT_FONT = "textFont";
 }

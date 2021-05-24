@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import com.alesapps.islamik.AppConstant;
 import com.alesapps.islamik.AppGlobals;
 import com.alesapps.islamik.listener.BooleanListener;
-import com.alesapps.islamik.utils.ResourceUtil;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -56,13 +55,6 @@ public class FileModel {
 			if (listener != null)
 				listener.done(false, "", "Google Play Services error.");
 		}
-	}
-
-	public static ParseFile createParseFile(String fileName, String filePath) {
-		ParseFile parseFile = null;
-		Bitmap bm = ResourceUtil.decodeSampledBitmapFromFile(filePath, PHOTO_SIZE);
-		parseFile = createParseFile(fileName, bm);
-		return parseFile;
 	}
 
 	public static ParseFile createParseFile(String fileName, Bitmap bitmap) {

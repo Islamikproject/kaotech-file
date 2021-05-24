@@ -23,6 +23,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 	LinearLayout layout_jumah;
 	LinearLayout layout_book;
 	LinearLayout layout_post;
+	LinearLayout layout_gauge;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		layout_jumah = findViewById(R.id.layout_jumah);
 		layout_book = findViewById(R.id.layout_book);
 		layout_post = findViewById(R.id.layout_post);
+		layout_gauge = findViewById(R.id.layout_gauge);
 		findViewById(R.id.layout_jumah).setOnClickListener(this);
 		findViewById(R.id.layout_regular).setOnClickListener(this);
 		findViewById(R.id.layout_donation).setOnClickListener(this);
@@ -42,6 +44,7 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		findViewById(R.id.layout_settings).setOnClickListener(this);
 		findViewById(R.id.layout_book).setOnClickListener(this);
 		findViewById(R.id.layout_post).setOnClickListener(this);
+		findViewById(R.id.layout_gauge).setOnClickListener(this);
 		initialize();
 	}
 
@@ -49,10 +52,12 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 		layout_jumah.setVisibility(View.GONE);
 		layout_book.setVisibility(View.GONE);
 		layout_post.setVisibility(View.GONE);
+		layout_gauge.setVisibility(View.GONE);
 		int type = ParseUser.getCurrentUser().getInt(ParseConstants.KEY_TYPE);
 		if (type == UserModel.TYPE_ADMIN) {
 			layout_jumah.setVisibility(View.VISIBLE);
 			layout_post.setVisibility(View.VISIBLE);
+			layout_gauge.setVisibility(View.VISIBLE);
 		} else if (type == UserModel.TYPE_MOSQUE) {
 			layout_jumah.setVisibility(View.VISIBLE);
 		} else if (type == UserModel.TYPE_INFLUENCER_WOMEN || type == UserModel.TYPE_INFLUENCER_KID || type == UserModel.TYPE_INFLUENCER_OTHER) {
@@ -97,6 +102,9 @@ public class MainActivity extends BaseActionBarActivity implements OnClickListen
 				break;
 			case R.id.layout_post:
 				startActivity(new Intent(instance, PostListActivity.class));
+				break;
+			case R.id.layout_gauge:
+				startActivity(new Intent(instance, GaugeListActivity.class));
 				break;
 		}
 	}

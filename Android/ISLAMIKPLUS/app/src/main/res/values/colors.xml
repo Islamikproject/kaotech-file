@@ -8,6 +8,8 @@
     <color name="green_light">#81b826</color>
     <color name="green">#0e6129</color>
     <color name="red">#de5249</color>
+    <color name="blue">#00467f</color>
+    <color name="beige">#e1c699</color>
 
     <color name="text_light">#acacac</color>
     <color name="text_normal">#313131</color>

@@ -1,16 +1,13 @@
 package com.alesapps.islamik.utils;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -35,22 +32,15 @@ public class ResourceUtil {
 			}
 		return tempDirPath + tempFileName;
 	}
-	public static String getAvatarFilePath() {
-		return getVideoFilePath("avatar.png");
-	}
 	public static String getPhotoFilePath() {
 		return getVideoFilePath("photo.png");
 	}
 	public static String getRecordFilePath() {
 		return getVideoFilePath("record.wav");
 	}
-	public static String generatePath(Uri uri, Context context) {
-		String filePath = null;
-		final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-		if(isKitKat){
-			filePath = generateFromKitkat(uri,context);
-		}
 
+	public static String generatePath(Uri uri, Context context) {
+		String filePath = generateFromKitkat(uri,context);
 		if(filePath != null){
 			return filePath;
 		}
@@ -67,7 +57,6 @@ public class ResourceUtil {
 		return filePath == null ? uri.getPath() : filePath;
 	}
 
-	@TargetApi(19)
 	private static String generateFromKitkat(Uri uri,Context context){
 		String filePath = null;
 		if(DocumentsContract.isDocumentUri(context, uri)){

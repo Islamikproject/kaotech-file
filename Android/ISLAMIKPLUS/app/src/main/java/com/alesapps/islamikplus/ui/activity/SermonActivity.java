@@ -107,20 +107,14 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 				.setNegativeButton(R.string.select_video_gallery, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						if (Build.VERSION.SDK_INT < 19) {
-							Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-							intent.setType("video/*");
-							startActivityForResult(intent, VIDEO_PICK);
-						} else {
-							Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-							intent.addCategory(Intent.CATEGORY_OPENABLE);
-							intent.setType("video/*");
-							intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[] {"video/*"});
-							startActivityForResult(intent, VIDEO_PICK);
-						}
+						Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+						intent.addCategory(Intent.CATEGORY_OPENABLE);
+						intent.setType("video/*");
+						intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[] {"video/*"});
+						startActivityForResult(intent, VIDEO_PICK);
 					}
 				})
-				.setNeutralButton(R.string.select_audio_gallery, new DialogInterface.OnClickListener() {
+				.setNeutralButton(R.string.select_audio_file, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						if (Build.VERSION.SDK_INT < 19) {
 							Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -160,19 +154,18 @@ public class SermonActivity extends BaseActionBarActivity implements View.OnClic
 			if(mimeType.startsWith("video")) {
 				Uri selectedImageUri = data.getData();
 				String selectedImagePath = ResourceUtil.generatePath(selectedImageUri, this);
-				uploadVideo(selectedImagePath, false);
+				uploadVideo(selectedImageUri, false);
 			} else if (mimeType.startsWith("audio")) {
 				Uri selectedImageUri = data.getData();
 				String selectedImagePath = ResourceUtil.generatePath(selectedImageUri, this);
-				uploadVideo(selectedImagePath, true);
+				uploadVideo(selectedImageUri, true);
 			}
 		}
 	}
 
-	public void uploadVideo(String path, final boolean isAudio){
-		Uri video_uri = Uri.parse("file://" + path);
+	public void uploadVideo(Uri path, final boolean isAudio){
 		dlg_progress.show();
-		FileModel.UploadVideo(video_uri, new BooleanListener() {
+		FileModel.UploadVideo(path, new BooleanListener() {
 			@Override
 			public void done(boolean flag, String fileName, String error) {
 				if (flag) {

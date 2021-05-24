@@ -175,23 +175,28 @@ public class SermonListActivity extends BaseActionBarActivity implements DragLis
 	}
 
 	private void showConfirmDialog(final ParseObject sermonObj) {
-		String amount = String.valueOf(sermonObj.getDouble(ParseConstants.KEY_AMOUNT));
-		if (amount.equals("0") || amount.equals("0.0"))
-			amount = "";
-		else
-			amount = "$" + amount;
-		String message = String.format(getString(R.string.confirm_mosque_virtual_basket), amount);
+//		String amount = String.valueOf(sermonObj.getDouble(ParseConstants.KEY_AMOUNT));
+//		if (amount.equals("0") || amount.equals("0.0"))
+//			amount = "";
+//		else
+//			amount = "$" + amount;
+//		String message = String.format(getString(R.string.confirm_mosque_virtual_basket), amount);
 		new AlertDialog.Builder(instance)
 				.setTitle(R.string.app_name)
-				.setMessage(message)
-				.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+				.setMessage(R.string.choose_payment_method)
+				.setPositiveButton(R.string.stripe, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						String url = AppConstant.STRIPE_CONNECT_URL + "donation?sermon=" + sermonObj.getObjectId();
 						Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 						startActivity(browserIntent);
 					}
 				})
-				.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+				.setNegativeButton(R.string.google_pay, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+
+					}
+				})
+				.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {}
 				}).show();
 	}

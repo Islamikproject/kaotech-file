@@ -33,28 +33,37 @@ public class JumahSermonActivity extends BaseActionBarActivity implements View.O
 		super.onClick(view);
 		switch (view.getId()) {
 			case R.id.layout_africa:
+				gotoNextActivity(SermonModel.TYPE_JUMAH, UserModel.TYPE_MOSQUE, UserModel.CONTINENT_AFRICA);
+				break;
 			case R.id.layout_asia:
+				gotoNextActivity(SermonModel.TYPE_JUMAH, UserModel.TYPE_MOSQUE, UserModel.CONTINENT_ASIA);
+				break;
 			case R.id.layout_america:
+				gotoNextActivity(SermonModel.TYPE_JUMAH, UserModel.TYPE_MOSQUE, UserModel.CONTINENT_AMERICA);
+				break;
 			case R.id.layout_australia:
+				gotoNextActivity(SermonModel.TYPE_JUMAH, UserModel.TYPE_MOSQUE, UserModel.CONTINENT_AUSTRALIA);
+				break;
 			case R.id.layout_europ:
-				gotoNextActivity(SermonModel.TYPE_JUMAH, UserModel.TYPE_MOSQUE);
+				gotoNextActivity(SermonModel.TYPE_JUMAH, UserModel.TYPE_MOSQUE, UserModel.CONTINENT_EUROPA);
 				break;
 			case R.id.layout_scholars:
-				gotoNextActivity(SermonModel.TYPE_REGULAR, UserModel.TYPE_USTHADH);
+				gotoNextActivity(SermonModel.TYPE_REGULAR, UserModel.TYPE_USTHADH, -1);
 				break;
 			case R.id.layout_women:
-				gotoNextActivity(SermonModel.TYPE_REGULAR, UserModel.TYPE_INFLUENCER_WOMEN);
+				gotoNextActivity(SermonModel.TYPE_REGULAR, UserModel.TYPE_INFLUENCER_WOMEN, -1);
 				break;
 			case R.id.layout_kids:
-				gotoNextActivity(SermonModel.TYPE_REGULAR, UserModel.TYPE_INFLUENCER_KID);
+				gotoNextActivity(SermonModel.TYPE_REGULAR, UserModel.TYPE_INFLUENCER_KID, -1);
 				break;
 			case R.id.layout_other:
-				gotoNextActivity(SermonModel.TYPE_REGULAR, UserModel.TYPE_INFLUENCER_OTHER);
+				gotoNextActivity(SermonModel.TYPE_REGULAR, UserModel.TYPE_INFLUENCER_OTHER, -1);
 				break;
 		}
 	}
 
-	private void gotoNextActivity(int _type, int _user) {
+	private void gotoNextActivity(int _type, int _user, int _continent) {
+		SermonActivity.continent = _continent;
 		SermonActivity.type = _type;
 		SermonActivity.userType = _user;
 		startActivity(new Intent(instance, SermonActivity.class));

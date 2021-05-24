@@ -16,7 +16,7 @@
 
         <gradient
             android:angle="0"
-            android:endColor="@color/green"
+            android:endColor="@color/color_maghrib"
             android:startColor="@color/transparent"
             android:type="sweep"
             android:useLevel="false" />

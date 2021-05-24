@@ -25,6 +25,7 @@ public class SermonActivity extends BaseActionBarActivity implements DragListVie
 	DragListView list_sermon;
 	ListAdapter adapter;
 	ArrayList<ParseUser> mDataList = new ArrayList<>();
+	public static int continent = UserModel.CONTINENT_AFRICA;
 	public static int type = SermonModel.TYPE_JUMAH;
 	public static int userType = UserModel.TYPE_USER;
 
@@ -74,7 +75,8 @@ public class SermonActivity extends BaseActionBarActivity implements DragListVie
 					if (userType == UserModel.TYPE_MOSQUE) {
 						for (int i = 0; i < users.size(); i ++) {
 							int _type = users.get(i).getInt(ParseConstants.KEY_TYPE);
-							if (_type == UserModel.TYPE_MOSQUE || _type == UserModel.TYPE_ADMIN)
+							int _continent = users.get(i).getInt(ParseConstants.KEY_CONTINENT);
+							if ((_type == UserModel.TYPE_MOSQUE || _type == UserModel.TYPE_ADMIN) && (_continent == continent))
 								mDataList.add(users.get(i));
 						}
 					} else {

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_large">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_recipient"
+        android:textAllCaps="true"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textsize_normal" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <RadioButton
+            android:id="@+id/rb_mosque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mosque"
+            android:textSize="@dimen/textsize_small"
+            android:textColor="@color/text_normal"
+            android:textAllCaps="true"
+            android:checked="true" />
+        <RadioButton
+            android:id="@+id/rb_scholars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:text="@string/scholars"
+            android:textSize="@dimen/textsize_small"
+            android:textColor="@color/text_normal"/>
+        <RadioButton
+            android:id="@+id/rb_influencers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:text="@string/influencers"
+            android:textSize="@dimen/textsize_small"
+            android:textColor="@color/text_normal"/>
+    </RadioGroup>
+
+    <com.alesapps.islamik.ui.view.DragListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_count"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/type_amount_willing_offer"
+        android:textAllCaps="true"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textsize_normal" />
+
+    <EditText
+        android:id="@+id/edt_amount"
+        style="@style/normalText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:inputType="number"
+        android:background="@drawable/bg_rectangle_gray_line" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        style="@style/normalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:text="@string/submit" />
+</LinearLayout>

@@ -74,10 +74,8 @@ public class SermonModel {
 		sermonObj.put(ParseConstants.KEY_IS_DELETE, model.isDelete);
 		sermonObj.put(ParseConstants.KEY_LANGUAGE, model.language);
 		sermonObj.put(ParseConstants.KEY_IS_AUDIO, model.isAudio);
-		if (!TextUtils.isEmpty(model.video)) {
-			sermonObj.put(ParseConstants.KEY_VIDEO, model.video);
-			sermonObj.put(ParseConstants.KEY_VIDEO_NAME, model.videoName);
-		}
+		sermonObj.put(ParseConstants.KEY_VIDEO, model.video);
+		sermonObj.put(ParseConstants.KEY_VIDEO_NAME, model.videoName);
 		sermonObj.saveInBackground(new SaveCallback() {
 			public void done(ParseException e) {
 				if (listener != null)

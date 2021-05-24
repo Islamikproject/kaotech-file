@@ -36,7 +36,8 @@
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -94,6 +95,10 @@
         <activity android:name="com.alesapps.islamikplus.ui.activity.PostActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name="com.alesapps.islamikplus.ui.activity.BookActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamikplus.ui.activity.GaugeListActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.alesapps.islamikplus.ui.activity.GaugeActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name="com.alesapps.islamikplus.ui.activity.NotificationActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />

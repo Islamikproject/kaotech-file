@@ -1,6 +1,7 @@
 package com.alesapps.islamikplus.ui.activity;
 
 import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -102,7 +103,9 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
                 public void onVideoRecorded(String filePath) {
                     Toast.makeText(getBaseContext(), "onVideoRecorded " + filePath, Toast.LENGTH_SHORT).show();
                     if (SermonActivity.instance != null)
-                        SermonActivity.instance.uploadVideo(filePath, false);
+                        SermonActivity.instance.uploadVideo(Uri.parse("file://" + filePath), false);
+                    if (GaugeActivity.instance != null)
+                        GaugeActivity.instance.addVideo(filePath);
                     if (ChatActivity.instance != null)
                         ChatActivity.instance.uploadFile(filePath);
                     myBack();

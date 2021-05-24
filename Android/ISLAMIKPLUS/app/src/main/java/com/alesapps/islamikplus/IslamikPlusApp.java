@@ -37,7 +37,6 @@ public class IslamikPlusApp extends MultiDexApplication {
         Places.createClient(this);
         AppGlobals.mFirebaseStorage = FirebaseStorage.getInstance();
         AppGlobals.mStorageReference = FirebaseStorage.getInstance().getReferenceFromUrl(AppConstant.URL_STORAGE_REFERENCE).child(AppConstant.STORAGE_FILE);
-
     }
 
     public static Context getContext() {

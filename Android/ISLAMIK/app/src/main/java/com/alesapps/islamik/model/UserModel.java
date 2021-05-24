@@ -26,6 +26,11 @@ public class UserModel {
 	public static int TYPE_INFLUENCER_KID = 401;
 	public static int TYPE_INFLUENCER_OTHER = 402;
 	public static int TYPE_ADMIN = 500;
+	public static int CONTINENT_AFRICA = 0;
+	public static int CONTINENT_AMERICA = 1;
+	public static int CONTINENT_ASIA = 2;
+	public static int CONTINENT_AUSTRALIA = 3;
+	public static int CONTINENT_EUROPA = 4;
 	public String username = "";
 	public String email = "";
 	public String password = "";
@@ -41,7 +46,7 @@ public class UserModel {
 	public int price = 0;
 	public int groupPrice = 0;
 	public ParseFile avatar;
-	public int qbId = 0;
+	public int continent = CONTINENT_AFRICA;
 
 	public void parse(ParseUser user) {
 		if (user == null)
@@ -61,7 +66,7 @@ public class UserModel {
 		price = user.getInt(ParseConstants.KEY_PRICE);
 		groupPrice = user.getInt(ParseConstants.KEY_GROUP_PRICE);
 		avatar = user.getParseFile(ParseConstants.KEY_AVATAR);
-		qbId = user.getInt(ParseConstants.KEY_QB_ID);
+		continent = user.getInt(ParseConstants.KEY_CONTINENT);
 	}
 
 	public static void GetUsersList(final int type, final UserListListener listener) {
@@ -109,7 +114,7 @@ public class UserModel {
 		userObj.put(ParseConstants.KEY_TYPE, model.type);
 		userObj.put(ParseConstants.KEY_PRICE, model.price);
 		userObj.put(ParseConstants.KEY_GROUP_PRICE, model.groupPrice);
-		userObj.put(ParseConstants.KEY_QB_ID, model.qbId);
+		userObj.put(ParseConstants.KEY_CONTINENT, model.continent);
 
 		userObj.signUpInBackground(new SignUpCallback() {
 			@Override

@@ -51,6 +51,7 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -232,10 +233,9 @@ public class ChatActivity extends BaseActionBarActivity implements View.OnClickL
 		});
 	}
 
-	public void uploadFile(String video) {
-		Uri video_uri = Uri.parse("file://" + video);
+	public void uploadFile(Uri video) {
 		dlg_progress.show();
-		FileModel.UploadVideo(video_uri, new BooleanListener() {
+		FileModel.UploadVideo(video, new BooleanListener() {
 			@Override
 			public void done(boolean flag, String fileName, String error) {
 				dlg_progress.cancel();
@@ -523,7 +523,7 @@ public class ChatActivity extends BaseActionBarActivity implements View.OnClickL
 			if(mimeType.startsWith("video")) {
 				Uri selectedImageUri = data.getData();
 				String selectedImagePath = ResourceUtil.generatePath(selectedImageUri, this);
-				uploadFile(selectedImagePath);
+				uploadFile(selectedImageUri);
 			}
 		}
 	}

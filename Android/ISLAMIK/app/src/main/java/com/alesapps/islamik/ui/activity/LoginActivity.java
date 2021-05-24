@@ -25,6 +25,8 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 	EditText edt_phone_number;
 	EditText edt_password;
 	TextView txt_forgot_password;
+	TextView txt_terms;
+	TextView txt_privacy;
 	TextView txt_signup;
 
 	@Override
@@ -36,9 +38,13 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 		edt_phone_number = findViewById(R.id.edt_phone);
 		edt_password = findViewById(R.id.edt_password);
 		txt_forgot_password = findViewById(R.id.txt_forgot_password);
+		txt_terms = findViewById(R.id.txt_terms);
+		txt_privacy = findViewById(R.id.txt_privacy);
 		txt_signup = findViewById(R.id.txt_signup);
 		findViewById(R.id.txt_forgot_password).setOnClickListener(this);
 		findViewById(R.id.btn_login).setOnClickListener(this);
+		findViewById(R.id.txt_terms).setOnClickListener(this);
+		findViewById(R.id.txt_privacy).setOnClickListener(this);
 		findViewById(R.id.txt_signup).setOnClickListener(this);
 		initialize();
 	}
@@ -46,6 +52,8 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 	private void initialize() {
 		txt_forgot_password.setText(Html.fromHtml(getString(R.string.forgot_password)));
 		txt_signup.setText(Html.fromHtml(getString(R.string.no_account_signup_here)));
+		txt_terms.setText(Html.fromHtml(getString(R.string.terms_conditions_)));
+		txt_privacy.setText(Html.fromHtml(getString(R.string.privacy_policy_)));
 		edt_phone_number.setText(AppPreference.getStr(AppPreference.KEY.PHONE_NUMBER, ""));
 		edt_password.setText(AppPreference.getStr(AppPreference.KEY.PASSWORD, ""));
 	}
@@ -60,6 +68,12 @@ public class LoginActivity extends BaseActionBarActivity implements OnClickListe
 				break;
 			case R.id.txt_forgot_password:
 				startActivity(new Intent(instance, ResetPasswordActivity.class));
+				break;
+			case R.id.txt_terms:
+				startActivity(new Intent(instance, TermsConditionActivity.class));
+				break;
+			case R.id.txt_privacy:
+				startActivity(new Intent(instance, PrivacyPolicyActivity.class));
 				break;
 			case R.id.btn_login:
 				if (isValid())

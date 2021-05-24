@@ -296,29 +296,6 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/layout_settings"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/img_settings" />
-
-                <TextView
-                    style="@style/normalText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/settings"
-                    android:textColor="@color/green"
-                    android:textSize="@dimen/textsize_large" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/layout_order"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -340,30 +317,106 @@
                     android:textColor="@color/green"
                     android:textSize="@dimen/textsize_large" />
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_book"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_book" />
+
+                <TextView
+                    style="@style/normalText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/book_session"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textsize_large" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layout_book"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/layout_donation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_donation" />
+                <TextView
+                    style="@style/normalText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/charity_donation"
+                    android:textColor="@color/green"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/textsize_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_settings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_settings" />
+
+                <TextView
+                    style="@style/normalText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/settings"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textsize_large" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_gauge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/img_book" />
-
+                android:background="@drawable/img_gauge" />
             <TextView
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/book_session"
-                android:textColor="@color/green"
-                android:textSize="@dimen/textsize_large" />
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@string/islamophobia_gauge"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/textsize_large"
+                android:background="@color/blue"/>
         </LinearLayout>
 
         <ImageView

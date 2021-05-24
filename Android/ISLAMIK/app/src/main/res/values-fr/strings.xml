@@ -113,7 +113,7 @@
     <string name="login">Identifiant</string>
     <string name="phone_number">Numero de téléphone</string>
     <string name="password">Mot de passe</string>
-    <string name="forgot_password"><![CDATA[<u>OUBLIER MOT DE PASSE?<u>]]></string>
+    <string name="forgot_password"><![CDATA[<u>OUBLIER MOT DE PASSE?</u>]]></string>
     <string name="valid_No_phone_number_password">INSÉRER VOTRE NUMÉRO DE TÉLÉPHONE ET MOT DE PASSE.</string>
     <string name="valid_No_phone_number">INSÉRER VOTRE NUMÉRO DE TÉLÉPHONE.</string>
     <string name="valid_No_password">INSÉRER MOT DE PASSE.</string>
@@ -121,6 +121,13 @@
     <string name="no_account_signup_here">PAS DE COMPTE? <![CDATA[<font color=\'#0e6129\'><u>ENREGISTREZ VOUS ICI!</u></font>]]></string>
     <string name="sign_up">ENREGITREMENT</string>
     <string name="valid_Invalid_customer">CET UTILISATEUR N’EST PAS ENREGISTRÉ .</string>
+    <string name="login_label">Nous apprécions votre vie privée, par conséquent, votre numéro de téléphone est nécessaire pour créer vos informations de connexion et pour recevoir ou passer un appel avec une mosquée, un usthadh ou un commerçant, au cas où vous choisiriez d\'utiliser ces fonctions. nous ne suivons pas votre activité sur le Web.</string>
+    <string name="by_continuing_your_agreeing">En continuant, vous acceptez les conditions de KAOTECH LLC</string>
+    <string name="terms_conditions_"><![CDATA[<u>TERMES ET CONDITIONS</u>]]></string>
+    <string name="privacy_policy_"><![CDATA[<u>POLITIQUE DE CONFIDENTIALITÉ</u>]]></string>
+    <string name="and_confirm_that">et confirmez que</string>
+    <string name="you_read_our">vous avez lu notre</string>
+
     <!-- Reset Password -->
     <string name="email_address">ADDRESSE EMAIL</string>
     <string name="valid_No_email_address">INSÉRER VOTRE ADDRESSE EMAIL.</string>
@@ -172,6 +179,7 @@
     <string name="women_islam">FEMMES EN ISLAM</string>
     <string name="kids_islam">SECTION ENFANTS</string>
     <string name="others">AUTRES</string>
+    <string name="donate_support">Faire un don / soutenir</string>
     <!-- Order Prayer -->
     <string name="mosque">Mosquée</string>
     <string name="usthadh">Usthadh</string>
@@ -200,6 +208,19 @@
     <string name="valid_No_date">Veuillez choisir la date.</string>
     <string name="valid_No_time">Veuillez choisir l\'heure.</string>
     <string name="valid_No_children">Veuillez entrer les enfants.</string>
+    <!-- Charity Donation -->
+    <string name="charity_donation">Don &amp; caritatif</string>
+    <string name="choose_recipient">Veuillez choisir le destinataire</string>
+    <string name="type_amount_willing_offer">Veuillez saisir le montant que vous souhaitez offrir</string>
+    <string name="choose_payment_method">Veuillez choisir votre mode de paiement préféré.</string>
+    <string name="stripe">Stripe</string>
+    <string name="google_pay">Google Pay</string>
+    <string name="apple_pay">Apple Pay</string>
+    <!-- Islamophobia Gauge -->
+    <string name="islamophobia_gauge">Jauge d\'islamophobie</string>
+    <string name="choose_your_blog_format">Veuillez choisir le format de votre blog</string>
+    <string name="wanna_add_extra_format">Voulez-vous ajouter un format supplémentaire</string>
+    <string name="choose_color_text_background">Veuillez choisir la couleur de l\'arrière-plan du texte</string>
     <!-- Notification -->
     <string name="notification">NOTIFICATION</string>
     <string name="msg_notification_book">%1$s vient de réserver une session pour (%2$s and $%3$s).</string>
@@ -224,11 +245,11 @@
     <string name="i_agree">J’accepte</string>>
     <string name="terms_label" tools:ignore="TypographyOther">"
     <![CDATA[
-        <p>ISLAMIK and ISLAMIK+ developed and published by KAOTECH LLC  is provided to you, under the following terms and conditions of use (âTerms & Conditionsâ). By using the App, you are indicating your agreement to be bound by these Terms & Conditions. If you do not accept any part of these Terms & Conditions, you must immediately cease all use of the App.</p>
+        <p>OSSENI app developed and published by KAOTECH LLC  is provided to you, under the following terms and conditions of use (âTerms & Conditionsâ). By using the App, you are indicating your agreement to be bound by these Terms & Conditions. If you do not accept any part of these Terms & Conditions, you must immediately cease all use of the App.</p>
         <p>The App is a utility and information application related to the religion of Islam. KAOTECH LLC is not affiliated with and do not support any particular political organization, sect, ideology or denomination.</p>
         <h3>1. DEFINITIONS</h3>
         <p>In these Terms & Conditions, unless the context otherwise requires, the following expressions shall have the following meanings:</p>
-        <p>1.1 âAppâ means the mobile application, ISLAMIK or/and ISLAMIK+;</p>
+        <p>1.1 âAppâ means the mobile application, OSSENI app;</p>
         <p>1.2 âDeviceâ means the mobile device on which you are running the App;</p>
         <p>1.3 âServiceâ means the services, information, functions and features made available to you through the App;</p>
         <p>1.4 âPasswordâ refers to the valid password that you use in conjunction with the Username to access and use certain password-protected or secure parts of the App and/or Service;</p>

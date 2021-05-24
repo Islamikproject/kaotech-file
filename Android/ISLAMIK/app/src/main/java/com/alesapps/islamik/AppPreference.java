@@ -6,7 +6,6 @@ public class AppPreference {
 	private static SharedPreferences instance = null;
 
 	public static class KEY {
-		public static final String AGREE = "AGREE";
 		public static final String LANGUAGE_SYMBOL = "LANGUAGE_SYMBOL";
 		public static final String SIGN_IN_AUTO = "SIGN_IN_AUTO";
 		public static final String PHONE_NUMBER = "PHONE_NUMBER";

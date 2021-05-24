@@ -1,5 +1,7 @@
 package com.alesapps.islamik.ui.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -175,7 +177,7 @@ public class OrderActivity extends BaseActionBarActivity implements View.OnClick
 		OrderModel model = new OrderModel();
 		model.owner = ParseUser.getCurrentUser();
 		model.language = AppConstant.LANGUAGE_SYMBOL[sp_language.getSelectedItemPosition()];
-		model.type = type;
+		model.type = OrderModel.TYPE_ORDER;
 		model.toUser = mSelectedUser;
 		model.name = edt_name.getText().toString().trim();
 		model.subject = edt_subject.getText().toString().trim();
@@ -197,9 +199,24 @@ public class OrderActivity extends BaseActionBarActivity implements View.OnClick
 	}
 
 	private void gotoDonation(String orderId) {
-		String url = AppConstant.STRIPE_CONNECT_URL + "order?order=" + orderId + "&amount=" + String.format("%.2f", Double.valueOf(edt_amount.getText().toString().trim()));
-		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-		startActivity(browserIntent);
+		new AlertDialog.Builder(instance)
+				.setTitle(R.string.app_name)
+				.setMessage(R.string.choose_payment_method)
+				.setPositiveButton(R.string.stripe, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						String url = AppConstant.STRIPE_CONNECT_URL + "order?order=" + orderId + "&amount=" + String.format("%.2f", Double.valueOf(edt_amount.getText().toString().trim()));
+						Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+						startActivity(browserIntent);
+					}
+				})
+				.setNegativeButton(R.string.google_pay, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+
+					}
+				})
+				.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {}
+				}).show();
 	}
 
 	class ListAdapter extends BaseAdapter {
