@@ -13,6 +13,7 @@ import android.widget.VideoView;
 import androidx.core.app.ShareCompat;
 import androidx.core.content.FileProvider;
 import com.alesapps.islamik.AppConstant;
+import com.alesapps.islamik.Constants;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.model.ParseConstants;
 import com.alesapps.islamik.utils.MessageUtil;
@@ -159,7 +160,11 @@ public class VideoActivity extends BaseActionBarActivity {
 				})
 				.setNegativeButton(R.string.google_pay, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-
+						Double amount = mSermonObj.getDouble(ParseConstants.KEY_AMOUNT);
+						Intent payIntent = new Intent(instance, GooglePayActivity.class);
+						payIntent.setAction(Constants.ACTION_PAY_GOOGLE_PAY);
+						payIntent.putExtra(Constants.OPTION_PRICE_EXTRA, amount * 100);
+						startActivity(payIntent);
 					}
 				})
 				.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {

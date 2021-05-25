@@ -1,11 +1,9 @@
 package com.alesapps.islamik.model;
 
 import android.text.TextUtils;
-
 import com.alesapps.islamik.listener.ObjectListListener;
 import com.alesapps.islamik.listener.ObjectListener;
 import com.parse.FindCallback;
-import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -65,12 +63,27 @@ public class SermonModel {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery(ParseConstants.TBL_SERMON);
 		query.whereNotEqualTo(ParseConstants.KEY_IS_DELETE, true);
 		query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
-		query.getFirstInBackground(new GetCallback<ParseObject>() {
+		query.include(ParseConstants.KEY_OWNER);
+		query.findInBackground(new FindCallback<ParseObject>() {
 			@Override
-			public void done(ParseObject object, ParseException e) {
-				if (listener != null)
-					listener.done(object, ParseErrorHandler.handle(e));
+			public void done(List<ParseObject> objects, ParseException e) {
+				if (e == null && objects.size() > 0) {
+					if (listener != null)
+						listener.done(checkAdmin(objects), ParseErrorHandler.handle(e));
+				} else {
+					if (listener != null)
+						listener.done(null, ParseErrorHandler.handle(e));
+				}
 			}
 		});
+	}
+
+	private static ParseObject checkAdmin(List<ParseObject> objects) {
+		for (int i = 0; i < objects.size(); i ++) {
+			int type = objects.get(i).getParseUser(ParseConstants.KEY_OWNER).getInt(ParseConstants.KEY_TYPE);
+			if (type == UserModel.TYPE_ADMIN)
+				return objects.get(i);
+		}
+		return null;
 	}
 }

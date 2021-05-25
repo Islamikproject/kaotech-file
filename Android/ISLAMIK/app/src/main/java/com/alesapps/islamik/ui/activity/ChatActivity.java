@@ -137,17 +137,11 @@ public class ChatActivity extends BaseActionBarActivity implements View.OnClickL
 						startActivity(new Intent(instance, CameraActivity.class));
 						break;
 					case 3: // Select video from gallery
-						if (Build.VERSION.SDK_INT < 19) {
-							Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-							intent.setType("video/*");
-							startActivityForResult(intent, VIDEO_PICK);
-						} else {
-							Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-							intent.addCategory(Intent.CATEGORY_OPENABLE);
-							intent.setType("video/*");
-							intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[] {"video/*"});
-							startActivityForResult(intent, VIDEO_PICK);
-						}
+						Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+						intent.addCategory(Intent.CATEGORY_OPENABLE);
+						intent.setType("video/*");
+						intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[] {"video/*"});
+						startActivityForResult(intent, VIDEO_PICK);
 						break;
 				}
 			}

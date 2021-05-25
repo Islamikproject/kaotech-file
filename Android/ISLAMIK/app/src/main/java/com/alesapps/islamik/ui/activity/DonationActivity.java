@@ -14,8 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-
 import com.alesapps.islamik.AppConstant;
+import com.alesapps.islamik.Constants;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ObjectListener;
 import com.alesapps.islamik.listener.UserListListener;
@@ -158,19 +158,23 @@ public class DonationActivity extends BaseActionBarActivity implements View.OnCl
 	}
 
 	private void gotoDonation(String orderId) {
+		Double amount = Double.valueOf(edt_amount.getText().toString().trim());
 		new AlertDialog.Builder(instance)
 				.setTitle(R.string.app_name)
 				.setMessage(R.string.choose_payment_method)
 				.setPositiveButton(R.string.stripe, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						String url = AppConstant.STRIPE_CONNECT_URL + "order?order=" + orderId + "&amount=" + String.format("%.2f", Double.valueOf(edt_amount.getText().toString().trim()));
+						String url = AppConstant.STRIPE_CONNECT_URL + "order?order=" + orderId + "&amount=" + String.format("%.2f", amount);
 						Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 						startActivity(browserIntent);
 					}
 				})
 				.setNegativeButton(R.string.google_pay, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-
+						Intent payIntent = new Intent(instance, GooglePayActivity.class);
+						payIntent.setAction(Constants.ACTION_PAY_GOOGLE_PAY);
+						payIntent.putExtra(Constants.OPTION_PRICE_EXTRA, amount * 100);
+						startActivity(payIntent);
 					}
 				})
 				.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {

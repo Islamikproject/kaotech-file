@@ -13,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import com.alesapps.islamik.AppConstant;
+import com.alesapps.islamik.Constants;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.listener.ObjectListListener;
 import com.alesapps.islamik.model.ParseConstants;
@@ -193,7 +194,11 @@ public class SermonListActivity extends BaseActionBarActivity implements DragLis
 				})
 				.setNegativeButton(R.string.google_pay, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-
+						Double amount = sermonObj.getDouble(ParseConstants.KEY_AMOUNT);
+						Intent payIntent = new Intent(instance, GooglePayActivity.class);
+						payIntent.setAction(Constants.ACTION_PAY_GOOGLE_PAY);
+						payIntent.putExtra(Constants.OPTION_PRICE_EXTRA, amount * 100);
+						startActivity(payIntent);
 					}
 				})
 				.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {

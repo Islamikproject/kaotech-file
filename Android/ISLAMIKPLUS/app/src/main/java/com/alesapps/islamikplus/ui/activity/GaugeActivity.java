@@ -371,12 +371,14 @@ public class GaugeActivity extends BaseActionBarActivity implements View.OnClick
 		model.owner = ParseUser.getCurrentUser();
 		model.description = edt_text.getText().toString().trim();
 		model.webLink = edt_weblink.getText().toString().trim();
-		model.video = video_path;
-		model.videoName = video_name;
 		model.bgColor = sp_background.getSelectedItemPosition();
 		model.textColor = sp_text.getSelectedItemPosition();
 		model.textSize = sp_size.getSelectedItemPosition();
 		model.textFont = sp_font.getSelectedItemPosition();
+		if (isAddedVideo) {
+			model.video = video_path;
+			model.videoName = video_name;
+		}
 		if (isAddedPhoto)
 			model.photo = FileModel.createParseFile("photo.png", ResourceUtil.getPhotoFilePath());
 		dlg_progress.show();
@@ -397,14 +399,18 @@ public class GaugeActivity extends BaseActionBarActivity implements View.OnClick
 
 			@Override
 			public void onTaskResult(int taskId, Object result) {
-				mGaugeObj.put(ParseConstants.KEY_OWNER, ParseUser.getCurrentUser());
 				mGaugeObj.put(ParseConstants.KEY_DESCRIPTION, model.description);
 				mGaugeObj.put(ParseConstants.KEY_WEB_LINK, model.webLink);
 				mGaugeObj.put(ParseConstants.KEY_BG_COLOR, model.bgColor);
 				mGaugeObj.put(ParseConstants.KEY_TEXT_COLOR, model.textColor);
-				if (isAddedPhoto) {
-					mGaugeObj.put(ParseConstants.KEY_PHOTO, model.photo);
+				mGaugeObj.put(ParseConstants.KEY_TEXT_SIZE, model.textSize);
+				mGaugeObj.put(ParseConstants.KEY_TEXT_FONT, model.textFont);
+				if (isAddedVideo) {
+					mGaugeObj.put(ParseConstants.KEY_VIDEO, model.video);
+					mGaugeObj.put(ParseConstants.KEY_VIDEO_NAME, model.videoName);
 				}
+				if (isAddedPhoto)
+					mGaugeObj.put(ParseConstants.KEY_PHOTO, model.photo);
 				mGaugeObj.saveInBackground(new SaveCallback() {
 					public void done(ParseException e) {
 						dlg_progress.cancel();

@@ -38,7 +38,8 @@
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -56,6 +57,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_map_api_key"/>
         <!-- google map/place API key for release.keystore -->
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
         <activity
             android:name="com.alesapps.islamik.ui.activity.SplashActivity"
             android:windowSoftInputMode="stateHidden">
@@ -116,6 +120,9 @@
         <activity
             android:name=".ui.activity.CameraActivity"
             android:theme="@style/ThemeFullscreen" />
+        <activity
+            android:name=".ui.activity.GooglePayActivity"
+            android:taskAffinity="" />
         <activity
             android:name="com.alesapps.islamik.ui.dialog.PhotoDialog" />
         <activity
