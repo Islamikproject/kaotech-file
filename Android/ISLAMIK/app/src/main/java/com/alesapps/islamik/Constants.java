@@ -17,7 +17,6 @@
 package com.alesapps.islamik;
 
 import com.google.android.gms.wallet.WalletConstants;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -50,7 +49,7 @@ public class Constants {
    *
    * @value #PAYMENTS_ENVIRONMENT
    */
-  public static final int PAYMENTS_ENVIRONMENT = WalletConstants.ENVIRONMENT_TEST;
+  public static final int PAYMENTS_ENVIRONMENT = WalletConstants.ENVIRONMENT_PRODUCTION;
 
   /**
    * The allowed networks to be requested from the API. If the user has cards from networks not
@@ -103,7 +102,7 @@ public class Constants {
    *
    * @value #PAYMENT_GATEWAY_TOKENIZATION_NAME
    */
-  public static final String PAYMENT_GATEWAY_TOKENIZATION_NAME = "example";
+  public static final String PAYMENT_GATEWAY_TOKENIZATION_NAME = "allpayments";
 
   /**
    * Custom parameters required by the processor/gateway.
@@ -116,28 +115,7 @@ public class Constants {
   public static final HashMap<String, String> PAYMENT_GATEWAY_TOKENIZATION_PARAMETERS =
       new HashMap<String, String>() {{
         put("gateway", PAYMENT_GATEWAY_TOKENIZATION_NAME);
-        put("gatewayMerchantId", "exampleGatewayMerchantId");
+        put("gatewayMerchantId", "BCR2DN6T57K7XZK3");
         // Your processor may require additional parameters.
-      }};
-
-  /**
-   * Only used for {@code DIRECT} tokenization. Can be removed when using {@code PAYMENT_GATEWAY}
-   * tokenization.
-   *
-   * @value #DIRECT_TOKENIZATION_PUBLIC_KEY
-   */
-  public static final String DIRECT_TOKENIZATION_PUBLIC_KEY = "REPLACE_ME";
-
-  /**
-   * Parameters required for {@code DIRECT} tokenization.
-   * Only used for {@code DIRECT} tokenization. Can be removed when using {@code PAYMENT_GATEWAY}
-   * tokenization.
-   *
-   * @value #DIRECT_TOKENIZATION_PARAMETERS
-   */
-  public static final HashMap<String, String> DIRECT_TOKENIZATION_PARAMETERS =
-      new HashMap<String, String>() {{
-        put("protocolVersion", "ECv2");
-        put("publicKey", DIRECT_TOKENIZATION_PUBLIC_KEY);
       }};
 }

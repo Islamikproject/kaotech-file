@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 import com.alesapps.islamik.Constants;
 import com.alesapps.islamik.R;
 import com.alesapps.islamik.utils.PaymentsUtil;
@@ -19,7 +18,7 @@ import java.util.Optional;
 /**
  * Transparent activity to be triggered from notification
  */
-public class GooglePayActivity extends AppCompatActivity {
+public class GooglePayActivity extends BaseActivity {
 
   // Arbitrarily-picked constant integer you define to track a request for payment data activity.
   private static final int LOAD_PAYMENT_DATA_REQUEST_CODE = 991;
@@ -46,7 +45,6 @@ public class GooglePayActivity extends AppCompatActivity {
     super.onActivityResult(requestCode, resultCode, data);
     
     switch (requestCode) {
-
       case LOAD_PAYMENT_DATA_REQUEST_CODE:
         switch (resultCode) {
 
@@ -108,8 +106,6 @@ public class GooglePayActivity extends AppCompatActivity {
     }
 
     // Remove the payment notification
-//    Notifications.remove(this);
-
     try {
       JSONObject paymentMethodData = new JSONObject(paymentInfo).getJSONObject("paymentMethodData");
 

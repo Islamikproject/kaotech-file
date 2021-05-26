@@ -85,36 +85,6 @@ public class PaymentsUtil {
   }
 
   /**
-   * {@code DIRECT} Integration: Decrypt a response directly on your servers. This configuration has
-   * additional data security requirements from Google and additional PCI DSS compliance complexity.
-   *
-   * <p>Please refer to the documentation for more information about {@code DIRECT} integration. The
-   * type of integration you use depends on your payment processor.
-   *
-   * @return Payment data tokenization for the CARD payment method.
-   * @throws JSONException
-   * @see <a
-   * href="https://developers.google.com/pay/api/android/reference/object#PaymentMethodTokenizationSpecification">PaymentMethodTokenizationSpecification</a>
-   */
-  private static JSONObject getDirectTokenizationSpecification()
-      throws JSONException, RuntimeException {
-    if (Constants.DIRECT_TOKENIZATION_PARAMETERS.isEmpty()
-        || Constants.DIRECT_TOKENIZATION_PUBLIC_KEY.isEmpty()
-        || Constants.DIRECT_TOKENIZATION_PUBLIC_KEY == null
-        || Constants.DIRECT_TOKENIZATION_PUBLIC_KEY == "REPLACE_ME") {
-      throw new RuntimeException(
-          "Please edit the Constants.java file to add protocol version & public key.");
-    }
-    JSONObject tokenizationSpecification = new JSONObject();
-
-    tokenizationSpecification.put("type", "DIRECT");
-    JSONObject parameters = new JSONObject(Constants.DIRECT_TOKENIZATION_PARAMETERS);
-    tokenizationSpecification.put("parameters", parameters);
-
-    return tokenizationSpecification;
-  }
-
-  /**
    * Card networks supported by your app and your gateway.
    *
    * <p>TODO: Confirm card networks supported by your app and gateway & update in Constants.java.

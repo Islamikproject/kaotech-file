@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.core.content.res.ResourcesCompat;
-
 import com.alesapps.islamikplus.AppConstant;
 import com.alesapps.islamikplus.R;
 import com.alesapps.islamikplus.listener.ObjectListListener;
@@ -49,6 +47,7 @@ public class GaugeListActivity extends BaseActionBarActivity implements View.OnC
 		super.onClick(view);
 		switch (view.getId()) {
 			case R.id.action_add:
+				GaugeActivity.mGaugeObj = null;
 				startActivity(new Intent(instance, GaugeActivity.class));
 				return;
 		}

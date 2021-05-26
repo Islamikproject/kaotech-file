@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_large"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/layout_pay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+        <TextView
+            style="@style/normalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Donation to Mosque IRE AKARI, P-NOVO"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_normal" />
+        <TextView
+            style="@style/normalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$10.00"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_normal" />
+        <Button
+            android:id="@+id/btn_pay"
+            style="@style/normalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:background="@drawable/bg_google_pay" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_success"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+        <TextView
+            style="@style/normalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Completed Successfully!"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_normal" />
+        <TextView
+            style="@style/normalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:gravity="center"
+            android:text="You Visa ****6912 with Google Pay was successfully charged."
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_normal" />
+        <TextView
+            style="@style/normalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="Check your email for your receipt"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_normal" />
+    </LinearLayout>
+</RelativeLayout>

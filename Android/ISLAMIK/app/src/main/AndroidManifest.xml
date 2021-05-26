@@ -121,8 +121,13 @@
             android:name=".ui.activity.CameraActivity"
             android:theme="@style/ThemeFullscreen" />
         <activity
-            android:name=".ui.activity.GooglePayActivity"
+            android:name=".ui.activity.PayActivity"
             android:taskAffinity="" />
+        <activity
+            android:name=".ui.activity.GooglePayActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity=""
+            android:theme="@style/Transparent" />
         <activity
             android:name="com.alesapps.islamik.ui.dialog.PhotoDialog" />
         <activity
