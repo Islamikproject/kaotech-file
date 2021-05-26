@@ -59,5 +59,14 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Angeline Vintage.ttf</string>
+		<string>Austina Alma.ttf</string>
+		<string>CalligraphyFLF.ttf</string>
+		<string>Drexs.ttf</string>
+		<string>Gamiela Demo.ttf</string>
+		<string>Vonique 92.otf</string>
+	</array>
 </dict>
 </plist>

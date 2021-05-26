@@ -1,5 +1,4 @@
 
-#define SYSTEM_KEY_AGREE                                        @"AGREE"
 #define SYSTEM_KEY_AUTO                                         @"AUTO"
 #define SYSTEM_KEY_USERNAME                                     @"USERNAME"
 #define SYSTEM_KEY_PASSWORD                                     @"PASSWORD"
@@ -42,6 +41,10 @@ enum {
 #define GROUP_PRICE                                             [[NSArray alloc] initWithObjects:@"$0.00", @"$2.44", @"$4.44", @"$5.44", @"$9.88", @"$11.11", @"$16.44", nil]
 #define ARRAY_AMOUNT                                            [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f], [NSNumber numberWithFloat:4.0f],[NSNumber numberWithFloat:8.0f], [NSNumber numberWithFloat:12.0f], [NSNumber numberWithFloat:20.0f], nil]
 #define MAIN_COLOR                                              [UIColor colorWithRed:14/255.f green:97/255.f blue:41/255.f alpha:1.f]
+#define STRING_COLOR                                            [[NSArray alloc] initWithObjects:@"Dark Blue", @"White", @"Black", @"Green", @"Beige", nil]
+#define ARRAY_COLOR                                             [[NSArray alloc] initWithObjects:[UIColor colorWithRed:0/255.f green:70/255.f blue:127/255.f alpha:1.f], [UIColor colorWithRed:255/255.f green:255/255.f blue:255/255.f alpha:1.f], [UIColor colorWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1.f], [UIColor colorWithRed:14/255.f green:97/255.f blue:41/255.f alpha:1.f], [UIColor colorWithRed:225/255.f green:198/255.f blue:153/255.f alpha:1.f], nil]
+#define ARRAY_STRING_SIZE                                       [[NSArray alloc] initWithObjects:@"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24", @"25", @"26", @"27", @"28", @"29", @"30", nil]
+#define ARRAY_FONT                                              [[NSArray alloc] initWithObjects:@"Angeline Vintage", @"Austina Alma", @"CalligraphyFLF", @"Drexs", @"Gamiela Demo", @"Vonique 92", nil]
 
 #define PARSE_FIELD_OBJECT_ID                                   @"objectId"
 #define PARSE_FIELD_USER                                        @"user"
@@ -54,6 +57,7 @@ enum {
 #define PARSE_TABLE_MESSAGES                                    @"Messages"
 #define PARSE_TABLE_POST                                        @"Post"
 #define PARSE_TABLE_BOOK                                        @"Book"
+#define PARSE_TABLE_GAUGE                                       @"Gauge"
 #define PARSE_TABLE_NOTIFICATION                                @"Notification"
 #define PARSE_TABLE_CHAT                                        @"Chat"
 
@@ -105,3 +109,9 @@ enum {
 #define PARSE_SENDER                                            @"sender"
 #define PARSE_RECEIVER                                          @"receiver"
 #define PARSE_VOICE_FILE                                        @"voiceFile"
+
+#define PARSE_WEB_LINK                                          @"webLink"
+#define PARSE_BG_COLOR                                          @"bgColor"
+#define PARSE_TEXT_COLOR                                        @"textColor"
+#define PARSE_TEXT_SIZE                                         @"textSize"
+#define PARSE_TEXT_FONT                                         @"textFont"

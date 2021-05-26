@@ -93,7 +93,7 @@ static SermonViewController *_sharedViewController = nil;
             imagePickerController.mediaTypes = [NSArray arrayWithObjects:(NSString *)kUTTypeMovie, nil];
             [self presentViewController:imagePickerController animated:YES completion:nil];
         }]];
-        [actionsheet addAction:[UIAlertAction actionWithTitle:@"Select audio from gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [actionsheet addAction:[UIAlertAction actionWithTitle:@"Select audio from file" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
             
         }]];
         [actionsheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){

@@ -15,11 +15,13 @@
 #import "DailyViewController.h"
 #import "NotificationViewController.h"
 #import "BookViewController.h"
+#import "GaugeListViewController.h"
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *viewJumah;
 @property (weak, nonatomic) IBOutlet UIView *viewBook;
 @property (weak, nonatomic) IBOutlet UIView *viewDaily;
+@property (weak, nonatomic) IBOutlet UIView *viewGauge;
 
 @end
 
@@ -36,9 +38,11 @@
     self.viewJumah.hidden = YES;
     self.viewBook.hidden = YES;
     self.viewDaily.hidden = YES;
+    self.viewGauge.hidden = YES;
     if (type == TYPE_ADMIN) {
         self.viewJumah.hidden = NO;
         self.viewDaily.hidden = NO;
+        self.viewGauge.hidden = NO;
     } else if (type == TYPE_MOSQUE) {
         self.viewJumah.hidden = NO;
     } else if (type == TYPE_INFLUENCER_WOMEN || type == TYPE_INFLUENCER_KID || type == TYPE_INFLUENCER_OTHER) {
@@ -114,6 +118,10 @@
 }
 - (IBAction)onDailyClick:(id)sender {
     DailyViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DailyViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onGaugeClick:(id)sender {
+    GaugeListViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GaugeListViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 @end

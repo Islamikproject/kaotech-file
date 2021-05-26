@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "PrivacyViewController.h"
 #import "LoginViewController.h"
 
 @interface AppDelegate ()
@@ -37,15 +36,9 @@
     }
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    BOOL agree = [[NSUserDefaults standardUserDefaults] boolForKey:SYSTEM_KEY_AGREE];
     UINavigationController * mainNav = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"AppMainNav"];
-    if(!agree){
-        PrivacyViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PrivacyViewController"];
-        [mainNav setViewControllers:@[controller] animated:NO];
-    } else{
-        LoginViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        [mainNav setViewControllers:@[controller] animated:NO];
-    }
+    LoginViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [mainNav setViewControllers:@[controller] animated:NO];
     self.window.rootViewController = mainNav;
     [self.window makeKeyAndVisible];
     return YES;

@@ -8,8 +8,8 @@
 
 #import "LoginViewController.h"
 #import "ResetPasswordViewController.h"
-#import "SignUpViewController.h"
 #import "MainViewController.h"
+#import "TermsViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *edtPhoneNumber;
@@ -57,9 +57,17 @@
     ResetPasswordViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ResetPasswordViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
-- (IBAction)onSignUpClick:(id)sender {
-    [self gotoNextScreen];
+- (IBAction)onTermsClick:(id)sender {
+    TermsViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TermsViewController"];
+    controller.runMode = RUN_MODE_TERMS;
+    [self.navigationController pushViewController:controller animated:YES];
 }
+- (IBAction)onPrivacyClick:(id)sender {
+    TermsViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TermsViewController"];
+    controller.runMode = RUN_MODE_PRIVACY;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (BOOL) isValid {
     NSString *phonenumber = _edtPhoneNumber.text;
     NSString *password = _edtPassword.text;
