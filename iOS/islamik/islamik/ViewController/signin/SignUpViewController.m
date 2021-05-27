@@ -118,7 +118,7 @@
     user[PARSE_ACCOUNT_ID] = @"";
     user[PARSE_PRICE] = [NSNumber numberWithDouble:0.0f];
     user[PARSE_GROUP_PRICE] = [NSNumber numberWithDouble:0.0f];
-    user[PARSE_QB_ID] = @"";
+    user[PARSE_CONTINENT] = [NSNumber numberWithInt:CONTINENT_AFRICA];;
 
     [user setObject:[PFGeoPoint geoPointWithLocation:[[CLLocation alloc] initWithLatitude:mLatLng.latitude longitude:mLatLng.longitude]] forKey:PARSE_LON_LAT];
     

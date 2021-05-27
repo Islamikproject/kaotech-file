@@ -11,6 +11,9 @@
 		5A0E5478265E518A00A7EFEF /* GaugeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E5477265E518A00A7EFEF /* GaugeListViewController.m */; };
 		5A0E547C265E519C00A7EFEF /* GaugeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E547B265E519C00A7EFEF /* GaugeViewController.m */; };
 		5A12A599255E8A520098E798 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A12A598255E8A520098E798 /* BookViewController.m */; };
+		5A1AC06526602AD4008640AE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1AC06426602AD4008640AE /* MediaPlayer.framework */; };
+		5A1AC06826602E42008640AE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1AC06726602E42008640AE /* CoreMedia.framework */; };
+		5A1AC06B26602E60008640AE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1AC06A26602E60008640AE /* CoreAudio.framework */; };
 		5A227CF9265EA653003973DC /* GaugeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A227CF8265EA653003973DC /* GaugeCell.m */; };
 		5A58334124D9DA710031E62A /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58334024D9DA710031E62A /* MessagesViewController.m */; };
 		5A58334424D9E2A70031E62A /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A58334324D9E2A70031E62A /* MessageCell.m */; };
@@ -149,6 +152,9 @@
 		5A0E547B265E519C00A7EFEF /* GaugeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaugeViewController.m; sourceTree = "<group>"; };
 		5A12A597255E8A520098E798 /* BookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		5A12A598255E8A520098E798 /* BookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		5A1AC06426602AD4008640AE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		5A1AC06726602E42008640AE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		5A1AC06A26602E60008640AE /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		5A227CF7265EA653003973DC /* GaugeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaugeCell.h; sourceTree = "<group>"; };
 		5A227CF8265EA653003973DC /* GaugeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaugeCell.m; sourceTree = "<group>"; };
 		5A58333F24D9DA710031E62A /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
@@ -340,11 +346,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				78066EEA24762213007F04A9 /* libsqlite3.tbd in Frameworks */,
+				5A1AC06826602E42008640AE /* CoreMedia.framework in Frameworks */,
 				78066EE8247621FF007F04A9 /* libc++.tbd in Frameworks */,
 				78066EF024762243007F04A9 /* libz.tbd in Frameworks */,
 				78066EE6247621ED007F04A9 /* libc.tbd in Frameworks */,
 				78066EEE24762235007F04A9 /* libxml2.tbd in Frameworks */,
+				5A1AC06B26602E60008640AE /* CoreAudio.framework in Frameworks */,
 				5AFC4A8325E5A3EB004854E4 /* SafariServices.framework in Frameworks */,
+				5A1AC06526602AD4008640AE /* MediaPlayer.framework in Frameworks */,
 				5AFC4A8125E5A3D8004854E4 /* MobileCoreServices.framework in Frameworks */,
 				DF58A2A10D547EB574247E6B /* Pods_islamikplus.framework in Frameworks */,
 				78066EEC24762226007F04A9 /* libxml2.2.tbd in Frameworks */,
@@ -715,6 +724,9 @@
 		A1279539DF500E1C937308D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A1AC06A26602E60008640AE /* CoreAudio.framework */,
+				5A1AC06726602E42008640AE /* CoreMedia.framework */,
+				5A1AC06426602AD4008640AE /* MediaPlayer.framework */,
 				5AFC4A8225E5A3EB004854E4 /* SafariServices.framework */,
 				5AFC4A8025E5A3D8004854E4 /* MobileCoreServices.framework */,
 				78066EEF2476223E007F04A9 /* libz.tbd */,

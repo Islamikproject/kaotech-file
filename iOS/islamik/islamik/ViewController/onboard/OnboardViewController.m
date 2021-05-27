@@ -7,7 +7,7 @@
 //
 
 #import "OnboardViewController.h"
-#import "PrivacyViewController.h"
+#import "LoginViewController.h"
 
 @interface OnboardViewController ()
 
@@ -21,7 +21,10 @@
 }
 
 - (IBAction)onNextClick:(id)sender {
-    PrivacyViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PrivacyViewController"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:YES forKey:SYSTEM_KEY_AGREE];
+    [defaults synchronize];
+    LoginViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

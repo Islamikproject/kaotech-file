@@ -30,6 +30,13 @@ enum {
     TYPE_ADMIN = 500
 };
 enum {
+    CONTINENT_AFRICA = 0,
+    CONTINENT_AMERICA = 1,
+    CONTINENT_ASIA = 2,
+    CONTINENT_AUSTRALIA = 3,
+    CONTINENT_EUROPA = 4
+};
+enum {
     TYPE_FAJR = 0,
     TYPE_ZUHR = 1,
     TYPE_ASR = 2,
@@ -47,6 +54,10 @@ enum {
     STATE_ACCEPT = 1,
     STATE_REJECT = 2
 };
+enum {
+    TYPE_ORDER = 0,
+    TYPE_DONATION = 1
+};
 #define STRING_AMOUNT                                           [[NSArray alloc] initWithObjects:@"", @"$1", @"$4", @"$8", @"$12", @"$20", nil]
 #define ARRAY_AMOUNT                                            [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.0f], [NSNumber numberWithFloat:1.0f], [NSNumber numberWithFloat:4.0f],[NSNumber numberWithFloat:8.0f], [NSNumber numberWithFloat:12.0f], [NSNumber numberWithFloat:20.0f], nil]
 #define SPEED_VALUE                                             [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3],[NSNumber numberWithInt:5], nil]
@@ -62,6 +73,10 @@ enum {
 #define ARRAY_RECITER                                           [[NSArray alloc] initWithObjects:@"ABDUL HADI KANAKERI", @"AL-HUSSAYNI AL-AZAZY (With Children)", nil]
 #define RECITER_URL                                             @"https://www.quran411.com/quran/kanakeri/"
 #define PRAYER_TIME_URL                                         @"https://www.islamicfinder.org/"
+#define STRING_COLOR                                            [[NSArray alloc] initWithObjects:@"Dark Blue", @"White", @"Black", @"Green", @"Beige", nil]
+#define ARRAY_COLOR                                             [[NSArray alloc] initWithObjects:[UIColor colorWithRed:0/255.f green:70/255.f blue:127/255.f alpha:1.f], [UIColor colorWithRed:255/255.f green:255/255.f blue:255/255.f alpha:1.f], [UIColor colorWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1.f], [UIColor colorWithRed:14/255.f green:97/255.f blue:41/255.f alpha:1.f], [UIColor colorWithRed:225/255.f green:198/255.f blue:153/255.f alpha:1.f], nil]
+#define ARRAY_STRING_SIZE                                       [[NSArray alloc] initWithObjects:@"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"21", @"22", @"23", @"24", @"25", @"26", @"27", @"28", @"29", @"30", nil]
+#define ARRAY_FONT                                              [[NSArray alloc] initWithObjects:@"Angeline Vintage", @"Austina Alma", @"CalligraphyFLF", @"Drexs", @"Gamiela Demo", @"Vonique 92", nil]
 
 #define PARSE_FIELD_OBJECT_ID                                   @"objectId"
 #define PARSE_FIELD_USER                                        @"user"
@@ -76,6 +91,7 @@ enum {
 #define PARSE_TABLE_POST                                        @"Post"
 #define PARSE_TABLE_ORDER                                       @"Order"
 #define PARSE_TABLE_BOOK                                        @"Book"
+#define PARSE_TABLE_GAUGE                                       @"Gauge"
 #define PARSE_TABLE_NOTIFICATION                                @"Notification"
 #define PARSE_TABLE_CHAT                                        @"Chat"
 
@@ -94,7 +110,7 @@ enum {
 #define PARSE_PRICE                                             @"price"
 #define PARSE_GROUP_PRICE                                       @"groupPrice"
 #define PARSE_AVATAR                                            @"avatar"
-#define PARSE_QB_ID                                             @"qbId"
+#define PARSE_CONTINENT                                         @"continent"
 
 #define PARSE_OWNER                                             @"owner"
 #define PARSE_TOPIC                                             @"topic"
@@ -130,6 +146,12 @@ enum {
 #define PARSE_SENDER                                            @"sender"
 #define PARSE_RECEIVER                                          @"receiver"
 #define PARSE_VOICE_FILE                                        @"voiceFile"
+
+#define PARSE_WEB_LINK                                          @"webLink"
+#define PARSE_BG_COLOR                                          @"bgColor"
+#define PARSE_TEXT_COLOR                                        @"textColor"
+#define PARSE_TEXT_SIZE                                         @"textSize"
+#define PARSE_TEXT_FONT                                         @"textFont"
 
 #define LANGUAGE_ARRAY                                          [[NSArray alloc] initWithObjects:@"English", @"Arabic", nil]
 #define LANGUAGE_ORDER_ARRAY                                    [[NSArray alloc] initWithObjects:@"English", @"Arabic", @"French", nil]

@@ -58,6 +58,15 @@
 	<string>This app requires access to the micro phone for upload video.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app requires access to the photo library for upload video.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Angeline Vintage.ttf</string>
+		<string>Austina Alma.ttf</string>
+		<string>CalligraphyFLF.ttf</string>
+		<string>Drexs.ttf</string>
+		<string>Gamiela Demo.ttf</string>
+		<string>Vonique 92.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

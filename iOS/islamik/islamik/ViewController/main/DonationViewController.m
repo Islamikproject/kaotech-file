@@ -6,28 +6,25 @@
 //  Copyright © 2020 Ales Gabrysz. All rights reserved.
 //
 
-#import "OrderViewController.h"
+#import "DonationViewController.h"
 #import "OrderCell.h"
 #import <SafariServices/SafariServices.h>
 
-@interface OrderViewController () <IQDropDownTextFieldDelegate, UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate> {
+@interface DonationViewController () <UITableViewDelegate, UITableViewDataSource, SFSafariViewControllerDelegate> {
     int type;
     NSMutableArray *mServerDataList;
     NSMutableArray *mDataList;
     PFUser *mUser;
 }
-@property (weak, nonatomic) IBOutlet IQDropDownTextField *edtLanguage;
 @property (weak, nonatomic) IBOutlet UIImageView *imgMosque;
-@property (weak, nonatomic) IBOutlet UIImageView *imgUsthadh;
+@property (weak, nonatomic) IBOutlet UIImageView *imgScholars;
+@property (weak, nonatomic) IBOutlet UIImageView *imgInfluencers;
 @property (weak, nonatomic) IBOutlet UITableView *tblData;
-@property (weak, nonatomic) IBOutlet UITextField *edtName;
-@property (weak, nonatomic) IBOutlet UITextField *edtSubject;
-@property (weak, nonatomic) IBOutlet UITextField *edtMessage;
 @property (weak, nonatomic) IBOutlet UITextField *edtAmount;
 
 @end
 
-@implementation OrderViewController
+@implementation DonationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,10 +33,6 @@
 }
 
 - (void) initialize {
-    self.edtLanguage.itemList = LANGUAGE_ORDER_ARRAY;
-    self.edtLanguage.isOptionalDropDown = YES;
-    self.edtLanguage.selectedRow = 0;
-    self.edtLanguage.delegate = self;
     mUser = nil;
     [self setType:TYPE_MOSQUE];
     [self getServerData];
@@ -48,11 +41,14 @@
 - (void) setType:(int) index {
     type = index;
     self.imgMosque.image = [UIImage imageNamed:@"check_off"];
-    self.imgUsthadh.image = [UIImage imageNamed:@"check_off"];
+    self.imgScholars.image = [UIImage imageNamed:@"check_off"];
+    self.imgInfluencers.image = [UIImage imageNamed:@"check_off"];
     if (type == TYPE_MOSQUE) {
         self.imgMosque.image = [UIImage imageNamed:@"check_on"];
+    } else if (type == TYPE_USTHADH) {
+        self.imgScholars.image = [UIImage imageNamed:@"check_on"];
     } else {
-        self.imgUsthadh.image = [UIImage imageNamed:@"check_on"];
+        self.imgInfluencers.image = [UIImage imageNamed:@"check_on"];
     }
     [self showData];
 }
@@ -86,9 +82,7 @@
     mDataList = [NSMutableArray new];
     for (int i = 0; i < mServerDataList.count; i ++) {
         int _type = [mServerDataList[i][PARSE_TYPE] intValue];
-        if (type == _type) {
-            [self->mDataList addObject:mServerDataList[i]];
-        } else if (type == TYPE_MOSQUE && _type == TYPE_ADMIN) {
+        if (_type == TYPE_ADMIN || _type == type || (type == TYPE_INFLUENCER_WOMEN && _type >= TYPE_INFLUENCER_WOMEN)) {
             [self->mDataList addObject:mServerDataList[i]];
         }
     }
@@ -146,53 +140,35 @@
 - (IBAction)onMosqueClick:(id)sender {
     [self setType:TYPE_MOSQUE];
 }
-- (IBAction)onUsthadhClick:(id)sender {
+- (IBAction)onScholarsClick:(id)sender {
     [self setType:TYPE_USTHADH];
+}
+- (IBAction)onInfluencersClick:(id)sender {
+    [self setType:TYPE_INFLUENCER_WOMEN];
 }
 - (IBAction)onSubmitClick:(id)sender {
     if ([self isValid])
         [self submit];
 }
 - (BOOL) isValid {
-    NSString *name = [Util trim:self.edtName.text];
-    NSString *subject = [Util trim:self.edtSubject.text];
-    NSString *message = [Util trim:self.edtMessage.text];
     NSString *amount = [Util trim:self.edtAmount.text];
-    NSString * errorMsg = @"";
-    if (self.edtLanguage.selectedItem.length == 0) {
-        errorMsg = @"Please select language.";
-    } else if (mUser == nil) {
-        errorMsg = @"Please select mosque.";
-    } else if (name.length == 0) {
-        errorMsg = @"Please enter name.";
-    } else if (subject.length == 0) {
-        errorMsg = @"Please enter subject.";
-    } else if (message.length == 0) {
-        errorMsg = @"Please enter message.";
-    } else if (amount.length == 0) {
-        errorMsg = @"Please enter amount.";
-    }
-    if (errorMsg.length > 0) {
-        [Util showAlertTitle:self title:@"Error" message:errorMsg];
+    if (amount.length == 0) {
+        [Util showAlertTitle:self title:@"Error" message:@"Please enter amount."];
         return NO;
     }
     return YES;
 }
 - (void) submit {
-    NSString *name = [Util trim:self.edtName.text];
-    NSString *subject = [Util trim:self.edtSubject.text];
-    NSString *message = [Util trim:self.edtMessage.text];
     NSString *amount = [Util trim:self.edtAmount.text];
     
     PFObject *object = [PFObject objectWithClassName:PARSE_TABLE_ORDER];
     object[PARSE_OWNER] = [PFUser currentUser];
-    int index = (int)[self.edtLanguage selectedRow];
-    object[PARSE_LANGUAGE] = LANGUAGE_ORDER_SYMBOL[index];
-    object[PARSE_TYPE] = [NSNumber numberWithInt:TYPE_ORDER];
+    object[PARSE_LANGUAGE] = @"";
+    object[PARSE_TYPE] = [NSNumber numberWithInt:TYPE_DONATION];
     object[PARSE_TO_USER] = mUser;
-    object[PARSE_NAME] = name;
-    object[PARSE_SUBJECT] = subject;
-    object[PARSE_MESSAGE] = message;
+    object[PARSE_NAME] = [NSString stringWithFormat:@"%@ %@", [PFUser currentUser][PARSE_FIRSTNAME], [PFUser currentUser][PARSE_LASTSTNAME]];
+    object[PARSE_SUBJECT] = @"CHARITY & DONATION";
+    object[PARSE_MESSAGE] = @"";
     object[PARSE_AMOUNT] = [NSNumber numberWithDouble:[amount doubleValue]];
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SermonViewController : BaseViewController
 @property (atomic) int sermonType;
 @property (atomic) int userType;
+@property (atomic) int continentType;
 @end
 
 NS_ASSUME_NONNULL_END

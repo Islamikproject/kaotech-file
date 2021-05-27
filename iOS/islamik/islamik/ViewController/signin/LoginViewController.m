@@ -10,6 +10,7 @@
 #import "ResetPasswordViewController.h"
 #import "SignUpViewController.h"
 #import "MainViewController.h"
+#import "TermsConditionViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *edtPhoneNumber;
@@ -55,6 +56,16 @@
 }
 - (IBAction)onForgotPasswordClick:(id)sender {
     ResetPasswordViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ResetPasswordViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onTermsClick:(id)sender {
+    TermsConditionViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TermsConditionViewController"];
+    controller.runMode = RUN_MODE_TERMS;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onPrivacyClick:(id)sender {
+    TermsConditionViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TermsConditionViewController"];
+    controller.runMode = RUN_MODE_PRIVACY;
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onSignUpClick:(id)sender {

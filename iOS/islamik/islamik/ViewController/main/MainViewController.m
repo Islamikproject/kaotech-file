@@ -16,6 +16,8 @@
 #import "PhotoViewController.h"
 #import "OrderViewController.h"
 #import "BookViewController.h"
+#import "GaugeListViewController.h"
+#import "DonationViewController.h"
 #import "NotificationViewController.h"
 #import <AVKit/AVKit.h>
 #import "DMActivityInstagram.h"
@@ -46,33 +48,48 @@
 }
 
 - (void) initialize {
+    _lblLocation.text = [PFUser currentUser][PARSE_ADDRESS];
+    [self getTime];
+    [self getVideo];
+    [self getPost];
+}
+- (void) getTime {
     _lblFajrTime.text = @"05:10 AM";
     _lblZuhrTime.text = @"11:41 AM";
     _lblAsrTime.text = @"02:15 PM";
     _lblMaghribTime.text = @"04:36 PM";
     _lblIshaTime.text = @"06:06 PM";
-    _lblLocation.text = [PFUser currentUser][PARSE_ADDRESS];
-    [self getVideo];
-    [self getPost];
 }
-
 - (void) getVideo {
     PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_SERMON];
     [query whereKey:PARSE_IS_DELETE notEqualTo:[NSNumber numberWithBool:YES]];
+    [query includeKey:PARSE_OWNER];
     [query orderByDescending:PARSE_FIELD_CREATED_AT];
-    
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error){
+        [SVProgressHUD dismiss];
         if (!error){
-            NSURL *videoURL = [NSURL URLWithString:object[PARSE_VIDEO]];
-            self.player = [AVPlayer playerWithURL:videoURL];
-            [self.player addObserver:self forKeyPath:@"rate" options:0 context:nil];
-            self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-            self.playerLayer.frame = self.viewVideo.bounds;
-            self.playerLayer.needsDisplayOnBoundsChange = true;
-            [self.viewVideo.layer addSublayer:self.playerLayer];
-            [self.player play];
+            PFObject *sermonObj = [self getSermonObj:array];
+            if (sermonObj != nil) {
+                NSURL *videoURL = [NSURL URLWithString:sermonObj[PARSE_VIDEO]];
+                self.player = [AVPlayer playerWithURL:videoURL];
+                [self.player addObserver:self forKeyPath:@"rate" options:0 context:nil];
+                self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+                self.playerLayer.frame = self.viewVideo.bounds;
+                self.playerLayer.needsDisplayOnBoundsChange = true;
+                [self.viewVideo.layer addSublayer:self.playerLayer];
+                [self.player play];
+            }
         }
     }];
+}
+-(PFObject *) getSermonObj:(NSArray*)objects {
+    for (int i = 0; i < objects.count; i ++) {
+        int _type = [objects[i][PARSE_OWNER][PARSE_TYPE] intValue];
+        if (_type == TYPE_ADMIN) {
+            return objects[i];
+        }
+    }
+    return nil;
 }
 - (void) getPost {
     PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_POST];
@@ -118,16 +135,24 @@
     MessagesViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MessagesViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
-- (IBAction)onSettingsClick:(id)sender {
-    SettingsViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingsViewController"];
-    [self.navigationController pushViewController:controller animated:YES];
-}
 - (IBAction)onOrderClick:(id)sender {
     OrderViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"OrderViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onBookClick:(id)sender {
     BookViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"BookViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onDonationClick:(id)sender {
+    DonationViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DonationViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onSettingsClick:(id)sender {
+    SettingsViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+- (IBAction)onGaugeClick:(id)sender {
+    GaugeListViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"GaugeListViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)onFullClick:(id)sender {

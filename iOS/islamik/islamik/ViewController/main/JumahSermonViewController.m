@@ -30,37 +30,38 @@
 }
 */
 - (IBAction)onAfricaClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE];
+    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE continent:CONTINENT_AFRICA];
 }
 - (IBAction)onAmericaClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE];
+    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE continent:CONTINENT_AMERICA];
 }
 - (IBAction)onAsiaClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE];
+    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE continent:CONTINENT_ASIA];
 }
 - (IBAction)onAustraliaClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE];
+    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE continent:CONTINENT_AUSTRALIA];
 }
 - (IBAction)onEuropaClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE];
+    [self gotoNextView:TYPE_JUMAH user:TYPE_MOSQUE continent:CONTINENT_EUROPA];
 }
 - (IBAction)onScholarsClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_USTHADH];
+    [self gotoNextView:TYPE_REGULAR user:TYPE_USTHADH continent:-1];
 }
 - (IBAction)onWomenClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_INFLUENCER_WOMEN];
+    [self gotoNextView:TYPE_REGULAR user:TYPE_INFLUENCER_WOMEN continent:-1];
 }
 - (IBAction)onKidsClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_INFLUENCER_KID];
+    [self gotoNextView:TYPE_REGULAR user:TYPE_INFLUENCER_KID continent:-1];
 }
 - (IBAction)onOthersClick:(id)sender {
-    [self gotoNextView:TYPE_JUMAH user:TYPE_INFLUENCER_OTHER];
+    [self gotoNextView:TYPE_REGULAR user:TYPE_INFLUENCER_OTHER continent:-1];
 }
 
-- (void) gotoNextView:(int) type user:(int) user {
+- (void) gotoNextView:(int) type user:(int) user continent:(int) continent {
     SermonViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SermonViewController"];
     controller.sermonType = type;
     controller.userType = user;
+    controller.continentType = continent;
     [self.navigationController pushViewController:controller animated:YES];
 }
 @end

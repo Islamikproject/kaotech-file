@@ -52,7 +52,8 @@
             if (self.userType == TYPE_MOSQUE) {
                 for (int i = 0; i < array.count; i ++) {
                     int _type = [array[i][PARSE_TYPE] intValue];
-                    if (_type == TYPE_MOSQUE || _type == TYPE_ADMIN) {
+                    int _continent = [array[i][PARSE_CONTINENT] intValue];
+                    if ((self.continentType == _continent) && (_type == TYPE_MOSQUE || _type == TYPE_ADMIN)) {
                         [self->mDataList addObject:array[i]];
                     }
                 }
@@ -112,6 +113,7 @@
     MapViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MapViewController"];
     controller.sermonType = self.sermonType;
     controller.userType = self.userType;
+    controller.continentType = self.continentType;
     [self.navigationController pushViewController:controller animated:YES];
 }
 @end

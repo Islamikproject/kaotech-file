@@ -8,10 +8,15 @@
 
 #import "SermonViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <CoreAudio/CoreAudioTypes.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreMedia/CoreMedia.h>
 
 static SermonViewController *_sharedViewController = nil;
 
-@interface SermonViewController () <IQDropDownTextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
+@interface SermonViewController () <IQDropDownTextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MPMediaPickerControllerDelegate>{
     BOOL isCameraOpen;
     NSMutableArray * languageCode;
     NSMutableArray * languageName;
@@ -95,6 +100,14 @@ static SermonViewController *_sharedViewController = nil;
         }]];
         [actionsheet addAction:[UIAlertAction actionWithTitle:@"Select audio from file" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
             
+            MPMediaPickerController *picker = [[MPMediaPickerController alloc]     initWithMediaTypes:MPMediaTypeAnyAudio];
+
+            [picker setDelegate:self];
+            [picker setAllowsPickingMultipleItems:NO];
+            [picker setPrompt:NSLocalizedString(@"Add songs to play","Prompt in media item picker")];
+            [picker loadView]; // Will throw an exception in iOS simulator
+            [self presentViewController:picker animated:YES completion:nil];
+            
         }]];
         [actionsheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -132,12 +145,27 @@ static SermonViewController *_sharedViewController = nil;
         return;
     }
 }
+
+- (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
+{
+    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
+    MPMediaItem *item = [mediaItemCollection.items firstObject];
+    NSURL *assetURL = [item valueForProperty:MPMediaItemPropertyAssetURL];//returning null
+    [self uploadAudio:assetURL];
+}
+- (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
+{
+    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
 - (void) uploadVideo:(NSURL*) videoUrl {
     NSString *videoName = [Util convertDateTimeToString:[NSDate date]];
     NSData *videoData = [NSData dataWithContentsOfURL:videoUrl];
     FIRStorage *storage = [FIRStorage storage];
     FIRStorageReference *storageRef = [storage reference];
-    NSString *storagePath = [NSString stringWithFormat:@"file/%@.mp4", videoName];
+    NSString *storagePath = [NSString stringWithFormat:@"file/%@", videoName];
     FIRStorageReference *fileRef = [storageRef child:storagePath];
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
@@ -154,14 +182,41 @@ static SermonViewController *_sharedViewController = nil;
                   [SVProgressHUD dismiss];
                   [Util showAlertTitle:self title:@"Error" message:[error localizedDescription]];
               } else {
-                  [self registerSermon:videoName videoPath:URL.absoluteString];
+                  [self registerSermon:videoName videoPath:URL.absoluteString isAudio:NO];
               }
         }];
       }
     }];
-    
 }
-- (void) registerSermon:(NSString *)videoName videoPath:(NSString *)videoPath {
+- (void) uploadAudio:(NSURL*) audioUrl {
+    NSString *audioName = [Util convertDateTimeToString:[NSDate date]];
+    NSData *audioData = [NSData dataWithContentsOfURL:audioUrl];
+    FIRStorage *storage = [FIRStorage storage];
+    FIRStorageReference *storageRef = [storage reference];
+    NSString *storagePath = [NSString stringWithFormat:@"file/%@", audioName];
+    FIRStorageReference *fileRef = [storageRef child:storagePath];
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
+    FIRStorageUploadTask *uploadTask = [fileRef putData:audioData
+                                                 metadata:nil
+                                               completion:^(FIRStorageMetadata *metadata,
+                                                            NSError *error) {
+      if (error != nil) {
+          [SVProgressHUD dismiss];
+          [Util showAlertTitle:self title:@"Error" message:[error localizedDescription]];
+      } else {
+          [fileRef downloadURLWithCompletion:^(NSURL * _Nullable URL, NSError * _Nullable error) {
+              if (error != nil) {
+                  [SVProgressHUD dismiss];
+                  [Util showAlertTitle:self title:@"Error" message:[error localizedDescription]];
+              } else {
+                  [self registerSermon:audioName videoPath:URL.absoluteString isAudio:YES];
+              }
+        }];
+      }
+    }];
+}
+- (void) registerSermon:(NSString *)videoName videoPath:(NSString *)videoPath isAudio:(BOOL) isAudio{
     NSString *topic = [Util trim:_edtTopic.text];;
     NSString *language = languageCode[(int)[self.edtLanguage selectedRow]];
     
@@ -174,6 +229,7 @@ static SermonViewController *_sharedViewController = nil;
     object[PARSE_VIDEO] = videoPath;
     object[PARSE_VIDEO_NAME] = videoName;
     object[PARSE_IS_DELETE] = [NSNumber numberWithBool:NO];
+    object[PARSE_IS_AUDIO] = [NSNumber numberWithBool:isAudio];
     object[PARSE_LANGUAGE] = language;
     int index = (int)[self.edtAmount selectedRow];
     object[PARSE_AMOUNT] = ARRAY_AMOUNT[index];
