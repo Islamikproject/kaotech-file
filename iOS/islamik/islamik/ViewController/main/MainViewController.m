@@ -54,11 +54,11 @@
     [self getPost];
 }
 - (void) getTime {
-    _lblFajrTime.text = @"05:10 AM";
-    _lblZuhrTime.text = @"11:41 AM";
-    _lblAsrTime.text = @"02:15 PM";
-    _lblMaghribTime.text = @"04:36 PM";
-    _lblIshaTime.text = @"06:06 PM";
+    _lblFajrTime.text = @"04:19 AM";
+    _lblZuhrTime.text = @"12:52 PM";
+    _lblAsrTime.text = @"04:37 PM";
+    _lblMaghribTime.text = @"08:01 PM";
+    _lblIshaTime.text = @"09:24 PM";
 }
 - (void) getVideo {
     PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_SERMON];

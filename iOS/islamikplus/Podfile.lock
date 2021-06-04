@@ -16,6 +16,7 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.9.1)
+  - DBCameraButton (1.0.0)
   - DMActivityInstagram (0.0.5)
   - Firebase/Analytics (6.34.0):
     - Firebase/Core
@@ -89,6 +90,9 @@ PODS:
     - SCSiriWaveformView
   - IQDropDownTextField (2.0.1)
   - IQKeyboardManager (6.5.6)
+  - IQMediaPickerController (2.0.0):
+    - DBCameraButton
+    - SCSiriWaveformView
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -125,6 +129,7 @@ DEPENDENCIES:
   - IQAudioRecorderController
   - IQDropDownTextField
   - IQKeyboardManager
+  - IQMediaPickerController
   - JSQMessagesViewController
   - MBProgressHUD
   - MGSwipeTableCell
@@ -141,6 +146,7 @@ SPEC REPOS:
     - AAPullToRefresh
     - AFNetworking
     - Bolts
+    - DBCameraButton
     - DMActivityInstagram
     - Firebase
     - FirebaseAnalytics
@@ -158,6 +164,7 @@ SPEC REPOS:
     - IQAudioRecorderController
     - IQDropDownTextField
     - IQKeyboardManager
+    - IQMediaPickerController
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
     - MBProgressHUD
@@ -177,6 +184,7 @@ SPEC CHECKSUMS:
   AAPullToRefresh: 9170fe976bad38329656fc852ee84f8095d3718e
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  DBCameraButton: 969d585df804df5b413936a7bf5d77c562ca2307
   DMActivityInstagram: c82f3e965482500ba8bc62115ef830ada2e51394
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
@@ -194,6 +202,7 @@ SPEC CHECKSUMS:
   IQAudioRecorderController: 69a67c2e0b87bd8746cbb4de175fd7a0bf820009
   IQDropDownTextField: 1afad4825d80089a1b0907e8a8d73a49248a2508
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  IQMediaPickerController: d8c88f955bcc67e8c2703538f63cc670c56b82a2
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -209,6 +218,6 @@ SPEC CHECKSUMS:
   SDWebImage: b969dcfc02c40a5da71eac0b03b8f1a0c794a86f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: f360661b94cdb635e5f201b9ffd0a6f95fb576a4
+PODFILE CHECKSUM: 29efc8cbe758d1cfd9920f8a3969955c77cdb7aa
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

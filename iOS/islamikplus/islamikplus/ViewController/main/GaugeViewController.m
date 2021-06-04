@@ -270,6 +270,18 @@
     int textSize = (int)[self.edtTextSize selectedRow];
     int textFont = (int)[self.edtTextFont selectedRow];
     int backgroundColor = (int)[self.edtBackgroundColor selectedRow];
+    if (textColor == -1) {
+        textColor = 2;
+    }
+    if (textSize == -1) {
+        textSize = 0;
+    }
+    if (textFont == -1) {
+        textFont = 0;
+    }
+    if (backgroundColor == -1) {
+        backgroundColor = 1;
+    }
     object[PARSE_TEXT_COLOR] = [NSNumber numberWithInt:textColor];
     object[PARSE_TEXT_SIZE] = [NSNumber numberWithInt:textSize];
     object[PARSE_TEXT_FONT] = [NSNumber numberWithInt:textFont];
@@ -303,10 +315,18 @@
     int textSize = (int)[self.edtTextSize selectedRow];
     int textFont = (int)[self.edtTextFont selectedRow];
     int backgroundColor = (int)[self.edtBackgroundColor selectedRow];
-    self.mGaugeObj[PARSE_TEXT_COLOR] = [NSNumber numberWithInt:textColor];
-    self.mGaugeObj[PARSE_TEXT_SIZE] = [NSNumber numberWithInt:textSize];
-    self.mGaugeObj[PARSE_TEXT_FONT] = [NSNumber numberWithInt:textFont];
-    self.mGaugeObj[PARSE_BG_COLOR] = [NSNumber numberWithInt:backgroundColor];
+    if (textColor > -1) {
+        self.mGaugeObj[PARSE_TEXT_COLOR] = [NSNumber numberWithInt:textColor];
+    }
+    if (textSize > -1) {
+        self.mGaugeObj[PARSE_TEXT_SIZE] = [NSNumber numberWithInt:textSize];
+    }
+    if (textFont > -1) {
+        self.mGaugeObj[PARSE_TEXT_FONT] = [NSNumber numberWithInt:textFont];
+    }
+    if (backgroundColor > -1) {
+        self.mGaugeObj[PARSE_BG_COLOR] = [NSNumber numberWithInt:backgroundColor];
+    }
     if (hasPhoto){
         UIImage *profileImage = [Util getUploadingUserImageFromImage:_imgPhoto.image];
         NSData *imageData = UIImageJPEGRepresentation(profileImage, 0.8);
@@ -394,10 +414,14 @@
             [self.edtDescription setTextColor:ARRAY_COLOR[index]];
         } else if (textField == self.edtTextSize) {
             int font = (int)[self.edtTextFont selectedRow];
-            [self.edtDescription setFont:[UIFont fontWithName:ARRAY_FONT[font] size:index + 10]];
+            if (font > -1) {
+                [self.edtDescription setFont:[UIFont fontWithName:ARRAY_FONT[font] size:index + 10]];
+            }
         } else if (textField == self.edtTextFont) {
             int size = (int)[self.edtTextSize selectedRow];
-            [self.edtDescription setFont:[UIFont fontWithName:ARRAY_FONT[index] size:size + 10]];
+            if (size > -1) {
+                [self.edtDescription setFont:[UIFont fontWithName:ARRAY_FONT[index] size:size + 10]];
+            }
         } else if (textField == self.edtBackgroundColor) {
             [self.edtDescription setBackgroundColor:ARRAY_COLOR[index]];
         }

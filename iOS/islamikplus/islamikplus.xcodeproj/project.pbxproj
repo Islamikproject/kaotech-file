@@ -11,7 +11,6 @@
 		5A0E5478265E518A00A7EFEF /* GaugeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E5477265E518A00A7EFEF /* GaugeListViewController.m */; };
 		5A0E547C265E519C00A7EFEF /* GaugeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E547B265E519C00A7EFEF /* GaugeViewController.m */; };
 		5A12A599255E8A520098E798 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A12A598255E8A520098E798 /* BookViewController.m */; };
-		5A1AC06526602AD4008640AE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1AC06426602AD4008640AE /* MediaPlayer.framework */; };
 		5A1AC06826602E42008640AE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1AC06726602E42008640AE /* CoreMedia.framework */; };
 		5A1AC06B26602E60008640AE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1AC06A26602E60008640AE /* CoreAudio.framework */; };
 		5A227CF9265EA653003973DC /* GaugeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A227CF8265EA653003973DC /* GaugeCell.m */; };
@@ -90,7 +89,6 @@
 		5AFC4A3325E5A16A004854E4 /* ChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC4A2F25E5A169004854E4 /* ChatDetailViewController.m */; };
 		5AFC4A3425E5A16A004854E4 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC4A3025E5A169004854E4 /* ChatViewController.m */; };
 		5AFC4A3825E5A237004854E4 /* AppStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC4A3725E5A237004854E4 /* AppStateManager.m */; };
-		5AFC4A8125E5A3D8004854E4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFC4A8025E5A3D8004854E4 /* MobileCoreServices.framework */; };
 		5AFC4A8325E5A3EB004854E4 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFC4A8225E5A3EB004854E4 /* SafariServices.framework */; };
 		78066E9724761D4D007F04A9 /* CircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066DF624761D4C007F04A9 /* CircleImageView.m */; };
 		78066ED524761D4D007F04A9 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 78066E7124761D4D007F04A9 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
@@ -353,8 +351,6 @@
 				78066EEE24762235007F04A9 /* libxml2.tbd in Frameworks */,
 				5A1AC06B26602E60008640AE /* CoreAudio.framework in Frameworks */,
 				5AFC4A8325E5A3EB004854E4 /* SafariServices.framework in Frameworks */,
-				5A1AC06526602AD4008640AE /* MediaPlayer.framework in Frameworks */,
-				5AFC4A8125E5A3D8004854E4 /* MobileCoreServices.framework in Frameworks */,
 				DF58A2A10D547EB574247E6B /* Pods_islamikplus.framework in Frameworks */,
 				78066EEC24762226007F04A9 /* libxml2.2.tbd in Frameworks */,
 			);

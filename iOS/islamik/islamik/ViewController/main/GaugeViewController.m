@@ -24,8 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.txtDescription.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.txtDescription.layer.borderWidth = 1.f;
     self.txtDescription.editable = NO;
     [self initialize];
 }
@@ -57,6 +55,14 @@
             self.playerLayer.needsDisplayOnBoundsChange = true;
             [self.videoView.layer addSublayer:self.playerLayer];
             [self.player play];
+        }
+    }
+}
+- (IBAction)onWebLinkClick:(id)sender {
+    NSString *webLink = self.mGaugeObj[PARSE_WEB_LINK];
+    if (webLink.length > 0) {
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: webLink]]){
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webLink]];
         }
     }
 }

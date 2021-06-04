@@ -8,15 +8,11 @@
 
 #import "SermonViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import <CoreAudio/CoreAudioTypes.h>
-#import <AudioToolbox/AudioToolbox.h>
-#import <MediaPlayer/MediaPlayer.h>
-#import <AVFoundation/AVFoundation.h>
-#import <CoreMedia/CoreMedia.h>
+#import <IQMediaPickerController/IQMediaPickerController.h>
 
 static SermonViewController *_sharedViewController = nil;
 
-@interface SermonViewController () <IQDropDownTextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MPMediaPickerControllerDelegate>{
+@interface SermonViewController () <IQDropDownTextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, IQMediaPickerControllerDelegate>{
     BOOL isCameraOpen;
     NSMutableArray * languageCode;
     NSMutableArray * languageName;
@@ -99,14 +95,12 @@ static SermonViewController *_sharedViewController = nil;
             [self presentViewController:imagePickerController animated:YES completion:nil];
         }]];
         [actionsheet addAction:[UIAlertAction actionWithTitle:@"Select audio from file" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-            
-            MPMediaPickerController *picker = [[MPMediaPickerController alloc]     initWithMediaTypes:MPMediaTypeAnyAudio];
-
-            [picker setDelegate:self];
-            [picker setAllowsPickingMultipleItems:NO];
-            [picker setPrompt:NSLocalizedString(@"Add songs to play","Prompt in media item picker")];
-            [picker loadView]; // Will throw an exception in iOS simulator
-            [self presentViewController:picker animated:YES completion:nil];
+            IQMediaPickerController *controller = [[IQMediaPickerController alloc] init];
+            [controller setSourceType:IQMediaPickerControllerSourceTypeLibrary];//or IQMediaPickerControllerSourceTypeLibrary
+            [controller setMediaTypes:@[@(PHAssetMediaTypeAudio)]];
+            controller.allowsPickingMultipleItems = NO;//or NO
+            controller.delegate = self;
+            [self presentViewController:controller animated:YES completion:nil];
             
         }]];
         [actionsheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
@@ -123,6 +117,20 @@ static SermonViewController *_sharedViewController = nil;
         }
     }
 }
+
+-(void)mediaPickerController:(IQMediaPickerController *)controller didFinishMedias:(IQMediaPickerSelection *)selection
+{
+    NSLog(@"Info: %@",selection);   //Here you'll get the information about captured or picked assets
+
+//    selectedMedias = selection;
+
+}
+
+- (void)mediaPickerControllerDidCancel:(IQMediaPickerController *)controller;
+{
+}
+
+
 #pragma mark - image pickerview
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -145,20 +153,6 @@ static SermonViewController *_sharedViewController = nil;
         return;
     }
 }
-
-- (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
-{
-    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
-    MPMediaItem *item = [mediaItemCollection.items firstObject];
-    NSURL *assetURL = [item valueForProperty:MPMediaItemPropertyAssetURL];//returning null
-    [self uploadAudio:assetURL];
-}
-- (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
-{
-    [mediaPicker dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 
 - (void) uploadVideo:(NSURL*) videoUrl {
     NSString *videoName = [Util convertDateTimeToString:[NSDate date]];

@@ -282,7 +282,7 @@ static ChatDetailViewController *_sharedViewController = nil;
     NSData *videoData = [NSData dataWithContentsOfURL:videoUrl];
     FIRStorage *storage = [FIRStorage storage];
     FIRStorageReference *storageRef = [storage reference];
-    NSString *storagePath = [NSString stringWithFormat:@"file/%@.mp4", videoName];
+    NSString *storagePath = [NSString stringWithFormat:@"file/%@", videoName];
     FIRStorageReference *fileRef = [storageRef child:storagePath];
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];

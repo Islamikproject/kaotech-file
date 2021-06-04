@@ -8248,6 +8248,15 @@ We will send you a link to reset your password.</string>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkN-Wv-teT">
+                                        <rect key="frame" x="20" y="418" width="374" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="0VJ-gb-OWX"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="onWebLinkClick:" destination="9OC-zp-vGm" eventType="touchUpInside" id="0c7-4Z-tFo"/>
+                                        </connections>
+                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WfX-gd-yJt">
                                         <rect key="frame" x="20" y="452" width="374" height="150"/>
                                         <constraints>
@@ -8265,7 +8274,10 @@ We will send you a link to reset your password.</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="JSJ-V4-5VJ" firstAttribute="leading" secondItem="NfA-gM-YDW" secondAttribute="leading" constant="20" id="9AJ-dB-3Qe"/>
+                                    <constraint firstItem="vkN-Wv-teT" firstAttribute="centerX" secondItem="NfA-gM-YDW" secondAttribute="centerX" id="9Lb-5m-h4X"/>
+                                    <constraint firstItem="vkN-Wv-teT" firstAttribute="centerY" secondItem="PZM-do-Ca9" secondAttribute="centerY" id="CNt-3v-vXi"/>
                                     <constraint firstItem="JSJ-V4-5VJ" firstAttribute="centerX" secondItem="NfA-gM-YDW" secondAttribute="centerX" id="Lc6-7n-6d4"/>
+                                    <constraint firstItem="vkN-Wv-teT" firstAttribute="leading" secondItem="NfA-gM-YDW" secondAttribute="leading" constant="20" id="Lvu-pn-WAq"/>
                                     <constraint firstAttribute="bottom" secondItem="JSJ-V4-5VJ" secondAttribute="bottom" constant="30" id="NUt-C1-wL7"/>
                                     <constraint firstItem="WfX-gd-yJt" firstAttribute="top" secondItem="PZM-do-Ca9" secondAttribute="bottom" constant="10" id="OF2-R2-o2m"/>
                                     <constraint firstItem="PZM-do-Ca9" firstAttribute="leading" secondItem="NfA-gM-YDW" secondAttribute="leading" constant="20" id="OKD-12-duJ"/>
@@ -8643,14 +8655,6 @@ We will send you a link to reset your password.</string>
             <point key="canvasLocation" x="3560.8695652173915" y="-711.16071428571422"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="3pR-u3-rF8">
-            <size key="intrinsicContentSize" width="240" height="44"/>
-        </designable>
-        <designable name="kMy-rR-EVP">
-            <size key="intrinsicContentSize" width="240" height="44"/>
-        </designable>
-    </designables>
     <resources>
         <image name="check_off.png" width="43" height="43"/>
         <image name="check_on.png" width="43" height="43"/>

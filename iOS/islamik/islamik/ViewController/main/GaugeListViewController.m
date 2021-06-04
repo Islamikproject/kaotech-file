@@ -57,7 +57,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 90.f;
+    return 100.f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,7 +74,7 @@
             int textColor = [gaugeObj[PARSE_TEXT_COLOR] intValue];
             int textFont = [gaugeObj[PARSE_TEXT_FONT] intValue];
             int textSize = [gaugeObj[PARSE_TEXT_SIZE] intValue] + 10;
-            [cell.lblDescription setFont:[UIFont fontWithName:ARRAY_FONT[textFont] size:textSize]];
+            [cell.lblDescription setFont:[UIFont fontWithName:ARRAY_FONT[textFont] size:15]];
             [cell.lblDescription setTextColor:ARRAY_COLOR[textColor]];
             [cell.lblDescription setBackgroundColor:ARRAY_COLOR[bgColor]];
         }
