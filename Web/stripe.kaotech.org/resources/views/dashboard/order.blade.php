@@ -35,7 +35,7 @@
 
         <div class="form-container active">
             <form method="post">
-                <input type="hidden" name="sermon" value="{{$_GET['sermon']}}">
+                <input type="hidden" name="order" value="{{$_GET['order']}}">
                 <input placeholder="Card number" type="tel" name="number" required>
                 <input placeholder="Full name" type="text" name="name" required>
                 <input placeholder="MM/YY" type="tel" name="expiry" required>
