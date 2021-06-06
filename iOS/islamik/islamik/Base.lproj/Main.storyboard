@@ -2716,12 +2716,24 @@ SERMON</string>
                                 <rect key="frame" x="0.0" y="104" width="414" height="792"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3u-AP-en9">
+                                <rect key="frame" x="261" y="124" width="133" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="DONATE/SUPPORT">
+                                    <color key="titleColor" red="1" green="0.49019607840000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDonateClick:" destination="L5N-o1-r6B" eventType="touchUpInside" id="i80-fB-4hw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wEG-6t-rzA"/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.3803921569" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="sFK-c3-pap" secondAttribute="bottom" id="1q5-ue-MtK"/>
                             <constraint firstItem="U2C-pF-Rws" firstAttribute="top" secondItem="wEG-6t-rzA" secondAttribute="top" id="5lP-jD-Q9h"/>
+                            <constraint firstItem="wEG-6t-rzA" firstAttribute="trailing" secondItem="D3u-AP-en9" secondAttribute="trailing" constant="20" id="NzK-g7-ySv"/>
+                            <constraint firstItem="D3u-AP-en9" firstAttribute="top" secondItem="U2C-pF-Rws" secondAttribute="bottom" constant="20" id="RNN-lo-C0s"/>
                             <constraint firstItem="U2C-pF-Rws" firstAttribute="trailing" secondItem="wEG-6t-rzA" secondAttribute="trailing" id="VRp-ID-rzc"/>
                             <constraint firstItem="U2C-pF-Rws" firstAttribute="leading" secondItem="wEG-6t-rzA" secondAttribute="leading" id="Ztb-fK-x5I"/>
                             <constraint firstItem="sFK-c3-pap" firstAttribute="top" secondItem="U2C-pF-Rws" secondAttribute="bottom" id="bqw-GA-CT8"/>
@@ -8655,6 +8667,14 @@ We will send you a link to reset your password.</string>
             <point key="canvasLocation" x="3560.8695652173915" y="-711.16071428571422"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="3pR-u3-rF8">
+            <size key="intrinsicContentSize" width="240" height="44"/>
+        </designable>
+        <designable name="kMy-rR-EVP">
+            <size key="intrinsicContentSize" width="240" height="44"/>
+        </designable>
+    </designables>
     <resources>
         <image name="check_off.png" width="43" height="43"/>
         <image name="check_on.png" width="43" height="43"/>

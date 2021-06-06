@@ -61,7 +61,6 @@
             NSLog(@"[self changeToPause];  // This changes the button to Pause");
         } else {
             NSLog(@"[self changeToPlay];  // This changes the button to Play");
-            [self showConfirmDialog];
         }
     }
 }
@@ -84,6 +83,9 @@
 
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+- (IBAction)onDonateClick:(id)sender {
+    [self showConfirmDialog];
 }
 - (IBAction)onShareClick:(id)sender {
     [self shareVideo:self.mSermonObj[PARSE_VIDEO] title:self.mSermonObj[PARSE_TOPIC]];
