@@ -155,10 +155,11 @@ static SermonViewController *_sharedViewController = nil;
 }
 
 - (void) uploadVideo:(NSURL*) videoUrl {
-    NSString *videoName = [Util convertDateTimeToString:[NSDate date]];
     NSData *videoData = [NSData dataWithContentsOfURL:videoUrl];
     FIRStorage *storage = [FIRStorage storage];
     FIRStorageReference *storageRef = [storage reference];
+    NSString *extension = [[videoUrl lastPathComponent] pathExtension];
+    NSString *videoName = [NSString stringWithFormat:@"%@.%@", [Util convertDateTimeToString:[NSDate date]], extension];
     NSString *storagePath = [NSString stringWithFormat:@"file/%@", videoName];
     FIRStorageReference *fileRef = [storageRef child:storagePath];
     
@@ -183,10 +184,11 @@ static SermonViewController *_sharedViewController = nil;
     }];
 }
 - (void) uploadAudio:(NSURL*) audioUrl {
-    NSString *audioName = [Util convertDateTimeToString:[NSDate date]];
     NSData *audioData = [NSData dataWithContentsOfURL:audioUrl];
     FIRStorage *storage = [FIRStorage storage];
     FIRStorageReference *storageRef = [storage reference];
+    NSString *extension = [[audioUrl lastPathComponent] pathExtension];
+    NSString *audioName = [NSString stringWithFormat:@"%@.%@", [Util convertDateTimeToString:[NSDate date]], extension];
     NSString *storagePath = [NSString stringWithFormat:@"file/%@", audioName];
     FIRStorageReference *fileRef = [storageRef child:storagePath];
     
@@ -226,6 +228,9 @@ static SermonViewController *_sharedViewController = nil;
     object[PARSE_IS_AUDIO] = [NSNumber numberWithBool:isAudio];
     object[PARSE_LANGUAGE] = language;
     int index = (int)[self.edtAmount selectedRow];
+    if (index == -1) {
+        index = 0;
+    }
     object[PARSE_AMOUNT] = ARRAY_AMOUNT[index];
     
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {

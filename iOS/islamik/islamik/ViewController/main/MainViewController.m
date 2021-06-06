@@ -54,11 +54,33 @@
     [self getPost];
 }
 - (void) getTime {
-    _lblFajrTime.text = @"04:19 AM";
-    _lblZuhrTime.text = @"12:52 PM";
-    _lblAsrTime.text = @"04:37 PM";
-    _lblMaghribTime.text = @"08:01 PM";
-    _lblIshaTime.text = @"09:24 PM";
+    NSURL *URL = [NSURL URLWithString:PRAYER_TIME_URL];
+    NSString *webData= [NSString stringWithContentsOfURL:URL encoding:NSASCIIStringEncoding error:nil];
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\<span class=\"todayPrayerTime\".+?<\\/span\\>"
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    NSArray *matches = [regex matchesInString:webData
+                              options:0
+                              range:NSMakeRange(0, [webData length])];
+    int index = 0;
+    for (NSTextCheckingResult *match in matches) {
+        NSRange matchRange = [match range];
+        NSString *matchedString = [webData substringWithRange:matchRange];
+        NSString *str = [matchedString stringByReplacingOccurrencesOfString:@"<span class=\"todayPrayerTime\">" withString:@""];
+        NSString *time = [str stringByReplacingOccurrencesOfString:@"</span>" withString:@""];
+        if (index == 0)
+            _lblFajrTime.text = time;
+        else if (index == 2)
+            _lblZuhrTime.text = time;
+        else if (index == 3)
+            _lblAsrTime.text = time;
+        else if (index == 4)
+            _lblMaghribTime.text = time;
+        else if (index == 5)
+            _lblIshaTime.text = time;
+        index ++;
+    }
 }
 - (void) getVideo {
     PFQuery * query = [PFQuery queryWithClassName:PARSE_TABLE_SERMON];

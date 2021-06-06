@@ -219,10 +219,11 @@
 
 - (void) uploadVideo {
     if (hasVideo) {
-        NSString *videoName = [Util convertDateTimeToString:[NSDate date]];
         NSData *videoData = [NSData dataWithContentsOfURL:videoUrl];
         FIRStorage *storage = [FIRStorage storage];
         FIRStorageReference *storageRef = [storage reference];
+        NSString *extension = [[videoUrl lastPathComponent] pathExtension];
+        NSString *videoName = [NSString stringWithFormat:@"%@.%@", [Util convertDateTimeToString:[NSDate date]], extension];
         NSString *storagePath = [NSString stringWithFormat:@"file/%@", videoName];
         FIRStorageReference *fileRef = [storageRef child:storagePath];
         
